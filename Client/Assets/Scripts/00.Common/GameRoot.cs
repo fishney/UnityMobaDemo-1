@@ -30,16 +30,51 @@ public class GameRoot : MonoBehaviour
             loggerType = LoggerType.Unity,
         };
         PELog.InitSettings(cfg);
-        
         PELog.ColorLog(LogColor.Green,"GameRoot Init...");
-
-        // ClearUIRoot();
+        
+        DontDestroyOnLoad(this);
+        ClearUIRoot();
         Init();
     }
+    
+    /// <summary>
+    /// 初始化所有窗口，隐藏他们，除了显示Tips的DynamicWindow
+    /// </summary>
+    private void ClearUIRoot()
+    {
+        Transform canvas = transform.Find("Canvas");
+        for (int i = 0; i < canvas.childCount; i++)
+        {
+            canvas.GetChild(i).gameObject.SetActive(false);
+        }
+        
+        //GameRootResources.Instance().dynamicWindow.SetWindowState(true);
+    }
+    
 
+    private NetSvc netSvc;
+    private AudioSvc audioSvc;
+    private ResSvc resSvc;
 
     private void Init()
     {
+        netSvc = GetComponent<NetSvc>();
+        netSvc.InitSvc();
+        audioSvc = GetComponent<AudioSvc>();
+        audioSvc.InitSvc();
+        resSvc = GetComponent<ResSvc>();
+        resSvc.InitSvc();
+
+        LoginSys loginSys = GetComponent<LoginSys>();
+        loginSys.InitSys();
+        LobbySys lobbySys = GetComponent<LobbySys>();
+        lobbySys.InitSys();
+        BattleSys battleSys = GetComponent<BattleSys>();
+        battleSys.InitSys();
         
+        
+        
+        //进入登陆场景并加载相应UI
+        loginSys.EnterLogin();
     }
 }

@@ -50,9 +50,20 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\00.Common\GameRoot.cs" />
+     <Compile Include="Assets\Scripts\02.Systems\LoginSys.cs" />
+     <Compile Include="Assets\Scripts\02.Systems\LobbySys.cs" />
+     <Compile Include="Assets\Scripts\01.Services\ResSvc.cs" />
      <Compile Include="Assets\MyLibrary\SingletonLibrary\Scripts\MonoSingleton.cs" />
      <Compile Include="Assets\MyLibrary\SingletonLibrary\Scripts\Singleton.cs" />
+     <Compile Include="Assets\Scripts\02.Systems\BattleSys.cs" />
+     <Compile Include="Assets\Scripts\00.Common\GameRoot.cs" />
+     <Compile Include="Assets\Scripts\01.Services\AudioSvc.cs" />
+     <Compile Include="Assets\Scripts\01.Services\NetSvc.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\WindowBase.cs" />
+     <Compile Include="Assets\Scripts\00.Common\GameRootResources.cs" />
+     <Compile Include="Assets\Scripts\02.Systems\SystemBase.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\LoginWindow.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Constants.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
