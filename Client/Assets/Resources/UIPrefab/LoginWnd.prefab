@@ -1261,6 +1261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2564118839347219617}
+  - component: {fileID: 1186511568}
   m_Layer: 5
   m_Name: LoginWnd
   m_TagString: Untagged
@@ -1292,6 +1293,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1186511568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6153965586807353284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039cca16717c4614cbcb59e432a5793b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputAccount: {fileID: 4405548195116784992}
+  inputPassword: {fileID: 5770033121134189093}
+  togServer: {fileID: 6440459194687572452}
 --- !u!1 &6642865647118852612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,8 +1732,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 1186511568}
+        m_TargetAssemblyTypeName: LoginWindow, Assembly-CSharp
         m_MethodName: ClickLoginBtn
         m_Mode: 1
         m_Arguments:

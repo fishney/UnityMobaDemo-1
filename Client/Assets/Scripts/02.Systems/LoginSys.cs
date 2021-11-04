@@ -31,7 +31,7 @@ public class LoginSys : SystemBase
         //resSvc.AsyncLoadScene(Constants.SceneLogin,OpenLoginWindow);
         gameRootResources.loginWindow.SetWindowState();
         audioSvc.PlayBGMusic(Constants.BGMainCity);
-        //gameRootResources.ShowTips("加载音乐资源...成功");
-        //gameRootResources.ShowTips("加载动画资源...成功");
+        gameRootResources.ShowTips("加载音乐资源...成功");
+        gameRootResources.ShowTips("加载动画资源...成功");
     }
 }

@@ -48,7 +48,7 @@ public class GameRoot : MonoBehaviour
             canvas.GetChild(i).gameObject.SetActive(false);
         }
         
-        //GameRootResources.Instance().dynamicWindow.SetWindowState(true);
+        GameRootResources.Instance().tipsWindow.SetWindowState(true);
     }
     
 

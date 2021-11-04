@@ -10,12 +10,68 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoginWindow : WindowBase
 {
+    #region define
+
+    public InputField inputAccount;
+    public InputField inputPassword;
+    public Toggle togServer;
+
+    #endregion
+
     protected override void InitWindow()
     {
         base.InitWindow();
-       
+        
+        // 获取本地存储的账号密码
+        if (PlayerPrefs.HasKey("Account") && PlayerPrefs.HasKey("Password"))
+        {
+            inputAccount.text = PlayerPrefs.GetString("Account");
+            inputPassword.text = PlayerPrefs.GetString("Password");
+        }
+        else
+        {
+            inputAccount.text = string.Empty;
+            inputPassword.text = string.Empty;
+        }
     }
+
+    #region Events
+
+    public void ClickLoginBtn()
+    {
+        audioSvc.PlayUIAudio(Constants.LoginBtn);
+        GameRootResources.Instance().ShowTips("加载音乐资源...成功");
+        GameRootResources.Instance().ShowTips("加载动画资源...成功");
+        
+        string account = inputAccount.text;
+        string password = inputPassword.text;
+
+        if (!string.IsNullOrEmpty(account) && !string.IsNullOrEmpty(password))
+        {
+
+            //TODO 发送网络请求，验证登录
+            // GameMsg msg = new GameMsg()
+            // {
+            //     cmd = (int) CMD.ReqLogin,
+            //     reqLogin = new ReqLogin
+            //     {
+            //         acct = account,
+            //         pass = password
+            //     }
+            // };
+            // netSvc.SendMsg(msg);
+            
+        }
+        else
+        {
+            GameRootResources.Instance().ShowTips("账号或密码为空");
+        }
+    }
+
+    #endregion
+    
 }

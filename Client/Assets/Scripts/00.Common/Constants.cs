@@ -17,13 +17,13 @@ public static class Constants
 
     // 登录bgm
     //public const string BGLogin = "bgLogin";
-    
     // 主城bgm
     public const string BGMainCity = "main";
-    
     // 战斗bgm
     public const string BGBattle = "battle";
-    
-    
+
+    public const string LoginBtn = "LoginBtnClick";
+
+
     #endregion
 }

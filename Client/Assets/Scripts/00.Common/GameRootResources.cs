@@ -18,9 +18,9 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
 {
     // public LoadingWindow loadingWindow;
     //
-    public LoginWindow loginWindow;
-    //
-    // public DynamicWindow dynamicWindow;
+    public LoginWindow loginWindow; 
+    
+    public TipsWindow tipsWindow;
     //
     // public CreateWindow createWindow;
     //     
@@ -44,8 +44,8 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
     //
     // public BattleEndWindow battleEndWindow;
     //     
-    // public void ShowTips(string tip)
-    // {
-    //     dynamicWindow.AddTips(tip);
-    // }
+    public void ShowTips(string tip)
+    {
+        tipsWindow.AddTips(tip);
+    }
 }
