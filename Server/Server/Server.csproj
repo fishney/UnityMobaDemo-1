@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HOKProtocol\HOKProtocol.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Kcp">
+      <HintPath>..\..\Libs\KCPNetLibs\Kcp.dll</HintPath>
+    </Reference>
+    <Reference Include="KCPNet">
+      <HintPath>..\..\Libs\KCPNetLibs\KCPNet.dll</HintPath>
+    </Reference>
+    <Reference Include="PEUtils">
+      <HintPath>..\..\Libs\PEUtils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

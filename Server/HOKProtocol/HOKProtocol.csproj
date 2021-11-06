@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>C:\Github\UnityMobaDemo\Client\Assets\Scripts\00.Common\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="KCPNet">
+      <HintPath>..\..\Libs\KCPNetLibs\KCPNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

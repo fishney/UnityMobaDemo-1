@@ -1,0 +1,9 @@
+[L]# 11:18:06--970  ThreadID:1 >> NetSvc init.
+[L]# 11:18:07--023  ThreadID:1 >> Server Start...
+[L]# 11:18:07--040  ThreadID:1 >> ServerSession init Completed by NetSvc.
+[L]# 11:18:07--042  ThreadID:1 >> TimerSvc init.
+[L]# 11:18:07--044  ThreadID:1 >> CacheSvc init.
+[L]# 11:18:07--045  ThreadID:1 >> LoginSys init.
+[L]# 11:18:07--045  ThreadID:1 >> MatchSys init.
+[L]# 11:18:07--046  ThreadID:1 >> RoomSys init.
+[L]# 11:18:07--046  ThreadID:1 >> ServerRoot init Completed.

@@ -1,0 +1,81 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "HOKProtocol/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/HOKProtocol.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HOKProtocol.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HOKProtocol/1.0.0": {
+      "type": "project",
+      "path": "../HOKProtocol/HOKProtocol.csproj",
+      "msbuildProject": "../HOKProtocol/HOKProtocol.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "HOKProtocol >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\YAN JUNJIE\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Github\\UnityMobaDemo\\Server\\Server\\Server.csproj",
+      "projectName": "Server",
+      "projectPath": "C:\\Github\\UnityMobaDemo\\Server\\Server\\Server.csproj",
+      "packagesPath": "C:\\Users\\YAN JUNJIE\\.nuget\\packages\\",
+      "outputPath": "C:\\Github\\UnityMobaDemo\\Server\\Server\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\YAN JUNJIE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {
+            "C:\\Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj": {
+              "projectPath": "C:\\Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "imports": [
+          "net461"
+        ],
+        "assetTargetFallback": true,
+        "warn": true
+      }
+    }
+  }
+}
