@@ -18,7 +18,7 @@ namespace Server
 		protected override void OnConnected()
 		{
 			sessionId = ServerRoot.Instance().GetSessionId();
-			this.Log("SessionId:" + sessionId + " Client Connect");
+			this.Log("SessionId:" + sessionId + " Client Connect" + m_sid);
 		}
 
 		protected override void OnReciveMsg(HokMsg msg)
