@@ -7,6 +7,7 @@
     功能：Unknown
 *****************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -17,15 +18,15 @@ using PEUtils;
 
 public class NetSvc : GameRootMonoSingleton<NetSvc>
 {
-    private KCPNet<ClientSession, HokMsg> client = null;
-    private Queue<HokMsg> msgQue = null;
+    private KCPNet<ClientSession, GameMsg> client = null;
+    private Queue<GameMsg> msgQue = null;
     private static readonly string obj = "lock";
     private Task<bool> checkTask = null;
     
     public void InitSvc()
     {
-        client = new KCPNet<ClientSession, HokMsg>();
-        msgQue = new Queue<HokMsg>();
+        client = new KCPNet<ClientSession, GameMsg>();
+        msgQue = new Queue<GameMsg>();
         
         KCPTool.LogFunc = this.Log;
         KCPTool.WarnFunc = this.Warn;
@@ -51,23 +52,25 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
         Debug.Log("NetSvc Init Completed.");
     }
     
-    public void SendMsg(HokMsg msg)
+    public void SendMsg(GameMsg msg,Action<bool> cb = null)
     {
         if (client.clientSession != null)
         {
             client.clientSession.SendMsg(msg);
+            cb?.Invoke(true);
         }
         else
         {
             GameRootResources.Instance().ShowTips("服务器未连接");
             InitSvc();
+            cb?.Invoke(false);
         }
     }
 
     /// <summary>
     /// 向客户端发送请求
     /// </summary>
-    public void AddNetMsg(HokMsg msg)
+    public void AddNetMsg(GameMsg msg)
     {
         lock (obj)
         {
@@ -118,7 +121,7 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
         
     }
     
-    private void HandleRsp(HokMsg msg)
+    private void HandleRsp(GameMsg msg)
     {
        
     }

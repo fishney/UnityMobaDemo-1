@@ -4,7 +4,7 @@ using System;
 using HOKProtocol;
 using PENet;
 
-public class ClientSession: KCPSession<HokMsg>
+public class ClientSession: KCPSession<GameMsg>
 {
     public int sessionId = 0;
 
@@ -19,7 +19,7 @@ public class ClientSession: KCPSession<HokMsg>
         this.Log("SessionId:" + sessionId + " Client Connect");
     }
 
-    protected override void OnReciveMsg(HokMsg msg)
+    protected override void OnReciveMsg(GameMsg msg)
     {
         this.Log("SessionId:" + sessionId + " RcvPack CMD:");
 

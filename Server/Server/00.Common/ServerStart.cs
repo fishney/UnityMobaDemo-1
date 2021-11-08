@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Server
 {
@@ -9,9 +10,12 @@ namespace Server
 			ServerRoot.Instance().Init();
 
 
-
-
-			Console.Read();
+            while (true)
+            {
+                ServerRoot.Instance().Update();
+                // 降低执行频率
+                Thread.Sleep(20);
+            }
 		}
 	}
 }

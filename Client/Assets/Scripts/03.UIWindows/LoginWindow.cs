@@ -9,6 +9,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using HOKProtocol;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,18 +53,23 @@ public class LoginWindow : WindowBase
 
         if (!string.IsNullOrEmpty(account) && !string.IsNullOrEmpty(password))
         {
-
-            //TODO 发送网络请求，验证登录
-            // GameMsg msg = new GameMsg()
-            // {
-            //     cmd = (int) CMD.ReqLogin,
-            //     reqLogin = new ReqLogin
-            //     {
-            //         acct = account,
-            //         pass = password
-            //     }
-            // };
-            // netSvc.SendMsg(msg);
+            // 发送网络请求，验证登录
+            GameMsg msg = new GameMsg()
+            {
+                cmd = CMD.ReqLogin,
+                reqLogin = new ReqLogin
+                {
+                    acct = account,
+                    pass = password
+                }
+            };
+            netSvc.SendMsg(msg, result =>
+            {
+                if (result == false) 
+                {
+                    netSvc.InitSvc();
+                }
+            });
             
         }
         else

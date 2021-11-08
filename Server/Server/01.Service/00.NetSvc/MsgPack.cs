@@ -8,9 +8,9 @@ namespace Server
 	public class MsgPack
 	{
 		public ServerSession session;
-		public HokMsg msg;
+		public GameMsg msg;
 
-		public MsgPack(ServerSession s, HokMsg m)
+		public MsgPack(ServerSession s, GameMsg m)
 		{
 			session = s;
 			msg = m;

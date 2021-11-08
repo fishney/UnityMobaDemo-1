@@ -11,3 +11,13 @@ C:\Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.
 C:\Github\UnityMobaDemo\Client\Assets\Scripts\00.Common\netstandard2.0\HOKProtocol.deps.json
 C:\Github\UnityMobaDemo\Client\Assets\Scripts\00.Common\netstandard2.0\HOKProtocol.dll
 C:\Github\UnityMobaDemo\Client\Assets\Scripts\00.Common\netstandard2.0\HOKProtocol.pdb
+D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.csproj.AssemblyReference.cache
+D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.AssemblyInfoInputs.cache
+D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.AssemblyInfo.cs
+D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.csproj.CoreCompileInputs.cache
+D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.csproj.CopyComplete
+D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.dll
+D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.pdb
+D:\github\UnityMobaDemo\Client\Assets\Scripts\00.Common\netstandard2.0\HOKProtocol.deps.json
+D:\github\UnityMobaDemo\Client\Assets\Scripts\00.Common\netstandard2.0\HOKProtocol.dll
+D:\github\UnityMobaDemo\Client\Assets\Scripts\00.Common\netstandard2.0\HOKProtocol.pdb

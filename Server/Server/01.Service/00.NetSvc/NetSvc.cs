@@ -11,14 +11,14 @@ namespace Server
 	public class NetSvc : ServiceBase<NetSvc>
 	{
 		private NetSvc() { }
-		private KCPNet<ServerSession, HokMsg> server = null;
+		private KCPNet<ServerSession, GameMsg> server = null;
 		private Queue<MsgPack> msgPackQue = null;
 		private static readonly string obj = "lock";
 
 		public override void Init()
 		{
 			base.Init();
-			server = new KCPNet<ServerSession, HokMsg>();
+			server = new KCPNet<ServerSession, GameMsg>();
 			msgPackQue = new Queue<MsgPack>();
 
 			// 配置Log = 委托
@@ -51,7 +51,7 @@ namespace Server
 			}
 		}
 
-		public void AddMsgQue(ServerSession session, HokMsg msg)
+		public void AddMsgQue(ServerSession session, GameMsg msg)
 		{
 			lock (obj)
 			{

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>C:\Github\UnityMobaDemo\Client\Assets\Scripts\00.Common\</OutputPath>
+    <OutputPath>..\..\Client\Assets\Scripts\00.Common</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

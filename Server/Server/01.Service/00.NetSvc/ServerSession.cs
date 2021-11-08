@@ -6,7 +6,7 @@ using PENet;
 
 namespace Server
 {
-	public class ServerSession : KCPSession<HokMsg>
+	public class ServerSession : KCPSession<GameMsg>
 	{
 		public int sessionId = 0;
 
@@ -21,7 +21,7 @@ namespace Server
 			this.Log("SessionId:" + sessionId + " Client Connect" + m_sid);
 		}
 
-		protected override void OnReciveMsg(HokMsg msg)
+		protected override void OnReciveMsg(GameMsg msg)
 		{
 			this.Log("SessionId:" + sessionId + " RcvPack CMD:");
 
