@@ -7,12 +7,14 @@
     功能：启动
 *****************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using HOKProtocol;
 using PEUtils;
 using UnityEngine;
 
-public class GameRoot : MonoBehaviour
+public class GameRoot : GameRootMonoSingleton<GameRoot>
 {
     private void Start()
     {
@@ -76,5 +78,24 @@ public class GameRoot : MonoBehaviour
         
         //进入登陆场景并加载相应UI
         loginSys.EnterLogin();
+    }
+    
+    /// <summary>
+    /// 用户数据
+    /// </summary>
+    public PlayerData PlayerData
+    {
+        get;
+        private set;
+    }
+    
+    public void SetPlayerData(PlayerData pd)
+    {
+        PlayerData = pd;
+    }
+
+    public int GetMaxExp(int lv)
+    {
+        return (lv+1) * 1000;
     }
 }

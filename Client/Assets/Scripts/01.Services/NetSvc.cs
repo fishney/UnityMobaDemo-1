@@ -123,6 +123,93 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
     
     private void HandleRsp(GameMsg msg)
     {
-       
+       if (msg.err != (int)ErrorCode.None)
+        {
+            switch ((ErrorCode)msg.err)
+            {
+                case ErrorCode.AccountIsOnline :
+                    GameRootResources.Instance().ShowTips("当前账号已在线！");
+                    break;
+                case ErrorCode.WrongPass :
+                    GameRootResources.Instance().ShowTips("输入账户名或密码错误！");
+                    break;
+                case ErrorCode.ServerDataError :
+                    this.Log("服务端数据异常",LogType.Error);
+                    GameRootResources.Instance().ShowTips("服务端数据异常！");
+                    break;
+                case ErrorCode.ClientDataError :
+                    this.Log("客户端数据异常",LogType.Error);
+                    GameRootResources.Instance().ShowTips("客户端数据异常！");
+                    break;
+                case ErrorCode.UpdateDBError :
+                    this.Log("数据库更新异常",LogType.Error);
+                    GameRootResources.Instance().ShowTips("网络不稳定！");
+                    break;
+                case ErrorCode.LackLevel :
+                    this.Log("作弊检测：等级不足",LogType.Error);
+                    GameRootResources.Instance().ShowTips("等级不足");
+                    break;
+                case ErrorCode.LackCoin :
+                    this.Log("作弊检测：金币不足",LogType.Error);
+                    GameRootResources.Instance().ShowTips("金币不足");
+                    break;
+                case ErrorCode.LackCrystal :
+                    this.Log("作弊检测：晶体不足",LogType.Error);
+                    GameRootResources.Instance().ShowTips("晶体不足");
+                    break;
+                case ErrorCode.LackDiamond :
+                    this.Log("作弊检测：钻石不足",LogType.Error);
+                    GameRootResources.Instance().ShowTips("钻石不足");
+                    break;
+                case ErrorCode.LackPower :
+                    this.Log("作弊检测：体力不足",LogType.Error);
+                    GameRootResources.Instance().ShowTips("体力不足");
+                    break;
+            }
+            
+            return;
+        }
+        
+        switch ((CMD)msg.cmd)
+        {
+            case CMD.RspLogin:
+                LoginSys.Instance.RspLogin(msg);
+                break;
+            case CMD.RspMatch:
+                LobbySys.Instance.RspMatch(msg);
+                break;
+            
+            // case CMD.RspRename:
+            //     LoginSys.Instance.RspRename(msg);
+            //     break;
+            // case CMD.RspGuide:
+            //     MainCitySys.Instance.RspGuide(msg);
+            //     break;
+            // case CMD.RspStrong:
+            //     MainCitySys.Instance.RspStrong(msg);
+            //     break;
+            // case CMD.PushChat:
+            //     MainCitySys.Instance.PushChat(msg);
+            //     break;
+            // case CMD.RspBuy:
+            //     MainCitySys.Instance.RspBuy(msg);
+            //     break;
+            // case CMD.PushPower:
+            //     MainCitySys.Instance.PushPower(msg);
+            //     // MainCitySys.Instance.PushTaskPrgs(msg); TODO 如果想并包，两次请求操作合成一次，可以这样
+            //     break;
+            // case CMD.RspTask:
+            //     MainCitySys.Instance.RspTask(msg);
+            //     break;
+            // case CMD.PushTaskPrgs:
+            //     MainCitySys.Instance.PushTaskPrgs(msg);
+            //     break;
+            // case CMD.RspDungeon:
+            //     DungeonSys.Instance.RspDungeon(msg);
+            //     break;
+            // case CMD.RspDungeonEnd:
+            //     BattleSys.Instance.RspDungeonEnd(msg);
+            //     break;
+        }
     }
 }

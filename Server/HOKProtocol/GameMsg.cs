@@ -7,12 +7,15 @@ using PENet;
 /// </summary>
 namespace HOKProtocol
 {
-	public class GameMsg : KCPMsg
+    [Serializable]
+    public class GameMsg : KCPMsg
 	{
         public CMD cmd;
-        public ErrorCode error;
+        public ErrorCode err;
 		public ReqLogin reqLogin;
 		public RspLogin rspLogin;
+		public ReqMatch reqMatch;
+		public RspMatch rspMatch;
 	}
 
     #region 登陆相关
@@ -56,13 +59,41 @@ namespace HOKProtocol
     #endregion
 
 
+    #region 匹配确认相关
+
+    /// <summary>
+    /// 匹配请求
+    /// </summary>
+    [Serializable]
+    public class ReqMatch
+    {
+        /// <summary>
+        /// 匹配类型
+        /// </summary>
+        public PvpEnum pvpEnum;
+    }
+
+    /// <summary>
+    /// 匹配回应
+    /// </summary>
+    [Serializable]
+    public class RspMatch
+    {
+        /// <summary>
+        /// 预计等待时间
+        /// </summary>
+        public int preTime;
+    }
+
+    #endregion
+
     /// <summary>
 	/// 用户信息
 	/// </summary>
 	[Serializable]
     public class PlayerData
     {
-        public uint id { get; set; }
+        public int id { get; set; }
         public string name { get; set; }
         public int level { get; set; }
         public int exp { get; set; }
@@ -81,6 +112,18 @@ namespace HOKProtocol
         //本周限免
     }
 
+
+    /// <summary>
+    /// 匹配类型
+    /// </summary>
+    public enum PvpEnum
+    {
+        None = 0,
+        _1V1 = 1,
+        _2V2 = 2,
+        _5V5 = 3,
+
+    }
 
     /// <summary>
     /// Command协议常数
@@ -137,11 +180,15 @@ namespace HOKProtocol
         ReqLogin = 101,
         RspLogin = 102,
 
-
+        //匹配
+        ReqMatch = 103,
+        RspMatch = 104,
 
 
 
 
     }
+
+   
 
 }

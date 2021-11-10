@@ -51,6 +51,11 @@ public class WindowBase : MonoBehaviour
         // netSvc = null;
         // timerSvc = null;
     }
+
+    protected void ShowTips(string tips)
+    {
+        GameRootResources.Instance().ShowTips(tips);
+    }
     
     #region Tool Functions
 

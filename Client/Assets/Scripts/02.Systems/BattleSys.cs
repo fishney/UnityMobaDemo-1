@@ -15,7 +15,7 @@ public class BattleSys : SystemBase
 {
     public static BattleSys Instance;
 
-    public void InitSys()
+    public override void InitSys()
     {
         base.InitSys();
         

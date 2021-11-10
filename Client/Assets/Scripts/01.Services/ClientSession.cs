@@ -29,7 +29,7 @@ public class ClientSession: KCPSession<GameMsg>
 
     protected override void OnDisConnected()
     {
-        // GameRootResources.Instance().ShowTips("服务器已断开连接");
+        GameRootResources.Instance().ShowTips("服务器已断开连接");
         this.Log("SessionId:" + sessionId + " Client Offline");
     }
 

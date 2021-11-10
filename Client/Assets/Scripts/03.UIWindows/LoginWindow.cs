@@ -45,9 +45,7 @@ public class LoginWindow : WindowBase
     public void ClickLoginBtn()
     {
         audioSvc.PlayUIAudio(Constants.LoginBtn);
-        GameRootResources.Instance().ShowTips("加载音乐资源...成功");
-        GameRootResources.Instance().ShowTips("加载动画资源...成功");
-        
+
         string account = inputAccount.text;
         string password = inputPassword.text;
 

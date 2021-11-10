@@ -31,7 +31,7 @@ namespace Server
 
 		protected override void OnDisConnected()
 		{
-			//LoginSys.Instance().ClearOfflineData(this);
+			LoginSys.Instance().ClearOfflineData(this);
 			this.Log("SessionId:" + sessionId + " Client Offline");
 		}
 

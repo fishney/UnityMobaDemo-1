@@ -17,6 +17,9 @@ namespace Server
 			// Log
 			PELog.InitSettings();
 
+			// db
+            DBMgr.Instance().Init();
+
 			// Service
 			NetSvc.Instance().Init();
 			TimerSvc.Instance().Init();

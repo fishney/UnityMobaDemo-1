@@ -1,9 +1,15 @@
-[L]# 11:04:48--094  ThreadID:1 >> NetSvc init.
-[L]# 11:04:48--165  ThreadID:1 >> Server Start...
-[L]# 11:04:48--182  ThreadID:1 >> ServerSession init Completed by NetSvc.
-[L]# 11:04:48--195  ThreadID:1 >> TimerSvc init.
-[L]# 11:04:48--198  ThreadID:1 >> CacheSvc init.
-[L]# 11:04:48--198  ThreadID:1 >> LoginSys init.
-[L]# 11:04:48--198  ThreadID:1 >> MatchSys init.
-[L]# 11:04:48--198  ThreadID:1 >> RoomSys init.
-[L]# 11:04:48--198  ThreadID:1 >> ServerRoot init Completed.
+[L]# 12:18:29--426  ThreadID:1 >> DBMgr Init Done.
+[L]# 12:18:29--463  ThreadID:1 >> NetSvc init.
+[L]# 12:18:29--474  ThreadID:1 >> Server Start...
+[L]# 12:18:29--475  ThreadID:1 >> ServerSession init Completed by NetSvc.
+[L]# 12:18:29--475  ThreadID:1 >> TimerSvc init.
+[L]# 12:18:29--476  ThreadID:1 >> CacheSvc init.
+[L]# 12:18:29--476  ThreadID:1 >> LoginSys init.
+[L]# 12:18:29--477  ThreadID:1 >> MatchSys init.
+[L]# 12:18:29--477  ThreadID:1 >> RoomSys init.
+[L]# 12:18:29--477  ThreadID:1 >> ServerRoot init Completed.
+[L]# 12:18:32--466  ThreadID:9 >> SessionId:0 Client Connect2
+[L]# 12:18:32--515  ThreadID:4 >> SessionId:0 RcvPack CMD:
+[L]# 12:18:32--517  ThreadID:1 >> PacCount:1
+[L]# 12:18:34--587  ThreadID:6 >> SessionId:0 RcvPack CMD:
+[L]# 12:18:34--618  ThreadID:1 >> PacCount:1

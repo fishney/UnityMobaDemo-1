@@ -9,17 +9,29 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using HOKProtocol;
 using UnityEngine;
 
 public class LobbySys : SystemBase
 {
     public static LobbySys Instance;
 
-    public void InitSys()
+    public override void InitSys()
     {
         base.InitSys();
         
         Instance = this;
         this.Log("LobbySys Init Completed.");
+    }
+
+    public void EnterLobby()
+    {
+        gameRootResources.lobbyWindow.SetWindowState();
+    }
+
+    public void RspMatch(GameMsg msg)
+    {
+        int preTime = msg.rspMatch.preTime;
+        gameRootResources.lobbyWindow.ShowMatchInfo(true,preTime);
     }
 }

@@ -9,13 +9,15 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
+using HOKProtocol;
 using UnityEngine;
 
 public class LoginSys : SystemBase
 {
     public static LoginSys Instance;
 
-    public void InitSys()
+    public override void InitSys()
     {
         base.InitSys();
         
@@ -33,5 +35,36 @@ public class LoginSys : SystemBase
         audioSvc.PlayBGMusic(Constants.BGMainCity);
         gameRootResources.ShowTips("加载音乐资源...成功");
         gameRootResources.ShowTips("加载动画资源...成功");
+    }
+    
+    /// <summary>
+    /// 登录成功后执行，进入创建人物界面
+    /// </summary>
+    public void RspLogin(GameMsg msg)
+    {
+        gameRootResources.ShowTips("登陆成功");
+        GameRoot.Instance().SetPlayerData(msg.rspLogin.playerData);
+
+        if (string.IsNullOrEmpty(msg.rspLogin.playerData.name))
+        {
+            // TODO 新账号 改名页面
+            //gameRootResources.createWindow.SetWindowState(true);
+        }
+        else
+        {
+            // TODO 进入下一页面
+            gameRootResources.startWindow.SetWindowState(true);
+            gameRootResources.loginWindow.SetWindowState(false);
+            //MainCitySys.Instance.EnterMainCity();
+        }
+
+        // 关闭登录页面
+        // gameRootResources.loginWindow.SetWindowState(false);
+    }
+
+    public void EnterLobby()
+    {
+        gameRootResources.startWindow.SetWindowState(false);
+        LobbySys.Instance.EnterLobby();
     }
 }

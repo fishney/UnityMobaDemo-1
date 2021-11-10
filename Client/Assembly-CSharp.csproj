@@ -59,11 +59,13 @@
      <Compile Include="Assets\MyLibrary\SingletonLibrary\Scripts\Singleton.cs" />
      <Compile Include="Assets\Scripts\02.Systems\BattleSys.cs" />
      <Compile Include="Assets\Scripts\01.Services\ClientSession.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\StartWindow.cs" />
      <Compile Include="Assets\Scripts\00.Common\Constants.cs" />
      <Compile Include="Assets\Scripts\00.Common\GameRoot.cs" />
      <Compile Include="Assets\Scripts\02.Systems\SystemBase.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\TipsWindow.cs" />
      <Compile Include="Assets\Scripts\01.Services\AudioSvc.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\LobbyWindow.cs" />
      <Compile Include="Assets\Scripts\01.Services\NetSvc.cs" />
      <Compile Include="Assets\Scripts\00.Common\GameRootResources.cs" />
  <Reference Include="Unity.Timeline.Editor">

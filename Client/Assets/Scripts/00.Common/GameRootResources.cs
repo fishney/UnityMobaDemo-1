@@ -21,6 +21,11 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
     public LoginWindow loginWindow; 
     
     public TipsWindow tipsWindow;
+    
+    public StartWindow startWindow;
+    
+    public LobbyWindow lobbyWindow;
+    
     //
     // public CreateWindow createWindow;
     //     
