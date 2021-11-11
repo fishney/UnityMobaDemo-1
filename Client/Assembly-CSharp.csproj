@@ -68,6 +68,7 @@
      <Compile Include="Assets\Scripts\03.UIWindows\LobbyWindow.cs" />
      <Compile Include="Assets\Scripts\01.Services\NetSvc.cs" />
      <Compile Include="Assets\Scripts\00.Common\GameRootResources.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\MatchWindow.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

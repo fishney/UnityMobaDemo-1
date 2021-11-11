@@ -26,6 +26,8 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
     
     public LobbyWindow lobbyWindow;
     
+    public MatchWindow matchWindow;
+    
     //
     // public CreateWindow createWindow;
     //     

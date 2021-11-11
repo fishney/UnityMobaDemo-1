@@ -178,7 +178,10 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
             case CMD.RspMatch:
                 LobbySys.Instance.RspMatch(msg);
                 break;
-            
+            case CMD.NotifyConfirm:
+                LobbySys.Instance.NotifyConfirm(msg);
+                break;
+                
             // case CMD.RspRename:
             //     LoginSys.Instance.RspRename(msg);
             //     break;

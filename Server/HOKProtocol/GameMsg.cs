@@ -12,11 +12,15 @@ namespace HOKProtocol
 	{
         public CMD cmd;
         public ErrorCode err;
+
 		public ReqLogin reqLogin;
 		public RspLogin rspLogin;
+
 		public ReqMatch reqMatch;
 		public RspMatch rspMatch;
-	}
+        public NotifyConfirm notifyConfirm;
+        public ConfirmData confirmData;
+    }
 
     #region 登陆相关
 
@@ -84,6 +88,53 @@ namespace HOKProtocol
         /// </summary>
         public int preTime;
     }
+
+    /// <summary>
+    /// 确认
+    /// </summary>
+    [Serializable]
+    public class NotifyConfirm
+    {
+        public int roomId;
+
+        /// <summary>
+        /// 是否本次匹配被解散(某人取消)
+        /// </summary>
+        public bool dismiss;
+
+
+        /// <summary>
+        /// 同房间匹配者们的信息
+        /// </summary>
+        public ConfirmData[] confirmArr;
+    }
+
+    /// <summary>
+    /// 确认界面用的人物信息
+    /// </summary>
+    [Serializable]
+    public class ConfirmData
+    {
+        /// <summary>
+        /// 该玩家头像数据地址(模拟)
+        /// </summary>
+        public int iconIndex;
+
+        /// <summary>
+        /// 该玩家是否已经确认了
+        /// </summary>
+        public bool confirmDone;
+    }
+
+    /// <summary>
+    /// 从客户端发来确认对局的消息
+    /// </summary>
+    [Serializable]
+    public class SendConfirm
+    {
+        public int roomId;
+    }
+
 
     #endregion
 
@@ -185,7 +236,9 @@ namespace HOKProtocol
         RspMatch = 104,
 
 
-
+        //确认
+        NotifyConfirm = 105,
+        SendConfirm = 106,
 
     }
 

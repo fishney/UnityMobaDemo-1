@@ -12,6 +12,7 @@
           "MySql.Data": "8.0.27",
           "Kcp": "2.0.0.0",
           "KCPNet": "1.0.0.0",
+          "PETimer": "1.0.0.0",
           "PEUtils": "1.0.0.0"
         },
         "runtime": {
@@ -245,6 +246,14 @@
           }
         }
       },
+      "PETimer/1.0.0.0": {
+        "runtime": {
+          "PETimer.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "PEUtils/1.0.0.0": {
         "runtime": {
           "PEUtils.dll": {
@@ -405,6 +414,11 @@
       "sha512": ""
     },
     "KCPNet/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PETimer/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

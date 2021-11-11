@@ -8,5 +8,8 @@ namespace HOKProtocol
 	{
 		public const string LocalDevInnerIp = "127.0.0.1";
 		public const int UdpPort = 17666;
-	}
+
+		// 确认匹配倒计时
+        public const int ConfirmCountDown = 15;
+    }
 }

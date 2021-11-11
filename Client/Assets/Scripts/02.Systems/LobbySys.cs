@@ -34,4 +34,30 @@ public class LobbySys : SystemBase
         int preTime = msg.rspMatch.preTime;
         gameRootResources.lobbyWindow.ShowMatchInfo(true,preTime);
     }
+    
+    public void NotifyConfirm(GameMsg msg)
+    {
+        NotifyConfirm notify = msg.notifyConfirm;
+        
+        if (notify.dismiss)
+        {
+            // 匹配对局被某人拒绝了
+            gameRootResources.matchWindow.SetWindowState(false);
+            gameRootResources.lobbyWindow.SetWindowState();
+        }
+        else
+        {
+            GameRoot.Instance().ActiveRoomId = notify.roomId;
+            
+            gameRootResources.lobbyWindow.SetWindowState(false);
+            // 只有第一次是没打开的,后续9次都不用打开
+            if (gameRootResources.matchWindow.gameObject.activeSelf == false)
+            {
+                gameRootResources.matchWindow.SetWindowState();
+            }
+            gameRootResources.matchWindow.RefreshUI(notify.confirmArr);
+        }
+        
+        
+    }
 }

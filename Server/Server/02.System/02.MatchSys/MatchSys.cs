@@ -28,7 +28,43 @@ namespace Server
 		public override void Update()
 		{
 			base.Update();
-		}
+
+            while (que1V1.Count >= 2)
+            {
+                ServerSession[] serssionArr = new ServerSession[2];
+
+                for (int i=0;i<2;i++)
+                {
+                    serssionArr[i] = que1V1.Dequeue();
+                }
+
+                RoomSys.Instance().AddPvpRoom(serssionArr,PvpEnum._1V1);
+            }
+
+            while (que2V2.Count >= 4)
+            {
+                ServerSession[] serssionArr = new ServerSession[4];
+
+                for (int i = 0; i < 4; i++)
+                {
+                    serssionArr[i] = que2V2.Dequeue();
+                }
+
+                RoomSys.Instance().AddPvpRoom(serssionArr, PvpEnum._2V2);
+            }
+
+            while (que5V5.Count >= 10)
+            {
+                ServerSession[] serssionArr = new ServerSession[10];
+
+                for (int i = 0; i < 10; i++)
+                {
+                    serssionArr[i] = que5V5.Dequeue();
+                }
+
+                RoomSys.Instance().AddPvpRoom(serssionArr, PvpEnum._5V5);
+            }
+        }
 
         /// <summary>
         /// 整体逻辑是,3个队列对应3种不同人数的匹配模式,匹配满人了就开。
