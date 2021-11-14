@@ -47,7 +47,7 @@ public class LobbySys : SystemBase
         }
         else
         {
-            GameRoot.Instance().ActiveRoomId = notify.roomId;
+            GameRoot.ActiveRoomId = notify.roomId;
             
             gameRootResources.lobbyWindow.SetWindowState(false);
             // 只有第一次是没打开的,后续9次都不用打开

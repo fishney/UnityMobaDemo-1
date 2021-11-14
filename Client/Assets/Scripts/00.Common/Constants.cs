@@ -26,4 +26,14 @@ public static class Constants
 
 
     #endregion
+    
+    #region 资源路径
+    
+    public const string IconPath = "ResImages/MatchWnd/icon_";
+ 
+    public const string IconFramePath = "ResImages/MatchWnd/frame_";
+
+
+    #endregion
+
 }

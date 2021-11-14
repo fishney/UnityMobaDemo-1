@@ -118,8 +118,8 @@ public class WindowBase : MonoBehaviour
 
     protected void SetSprite(Image img,string path)
     {
-        //Sprite sp = resSvc.LoadSprite(path, true);
-        //img.sprite = sp;
+        Sprite sp = resSvc.LoadSprite(path, true);
+        img.sprite = sp;
     }
     
     protected Transform GetTrans(GameObject go,string name)
@@ -130,6 +130,16 @@ public class WindowBase : MonoBehaviour
     protected Transform GetTrans(Transform trans,string name)
     {
         return trans.Find(name).transform;
+    }
+    
+    
+    protected Image GetImage(Transform trans,string name = null)
+    {
+        if (name != null)
+        {
+            return trans.Find(name).GetComponent<Image>();
+        }
+        return trans.GetComponent<Image>();
     }
     #endregion
 }

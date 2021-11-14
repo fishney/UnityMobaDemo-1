@@ -69,27 +69,9 @@ namespace Server
                 case CMD.ReqMatch:
                     MatchSys.Instance().ReqMatch(msgPack);
                     break;
-                //case CMD.ReqGuide:
-                //    GuideSys.Instance().ReqGuide(msgPack);
-                //    break;
-                //case CMD.ReqStrong:
-                //    StrongSys.Instance().ReqStrong(msgPack);
-                //    break;
-                //case CMD.SendChat:
-                //    ChatSys.Instance().SendChat(msgPack);
-                //    break;
-                //case CMD.ReqBuy:
-                //    BuySys.Instance().ReqBuy(msgPack);
-                //    break;
-                //case CMD.ReqTask:
-                //    TaskSys.Instance().ReqTask(msgPack);
-                //    break;
-                //case CMD.ReqDungeon:
-                //    DungeonSys.Instance().ReqDungeon(msgPack);
-                //    break;
-                //case CMD.ReqDungeonEnd:
-                //    DungeonSys.Instance().ReqDungeonEnd(msgPack);
-                //    break;
+                case CMD.SendConfirm:
+	                RoomSys.Instance().SendConfirm(msgPack);
+	                break;
 
             }
         }

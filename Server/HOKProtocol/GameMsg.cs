@@ -19,8 +19,10 @@ namespace HOKProtocol
 		public ReqMatch reqMatch;
 		public RspMatch rspMatch;
         public NotifyConfirm notifyConfirm;
-        public ConfirmData confirmData;
-    }
+        public SendConfirm sendConfirm;
+        public NotifySelect notifySelect;
+        public SendSelect sendSelect;
+	}
 
     #region 登陆相关
 
@@ -90,7 +92,7 @@ namespace HOKProtocol
     }
 
     /// <summary>
-    /// 确认
+    /// 从服务端发出的房间确认状况信息
     /// </summary>
     [Serializable]
     public class NotifyConfirm
@@ -136,7 +138,48 @@ namespace HOKProtocol
     }
 
 
+
+
+    /// <summary>
+    /// 选择英雄请求
+    /// </summary>
+    [Serializable]
+    public class NotifySelect
+    {
+	    public SelectData selectData;
+    }
+
+    /// <summary>
+    /// 选择英雄数据
+    /// </summary>
+    [Serializable]
+    public class SelectData
+    {
+	    /// <summary>
+	    /// 选择英雄ID
+	    /// </summary>
+	    public int selectId;
+
+	    /// <summary>
+	    /// 选择状态
+	    /// </summary>
+	    public bool selectDone;
+    }
+
+    /// <summary>
+    /// 从客户端发来确认对局的英雄信息
+    /// </summary>
+    [Serializable]
+    public class SendSelect
+    {
+	    public int roomId;
+	    public int heroId;
+    }
+
+
     #endregion
+
+
 
     /// <summary>
 	/// 用户信息
@@ -231,14 +274,17 @@ namespace HOKProtocol
         ReqLogin = 101,
         RspLogin = 102,
 
-        //匹配
+        // 匹配
         ReqMatch = 103,
         RspMatch = 104,
 
-
-        //确认
+        // 确认
         NotifyConfirm = 105,
         SendConfirm = 106,
+
+        // 选择英雄
+        NotifySelect = 107,
+        SendSelect = 108,
 
     }
 

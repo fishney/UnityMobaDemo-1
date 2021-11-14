@@ -98,13 +98,9 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
     {
         return (lv+1) * 1000;
     }
-    
+
     /// <summary>
     /// 游戏中房间ID
     /// </summary>
-    public int ActiveRoomId
-    {
-        get;
-        set;
-    }
+    public static int ActiveRoomId;
 }

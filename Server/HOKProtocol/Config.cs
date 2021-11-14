@@ -11,5 +11,8 @@ namespace HOKProtocol
 
 		// 确认匹配倒计时
         public const int ConfirmCountDown = 15;
-    }
+
+        // 选择英雄倒计时
+        public const int SelectCountDown = 15;
+	}
 }

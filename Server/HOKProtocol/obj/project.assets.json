@@ -179,30 +179,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\YAN\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\YAN JUNJIE\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj",
+      "projectUniqueName": "C:\\Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj",
       "projectName": "HOKProtocol",
-      "projectPath": "D:\\github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj",
-      "packagesPath": "C:\\Users\\YAN\\.nuget\\packages\\",
-      "outputPath": "D:\\github\\UnityMobaDemo\\Server\\HOKProtocol\\obj\\",
+      "projectPath": "C:\\Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj",
+      "packagesPath": "C:\\Users\\YAN JUNJIE\\.nuget\\packages\\",
+      "outputPath": "C:\\Github\\UnityMobaDemo\\Server\\HOKProtocol\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\YAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\YAN JUNJIE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -244,7 +238,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.208\\RuntimeIdentifierGraph.json"
       }
     }
   }

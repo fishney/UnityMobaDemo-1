@@ -33,5 +33,18 @@ namespace Server
         {
             return roomId++;
         }
-	}
+
+        public void SendConfirm(MsgPack msgPack)
+        {
+	        SendConfirm req = msgPack.msg.sendConfirm;
+	        var room = pvpRoomList.Find(o => o.roomId == req.roomId);
+
+            if (room != null)
+            {
+	            room.SendConfirm(msgPack.session);
+            }
+
+        }
+        
+    }
 }

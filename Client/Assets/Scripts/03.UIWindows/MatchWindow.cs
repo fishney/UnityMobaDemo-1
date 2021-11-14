@@ -56,7 +56,85 @@ public class MatchWindow : WindowBase
     
     public void RefreshUI(ConfirmData[] confirmArr)
     {
+        // 计算左侧右侧需要哪几个显示
         int count = confirmArr.Length / 2;
-        
+
+        // 左侧
+        for (int i = 0; i < 5; i++)
+        {
+            var player = leftPlayerRoot.GetChild(i).transform;
+            if (i < count)
+            {
+                SetActive(player);
+                var iconPath = Constants.IconPath + confirmArr[i].iconIndex;
+                var iconFramePath = Constants.IconFramePath + (confirmArr[i].confirmDone ? "sure" : "normal");
+
+                var imgIcon = GetImage(player);
+                SetSprite(imgIcon, iconPath);
+
+                var imgFrame = GetImage(player, "img_state");
+                SetSprite(imgFrame, iconFramePath);
+
+                imgFrame.SetNativeSize();
+            }
+            else
+            {
+                SetActive(player, false);
+            }
+        }
+
+        // 右侧
+        for (int i = 0; i < 5; i++)
+        {
+            var player = rightPlayerRoot.GetChild(i).transform;
+            if (i < count)
+            {
+                SetActive(player);
+                var iconPath = Constants.IconPath + confirmArr[i + count].iconIndex;
+                var iconFramePath = Constants.IconFramePath + (confirmArr[i + count].confirmDone ? "sure" : "normal");
+
+                var imgIcon = GetImage(player);
+                SetSprite(imgIcon, iconPath);
+
+                var imgFrame = GetImage(player, "img_state");
+                SetSprite(imgFrame, iconFramePath);
+
+                imgFrame.SetNativeSize();
+            }
+            else
+            {
+                SetActive(player, false);
+            }
+        }
+
+        int cofirmCount = 0;
+        for (int i = 0; i < confirmArr.Length; i++)
+        {
+            if (confirmArr[i].confirmDone)
+            {
+                cofirmCount++;
+            }
+        }
+
+        txtConfirm.text = cofirmCount + "/" + confirmArr.Length + "就绪";
     }
+
+    public void ClickConfirmBtn()
+    {
+        audioSvc.PlayUIAudio("matchSureClick");
+
+        GameMsg msg = new GameMsg()
+        {
+            cmd = CMD.SendConfirm,
+            sendConfirm = new SendConfirm()
+            {
+                roomId = GameRoot.ActiveRoomId
+            }
+        };
+        
+        netSvc.SendMsg(msg);
+        btnConfirm.interactable = false;
+    }
+    
+    
 }

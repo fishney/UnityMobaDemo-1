@@ -10,7 +10,7 @@ namespace Server
     {
         public int roomId;
         public PvpEnum pvpType = PvpEnum.None;
-        public ServerSession[] sessionArr;
+        public List<ServerSession> sessionArr;
 
         private RoomStateEnum currentState = RoomStateEnum.None;
         private Dictionary<RoomStateEnum, RoomStateBase> fsm = new Dictionary<RoomStateEnum, RoomStateBase>();
@@ -19,7 +19,8 @@ namespace Server
         {
             this.roomId = roomId;
             this.pvpType = pvpType;
-            this.sessionArr = sessions;
+            this.sessionArr = new List<ServerSession>();
+            sessionArr.AddRange(sessions);
 
             fsm.Add(RoomStateEnum.Confirm, new RoomStateConfirm(this));
             fsm.Add(RoomStateEnum.Select, new RoomStateConfirm(this));
@@ -49,6 +50,10 @@ namespace Server
             }
         }
 
+        /// <summary>
+        /// 对全房间人全部推送
+        /// </summary>
+        /// <param name="msg"></param>
         public void PublishMsg(GameMsg msg)
         {
             byte[] bytes = KCPTool.Serialize(msg);
@@ -60,7 +65,23 @@ namespace Server
             }
         }
 
+        public void SendConfirm(ServerSession session)
+        {
+	        if (currentState == RoomStateEnum.Confirm)
+	        {
+		        if (fsm[currentState] is RoomStateConfirm state)
+		        {
+			        state.UpdateConfirmState(GetPosIndex(session));
 
+		        }
+	        }
+        }
+
+        // 根据session获取玩家Match画面的相对位置
+        private int GetPosIndex(ServerSession session)
+        {
+	        return sessionArr.IndexOf(session);
+        }
     }
 
 }
