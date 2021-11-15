@@ -28,6 +28,10 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
     
     public MatchWindow matchWindow;
     
+    public SelectWindow selectWindow;
+    
+    public LoadWindow loadWindow;
+    
     //
     // public CreateWindow createWindow;
     //     

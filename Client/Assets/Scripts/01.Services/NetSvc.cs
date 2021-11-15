@@ -181,7 +181,12 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
             case CMD.NotifyConfirm:
                 LobbySys.Instance.NotifyConfirm(msg);
                 break;
-                
+            case CMD.NotifySelect:
+                LobbySys.Instance.NotifySelect(msg);
+                break;
+            case CMD.NotifyLoadRes:
+                LobbySys.Instance.NotifyLoadRes(msg);
+                break;
             // case CMD.RspRename:
             //     LoginSys.Instance.RspRename(msg);
             //     break;

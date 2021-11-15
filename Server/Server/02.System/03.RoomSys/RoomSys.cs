@@ -45,6 +45,31 @@ namespace Server
             }
 
         }
+
+        public void SendSelect(MsgPack msgPack)
+        {
+            SendSelect req = msgPack.msg.sendSelect;
+            var room = pvpRoomList.Find(o => o.roomId == req.roomId);
+
+            if (room != null)
+            {
+                room.SendSelect(msgPack.session,req.heroId);
+            }
+
+        }
+
+        public void SendLoadPrg(MsgPack msgPack)
+        {
+            SendLoadPrg req = msgPack.msg.sendLoadPrg;
+
+            var room = pvpRoomList.Find(o => o.roomId == req.roomId);
+
+            if (room != null)
+            {
+                room.SendLoadPrg(msgPack.session, req.percent);
+            }
+
+        }
         
     }
 }

@@ -60,4 +60,23 @@ public class LobbySys : SystemBase
         
         
     }
+    
+    public void NotifySelect(GameMsg msg)
+    {
+        gameRootResources.matchWindow.SetWindowState(false);
+        gameRootResources.selectWindow.SetWindowState(true);
+    }
+    
+    public void NotifyLoadRes(GameMsg msg)
+    {
+        NotifyLoadRes data = msg.notifyLoadRes;
+        GameRoot.MapId = data.mapId;
+        GameRoot.SelfPosIndex = data.posIndex;
+        GameRoot.battleHeroList = data.heroList;
+        
+        gameRootResources.selectWindow.SetWindowState(false);
+        // 流程转入战斗系统
+        BattleSys.Instance.EnterBattle();
+    }
+    
 }

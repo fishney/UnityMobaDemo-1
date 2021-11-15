@@ -117,7 +117,6 @@ namespace Server
 
 	            room.PublishMsg(msg);
 
-	            room.ChangeRoomState(RoomStateEnum.End);
             }
 
         }

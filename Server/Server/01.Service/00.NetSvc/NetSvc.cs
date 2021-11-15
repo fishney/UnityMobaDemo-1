@@ -72,8 +72,14 @@ namespace Server
                 case CMD.SendConfirm:
 	                RoomSys.Instance().SendConfirm(msgPack);
 	                break;
+                case CMD.SendSelect:
+                    RoomSys.Instance().SendSelect(msgPack);
+                    break;
+                case CMD.SendLoadPrg:
+                    RoomSys.Instance().SendLoadPrg(msgPack);
+                    break;
 
-            }
+			}
         }
 
 	}

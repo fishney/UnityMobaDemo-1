@@ -26,6 +26,21 @@ namespace Server
             return DBMgr.Instance().QueryPlayerData(acct, pass);
         }
 
+        /// <summary>
+        /// 根据session返回 PlayerData 数据
+        /// </summary>
+        public PlayerData GetPlayerData(ServerSession session)
+        {
+            if (onlineSessionDic.TryGetValue(session,out var playerData))
+            {
+                return playerData;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         #region base
         private CacheSvc() { }
 

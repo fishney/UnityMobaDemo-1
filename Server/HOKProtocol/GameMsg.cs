@@ -22,7 +22,11 @@ namespace HOKProtocol
         public SendConfirm sendConfirm;
         public NotifySelect notifySelect;
         public SendSelect sendSelect;
-	}
+
+        public NotifyLoadRes notifyLoadRes;
+        public SendLoadPrg sendLoadPrg;
+        public NotifyLoadPrg notifyLoadPrg;
+    }
 
     #region 登陆相关
 
@@ -176,6 +180,37 @@ namespace HOKProtocol
 	    public int heroId;
     }
 
+    /// <summary>
+    /// 从客户端发来确认对局的英雄信息
+    /// </summary>
+    [Serializable]
+    public class NotifyLoadRes
+    {
+        public int mapId;
+        public List<BattleHeroData> heroList;
+
+        ///玩家在房间玩家List里的相对位置
+        public int posIndex;
+    }
+
+    /// <summary>
+    /// 推送进度
+    /// </summary>
+    [Serializable]
+    public class SendLoadPrg
+    {
+        public int roomId;
+        public int percent;
+    }
+
+    /// <summary>
+    /// 推送进度
+    /// </summary>
+    [Serializable]
+    public class NotifyLoadPrg
+    {
+        public List<int> percentList;
+    }
 
     #endregion
 
@@ -196,7 +231,10 @@ namespace HOKProtocol
         public int ticket { get; set; }
         public List<HeroSelectData> heroSelectData;
     }
-
+    
+    /// <summary>
+    /// 英雄数据
+    /// </summary>
     [Serializable]
     public class HeroSelectData
     {
@@ -206,6 +244,17 @@ namespace HOKProtocol
         //本周限免
     }
 
+    /// <summary>
+    /// 战场英雄数据
+    /// </summary>
+    [Serializable]
+    public class BattleHeroData
+    {
+        public string userName { get; set; }
+        public int heroId { get; set; }
+
+        //级别,皮肤id,边框
+    }
 
     /// <summary>
     /// 匹配类型
@@ -285,6 +334,12 @@ namespace HOKProtocol
         // 选择英雄
         NotifySelect = 107,
         SendSelect = 108,
+
+        // 加载
+        NotifyLoadRes = 109,
+        SendLoadPrg = 110,
+        NotifyLoadPrg = 111,
+
 
     }
 

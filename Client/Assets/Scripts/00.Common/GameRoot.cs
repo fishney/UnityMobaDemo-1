@@ -94,13 +94,39 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         PlayerData = pd;
     }
 
-    public int GetMaxExp(int lv)
-    {
-        return (lv+1) * 1000;
-    }
+
+
+    #region 客户端全局信息
 
     /// <summary>
     /// 游戏中房间ID
     /// </summary>
     public static int ActiveRoomId;
+    
+    /// <summary>
+    /// 地图Id
+    /// </summary>
+    public static int MapId;
+    
+    /// <summary>
+    /// 玩家在房间玩家List里的相对位置
+    /// </summary>
+    public static int SelfPosIndex;
+
+    /// <summary>
+    /// 房间内所有玩家信息
+    /// </summary>
+    public static List<BattleHeroData> battleHeroList;
+    
+    
+    
+    #endregion
+
+    
+    
+    public int GetMaxExp(int lv)
+    {
+        return (lv+1) * 1000;
+    }
+    
 }

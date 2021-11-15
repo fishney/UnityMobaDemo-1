@@ -7,9 +7,11 @@
     功能：Unknown
 *****************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResSvc : GameRootMonoSingleton<ResSvc>
 {
@@ -103,6 +105,87 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     }
 
     #endregion
+
+    #region 地图加载
+
+    private Action sceneBPMethod = null;
+    public void AsyncLoadScene(string sceneName,Action<float> updateProgress,Action afterAll)
+    {
+        StartCoroutine(StartLoading(sceneName,updateProgress,afterAll));
+        
+        // GameRootResources.Instance().loadingWindow.SetWindowState();
+        //
+        // AsyncOperation sceneAsync = SceneManager.LoadSceneAsync(sceneName);
+        // //sceneAsync.allowSceneActivation = true;
+        // prgCB = () => {
+        //     float val = sceneAsync.progress;
+        //     GameRootResources.Instance().loadingWindow.SetProgress(val);
+        //     if (val >= 0.9) {
+        //         if (afterAll != null) {
+        //             afterAll();
+        //         }
+        //         prgCB = null;
+        //         sceneAsync = null;
+        //         GameRootResources.Instance().loadingWindow.SetWindowState(false);
+        //     }
+        // };
+    }
+
+    private void Update()
+    {
+        if (sceneBPMethod != null)
+        {
+            sceneBPMethod();
+            sceneBPMethod = null;
+        }
+    }
     
-    
+    /// <summary>
+    /// 优化进度读取：协程刷新进度。updateProgress是更新进度函数
+    /// </summary>
+    /// <param name="sceneName"></param>
+    /// <returns></returns>
+    private IEnumerator StartLoading(string sceneName,Action<float> updateProgress,Action afterAll)
+    {
+        int displayProgress = 0;
+        int toProgress = 0;
+        // 卸载当前场景
+        AsyncOperation op = SceneManager.LoadSceneAsync(sceneName); 
+        
+        // 不让场景自动跳转，progress也最多只能到90%
+        op.allowSceneActivation = false;
+        
+        while (op.progress < 0.9f)
+        {
+            toProgress = (int)(op.progress * 100);
+            // Debug.Log("below90: " + displayProgress + " , " + op.progress + " , " + toProgress);
+            while (displayProgress < toProgress)
+            {
+                ++displayProgress;
+                //GameRootResources.Instance().loadingWindow.SetProgress(displayProgress);
+                updateProgress.Invoke(displayProgress);
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
+        toProgress = 100;
+       
+        while (displayProgress < toProgress)
+        {
+            // Debug.Log("over90: " + displayProgress + " , " + op.progress);
+            ++displayProgress;
+            //GameRootResources.Instance().loadingWindow.SetProgress(displayProgress);
+            updateProgress.Invoke(displayProgress);
+            yield return new WaitForEndOfFrame();
+        }
+        op.allowSceneActivation = true;
+        
+        //loadingWindow.SetWindowState(false);
+        
+        // 赋值回调函数
+        sceneBPMethod = afterAll;
+        
+    }
+
+    #endregion
 }

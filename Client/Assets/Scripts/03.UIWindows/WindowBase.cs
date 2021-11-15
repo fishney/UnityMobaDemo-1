@@ -7,9 +7,11 @@
     功能：Unknown
 *****************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class WindowBase : MonoBehaviour
@@ -141,5 +143,47 @@ public class WindowBase : MonoBehaviour
         }
         return trans.GetComponent<Image>();
     }
+    
+    protected Text GetText(Transform trans,string name = null)
+    {
+        if (name != null)
+        {
+            return trans.Find(name).GetComponent<Text>();
+        }
+        return trans.GetComponent<Text>();
+    }
+    
     #endregion
+    
+    #region Click Event
+    
+    protected void OnClickDown(GameObject go,Action<PointerEventData,object[]> action,params object[] args)
+    {
+        PEListener listener = GetOrAddComponent<PEListener>(go);
+        listener.onClickDown = action;
+        listener.args = args;
+    }
+    
+    protected void OnClickUp(GameObject go,Action<PointerEventData,object[]> action,params object[] args)
+    {
+        PEListener listener = GetOrAddComponent<PEListener>(go);
+        listener.onClickUp = action;
+        listener.args = args;
+    }
+    
+    protected void OnDrag(GameObject go,Action<PointerEventData,object[]> action,params object[] args)
+    {
+        PEListener listener = GetOrAddComponent<PEListener>(go);
+        listener.onDrag = action;
+        listener.args = args;
+    }
+
+    protected void OnClick(GameObject go,Action<PointerEventData,object[]> action,params object[] args)
+    {
+        PEListener listener = GetOrAddComponent<PEListener>(go);
+        listener.onClick = action;
+        listener.args = args;
+    }
+    #endregion
+    
 }

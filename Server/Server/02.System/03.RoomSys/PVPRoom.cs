@@ -15,6 +15,21 @@ namespace Server
         private RoomStateEnum currentState = RoomStateEnum.None;
         private Dictionary<RoomStateEnum, RoomStateBase> fsm = new Dictionary<RoomStateEnum, RoomStateBase>();
 
+        /// 存储房间内选择的英雄数据,从Select状态传入,在Fight使用
+        private SelectData[] selectArr = null;
+        /// 存储房间内选择的英雄数据,从Select状态传入,在Fight使用
+        public SelectData[] SelectArr
+        {
+            get
+            {
+                return selectArr;
+            }
+            set
+            {
+                selectArr = value;
+            }
+        }
+
         public PVPRoom(int roomId,PvpEnum pvpType,ServerSession[] sessions)
         {
             this.roomId = roomId;
@@ -23,10 +38,10 @@ namespace Server
             sessionArr.AddRange(sessions);
 
             fsm.Add(RoomStateEnum.Confirm, new RoomStateConfirm(this));
-            fsm.Add(RoomStateEnum.Select, new RoomStateConfirm(this));
-            fsm.Add(RoomStateEnum.Load, new RoomStateConfirm(this));
-            fsm.Add(RoomStateEnum.Fight, new RoomStateConfirm(this));
-            fsm.Add(RoomStateEnum.End, new RoomStateConfirm(this));
+            fsm.Add(RoomStateEnum.Select, new RoomStateSelect(this));
+            fsm.Add(RoomStateEnum.Load, new RoomStateLoad(this));
+            fsm.Add(RoomStateEnum.Fight, new RoomStateFight(this));
+            fsm.Add(RoomStateEnum.End, new RoomStateEnd(this));
 
             ChangeRoomState(RoomStateEnum.Confirm);
         }
@@ -38,14 +53,15 @@ namespace Server
                 return;
             }
 
-            if (fsm.ContainsKey(targetState))
+            var hasNext = fsm.TryGetValue(targetState,out var next);
+            if (hasNext)
             {
                 if (currentState != RoomStateEnum.None)
                 {
                     fsm[currentState].Exit();
                 }
 
-                fsm[targetState].Enter();
+                next.Enter();
                 currentState = targetState;
             }
         }
@@ -81,6 +97,29 @@ namespace Server
         private int GetPosIndex(ServerSession session)
         {
 	        return sessionArr.IndexOf(session);
+        }
+
+        public void SendSelect(ServerSession session,int heroId)
+        {
+            if (currentState == RoomStateEnum.Select)
+            {
+                if (fsm[currentState] is RoomStateSelect state)
+                {
+                    state.UpdateHeroSelect(GetPosIndex(session),heroId);
+
+                }
+            }
+        }
+
+        public void SendLoadPrg(ServerSession session, int percent)
+        {
+            if (currentState == RoomStateEnum.Select)
+            {
+                if (fsm[currentState] is RoomStateLoad state)
+                {
+                    state.UpdateLoadState(GetPosIndex(session), percent);
+                }
+            }
         }
     }
 
