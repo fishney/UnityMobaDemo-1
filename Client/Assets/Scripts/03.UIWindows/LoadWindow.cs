@@ -21,6 +21,11 @@ public class LoadWindow : WindowBase
     public Transform redTeamRoot;
 
     private List<BattleHeroData> battleHeroList;
+    
+    /// <summary>
+    /// 用于记录本地英雄进度,刷新
+    /// </summary>
+    private List<Text> txtPercentList;
 
     #endregion
     
@@ -29,6 +34,7 @@ public class LoadWindow : WindowBase
         base.InitWindow();
         audioSvc.PlayUIAudio("load");
         battleHeroList = GameRoot.battleHeroList;
+        txtPercentList = new List<Text>();
 
         int count = battleHeroList.Count / 2;
 
@@ -44,6 +50,7 @@ public class LoadWindow : WindowBase
                 SetText(GetText(player,"txtHeroName"),cfg.unitName);
                 SetText(GetText(player,"bgName/txtPlayerName"),battleHeroList[i].userName);
                 Text txtPrg = GetText(player, "txtProgress");
+                txtPercentList.Add(txtPrg);
                 SetText(txtPrg,"0%");
             }
             else
@@ -64,6 +71,7 @@ public class LoadWindow : WindowBase
                 SetText(GetText(player,"txtHeroName"),cfg.unitName);
                 SetText(GetText(player,"bgName/txtPlayerName"),battleHeroList[i + count].userName);
                 Text txtPrg = GetText(player, "txtProgress");
+                txtPercentList.Add(txtPrg);
                 SetText(txtPrg,"0%");
             }
             else
@@ -73,8 +81,14 @@ public class LoadWindow : WindowBase
         }
         
     }
-    
-    
+
+    public void RefreshPrgData(List<int> percentList)
+    {
+        for (int i = 0; i < percentList.Count; i++)
+        {
+            txtPercentList[i].text = percentList[i] + "%";
+        }
+    }
     
     
 }

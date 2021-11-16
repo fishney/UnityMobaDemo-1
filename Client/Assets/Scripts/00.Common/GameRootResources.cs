@@ -32,6 +32,8 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
     
     public LoadWindow loadWindow;
     
+    public PlayWindow playWindow;
+    
     //
     // public CreateWindow createWindow;
     //     

@@ -73,7 +73,8 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         lobbySys.InitSys();
         BattleSys battleSys = GetComponent<BattleSys>();
         battleSys.InitSys();
-        
+        GMSystem gmSys = GetComponent<GMSystem>();
+        gmSys.InitSys();
         
         
         //进入登陆场景并加载相应UI

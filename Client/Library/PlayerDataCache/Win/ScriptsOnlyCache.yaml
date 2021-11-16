@@ -12,6 +12,7 @@ ScriptsOnlyBuild:
     - LoginWindow
     - MatchWindow
     - NetSvc
+    - PlayWindow
     - ResSvc
     - SelectWindow
     - StartWindow
@@ -46,6 +47,41 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Toggle
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
+    Assets/Resources/ResScenes/map_101.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
     Assets/Scenes/GameRoot.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -118,33 +154,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12732}
     - Class: 114
-      Script: {instanceID: 12900}
+      Script: {instanceID: 12734}
     - Class: 114
-      Script: {instanceID: 13076}
+      Script: {instanceID: 12902}
     - Class: 114
-      Script: {instanceID: 13154}
+      Script: {instanceID: 13078}
     - Class: 114
-      Script: {instanceID: 13188}
+      Script: {instanceID: 13156}
     - Class: 114
-      Script: {instanceID: 13212}
+      Script: {instanceID: 13190}
     - Class: 114
-      Script: {instanceID: 13362}
+      Script: {instanceID: 13214}
     - Class: 114
-      Script: {instanceID: 13506}
+      Script: {instanceID: 13364}
     - Class: 114
-      Script: {instanceID: 13518}
+      Script: {instanceID: 13508}
     - Class: 114
-      Script: {instanceID: 13522}
+      Script: {instanceID: 13520}
     - Class: 114
-      Script: {instanceID: 13794}
+      Script: {instanceID: 13524}
     - Class: 114
-      Script: {instanceID: 13832}
+      Script: {instanceID: 13796}
     - Class: 114
-      Script: {instanceID: 13910}
+      Script: {instanceID: 13834}
     - Class: 114
-      Script: {instanceID: 13928}
+      Script: {instanceID: 13912}
     - Class: 114
-      Script: {instanceID: 19356}
+      Script: {instanceID: 13930}
+    - Class: 114
+      Script: {instanceID: 64462}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -428,6 +466,12 @@ ScriptsOnlyBuild:
     className: BattleSys
   - hash:
       serializedVersion: 2
+      Hash: cc1b66c5fad0df62a8337348dbdd002f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LoadWindow
+  - hash:
+      serializedVersion: 2
       Hash: 040dd48e3a027d5424519a5fa2009df4
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -620,7 +664,7 @@ ScriptsOnlyBuild:
     className: PlayModeRunnerCallback
   - hash:
       serializedVersion: 2
-      Hash: a63a1a77fa94532276de048e1c19a2f7
+      Hash: 0ca0041960553a91b7831f446c5c4f50
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameRootResources
@@ -698,11 +742,12 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: cc1b66c5fad0df62a8337348dbdd002f
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: LoadWindow
+    className: PlayWindow
   platform: 5
   scenePathNames:
   - Assets/Scenes/GameRoot.unity
+  - Assets/Resources/ResScenes/map_101.unity
   playerPath: D:/release/demo/hok/HOK.exe

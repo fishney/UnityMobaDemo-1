@@ -26,6 +26,10 @@ namespace HOKProtocol
         public NotifyLoadRes notifyLoadRes;
         public SendLoadPrg sendLoadPrg;
         public NotifyLoadPrg notifyLoadPrg;
+
+        public ReqBattleStart reqBattleStart;
+        public RspBattleStart rspBattleStart;
+
     }
 
     #region 登陆相关
@@ -214,12 +218,28 @@ namespace HOKProtocol
 
     #endregion
 
+    #region 核心战斗
 
+    [Serializable]
+    public class ReqBattleStart
+    {
+        public int roomId;
+    }
+
+    [Serializable]
+    public class RspBattleStart
+    {
+        
+    }
+
+    #endregion
+
+    #region 数据类型
 
     /// <summary>
-	/// 用户信息
-	/// </summary>
-	[Serializable]
+    /// 用户信息
+    /// </summary>
+    [Serializable]
     public class PlayerData
     {
         public int id { get; set; }
@@ -231,7 +251,7 @@ namespace HOKProtocol
         public int ticket { get; set; }
         public List<HeroSelectData> heroSelectData;
     }
-    
+
     /// <summary>
     /// 英雄数据
     /// </summary>
@@ -239,7 +259,7 @@ namespace HOKProtocol
     public class HeroSelectData
     {
         public int heroID { get; set; }
-       
+
         //已拥有
         //本周限免
     }
@@ -255,6 +275,10 @@ namespace HOKProtocol
 
         //级别,皮肤id,边框
     }
+
+    #endregion
+
+
 
     /// <summary>
     /// 匹配类型
@@ -340,6 +364,9 @@ namespace HOKProtocol
         SendLoadPrg = 110,
         NotifyLoadPrg = 111,
 
+        // 战斗
+        ReqBattleStart = 112,
+        RspBattleStart = 113,
 
     }
 

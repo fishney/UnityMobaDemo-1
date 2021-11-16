@@ -70,6 +70,19 @@ namespace Server
             }
 
         }
+
+        public void ReqBattleStart(MsgPack msgPack)
+        {
+            ReqBattleStart req = msgPack.msg.reqBattleStart;
+
+            var room = pvpRoomList.Find(o => o.roomId == req.roomId);
+
+            if (room != null)
+            {
+                room.ReqBattleStart(msgPack.session);
+            }
+
+        }
         
     }
 }

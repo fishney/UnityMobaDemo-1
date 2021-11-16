@@ -106,10 +106,40 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
 
     #endregion
 
+    #region 地图信息
+    
+    public MapCfg GetMapConfigById(int mapId)
+    {
+        // TODO 简写了,可以改成读取配置表
+        switch (mapId)
+        {
+            case 101:
+                return new MapCfg()
+                {
+                    mapId = 101,
+                    bornDelay = 15000,
+                    bornInterval = 2000,
+                    waveInterval = 50000,
+                };
+            case 102:
+                return new MapCfg()
+                {
+                    mapId = 102,
+                    bornDelay = 15000,
+                    bornInterval = 2000,
+                    waveInterval = 50000,
+                };
+        }
+
+        return null;
+    }
+
+    #endregion
+    
     #region 地图加载
 
     private Action sceneBPMethod = null;
-    public void AsyncLoadScene(string sceneName,Action<float> updateProgress,Action afterAll)
+    public void AsyncLoadScene(string sceneName,Action<int> updateProgress,Action afterAll)
     {
         StartCoroutine(StartLoading(sceneName,updateProgress,afterAll));
         
@@ -145,7 +175,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     /// </summary>
     /// <param name="sceneName"></param>
     /// <returns></returns>
-    private IEnumerator StartLoading(string sceneName,Action<float> updateProgress,Action afterAll)
+    private IEnumerator StartLoading(string sceneName,Action<int> updateProgress,Action afterAll)
     {
         int displayProgress = 0;
         int toProgress = 0;
@@ -161,7 +191,9 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
             // Debug.Log("below90: " + displayProgress + " , " + op.progress + " , " + toProgress);
             while (displayProgress < toProgress)
             {
-                ++displayProgress;
+                // 减少请求次数,一次涨15%进度
+                var tmpProgress = displayProgress + 15;
+                displayProgress = tmpProgress > toProgress ? tmpProgress : toProgress;
                 //GameRootResources.Instance().loadingWindow.SetProgress(displayProgress);
                 updateProgress.Invoke(displayProgress);
                 yield return new WaitForEndOfFrame();
@@ -172,8 +204,24 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
        
         while (displayProgress < toProgress)
         {
-            // Debug.Log("over90: " + displayProgress + " , " + op.progress);
-            ++displayProgress;
+            // 减少请求次数,一次涨25%进度;90%后,最后10%为了效果,一次涨1%进度.加载速度可能过快,直接跳过上面的0.9f判断,所以改为25%
+            var tmpProgress = displayProgress + 20;
+            if (tmpProgress <= 90)
+            {
+                // 不到70的每次都叠加20%
+                displayProgress = tmpProgress;
+            }
+            else if (tmpProgress > 90 && tmpProgress < 110)
+            {
+                // 70-89.99的直接跳到90%
+                displayProgress = 90;
+            }
+            else
+            {
+                // >=90的叠加1%
+                ++displayProgress;
+            }
+            
             //GameRootResources.Instance().loadingWindow.SetProgress(displayProgress);
             updateProgress.Invoke(displayProgress);
             yield return new WaitForEndOfFrame();

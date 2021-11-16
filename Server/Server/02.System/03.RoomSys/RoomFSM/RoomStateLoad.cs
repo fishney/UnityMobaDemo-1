@@ -11,11 +11,14 @@ namespace Server
     public class RoomStateLoad : RoomStateBase
     {
         private int[] percentArr;
+        private bool[] loadedArr;
 
         /// <summary>
         /// 进度数据前几次先略过。
         /// </summary>
         private int notifyCount;
+
+        
 
         public RoomStateLoad(PVPRoom r) : base(r)
         {
@@ -25,6 +28,7 @@ namespace Server
         {
             int len = room.sessionArr.Count;
             percentArr = new int[len];
+            loadedArr = new bool[len];
 
             GameMsg msg = new GameMsg
             {
@@ -70,9 +74,9 @@ namespace Server
         public void UpdateLoadState(int posIndex, int percent)
         {
             percentArr[posIndex] = percent;
-            ++notifyCount;
-            if (notifyCount > percentArr.Length)
-            {
+            //++notifyCount;
+            //if (notifyCount > percentArr.Length)
+            //{
                 GameMsg msg = new GameMsg
                 {
                     cmd = CMD.NotifyLoadPrg,
@@ -85,9 +89,34 @@ namespace Server
                 msg.notifyLoadPrg.percentList.AddRange(percentArr);
 
                 room.PublishMsg(msg);
-            }
+            //}
 
            
+        }
+
+        public void UpdateLoadDone(int posIndex)
+        {
+            loadedArr[posIndex] = true;
+
+            foreach (var loaded in loadedArr)
+            {
+                if (!loaded) return;
+            }
+
+            // 全部加载完成
+            GameMsg msg = new GameMsg
+            {
+                cmd = CMD.RspBattleStart,
+                rspBattleStart = new RspBattleStart
+                {
+
+                }
+            };
+
+            room.PublishMsg(msg);
+
+            this.ColorLog(PEUtils.LogColor.Green,$"RoomId:{room.roomId}: 所有玩家加载完成,进入游戏");
+            room.ChangeRoomState(RoomStateEnum.Fight);
         }
 
         public override void Update()
@@ -97,9 +126,9 @@ namespace Server
 
         public override void Exit()
         {
-            
+            percentArr = null;
+            loadedArr = null;
         }
-
 
     }
 }

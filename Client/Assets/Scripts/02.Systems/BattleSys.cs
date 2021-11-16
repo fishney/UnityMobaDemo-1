@@ -17,6 +17,10 @@ public class BattleSys : SystemBase
     public static BattleSys Instance;
 
     private int mapId;
+    private List<BattleHeroData> battleHeroList;
+    private GameObject fightGO;
+    private FightMgr fightMgr;
+    private AudioSource battleAudio;
     
     public override void InitSys()
     {
@@ -32,12 +36,13 @@ public class BattleSys : SystemBase
         gameRootResources.loadWindow.SetWindowState(true);
 
         mapId = GameRoot.MapId;
+        battleHeroList = GameRoot.battleHeroList;
+        resSvc.AsyncLoadScene("map_" + mapId,　SceneLoadProgress,　SceneLoadDone);
     }
 
     private int lastPercent = 0;
-    void SceneLoadProgress(float val)
+    void SceneLoadProgress(int percent)
     {
-        int percent = (int) (val * 100);
         GameMsg msg = new GameMsg()
         {
             cmd = CMD.SendLoadPrg,
@@ -54,7 +59,44 @@ public class BattleSys : SystemBase
 
     void SceneLoadDone()
     {
+        // 初始化UI
+        gameRootResources.playWindow.SetWindowState();
         
+        // 加载角色资源
+        
+        
+        //初始化战斗
+        fightGO = new GameObject()
+        {
+            name = "fight"
+        };
+        fightMgr = fightGO.AddComponent<FightMgr>();
+        battleAudio = fightGO.AddComponent<AudioSource>();
+        var mapCfg = resSvc.GetMapConfigById(mapId);
+        fightMgr.Init(battleHeroList,mapCfg);
+        
+        GameMsg msg = new GameMsg()
+        {
+            cmd = CMD.ReqBattleStart,
+            reqBattleStart = new ReqBattleStart()
+            {
+                roomId = GameRoot.ActiveRoomId,
+            }
+        };
+        netSvc.SendMsg(msg);
+
+
     }
-    
+
+    public void NotifyLoadPrg(GameMsg msg)
+    {
+        gameRootResources.loadWindow.RefreshPrgData(msg.notifyLoadPrg.percentList);
+    }
+
+    public void RspBattleStart(GameMsg msg)
+    {
+        gameRootResources.loadWindow.SetWindowState(false);
+        
+        audioSvc.PlayBGMusic(Constants.BGBattle);
+    }
 }

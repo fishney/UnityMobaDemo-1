@@ -187,6 +187,13 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
             case CMD.NotifyLoadRes:
                 LobbySys.Instance.NotifyLoadRes(msg);
                 break;
+            case CMD.NotifyLoadPrg:
+                BattleSys.Instance.NotifyLoadPrg(msg);
+                break;
+            case CMD.RspBattleStart:
+                BattleSys.Instance.RspBattleStart(msg);
+                break;
+                
             // case CMD.RspRename:
             //     LoginSys.Instance.RspRename(msg);
             //     break;

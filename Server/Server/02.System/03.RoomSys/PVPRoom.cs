@@ -113,11 +113,22 @@ namespace Server
 
         public void SendLoadPrg(ServerSession session, int percent)
         {
-            if (currentState == RoomStateEnum.Select)
+            if (currentState == RoomStateEnum.Load)
             {
                 if (fsm[currentState] is RoomStateLoad state)
                 {
                     state.UpdateLoadState(GetPosIndex(session), percent);
+                }
+            }
+        }
+
+        public void ReqBattleStart(ServerSession session)
+        {
+            if (currentState == RoomStateEnum.Load)
+            {
+                if (fsm[currentState] is RoomStateLoad state)
+                {
+                    state.UpdateLoadDone(GetPosIndex(session));
                 }
             }
         }

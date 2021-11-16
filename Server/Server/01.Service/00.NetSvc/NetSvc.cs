@@ -78,6 +78,9 @@ namespace Server
                 case CMD.SendLoadPrg:
                     RoomSys.Instance().SendLoadPrg(msgPack);
                     break;
+                case CMD.ReqBattleStart:
+                    RoomSys.Instance().ReqBattleStart(msgPack);
+                    break;
 
 			}
         }

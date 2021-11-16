@@ -77,5 +77,15 @@ public class LoginWindow : WindowBase
     }
 
     #endregion
-    
+
+
+    #region GM Test
+
+    public void ClickGMBtn()
+    {
+        SetWindowState(false);
+        GMSystem.Instance.StartSimulate();
+    }
+
+    #endregion
 }
