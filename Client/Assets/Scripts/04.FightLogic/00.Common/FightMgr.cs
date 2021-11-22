@@ -18,15 +18,20 @@ public class FightMgr : MonoBehaviour
 {
     private MapRoot mapRoot;
     private EnvColliders logicEnv;
+
+    private List<Hero> heroList;
     
     public void Init(List<BattleHeroData> battleHeroList,MapCfg mapCfg)
     {
+        heroList = new List<Hero>();
+        
         // 初始化碰撞环境
         InitEnv();
         // 防御塔
 
         // 英雄
-
+        InitHero(battleHeroList,mapCfg);
+        
         // 小兵
 
         // delay后出生小兵,按波次出生
@@ -45,6 +50,52 @@ public class FightMgr : MonoBehaviour
         };
         logicEnv.Init();
         
+    }
+
+    void InitHero(List<BattleHeroData> battleHeroList,MapCfg mapCfg)
+    {
+        int sep = battleHeroList.Count / 2;
+        for (int i = 0; i < battleHeroList.Count; i++)
+        {
+            HeroData hd = new HeroData()
+            {
+                heroId = battleHeroList[i].heroId,
+                posIndex = i,
+                userName = battleHeroList[i].userName,
+                unitCfg = ResSvc.Instance().GetUnitConfigById(battleHeroList[i].heroId),
+            };
+
+            Hero hero;
+            if (i < sep)
+            {
+                hd.teamEnum = TeamEnum.Blue;
+                hd.bornPos = mapCfg.blueBorn;
+            }
+            else
+            {
+                hd.teamEnum = TeamEnum.Red;
+                hd.bornPos = mapCfg.redBorn;
+            }
+            hero = new Hero(hd);
+            hero.LogicInit();
+            heroList.Add(hero);
+        }
+    }
+
+    /// <summary>
+    /// 由服务器数据帧进行驱动
+    /// </summary>
+    public void Tick()
+    {
+        for (int i = 0; i < heroList.Count; i++)
+        {
+            heroList[i].LogicTick();
+        }
+    }
+    
+    public void UnInit()
+    {
+       
     }
 
     // TODO 以后要学，这里是录入位置、大小、朝向、半径等信息，且转换浮点型Vector3为定点型PEVector3
@@ -90,5 +141,19 @@ public class FightMgr : MonoBehaviour
         
         return envColliderCfgList;
     }
-    
+
+    public List<PEColliderBase> GetEnvColliders()
+    {
+        return logicEnv.GetEnvColliders();
+    }
+
+    public void InputKey(List<OpKey> keyList)
+    {
+        for (int i = 0; i < keyList.Count; i++)
+        {
+            OpKey key = keyList[i];
+            MainLogicUnit hero = heroList[key.opIndex];
+            hero.InputKey(key);
+        }
+    }
 }

@@ -9,18 +9,45 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using PEMath;
 
 /// <summary>
 /// MainLogicAttributes
 /// </summary>
 public partial class MainLogicUnit
 {
+
+    private PEInt _hp;
+    public PEInt Hp
+    {
+        private set 
+        {
+            _hp = value;
+        }
+        get
+        {
+            return _hp;
+        }
+    }
+    
+    private PEInt _def;
+    public PEInt Def
+    {
+        private set 
+        {
+            _def = value;
+        }
+        get
+        {
+            return _def;
+        }
+    }
     
     
     void InitProperties()
     {
-        
+        Hp = ud.unitCfg.hp;
+        Def = ud.unitCfg.def;
     }
 
 }

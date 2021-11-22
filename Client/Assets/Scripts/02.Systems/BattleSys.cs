@@ -10,6 +10,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using HOKProtocol;
+using PEMath;
+using PEPhysx;
 using UnityEngine;
 
 public class BattleSys : SystemBase
@@ -17,10 +19,22 @@ public class BattleSys : SystemBase
     public static BattleSys Instance;
 
     private int mapId;
+    public bool isTickFight;
     private List<BattleHeroData> battleHeroList;
     private GameObject fightGO;
     private FightMgr fightMgr;
     private AudioSource battleAudio;
+    
+    private int _keyId = 0;
+    
+    /// 自增 移动逻辑帧Id
+    public int KeyId
+    {
+        get
+        {
+            return ++_keyId;
+        }
+    }
     
     public override void InitSys()
     {
@@ -98,5 +112,53 @@ public class BattleSys : SystemBase
         gameRootResources.loadWindow.SetWindowState(false);
         
         audioSvc.PlayBGMusic(Constants.BGBattle);
+
+        isTickFight = true;
     }
+    
+    public List<PEColliderBase> GetEnvColliders()
+    {
+        return fightMgr.GetEnvColliders();
+    }
+
+    public void NotifyOpKey(GameMsg msg)
+    {
+        // 每逻辑帧66ms一次
+        fightMgr.InputKey(msg.notifyOpKey.keyList);
+        if (isTickFight)
+        {
+            fightMgr.Tick();
+        }
+        
+    }
+
+    #region api func
+
+    /// 发送移动帧操作到服务器
+    public bool SendMoveKey(PEVector3 logicDir)
+    {
+        GameMsg msg = new GameMsg()
+        {
+            cmd = CMD.SendOpKey,
+            sendOpKey = new SendOpKey()
+            {
+                roomId = GameRoot.ActiveRoomId,
+                opKey = new OpKey()
+                {
+                    opIndex = GameRoot.SelfPosIndex,
+                    keyType = KeyType.Move,
+                    moveKey = new MoveKey(),
+                }
+            }
+        };
+
+        msg.sendOpKey.opKey.moveKey.x = logicDir.x.ScaledValue;
+        msg.sendOpKey.opKey.moveKey.z = logicDir.z.ScaledValue;
+        msg.sendOpKey.opKey.moveKey.keyId = KeyId;
+        
+        netSvc.SendMsg(msg);// TODO 1122
+        return true;
+    }
+
+    #endregion
 }

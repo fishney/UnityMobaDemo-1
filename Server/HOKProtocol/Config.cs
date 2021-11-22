@@ -15,4 +15,10 @@ namespace HOKProtocol
         // 选择英雄倒计时
         public const int SelectCountDown = 15;
 	}
+
+    public class Configs
+    {
+        /// 逻辑帧事件 66ms = 1秒15帧
+        public const float ClientLogicFromDeltaSec = 0.066f;
+    }
 }

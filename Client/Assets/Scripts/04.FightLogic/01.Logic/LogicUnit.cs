@@ -10,12 +10,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using PEMath;
-using UnityEngine;
 
 public abstract class LogicUnit : ILogic
 {
 
     #region Key Properties
+
+    /// 单位名称
+    public string unitName;
 
     private PEVector3 _logicPos;
     /// 逻辑位置
@@ -46,7 +48,7 @@ public abstract class LogicUnit : ILogic
     }
 
     private PEInt _logicMoveSpeed;
-    /// 逻辑速度
+    /// 逻辑速度，可被buff加速
     public PEInt LogicMoveSpeed
     {
         get
@@ -58,8 +60,8 @@ public abstract class LogicUnit : ILogic
             _logicMoveSpeed = value;
         }
     }
-    /// 基础速度
-    private PEInt MoveSpeedBase;
+    /// 基础速度，做记录用，逻辑速度结束buff会恢复
+    public PEInt moveSpeedBase;
     
     
     
@@ -84,3 +86,4 @@ interface ILogic
     void LogicTick();
     void LogicUnInit();
 }
+

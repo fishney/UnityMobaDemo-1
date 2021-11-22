@@ -30,6 +30,8 @@ namespace HOKProtocol
         public ReqBattleStart reqBattleStart;
         public RspBattleStart rspBattleStart;
 
+        public SendOpKey sendOpKey;
+        public NotifyOpKey notifyOpKey;
     }
 
     #region 登陆相关
@@ -232,6 +234,19 @@ namespace HOKProtocol
         
     }
 
+    [Serializable]
+    public class SendOpKey
+    {
+        public int roomId;
+        public OpKey opKey;
+    }
+
+    [Serializable]
+    public class NotifyOpKey
+    {
+        public int frameId;
+        public List<OpKey> keyList;
+    }
     #endregion
 
     #region 数据类型
@@ -367,6 +382,10 @@ namespace HOKProtocol
         // 战斗
         ReqBattleStart = 112,
         RspBattleStart = 113,
+
+        // 操作码
+        SendOpKey = 1000,
+        NotifyOpKey = 1001,
 
     }
 

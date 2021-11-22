@@ -193,6 +193,9 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
             case CMD.RspBattleStart:
                 BattleSys.Instance.RspBattleStart(msg);
                 break;
+            case CMD.NotifyOpKey:
+                BattleSys.Instance.NotifyOpKey(msg);
+                break;
                 
             // case CMD.RspRename:
             //     LoginSys.Instance.RspRename(msg);

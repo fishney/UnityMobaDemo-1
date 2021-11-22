@@ -10,6 +10,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using PEMath;
+using PEPhysx;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -91,6 +93,16 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                     unitId = 101,
                     unitName = "亚瑟",
                     resName = "arthur",
+                    
+                    hp = 6500,
+                    def = 0,
+                    moveSpeed = 5,
+                    
+                    colliCfg = new ColliderConfig
+                    {
+                        mType = ColliderType.Cylinder, //所有角色都是圆柱体
+                        mRadius = (PEInt)0.5f,
+                    }
                 };
             case 102:
                 return new UnitCfg()
@@ -98,6 +110,16 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                     unitId = 102,
                     unitName = "后羿",
                     resName = "houyi",
+                    
+                    hp = 3500,
+                    def = 10,
+                    moveSpeed = 5,
+                    
+                    colliCfg = new ColliderConfig
+                    {
+                        mType = ColliderType.Cylinder, //所有角色都是圆柱体
+                        mRadius = (PEInt)0.5f,
+                    }
                 };
         }
 
