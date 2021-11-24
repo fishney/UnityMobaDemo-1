@@ -54,6 +54,14 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
     
     public void SendMsg(GameMsg msg,Action<bool> cb = null)
     {
+        // 模拟服务器接收到了信息
+        if (GMSystem.Instance.isActive)
+        {
+            GMSystem.Instance.SimulateServerRcvMsg(msg);
+            cb?.Invoke(true);
+            return;
+        }
+        
         if (client.clientSession != null)
         {
             client.clientSession.SendMsg(msg);
@@ -117,8 +125,22 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                     HandleRsp(msg);
                 }
             }
+            // Debug.Log("Plane is wrong!!!");
+            // return;
         }
-        
+
+        // 模拟收到服务器消息
+        // if (GMSystem.Instance.isActive)
+        // {
+        //     if (msgQue?.Count > 0)
+        //     {
+        //         lock (obj)
+        //         {
+        //             var msg = msgQue.Dequeue();
+        //             HandleRsp(msg);
+        //         }
+        //     }
+        // }
     }
     
     private void HandleRsp(GameMsg msg)
@@ -196,38 +218,7 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
             case CMD.NotifyOpKey:
                 BattleSys.Instance.NotifyOpKey(msg);
                 break;
-                
-            // case CMD.RspRename:
-            //     LoginSys.Instance.RspRename(msg);
-            //     break;
-            // case CMD.RspGuide:
-            //     MainCitySys.Instance.RspGuide(msg);
-            //     break;
-            // case CMD.RspStrong:
-            //     MainCitySys.Instance.RspStrong(msg);
-            //     break;
-            // case CMD.PushChat:
-            //     MainCitySys.Instance.PushChat(msg);
-            //     break;
-            // case CMD.RspBuy:
-            //     MainCitySys.Instance.RspBuy(msg);
-            //     break;
-            // case CMD.PushPower:
-            //     MainCitySys.Instance.PushPower(msg);
-            //     // MainCitySys.Instance.PushTaskPrgs(msg); TODO 如果想并包，两次请求操作合成一次，可以这样
-            //     break;
-            // case CMD.RspTask:
-            //     MainCitySys.Instance.RspTask(msg);
-            //     break;
-            // case CMD.PushTaskPrgs:
-            //     MainCitySys.Instance.PushTaskPrgs(msg);
-            //     break;
-            // case CMD.RspDungeon:
-            //     DungeonSys.Instance.RspDungeon(msg);
-            //     break;
-            // case CMD.RspDungeonEnd:
-            //     BattleSys.Instance.RspDungeonEnd(msg);
-            //     break;
+    
         }
     }
 }

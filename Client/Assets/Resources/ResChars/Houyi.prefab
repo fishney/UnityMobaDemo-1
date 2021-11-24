@@ -438,6 +438,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7238942558968534912}
   - component: {fileID: 3591902702655391229}
+  - component: {fileID: 6058152118009801381}
   m_Layer: 0
   m_Name: Houyi
   m_TagString: Untagged
@@ -563,6 +564,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6058152118009801381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7238942558968534919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b0e4051c21fbe4aafe95c0280f72af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsSyncPos: 1
+  PredictPos: 1
+  PredictMaxCount: 15
+  SmoothPos: 1
+  viewPosAccer: 10
+  IsSyncDir: 1
+  RotationRoot: {fileID: 7238942558732667199}
 --- !u!1001 &7238942558732276695
 PrefabInstance:
   m_ObjectHideFlags: 0

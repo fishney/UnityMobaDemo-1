@@ -19,6 +19,7 @@ public abstract class LogicUnit : ILogic
     /// 单位名称
     public string unitName;
 
+    public bool isPosChanged;
     private PEVector3 _logicPos;
     /// 逻辑位置
     public PEVector3 LogicPos
@@ -30,6 +31,7 @@ public abstract class LogicUnit : ILogic
         set
         {
             _logicPos = value;
+            isPosChanged = true;
         }
     }
     

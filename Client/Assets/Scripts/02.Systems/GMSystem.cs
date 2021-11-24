@@ -7,6 +7,7 @@
     功能：模拟服务器 测试用Sys
 *****************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using HOKProtocol;
@@ -15,6 +16,9 @@ using UnityEngine;
 public class GMSystem : SystemBase
 {
     public static GMSystem Instance;
+    public bool isActive = false;
+    private int frameId = 0;
+    private List<OpKey> opkeyList = new List<OpKey>();
 
     public override void InitSys()
     {
@@ -26,6 +30,7 @@ public class GMSystem : SystemBase
 
     public void StartSimulate()
     {
+        isActive = true;
         StartCoroutine(BattleSimulate());
     }
 
@@ -63,5 +68,47 @@ public class GMSystem : SystemBase
             cmd = CMD.RspBattleStart
         };
         BattleSys.Instance.RspBattleStart(msg);
+    }
+
+    public void SimulateServerRcvMsg(GameMsg msg)
+    {
+        switch (msg.cmd)
+        {
+            case CMD.SendOpKey:
+                UpDateOpKey(msg.sendOpKey.opKey);
+                break;
+        }
+    }
+
+    void UpDateOpKey(OpKey key)
+    {
+        opkeyList.Add(key);
+    }
+
+    private void FixedUpdate()
+    {
+        ++frameId;
+        GameMsg msg = new GameMsg()
+        {
+            cmd = CMD.NotifyOpKey,
+            notifyOpKey = new NotifyOpKey()
+            {
+                frameId = frameId,
+                keyList = new List<OpKey>(),
+            }
+        };
+
+        if (opkeyList.Count > 0)
+        {
+            msg.notifyOpKey.keyList.AddRange(opkeyList);
+        }
+        opkeyList.Clear();
+        netSvc.AddNetMsg(msg);
+        
+    }
+
+    private void Update()
+    {
+        
     }
 }

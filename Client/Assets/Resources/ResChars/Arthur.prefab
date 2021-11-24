@@ -182,6 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5669233777762471083}
   - component: {fileID: 7028611493261094304}
+  - component: {fileID: 5941458301497291237}
   m_Layer: 0
   m_Name: Arthur
   m_TagString: Untagged
@@ -305,6 +306,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5941458301497291237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5669233777762471084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b0e4051c21fbe4aafe95c0280f72af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsSyncPos: 1
+  PredictPos: 1
+  PredictMaxCount: 15
+  SmoothPos: 1
+  viewPosAccer: 10
+  IsSyncDir: 1
+  RotationRoot: {fileID: 2990674558125748809}
 --- !u!1 &9124188277922223319
 GameObject:
   m_ObjectHideFlags: 0

@@ -124,12 +124,11 @@ public class BattleSys : SystemBase
     public void NotifyOpKey(GameMsg msg)
     {
         // 每逻辑帧66ms一次
-        fightMgr.InputKey(msg.notifyOpKey.keyList);
         if (isTickFight)
         {
+            fightMgr.InputKey(msg.notifyOpKey.keyList);
             fightMgr.Tick();
         }
-        
     }
 
     #region api func

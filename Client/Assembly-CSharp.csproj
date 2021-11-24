@@ -52,6 +52,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\02.Systems\LoginSys.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\MainLogicAttr.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\Hero.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\PlayWindow.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\WindowBase.cs" />
      <Compile Include="Assets\Scripts\02.Systems\GMSystem.cs" />
@@ -82,7 +83,9 @@
      <Compile Include="Assets\Scripts\01.Services\NetSvc.cs" />
      <Compile Include="Assets\Scripts\00.Common\GameRootResources.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\MainLogicMove.cs" />
-     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\Hero.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\02.View\ViewUnit.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\02.View\MainViewUnit.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\02.View\HeroView.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

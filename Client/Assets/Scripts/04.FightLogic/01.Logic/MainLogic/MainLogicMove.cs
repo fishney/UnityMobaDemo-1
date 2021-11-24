@@ -83,6 +83,7 @@ public partial class MainLogicUnit
     public void InputMoveKey(PEVector3 dir)
     {
         InputDir = dir;
+        this.Log("InputDir:" + dir.ConvertViewVector3());
     }
 }
 

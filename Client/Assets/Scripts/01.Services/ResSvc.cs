@@ -53,6 +53,42 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     }
 
     #endregion
+    
+    #region GameObject
+    
+    /// <summary>
+    /// GameObject暂存池
+    /// </summary>
+    private Dictionary<string, GameObject> goDic = new Dictionary<string, GameObject>();
+    
+    /// <summary>
+    /// 加载Prefab
+    /// </summary>
+    /// <param name="path"></param>
+    /// <param name="isCache">是否需要放进缓存字典中</param>
+    /// <returns></returns>
+    public GameObject LoadPrefab(string path, bool isCache = true)
+    {
+        GameObject prefab = null;
+        if (!goDic.TryGetValue(path,out prefab))
+        {
+            prefab = Resources.Load<GameObject>(path);
+            if (isCache)
+            {
+                goDic[path] = prefab;
+            }
+        }
+
+        GameObject go = null;
+        if (prefab != null)
+        {
+            go = Instantiate(prefab);
+        }
+        
+        return go;
+    }
+
+    #endregion
 
     #region Sprite
 
@@ -77,7 +113,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     }
 
     #endregion
-    
+
     #region 英雄信息
     
     
@@ -258,4 +294,6 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     }
 
     #endregion
+    
+    
 }

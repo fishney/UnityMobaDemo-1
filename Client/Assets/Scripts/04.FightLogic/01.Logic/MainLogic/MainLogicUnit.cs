@@ -11,16 +11,22 @@ using System.Collections;
 using System.Collections.Generic;
 using HOKProtocol;
 using PEMath;
+using UnityEngine;
 
 public abstract partial class MainLogicUnit : LogicUnit
 {
     public LogicUnitData ud;
     public UnitStateEnum unitState;
     public UnitTypeEnum unitType;
+    
+    /// 资源加载前缀
+    protected string pathPrefix = "";
+
+    public MainViewUnit mainViewUnit;
 
     public MainLogicUnit(LogicUnitData ud)
     {
-        ud = this.ud;
+        this.ud = ud;
         unitName = ud.unitCfg.unitName;
     }
     
@@ -33,6 +39,17 @@ public abstract partial class MainLogicUnit : LogicUnit
         InitSkill();
         // 初始化移动控制
         InitMove();
+
+        // test s?
+        GameObject go = ResSvc.Instance().LoadPrefab(pathPrefix+"/"+ud.unitCfg.resName);
+        mainViewUnit = go.GetComponent<MainViewUnit>();
+        if (mainViewUnit != null)
+        {
+            this.Error("Get MainView Error: "+unitName);
+        }
+        mainViewUnit.Init(this);
+        
+        //test e?
 
         unitState = UnitStateEnum.Alive;
     }
