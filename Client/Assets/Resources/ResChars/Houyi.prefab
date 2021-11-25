@@ -582,6 +582,9 @@ MonoBehaviour:
   SmoothPos: 1
   viewPosAccer: 10
   IsSyncDir: 1
+  SmoothDir: 1
+  viewDirAccer: 10
+  AngleMultiplier: 8
   RotationRoot: {fileID: 7238942558732667199}
 --- !u!1001 &7238942558732276695
 PrefabInstance:

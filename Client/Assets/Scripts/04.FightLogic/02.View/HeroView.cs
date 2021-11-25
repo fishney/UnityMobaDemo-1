@@ -17,5 +17,19 @@ using UnityEngine;
 /// </summary>
 public class HeroView : MainViewUnit
 {
+    private Hero hero;
 
+    public override void Init(LogicUnit logicUnit)
+    {
+        base.Init(logicUnit);
+        
+        hero = logicUnit as Hero;
+    }
+    
+    protected override Vector3 GetUnitViewDir()
+    {
+        // 玩家朝向使用UI输入位置朝向，不使用物理引擎运算修正方向
+        // 从而防止特殊情况，比如撞上墙会被物理引擎修正朝向
+        return hero.InputDir.ConvertViewVector3();
+    }
 }

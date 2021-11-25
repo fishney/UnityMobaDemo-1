@@ -324,6 +324,9 @@ MonoBehaviour:
   SmoothPos: 1
   viewPosAccer: 10
   IsSyncDir: 1
+  SmoothDir: 1
+  viewDirAccer: 10
+  AngleMultiplier: 8
   RotationRoot: {fileID: 2990674558125748809}
 --- !u!1 &9124188277922223319
 GameObject:

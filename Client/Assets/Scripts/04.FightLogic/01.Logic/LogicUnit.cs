@@ -35,8 +35,9 @@ public abstract class LogicUnit : ILogic
         }
     }
     
+    public bool isDirChanged;
     private PEVector3 _logicDir;
-    /// 逻辑方向
+    /// 逻辑方向，会记入物理碰撞
     public PEVector3 LogicDir
     {
         get
@@ -46,6 +47,7 @@ public abstract class LogicUnit : ILogic
         set
         {
             _logicDir = value;
+            isDirChanged = true;
         }
     }
 
