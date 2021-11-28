@@ -12,18 +12,37 @@ using System.Collections;
 using System.Collections.Generic;
 using PEMath;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PlayWindow : WindowBase
 {
+    public Image imgCancelSkill;
+    public Image imgTouch;
+    public Image imgDirBg;
+    public Image imgDirPoint;
+    public Transform ArrowRoot;
+    float pointDis = 135;
+    Vector2 startPos = Vector2.zero;
+    Vector2 defaultPos = Vector2.zero;
+    
     protected override void InitWindow()
     {
         base.InitWindow();
+        SetActive(ArrowRoot, false);
+        pointDis = Screen.height * 1.0f / ClientConfig.ScreenStandardHeight * ClientConfig.ScreenOPDis;
+        defaultPos = imgDirBg.transform.position;
+
+        RegisterMoveEvts();
     }
+    
+   
     
     protected override void ClearWindow()
     {
         base.ClearWindow();
     }
+    
 
     private Vector2 lastKeyDir = Vector2.zero;
     private void Update()
@@ -42,6 +61,46 @@ public class PlayWindow : WindowBase
         }
     }
 
+  
+    
+    void RegisterMoveEvts() {
+        SetActive(ArrowRoot, false);
+
+        OnClickDown(imgTouch.gameObject, (PointerEventData evt, object[] args) => {
+            startPos = evt.position;
+            Debug.Log($"evt.pos:{evt.position}");
+            imgDirPoint.color = new Color(1, 1, 1, 1f);
+            imgDirBg.transform.position = evt.position;
+        });
+        OnClickUp(imgTouch.gameObject, (PointerEventData evt, object[] args) => {
+            imgDirBg.transform.position = defaultPos;
+            imgDirPoint.color = new Color(1, 1, 1, 0.5f);
+            imgDirPoint.transform.localPosition = Vector2.zero;
+            SetActive(ArrowRoot, false);
+
+            InputMoveKey(Vector2.zero);
+        });
+        OnDrag(imgTouch.gameObject, (PointerEventData evt, object[] args) => {
+            Vector2 dir = evt.position - startPos;
+            float len = dir.magnitude;
+            if(len > pointDis) {
+                Vector2 clampDir = Vector2.ClampMagnitude(dir, pointDis);
+                imgDirPoint.transform.position = startPos + clampDir;
+            }
+            else {
+                imgDirPoint.transform.position = evt.position;
+            }
+
+            if(dir != Vector2.zero) {
+                SetActive(ArrowRoot);
+                float angle = Vector2.SignedAngle(new Vector2(1, 0), dir);
+                ArrowRoot.localEulerAngles = new Vector3(0, 0, angle);
+            }
+
+            InputMoveKey(dir.normalized);
+        });
+    }
+    
     private Vector2 lastStickDir = Vector2.zero;
     private void InputMoveKey(Vector2 dir)
     {

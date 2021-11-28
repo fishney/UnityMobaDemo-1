@@ -7,6 +7,7 @@
     功能：战斗管理器
 *****************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using HOKProtocol;
@@ -20,6 +21,8 @@ public class FightMgr : MonoBehaviour
     private EnvColliders logicEnv;
 
     private List<Hero> heroList;
+
+    private Transform transFollow;
     
     public void Init(List<BattleHeroData> battleHeroList,MapCfg mapCfg)
     {
@@ -38,7 +41,34 @@ public class FightMgr : MonoBehaviour
 
 
     }
-
+    
+    /// <summary>
+    /// 由服务器数据帧进行驱动
+    /// </summary>
+    public void Tick()
+    {
+        for (int i = 0; i < heroList.Count; i++)
+        {
+            heroList[i].LogicTick();
+        }
+    }
+    
+    public void UnInit()
+    {
+        heroList.Clear();
+    }
+    
+    /// <summary>
+    /// 由画面驱动
+    /// </summary>
+    private void Update()
+    {
+        if (transFollow != null)
+        {
+            mapRoot.transCameraRoot.position = transFollow.position;
+        }
+    }
+    
     void InitEnv()
     {
         Transform transMapRoot = GameObject.FindGameObjectWithTag("MapRoot").transform;
@@ -82,21 +112,14 @@ public class FightMgr : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 由服务器数据帧进行驱动
-    /// </summary>
-    public void Tick()
+  
+
+    public void InitCamFollowTrans(int posIndex)
     {
-        for (int i = 0; i < heroList.Count; i++)
-        {
-            heroList[i].LogicTick();
-        }
+        transFollow = heroList[posIndex].mainViewUnit.transform;
     }
     
-    public void UnInit()
-    {
-       
-    }
+    
 
     // TODO 以后要学，这里是录入位置、大小、朝向、半径等信息，且转换浮点型Vector3为定点型PEVector3
     List<ColliderConfig> GenerateEnvColliderCfgs(Transform transEnvRoot)

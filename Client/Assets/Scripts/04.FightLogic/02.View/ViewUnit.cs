@@ -12,7 +12,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ViewUnit : MonoBehaviour
+public abstract class ViewUnit : MonoBehaviour
 {
     // pos
     /// 是否开启同步
@@ -60,7 +60,7 @@ public class ViewUnit : MonoBehaviour
         RotationRoot.rotation = CalcRotation(logicUnit.LogicDir.ConvertViewVector3());
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (IsSyncDir)
         {
@@ -162,5 +162,5 @@ public class ViewUnit : MonoBehaviour
         return Quaternion.FromToRotation(Vector3.forward, targetDir);
     }
 
-    
+    public abstract void PlayAni(string aniName);
 }

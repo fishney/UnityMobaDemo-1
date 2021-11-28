@@ -328,6 +328,8 @@ MonoBehaviour:
   viewDirAccer: 10
   AngleMultiplier: 8
   RotationRoot: {fileID: 2990674558125748809}
+  fade: 0.25
+  ani: {fileID: 2990674558116001777}
 --- !u!1 &9124188277922223319
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,5 +436,10 @@ PrefabInstance:
 --- !u!4 &2990674558125748809 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400088, guid: 83bc0f5634e205244a0457d0f1632e65, type: 3}
+  m_PrefabInstance: {fileID: 2990674558125877393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &2990674558116001777 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 11100000, guid: 83bc0f5634e205244a0457d0f1632e65, type: 3}
   m_PrefabInstance: {fileID: 2990674558125877393}
   m_PrefabAsset: {fileID: 0}

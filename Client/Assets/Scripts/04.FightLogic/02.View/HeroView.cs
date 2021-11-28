@@ -32,4 +32,9 @@ public class HeroView : MainViewUnit
         // 从而防止特殊情况，比如撞上墙会被物理引擎修正朝向
         return hero.InputDir.ConvertViewVector3();
     }
+
+    // public override void PlayAni(string aniName)
+    // {
+    //     
+    // }
 }

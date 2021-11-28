@@ -39,17 +39,14 @@ public abstract partial class MainLogicUnit : LogicUnit
         InitSkill();
         // 初始化移动控制
         InitMove();
-
-        // test s?
+        
         GameObject go = ResSvc.Instance().LoadPrefab(pathPrefix+"/"+ud.unitCfg.resName);
         mainViewUnit = go.GetComponent<MainViewUnit>();
-        if (mainViewUnit != null)
+        if (mainViewUnit == null)
         {
             this.Error("Get MainView Error: "+unitName);
         }
         mainViewUnit.Init(this);
-        
-        //test e?
 
         unitState = UnitStateEnum.Alive;
     }
