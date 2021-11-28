@@ -35,6 +35,8 @@ public class UnitCfg
    // 碰撞体
    public ColliderConfig colliCfg;
    
+   // 技能Id数组
+   public int[] skillArr;
 }
 
 #endregion

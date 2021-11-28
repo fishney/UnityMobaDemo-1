@@ -110,6 +110,7 @@ public class BattleSys : SystemBase
     public void RspBattleStart(GameMsg msg)
     {
         fightMgr.InitCamFollowTrans(GameRoot.SelfPosIndex);
+        gameRootResources.playWindow.InitSKillInfo();
         gameRootResources.loadWindow.SetWindowState(false);
         
         audioSvc.PlayBGMusic(Constants.BGBattle);

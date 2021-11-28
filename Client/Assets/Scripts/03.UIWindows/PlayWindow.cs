@@ -15,7 +15,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class PlayWindow : WindowBase
+public partial class PlayWindow : WindowBase
 {
     public Image imgCancelSkill;
     public Image imgTouch;

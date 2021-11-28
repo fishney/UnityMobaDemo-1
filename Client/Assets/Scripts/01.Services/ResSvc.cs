@@ -138,7 +138,8 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                     {
                         mType = ColliderType.Cylinder, //所有角色都是圆柱体
                         mRadius = (PEInt)0.5f,
-                    }
+                    },
+                    skillArr = new []{1010,1011,1012,1013},
                 };
             case 102:
                 return new UnitCfg()
@@ -155,7 +156,8 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                     {
                         mType = ColliderType.Cylinder, //所有角色都是圆柱体
                         mRadius = (PEInt)0.5f,
-                    }
+                    },
+                    skillArr = new []{1020,1021,1022,1023},
                 };
         }
 
@@ -164,6 +166,28 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
 
     #endregion
 
+    #region 英雄信息
+    
+    public SkillCfg GetSkillConfigById(int skillId)
+    {
+        switch (skillId)
+        {
+            case 1010:
+                return ResSkillConfigs.sk_1010;
+            case 1011:
+                return ResSkillConfigs.sk_1011;
+            case 1012:
+                return ResSkillConfigs.sk_1012;
+            case 1013:
+                return ResSkillConfigs.sk_1013;
+            default:
+                this.Error("Get SkillCfg Failed,Id: " + skillId);
+                return null;
+        }
+    }
+
+    #endregion
+    
     #region 地图信息
     
     public MapCfg GetMapConfigById(int mapId)
