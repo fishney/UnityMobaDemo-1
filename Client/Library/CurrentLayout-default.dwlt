@@ -124,7 +124,7 @@ MonoBehaviour:
   m_MinSize: {x: 911, y: 442}
   m_MaxSize: {x: 22006, y: 14042}
   vertical: 0
-  controlID: 85
+  controlID: 197
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 18
+  controlID: 62
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 1080, y: 540, z: 0}
     speed: 2
-    m_Value: {x: 1079.9999, y: 539.99994, z: 0}
+    m_Value: {x: 1080, y: 540, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -567,7 +567,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 1207.4767
     speed: 2
-    m_Value: 1207.4766
+    m_Value: 1207.4767
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -709,9 +709,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6ef5ffff
-      m_LastClickedID: -2706
-      m_ExpandedIDs: 58f5ffff5efbffff063800003a3800004438000084380000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 5efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -773,20 +773,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/04.FightLogic/Configs
+    - Assets/Resources/UIPrefab
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/04.FightLogic/Configs
+  - Assets/Resources/UIPrefab
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\github\UnityMobaDemo\Client
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: 22430000
-    m_LastClickedID: 17186
+    m_SelectedIDs: b2420000
+    m_LastClickedID: 17074
     m_ExpandedIDs: 00000000b0420000b2420000b4420000b6420000b8420000ba420000bc420000be420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

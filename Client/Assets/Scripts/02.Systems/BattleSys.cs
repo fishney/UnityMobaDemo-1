@@ -161,5 +161,9 @@ public class BattleSys : SystemBase
         return true;
     }
 
+    public void SendSkillKey(int skillId,Vector3 vec)
+    {
+        // TODO 发送技能释放指令
+    }
     #endregion
 }

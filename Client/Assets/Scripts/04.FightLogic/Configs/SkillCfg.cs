@@ -7,5 +7,6 @@ public class SkillCfg
     public string iconName;
     /// 施法动画
     public string aniName;
-
+    /// 是否为普通攻击
+    public bool isNormalAttack;
 }
