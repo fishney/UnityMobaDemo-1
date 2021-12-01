@@ -13,7 +13,6 @@ using UnityEngine;
 
 /// <summary>
 /// 技能释放显示、旁白
-/// 
 /// </summary>
 public class HeroView : MainViewUnit
 {

@@ -19,6 +19,8 @@ using UnityEngine;
 /// </summary>
 public abstract class MainViewUnit : ViewUnit
 {
+    public Transform skillRange;
+    
     public float fade;
 
     public Animation ani;
@@ -69,6 +71,18 @@ public abstract class MainViewUnit : ViewUnit
                 this.Log("ani is null");
             }
             ani.CrossFade(aniName,fade);
+        }
+    }
+
+    public void SetAtkSkillRange(bool state, float range = 2.5f)
+    {
+        if (skillRange != null)
+        {
+            // 加上角色本身的半径长度
+            range += mainLogicUnit.ud.unitCfg.colliCfg.mRadius.RawFloat;
+            // 调整技能提示框的缩放。为什么/2.5f？因为技能提示框的素材大概占用2.5格单位。
+            skillRange.localScale = new Vector3(range / 2.5f, range / 2.5f, 1);
+            skillRange.gameObject.SetActive(state);
         }
     }
 }

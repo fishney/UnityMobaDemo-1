@@ -14,6 +14,8 @@ public class SkillItem : WindowBase
     public Image imgForbid;
     public Transform EffectRoot;
 
+    private HeroView viewHero;
+
     private int skillIndex;
     private SkillCfg skillCfg;
     private float pointDis;
@@ -24,6 +26,8 @@ public class SkillItem : WindowBase
         SetActive(EffectRoot,false);
         InitWindow();
 
+        viewHero = BattleSys.Instance.GetSelfHero().mainViewUnit as HeroView;
+
         this.skillIndex = skillIndex;
         this.skillCfg = skillCfg;
 
@@ -31,20 +35,39 @@ public class SkillItem : WindowBase
         
         if (skillCfg.isNormalAttack == false)
         {
+            SetSprite(skillIcon,"ResImages/PlayWnd/" + skillCfg.iconName);
+            SetActive(imgCd,false);
+            SetActive(txtCD,false);
             
+            OnClickDown(skillIcon.gameObject, (evt, args) =>
+            {
+                startPos = evt.position;
+                // 显示技能托盘与拖点
+                SetActive(imgCycle,true);
+                SetActive(imgPoint,true);
+                ShowSkillAtkRange(true);
+                if (skillCfg.releaseMode == ReleaseModeEnum.Position)
+                {
+                    // 通知场景中显示skill guide
+                }
+                else if (skillCfg.releaseMode == ReleaseModeEnum.Direction)
+                {
+                    // TODO
+                }
+            });
         }
         else
         {
             // 普攻
             OnClickDown(skillIcon.gameObject, (evt, args) =>
             {
-                // TODO show Range
+                ShowSkillAtkRange(true);
                 ClickSkillItem();
             });
             
             OnClickUp(skillIcon.gameObject, (evt, args) =>
             {
-                // TODO disable Range
+                ShowSkillAtkRange(false);
                 ShowEffect();
             });
         }
@@ -69,6 +92,14 @@ public class SkillItem : WindowBase
     {
         yield return new WaitForSeconds(0.5f);
         SetActive(EffectRoot,false);
+    }
+
+    private void ShowSkillAtkRange(bool state)
+    {
+        if (skillCfg.targetCfg != null)
+        {
+            viewHero.SetAtkSkillRange(state,skillCfg.targetCfg.selectRange);
+        }
     }
 
     public void ClickSkillItem()

@@ -133,6 +133,11 @@ public class BattleSys : SystemBase
         }
     }
 
+    public MainLogicUnit GetSelfHero()
+    {
+        return fightMgr.GetSelfHero(GameRoot.SelfPosIndex);
+    }
+
     #region api func
 
     /// 发送移动帧操作到服务器
@@ -165,5 +170,6 @@ public class BattleSys : SystemBase
     {
         // TODO 发送技能释放指令
     }
+    
     #endregion
 }

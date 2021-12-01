@@ -586,6 +586,7 @@ MonoBehaviour:
   viewDirAccer: 10
   AngleMultiplier: 8
   RotationRoot: {fileID: 7238942558732667199}
+  skillRange: {fileID: 4117883138375203420}
   fade: 0.25
   ani: {fileID: 7238942558722231479}
 --- !u!1001 &7238942558732276695

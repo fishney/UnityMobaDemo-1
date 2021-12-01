@@ -8,25 +8,25 @@ public class ResSkillConfigs {
         skillId = 1010,
         iconName = null,
         aniName = "atk",
-        // releaseMode = ReleaseModeEnum.None,
-        // //最近的敌方目标
-        // targetCfg = new TargetCfg {
-        //     targetTeam = TargetTeamEnum.Enemy,
-        //     selectRule = SelectRuleEnum.TargetClosestSingle,
-        //     targetTypeArr = new UnitTypeEnum[] {
-        //         UnitTypeEnum.Hero,
-        //         UnitTypeEnum.Soldier,
-        //         UnitTypeEnum.Tower
-        //     },
-        //     selectRange = 2f,
-        //     searchDis = 10f,
-        // },
-        //
-        // cdTime = 0,
-        // spellTime = 800,
-        // isNormalAttack = true,
-        // skillTime = 1400,
-        // damage = 45
+        releaseMode = ReleaseModeEnum.None,
+        // 目标为最近的敌方目标
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestSingle,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+                UnitTypeEnum.Tower
+            },
+            selectRange = 2f,
+            searchDis = 10f,
+        },
+        
+        cdTime = 0,
+        spellTime = 800,
+        isNormalAttack = true,
+        skillTime = 1400,
+        damage = 45
     };
 
     /// <summary>
@@ -40,13 +40,13 @@ public class ResSkillConfigs {
         skillId = 1011,
         iconName = "arthur_sk1",
         aniName = null,
-        // releaseMode = ReleaseModeEnum.Click,
-        // targetCfg = null,
-        // cdTime = 5000,
-        // spellTime = 0,
-        // isNormalAttack = false,
-        // skillTime = 0,
-        // damage = 0
+        releaseMode = ReleaseModeEnum.Click,
+        targetCfg = null,
+        cdTime = 5000,
+        spellTime = 0,
+        isNormalAttack = false,
+        skillTime = 0,
+        damage = 0
     };
     /// <summary>
     /// Arthur技能2:回旋打击
@@ -56,13 +56,13 @@ public class ResSkillConfigs {
         skillId = 1012,
         iconName = "arthur_sk2",
         aniName = null,
-        // releaseMode = ReleaseModeEnum.Click,
-        // targetCfg = null,
-        // spellTime = 0,
-        // cdTime = 5000,
-        // isNormalAttack = false,
-        // skillTime = 0,
-        // damage = 0
+        releaseMode = ReleaseModeEnum.Click,
+        targetCfg = null,
+        spellTime = 0,
+        cdTime = 5000,
+        isNormalAttack = false,
+        skillTime = 0,
+        damage = 0
     };
     /// <summary>
     /// Arthur技能3：圣剑裁决
@@ -73,21 +73,21 @@ public class ResSkillConfigs {
         skillId = 1013,
         iconName = "arthur_sk3",
         aniName = "sk3",
-        // releaseMode = ReleaseModeEnum.Click,
-        // targetCfg = new TargetCfg {
-        //     targetTeam = TargetTeamEnum.Enemy,
-        //     selectRule = SelectRuleEnum.TargetClosestSingle,
-        //     targetTypeArr = new UnitTypeEnum[] {
-        //         UnitTypeEnum.Hero
-        //     },
-        //     selectRange = 4f,
-        //     searchDis = 10f,
-        // },
-        // cdTime = 10000,
-        // spellTime = 100,
-        // isNormalAttack = false,
-        // skillTime = 0,
-        // damage = 0
+        releaseMode = ReleaseModeEnum.Click,
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestSingle,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero
+            },
+            selectRange = 4f,
+            searchDis = 10f,
+        },
+        cdTime = 10000,
+        spellTime = 100,
+        isNormalAttack = false,
+        skillTime = 0,
+        damage = 0
     };
     #endregion
 
@@ -99,24 +99,24 @@ public class ResSkillConfigs {
         skillId = 1020,
         iconName = null,
         aniName = "atk",
-        // releaseMode = ReleaseModeEnum.None,
-        // //最近的敌方目标
-        // targetCfg = new TargetCfg {
-        //     targetTeam = TargetTeamEnum.Enemy,
-        //     selectRule = SelectRuleEnum.TargetClosestSingle,
-        //     targetTypeArr = new UnitTypeEnum[] {
-        //         UnitTypeEnum.Hero,
-        //         UnitTypeEnum.Tower,
-        //         UnitTypeEnum.Soldier,
-        //     },
-        //     selectRange = 5f,
-        //     searchDis = 15f,
-        // },
-        // cdTime = 0,
-        // spellTime = 550,//施法时间（技能前摇）
-        // isNormalAttack = true,
-        // skillTime = 1400,
-        // damage = 50,
+        releaseMode = ReleaseModeEnum.None,
+        //最近的敌方目标
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestSingle,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Tower,
+                UnitTypeEnum.Soldier,
+            },
+            selectRange = 5f,
+            searchDis = 15f,
+        },
+        cdTime = 0,
+        spellTime = 550,//施法时间（技能前摇）
+        isNormalAttack = true,
+        skillTime = 1400,
+        damage = 50,
     };
     /// <summary>
     /// Houyi1技能：多重箭矢
@@ -126,13 +126,13 @@ public class ResSkillConfigs {
         skillId = 1021,
         iconName = "houyi_sk1",
         aniName = null,
-        // releaseMode = ReleaseModeEnum.Click,
-        // targetCfg = null,
-        // cdTime = 5000,//ms
-        // spellTime = 0,
-        // isNormalAttack = false,
-        // skillTime = 0,
-        // damage = 0,
+        releaseMode = ReleaseModeEnum.Click,
+        targetCfg = null,
+        cdTime = 5000,//ms
+        spellTime = 0,
+        isNormalAttack = false,
+        skillTime = 0,
+        damage = 0,
     };
     /// <summary>
     /// Houyi2技能：落日余晖
@@ -143,17 +143,17 @@ public class ResSkillConfigs {
         skillId = 1022,
         iconName = "houyi_sk2",
         aniName = "sk2",
-        // isNormalAttack = false,
-        // releaseMode = ReleaseModeEnum.Postion,
-        // targetCfg = new TargetCfg {
-        //     targetTeam = TargetTeamEnum.Dynamic,//动态目标
-        //     selectRange = 6,//动态施法范围，纯自身buff技能这个数值为0
-        // },
-        //
-        // cdTime = 5000,
-        // spellTime = 630,//施法时间（技能前摇）
-        // skillTime = 1200,
-        // damage = 0,
+        isNormalAttack = false,
+        releaseMode = ReleaseModeEnum.Position,
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Dynamic,//动态目标
+            selectRange = 6,//动态施法范围，纯自身buff技能这个数值为0
+        },
+        
+        cdTime = 5000,
+        spellTime = 630,//施法时间（技能前摇）
+        skillTime = 1200,
+        damage = 0,
     };
     /// <summary>
     /// Houyi3技能：灼日之矢
@@ -164,14 +164,14 @@ public class ResSkillConfigs {
         skillId = 1023,
         iconName = "houyi_sk3",
         aniName = "sk3",
-        // releaseMode = ReleaseModeEnum.Direction,
-        // targetCfg = null,
-        // cdTime = 8000,
-        // spellTime = 230,//施法时间（技能前摇）
-        // isNormalAttack = false,
-        // skillTime = 800,
-        // damage = 0,
-        // buffIDArr = new int[] { 10230, 10231 },
+        releaseMode = ReleaseModeEnum.Direction,
+        targetCfg = null,
+        cdTime = 8000,
+        spellTime = 230,//施法时间（技能前摇）
+        isNormalAttack = false,
+        skillTime = 800,
+        damage = 0,
+        buffIdArr = new int[] { 10230, 10231 },
     };
     #endregion
 }

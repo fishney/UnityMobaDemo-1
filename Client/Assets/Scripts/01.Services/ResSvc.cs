@@ -180,6 +180,16 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                 return ResSkillConfigs.sk_1012;
             case 1013:
                 return ResSkillConfigs.sk_1013;
+            
+            case 1020:
+                return ResSkillConfigs.sk_1020;
+            case 1021:
+                return ResSkillConfigs.sk_1021;
+            case 1022:
+                return ResSkillConfigs.sk_1022;
+            case 1023:
+                return ResSkillConfigs.sk_1023;
+            
             default:
                 this.Error("Get SkillCfg Failed,Id: " + skillId);
                 return null;

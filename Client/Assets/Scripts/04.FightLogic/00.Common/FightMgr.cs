@@ -179,4 +179,9 @@ public class FightMgr : MonoBehaviour
             hero.InputKey(key);
         }
     }
+
+    public MainLogicUnit GetSelfHero(int posIndex)
+    {
+        return heroList[posIndex];
+    }
 }

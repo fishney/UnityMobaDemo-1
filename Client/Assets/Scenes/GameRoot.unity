@@ -2928,7 +2928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imgCycle: {fileID: 0}
-  skillIcon: {fileID: 0}
+  skillIcon: {fileID: 1631411721}
   imgCd: {fileID: 0}
   txtCD: {fileID: 0}
   imgPoint: {fileID: 0}
@@ -3147,6 +3147,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1631411682}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1631411721 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1337883126727080221, guid: a6904fc30642caf41829d7dc95fb5aa9, type: 3}
+  m_PrefabInstance: {fileID: 1631411682}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631411690}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
