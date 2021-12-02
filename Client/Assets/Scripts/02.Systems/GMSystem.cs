@@ -54,7 +54,7 @@ public class GMSystem : SystemBase
                     new BattleHeroData() {heroId = 101, userName = "AAA"},
                     new BattleHeroData() {heroId = 102, userName = "BBB"},
                 },
-                posIndex = 0
+                posIndex = 1
             }
         };
         

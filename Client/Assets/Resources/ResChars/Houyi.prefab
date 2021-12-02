@@ -589,6 +589,9 @@ MonoBehaviour:
   skillRange: {fileID: 4117883138375203420}
   fade: 0.25
   ani: {fileID: 7238942558722231479}
+  sk1: {fileID: 0}
+  sk2: {fileID: 7287407273985570658}
+  sk3: {fileID: 8787101760912334512}
 --- !u!1001 &7238942558732276695
 PrefabInstance:
   m_ObjectHideFlags: 0

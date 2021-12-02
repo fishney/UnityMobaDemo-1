@@ -2003,6 +2003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTickFight: 0
+  SkillDisMultiplier: 0.03
 --- !u!114 &1496166954
 MonoBehaviour:
   m_ObjectHideFlags: 0

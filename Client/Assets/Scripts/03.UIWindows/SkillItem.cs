@@ -1,5 +1,6 @@
 
 using System.Collections;
+using HOKProtocol;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,7 @@ public class SkillItem : WindowBase
 
     private int skillIndex;
     private SkillCfg skillCfg;
+    /// 根据宽高比算出的最远技能点拖拽距离
     private float pointDis;
     private Vector2 startPos = Vector2.zero;
     
@@ -49,11 +51,62 @@ public class SkillItem : WindowBase
                 if (skillCfg.releaseMode == ReleaseModeEnum.Position)
                 {
                     // 通知场景中显示skill guide
+                    viewHero.SetSkillGuide(skillIndex,true,ReleaseModeEnum.Position,Vector3.zero);
                 }
                 else if (skillCfg.releaseMode == ReleaseModeEnum.Direction)
                 {
-                    // TODO
+                    viewHero.SetSkillGuide(skillIndex,true,ReleaseModeEnum.Direction,Vector3.zero);
                 }
+            });
+            
+            OnDrag(skillIcon.gameObject, (evt, args) =>
+            {
+                #region UI映射
+                
+                Vector2 dir = evt.position - startPos;
+                float len = dir.magnitude;
+                if (len > pointDis)
+                {
+                    // 拖拽距离
+                    Vector2 clampDir = Vector2.ClampMagnitude(dir, pointDis);
+                    imgPoint.transform.position = startPos + clampDir;
+                }
+                else
+                {
+                    imgPoint.transform.position = evt.position;
+                }
+                
+                #endregion
+
+                #region 模型映射
+
+                if (skillCfg.releaseMode == ReleaseModeEnum.Position)
+                {
+                    if (dir == Vector2.zero)
+                    {
+                        return;
+                    }
+                    // 从UI映射到地图
+                    dir = BattleSys.Instance.SkillDisMultiplier * dir;
+                    Vector2 clampDir = Vector2.ClampMagnitude(dir, skillCfg.targetCfg.selectRange);
+                    Vector3 clampDirVector3 = new Vector3(clampDir.x, 0, clampDir.y);
+                    clampDirVector3 = Quaternion.Euler(0, 45, 0) * clampDirVector3;// 这里的45度是相机偏移的45度
+                    viewHero.SetSkillGuide(skillIndex,true,ReleaseModeEnum.Position,clampDirVector3);
+                }
+                else if (skillCfg.releaseMode == ReleaseModeEnum.Direction)
+                {
+                    Vector3 dirVector3 = new Vector3(dir.x, 0, dir.y);
+                    dirVector3 = Quaternion.Euler(0, 45, 0) * dirVector3;// 这里的45度是相机偏移的45度
+                    viewHero.SetSkillGuide(skillIndex,true,ReleaseModeEnum.Direction,dirVector3.normalized);
+                }
+                else
+                {
+                    this.Warn(skillCfg.releaseMode.ToString() + " 没有实现！");
+                }
+
+                #endregion
+                
+                
             });
         }
         else

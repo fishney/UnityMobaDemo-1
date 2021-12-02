@@ -26,6 +26,9 @@ public class BattleSys : SystemBase
     private AudioSource battleAudio;
     
     private int _keyId = 0;
+
+    /// UI映射模型Position用倍乘器
+    public float SkillDisMultiplier;
     
     /// 自增 移动逻辑帧Id
     public int KeyId

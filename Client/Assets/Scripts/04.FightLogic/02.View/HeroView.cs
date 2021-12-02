@@ -16,6 +16,10 @@ using UnityEngine;
 /// </summary>
 public class HeroView : MainViewUnit
 {
+    public Transform sk1;
+    public Transform sk2;
+    public Transform sk3;
+    
     private Hero hero;
 
     public override void Init(LogicUnit logicUnit)
@@ -23,6 +27,13 @@ public class HeroView : MainViewUnit
         base.Init(logicUnit);
         
         hero = logicUnit as Hero;
+        
+        skillRange.gameObject.SetActive(false);
+        if (sk1 != null) sk1.gameObject.SetActive(false);
+        if (sk2 != null) sk2.gameObject.SetActive(false);
+        if (sk3 != null) sk3.gameObject.SetActive(false);
+        
+        
     }
     
     protected override Vector3 GetUnitViewDir()
@@ -32,8 +43,62 @@ public class HeroView : MainViewUnit
         return hero.InputDir.ConvertViewVector3();
     }
 
-    // public override void PlayAni(string aniName)
-    // {
-    //     
-    // }
+    public void DisableSkillGuide(int skillIndex)
+    {
+        switch (skillIndex)
+        {
+            case 1:
+                sk1.gameObject.SetActive(false);
+                break;
+            case 2:
+                sk2.gameObject.SetActive(false);
+                break;
+            case 3:
+                sk3.gameObject.SetActive(false);
+                break;
+        }
+    }
+    
+    
+    public void SetSkillGuide(int skillIndex,bool state,ReleaseModeEnum mode,Vector3 vector)
+    {
+        switch (skillIndex)
+        {
+            case 1:
+                sk1.gameObject.SetActive(state);
+                if (state)
+                {
+                    UpdateSkillGuide(sk1,mode,vector);
+                }
+                break;
+            case 2:
+                sk2.gameObject.SetActive(state);
+                if (state)
+                {
+                    UpdateSkillGuide(sk2,mode,vector);
+                }
+                break;
+            case 3:
+                sk3.gameObject.SetActive(state);
+                if (state)
+                {
+                    UpdateSkillGuide(sk3,mode,vector);
+                }
+                break;
+        }
+    }
+
+    void UpdateSkillGuide(Transform sk,ReleaseModeEnum mode,Vector3 vector)
+    {
+        if (mode == ReleaseModeEnum.Position)
+        {
+            sk.localPosition = vector;
+        }
+        else if (mode == ReleaseModeEnum.Direction)
+        {
+            // 计算指向与正向向量0,1的夹角
+            float angle = Vector2.SignedAngle(new Vector2(vector.x,vector.z),new Vector2(0,1));
+            sk.localEulerAngles = new Vector3(0, angle,0);
+        }
+    }
 }
