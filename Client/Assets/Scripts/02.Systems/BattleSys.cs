@@ -172,6 +172,26 @@ public class BattleSys : SystemBase
     public void SendSkillKey(int skillId,Vector3 vec)
     {
         // TODO 发送技能释放指令
+        GameMsg netSKillMsg = new GameMsg()
+        {
+            cmd = CMD.SendOpKey,
+            sendOpKey = new SendOpKey()
+            {
+                roomId = GameRoot.ActiveRoomId,
+                opKey = new OpKey()
+                {
+                    opIndex = GameRoot.SelfPosIndex,
+                    keyType = KeyType.Skill,
+                    skillKey = new SkillKey()
+                    {
+                        x_val = ((PEInt)vec.x).ScaledValue,
+                        z_val = ((PEInt)vec.z).ScaledValue,
+                        skillId = skillId,
+                    }
+                }
+            }
+        };
+        netSvc.SendMsg(netSKillMsg);
     }
     
     #endregion

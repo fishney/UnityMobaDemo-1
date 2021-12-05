@@ -69,7 +69,7 @@ public abstract partial class MainLogicUnit : LogicUnit
         switch (key.keyType)
         {
             case KeyType.Skill:
-                
+                InputSkillKey(key.skillKey);
                 break;
             case KeyType.Move:
                 // TODO 需要学习理解
