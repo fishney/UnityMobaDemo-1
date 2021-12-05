@@ -104,10 +104,69 @@ public class SkillItem : WindowBase
                     this.Warn(skillCfg.releaseMode.ToString() + " 没有实现！");
                 }
 
+                // 显示技能取消
+                if (len >= ClientConfig.SkillCancelDis)
+                {
+                    SetActive(GameRootResources.Instance().playWindow.imgCancelSkill);
+                }
+                else
+                {
+                    SetActive(GameRootResources.Instance().playWindow.imgCancelSkill,false);
+                }
                 #endregion
-                
-                
             });
+            
+            OnClickUp(skillIcon.gameObject, (evt, args) =>
+            {
+                Vector2 dir = evt.position = startPos;
+                imgPoint.transform.position = startPos;
+                SetActive(imgCycle,false);
+                SetActive(imgPoint,false);
+                
+                SetActive(GameRootResources.Instance().playWindow.imgCancelSkill,false);
+                ShowSkillAtkRange(false);
+
+                if (dir.magnitude >= ClientConfig.SkillCancelDis)
+                {
+                    viewHero.DisableSkillGuide(skillIndex);
+                    return;
+                }
+
+                if (skillCfg.releaseMode == ReleaseModeEnum.Click)
+                {
+                    // 直接释放技能
+                    viewHero.DisableSkillGuide(skillIndex);
+                    ClickSkillItem();
+                }
+                else if (skillCfg.releaseMode == ReleaseModeEnum.Position)
+                {
+                    viewHero.DisableSkillGuide(skillIndex);
+                    dir = BattleSys.Instance.SkillDisMultiplier * dir;
+                    Vector2 clampDir = Vector2.ClampMagnitude(dir, skillCfg.targetCfg.selectRange);
+                    Vector3 clampDirVector3 = new Vector3(clampDir.x, 0, clampDir.y);
+                    clampDirVector3 = Quaternion.Euler(0, 45, 0) * clampDirVector3;// 这里的45度是相机偏移的45度
+                    ClickSkillItem(clampDirVector3);
+                }
+                else if (skillCfg.releaseMode == ReleaseModeEnum.Direction)
+                {
+                    viewHero.DisableSkillGuide(skillIndex);
+                    if (dir == Vector2.zero)
+                    {
+                        return;
+                    }
+                    
+                    Vector3 dirVector3 = new Vector3(dir.x, 0, dir.y);
+                    dirVector3 = Quaternion.Euler(0, 45, 0) * dirVector3;// 这里的45度是相机偏移的45度
+                    ClickSkillItem(dirVector3);
+                }
+                else
+                {
+                    this.Warn("Skill release mode not exist.");
+                }
+                
+                ShowEffect();
+            });
+            
         }
         else
         {
