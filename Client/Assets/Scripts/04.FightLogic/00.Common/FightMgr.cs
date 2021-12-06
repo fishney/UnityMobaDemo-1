@@ -85,6 +85,8 @@ public class FightMgr : MonoBehaviour
     void InitHero(List<BattleHeroData> battleHeroList,MapCfg mapCfg)
     {
         int sep = battleHeroList.Count / 2;
+        var blueTeamHero = new Hero[sep];
+        var redTeamHero = new Hero[sep];
         for (int i = 0; i < battleHeroList.Count; i++)
         {
             HeroData hd = new HeroData()
@@ -100,16 +102,23 @@ public class FightMgr : MonoBehaviour
             {
                 hd.teamEnum = TeamEnum.Blue;
                 hd.bornPos = mapCfg.blueBorn;
+                hero = new Hero(hd);
+                blueTeamHero[i] = hero;
             }
             else
             {
                 hd.teamEnum = TeamEnum.Red;
                 hd.bornPos = mapCfg.redBorn;
+                hero = new Hero(hd);
+                redTeamHero[i] = hero;
             }
-            hero = new Hero(hd);
+            
             hero.LogicInit();
             heroList.Add(hero);
         }
+
+        CalcRule.blueTeamHero = blueTeamHero;
+        CalcRule.redTeamHero = redTeamHero;
     }
 
   

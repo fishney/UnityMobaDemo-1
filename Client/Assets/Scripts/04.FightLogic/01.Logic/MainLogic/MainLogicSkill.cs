@@ -56,4 +56,13 @@ public partial class MainLogicUnit
         }
         this.Error("skillId "+key.skillId+" is not exist.");
     }
+
+    #region API Func
+
+    public Skill GetNormalSkill()
+    {
+        return skillArr[0];
+    }
+
+    #endregion
 }

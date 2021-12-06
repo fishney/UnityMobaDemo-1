@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\MainLogicUnit.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\02.View\HeroView.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\LogicUnit.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SKill\Skill.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\LoginWindow.cs" />
      <Compile Include="Assets\MyLibrary\SingletonLibrary\Scripts\Singleton.cs" />
      <Compile Include="Assets\Scripts\02.Systems\BattleSys.cs" />
@@ -91,7 +92,9 @@
      <Compile Include="Assets\Scripts\01.Services\NetSvc.cs" />
      <Compile Include="Assets\Scripts\00.Common\GameRootResources.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\MainLogicMove.cs" />
-     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SKill\Skill.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\Tower.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\Soldier.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SKill\CalcRule.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
