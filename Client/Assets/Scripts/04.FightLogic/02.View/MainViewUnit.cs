@@ -9,6 +9,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using PEMath;
 using UnityEngine;
 
 /// <summary>
@@ -26,6 +27,7 @@ public abstract class MainViewUnit : ViewUnit
     public Animation ani;
 
     private float aniMoveSpeedBase;
+    private float aniAttackSpeedBase;
 
     private MainLogicUnit mainLogicUnit = null;
     public override void Init(LogicUnit logicUnit)
@@ -35,6 +37,7 @@ public abstract class MainViewUnit : ViewUnit
         
         // 移动速度
         aniMoveSpeedBase = mainLogicUnit.LogicMoveSpeed.RawFloat;
+        aniAttackSpeedBase = mainLogicUnit.AttackSpeedRateCurrent.RawFloat;
     }
 
     protected override void Update()
@@ -57,12 +60,28 @@ public abstract class MainViewUnit : ViewUnit
 
     public override void PlayAni(string aniName)
     {
+        if (aniName == "atk")
+        {
+            // 随机普攻动画
+            aniName += Random.Range(1, 3);
+        }
+        
         if (aniName.Contains("walk"))
         {
             // 如果有buff让速度提升，就按速率播放：
             float moveRate = mainLogicUnit.LogicMoveSpeed.RawFloat / aniMoveSpeedBase;
             ani[aniName].speed = moveRate;
             ani.CrossFade(aniName,fade / moveRate);
+        }
+        else if (aniName.Contains("atk"))
+        {
+            if (ani.IsPlaying(aniName))
+            {
+                ani.Stop();
+            }
+            float attackRate = mainLogicUnit.AttackSpeedRateCurrent.RawFloat / aniAttackSpeedBase;
+            ani[aniName].speed = attackRate;
+            ani.CrossFade(aniName,fade / attackRate);
         }
         else
         {
@@ -84,5 +103,13 @@ public abstract class MainViewUnit : ViewUnit
             skillRange.localScale = new Vector3(range / 2.5f, range / 2.5f, 1);
             skillRange.gameObject.SetActive(state);
         }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public void UpdateSKillRotation(PEVector3 skillRotation)
+    {
+        viewTargetDir = skillRotation.ConvertViewVector3();
     }
 }

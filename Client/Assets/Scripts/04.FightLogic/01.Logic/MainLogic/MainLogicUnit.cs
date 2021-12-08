@@ -86,6 +86,16 @@ public abstract partial class MainLogicUnit : LogicUnit
         }
         
     }
+
+    public void PlayAudio(string auName,bool loop = false,int delay = 0)
+    {
+        mainViewUnit.PlayAudio(auName,loop,delay);
+    }
+    
+    public void PlayAni(string aniName)
+    {
+        mainViewUnit.PlayAni(aniName);
+    }
 }
 
 public enum UnitStateEnum

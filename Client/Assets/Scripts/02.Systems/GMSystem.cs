@@ -51,8 +51,8 @@ public class GMSystem : SystemBase
                 mapId = 102,
                 heroList = new List<BattleHeroData>()
                 {
-                    new BattleHeroData() {heroId = 101, userName = "AAA"},
-                    new BattleHeroData() {heroId = 102, userName = "BBB"},
+                    new BattleHeroData() {heroId = 102, userName = "AAA"},
+                    new BattleHeroData() {heroId = 101, userName = "BBB"},
                 },
                 posIndex = 1
             }

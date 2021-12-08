@@ -110,7 +110,7 @@ public class FightMgr : MonoBehaviour
                 hd.teamEnum = TeamEnum.Red;
                 hd.bornPos = mapCfg.redBorn;
                 hero = new Hero(hd);
-                redTeamHero[i] = hero;
+                redTeamHero[i-sep] = hero;
             }
             
             hero.LogicInit();

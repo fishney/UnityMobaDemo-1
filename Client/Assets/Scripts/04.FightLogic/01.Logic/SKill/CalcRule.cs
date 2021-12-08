@@ -41,9 +41,10 @@ public static class CalcRule
                 break;
             default:
                 PELog.Warn("selectRule unknown error");
+                break;
         }
-        
-        
+
+        return null;
     }
 
     static MainLogicUnit FindMinDisTarget(MainLogicUnit self,List<MainLogicUnit> targetList, PEInt range)
@@ -80,30 +81,30 @@ public static class CalcRule
         {
             if (cfg.targetTeam == TargetTeamEnum.Friend)
             {
-                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Hero))
+                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Hero) && blueTeamHero?.Length > 0)
                 {
                     targetList.AddRange(blueTeamHero);
                 }
-                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Tower))
+                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Tower) && blueTeamTower?.Length > 0)
                 {
                     targetList.AddRange(blueTeamTower);
                 }
-                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Soldier))
+                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Soldier) && blueTeamSoldier?.Count > 0)
                 {
                     targetList.AddRange(blueTeamSoldier);
                 }
             }
             else if (cfg.targetTeam == TargetTeamEnum.Enemy)
             {
-                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Hero))
+                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Hero) && redTeamHero?.Length > 0)
                 {
                     targetList.AddRange(redTeamHero);
                 }
-                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Tower))
+                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Tower) && redTeamTower?.Length > 0)
                 {
                     targetList.AddRange(redTeamTower);
                 }
-                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Soldier))
+                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Soldier) && redTeamSoldier?.Count > 0)
                 {
                     targetList.AddRange(redTeamSoldier);
                 }
@@ -113,30 +114,30 @@ public static class CalcRule
         {
             if (cfg.targetTeam == TargetTeamEnum.Friend)
             {
-                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Hero))
+                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Hero) && redTeamHero?.Length > 0)
                 {
                     targetList.AddRange(redTeamHero);
                 }
-                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Tower))
+                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Tower) && redTeamTower?.Length > 0)
                 {
                     targetList.AddRange(redTeamTower);
                 }
-                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Soldier))
+                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Soldier) && redTeamSoldier?.Count > 0)
                 {
                     targetList.AddRange(redTeamSoldier);
                 }
             }
             else if (cfg.targetTeam == TargetTeamEnum.Enemy)
             {
-                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Hero))
+                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Hero) && blueTeamHero?.Length > 0)
                 {
                     targetList.AddRange(blueTeamHero);
                 }
-                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Tower))
+                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Tower) && blueTeamTower?.Length > 0)
                 {
                     targetList.AddRange(blueTeamTower);
                 }
-                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Soldier))
+                if (cfg.targetTypeArr.Any(o=> o == UnitTypeEnum.Soldier) && blueTeamSoldier?.Count > 0)
                 {
                     targetList.AddRange(blueTeamSoldier);
                 }
@@ -148,7 +149,7 @@ public static class CalcRule
         }
         
         // 2.过滤死亡单位
-        for (int i = targetList.Count - 1; i >= 0; i--)
+        for (int i = targetList.Count - 1; i >= 0; i--)//TODO --i?
         {
             if (targetList[i].unitState == UnitStateEnum.Dead)
             {

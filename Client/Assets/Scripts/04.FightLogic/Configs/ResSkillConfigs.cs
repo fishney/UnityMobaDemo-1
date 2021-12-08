@@ -21,12 +21,17 @@ public class ResSkillConfigs {
             selectRange = 2f,
             searchDis = 10f,
         },
-        
+        //bulletCfg = null,
         cdTime = 0,
         spellTime = 800,
         isNormalAttack = true,
         skillTime = 1400,
-        damage = 45
+        damage = 45,
+        
+        buffIdArr = null,
+        audio_start = "arthur_ska_rls",
+        audio_work = null,
+        audio_hit = "arthur_ska_hit",
     };
 
     /// <summary>

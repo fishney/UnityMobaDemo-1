@@ -7,6 +7,7 @@
     功能：Unknown
 *****************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -58,5 +59,34 @@ public class AudioSvc : GameRootMonoSingleton<AudioSvc>
         {
             bgAudio.Stop();
         }
+    }
+
+    /// <summary>
+    /// 给某组件添加声音，可以有声音近大远小区分
+    /// </summary>
+    public void PlayEntityAudio(string auName,AudioSource auSource,bool loop = false,int delay = 0)
+    {
+        void PlayAudio()
+        {
+            AudioClip au = ResSvc.Instance().LoadAudio("ResAudio/" + auName, true);
+            auSource.clip = au;
+            auSource.loop = loop;
+            auSource.Play();
+        }
+        
+        if (delay == 0)
+        {
+            PlayAudio();
+        }
+        else
+        {
+            StartCoroutine(DelayPlayAudio(delay * 1.0f / 1000, PlayAudio));
+        }
+    }
+
+    IEnumerator DelayPlayAudio(float sec,Action cb)
+    {
+        yield return new WaitForSeconds(sec);
+        cb?.Invoke();
     }
 }

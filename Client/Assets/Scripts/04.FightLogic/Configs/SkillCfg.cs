@@ -7,8 +7,13 @@ public class SkillCfg
     public string iconName;
     /// 施法动画
     public string aniName;
-    
-    /// TODO 音效
+
+    /// 施法开始音效
+    public string audio_start;
+    /// 施法成功音效
+    public string audio_work;
+    /// 施法命中音效
+    public string audio_hit;
     
     /// CD时间 ms
     public int cdTime;
