@@ -7,6 +7,7 @@
     功能：Unknown
 *****************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using PEMath;
@@ -16,6 +17,15 @@ using PEMath;
 /// </summary>
 public partial class MainLogicUnit
 {
+
+    /// <summary>
+    /// 受到伤害回调
+    /// </summary>
+    public Action OnHurt;
+    /// <summary>
+    /// 死亡时回调
+    /// </summary>
+    public Action<MainLogicUnit> OnDeath;
 
     private PEInt _hp;
     public PEInt Hp
@@ -84,4 +94,26 @@ public partial class MainLogicUnit
         return ud.teamEnum == teamEnum;
     }
 
+    #region API Func
+
+    public void GetDamageBySkill(PEInt damage,Skill skill)
+    {
+        OnHurt?.Invoke();// 比如挂载亚瑟的受击标记buff，受伤有额外伤害。
+        PEInt hurt = damage - Def;
+        if (hurt > 0)
+        {
+            Hp -= hurt;
+            if (Hp <= 0)
+            {
+                Hp = 0;
+                unitState = UnitStateEnum.Dead;
+                InputFakeMoveKey(PEVector3.zero);
+                OnDeath?.Invoke(skill.owner);
+                PlayAni("death");
+                this.Log($"{unitName} hp=0, Died.");
+            }
+        }
+    }
+
+    #endregion
 }

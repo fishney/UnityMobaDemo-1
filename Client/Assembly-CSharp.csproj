@@ -95,6 +95,12 @@
      <Compile Include="Assets\Scripts\00.Common\GameRootResources.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\MainLogicMove.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SKill\CalcRule.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\Configs\BulletCfg.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\HPWindow.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\ItemHP.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\ItemHPSoldier.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\ItemHPHero.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\ItemHPTower.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

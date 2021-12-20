@@ -141,6 +141,12 @@ public class BattleSys : SystemBase
         return fightMgr.GetSelfHero(GameRoot.SelfPosIndex);
     }
 
+    public TeamEnum GetCurrentUserTeam()
+    {
+        int sep = battleHeroList.Count / 2;
+        return GameRoot.SelfPosIndex < sep ? TeamEnum.Blue : TeamEnum.Red;
+    }
+
     #region api func
 
     /// 发送移动帧操作到服务器

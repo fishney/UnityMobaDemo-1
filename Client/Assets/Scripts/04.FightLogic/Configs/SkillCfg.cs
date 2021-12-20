@@ -34,6 +34,8 @@ public class SkillCfg
     public ReleaseModeEnum releaseMode;
     /// 目标选择配置,null为非锁定弹道技能
     public TargetCfg targetCfg;
+    /// 弹道配置，无弹道就为null
+    public BulletCfg bulletCfg;
 
 }
 

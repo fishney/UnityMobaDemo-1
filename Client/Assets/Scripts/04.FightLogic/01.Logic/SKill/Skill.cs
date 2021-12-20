@@ -37,6 +37,43 @@ public class Skill
         this.owner = owner;
     }
 
+    void HitTarget(MainLogicUnit target, object[] args = null)
+    {
+        if (skillCfg.audio_hit != null)
+        {
+            target.PlayAudio(skillCfg.audio_hit);
+        }
+
+        if (skillCfg.damage != 0)
+        {
+            PEInt damage = skillCfg.damage;
+            target.GetDamageBySkill(damage,this);
+        }
+        // 附加buff
+        if (skillCfg.buffIdArr == null)
+        {
+            return;
+        }
+        
+        
+    }
+    
+
+    /// <summary>
+    /// 技能生效
+    /// </summary>
+    void CalcSkillAttack(MainLogicUnit lockTarget)
+    {
+        if (skillCfg.bulletCfg != null)
+        {
+            
+        }
+        else
+        {
+            HitTarget(lockTarget);
+        }
+    }
+
     /// <summary>
     /// 施法前摇
     /// </summary>
@@ -89,6 +126,16 @@ public class Skill
             {
                 PEVector3 spellDir = lockTarget.LogicPos - owner.LogicPos;
                 SkillSpellStart(spellDir);
+
+                if (spellTime == 0)
+                {
+                    // 立即生效
+                    CalcSkillAttack(lockTarget);
+                }
+                else
+                {
+                    // 定时处理
+                }
                 
                 FreeAniCallback = () =>
                 {

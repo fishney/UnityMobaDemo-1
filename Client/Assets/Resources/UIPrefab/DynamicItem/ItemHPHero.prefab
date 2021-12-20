@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 1832708731826116729}
   - component: {fileID: 6465164960032971175}
   - component: {fileID: 1740782520490152022}
+  - component: {fileID: 759532247452478655}
   m_Layer: 5
   m_Name: ItemHPHero
   m_TagString: Untagged
@@ -155,6 +156,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &759532247452478655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824014643555912444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cebfb80bd44c3abf404d654f3ab29c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rect: {fileID: 1832708731826116729}
+  imgPrg: {fileID: 7265988019760851697}
+  iconState: {fileID: 3148682186327598253}
+  imgState: {fileID: 3841409544690388434}
+  txtName: {fileID: 1366336343942577773}
+  hpMarkRoot: {fileID: 5621073779722975427}
+  markCount: 1000
 --- !u!1 &876949370879058247
 GameObject:
   m_ObjectHideFlags: 0
