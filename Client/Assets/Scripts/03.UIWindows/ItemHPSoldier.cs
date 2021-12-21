@@ -10,13 +10,11 @@ public class ItemHPSoldier : ItemHP
         base.InitItem(unit, root, hp);
         SetActive(iconState,false);
 
-        if (isFriend)
-        {
-            SetSprite(imgPrg, "ResImages/PlayWnd/selfteamhpfg");
+        if(isFriend) {
+            SetSprite(imgPrg, @"ResImages/PlayWnd/selfteamhpfg");
         }
-        else
-        {
-            SetSprite(imgPrg, "ResImages/PlayWnd/enemyteamhpfg");
+        else {
+            SetSprite(imgPrg, @"ResImages/PlayWnd/enemyteamhpfg");
         }
     }
 

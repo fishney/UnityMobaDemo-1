@@ -78,6 +78,7 @@ public class BattleSys : SystemBase
     {
         // 初始化UI
         gameRootResources.playWindow.SetWindowState();
+        gameRootResources.hpWindow.SetWindowState();
         
         // 加载角色资源
         

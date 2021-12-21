@@ -331,6 +331,10 @@ MonoBehaviour:
   skillRange: {fileID: 1440414209279517047}
   fade: 0.25
   ani: {fileID: 2990674558116001777}
+  hpRoot: {fileID: 8751474097719979850}
+  sk1: {fileID: 0}
+  sk2: {fileID: 0}
+  sk3: {fileID: 0}
 --- !u!1 &9124188277922223319
 GameObject:
   m_ObjectHideFlags: 0

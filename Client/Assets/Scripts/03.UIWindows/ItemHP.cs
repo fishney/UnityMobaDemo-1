@@ -22,6 +22,8 @@ public abstract class ItemHP : WindowBase
     /// <param name="hp">初始化血量</param>
     public virtual void InitItem(MainLogicUnit unit, Transform root, int hp)
     {
+        base.InitWindow();
+        
         TeamEnum selfTeam = BattleSys.Instance.GetCurrentUserTeam();
         isFriend = unit.IsTeam(selfTeam);
 

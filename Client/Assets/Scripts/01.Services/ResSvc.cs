@@ -325,7 +325,6 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         op.allowSceneActivation = true;
         
         //loadingWindow.SetWindowState(false);
-        
         // 赋值回调函数
         sceneBPMethod = afterAll;
         

@@ -37,7 +37,7 @@ public class GMSystem : SystemBase
     public IEnumerator BattleSimulate()
     {
         SimulateLoadRes();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
         SimulateBattleStart();
     }
 

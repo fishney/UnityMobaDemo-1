@@ -30,6 +30,12 @@ public abstract class MainViewUnit : ViewUnit
     private float aniAttackSpeedBase;
 
     private MainLogicUnit mainLogicUnit = null;
+
+    private HPWindow hpWindow;
+    private PlayWindow playWindow;
+    //血条定位点
+    public Transform hpRoot;
+    
     public override void Init(LogicUnit logicUnit)
     {
         base.Init(logicUnit);
@@ -38,6 +44,12 @@ public abstract class MainViewUnit : ViewUnit
         // 移动速度
         aniMoveSpeedBase = mainLogicUnit.LogicMoveSpeed.RawFloat;
         aniAttackSpeedBase = mainLogicUnit.AttackSpeedRateCurrent.RawFloat;
+        
+        // 血条显示
+        hpWindow = GameRootResources.Instance().hpWindow;
+        hpWindow.AddHPItemInfo(mainLogicUnit,hpRoot,mainLogicUnit.Hp.RawInt);
+        
+        playWindow = GameRootResources.Instance().playWindow;
     }
 
     protected override void Update()
