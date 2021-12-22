@@ -23,7 +23,7 @@ public class ResSkillConfigs {
         },
         bulletCfg = null,
         cdTime = 0,
-        spellTime = 800,
+        spellTime = 0,
         isNormalAttack = true,
         skillTime = 1400,
         damage = 45,

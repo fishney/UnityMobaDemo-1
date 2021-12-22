@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1526840306603009787}
+  - component: {fileID: -5676867944494945871}
   m_Layer: 5
   m_Name: JumpNum
   m_TagString: Untagged
@@ -36,6 +37,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &-5676867944494945871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043777445357203465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ff501b0da942b6a8b1c69acedd68ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rect: {fileID: 1526840306603009787}
+  ani: {fileID: 2116624378}
+  txt: {fileID: 7296475944199685319}
+  MaxFont: 60
+  MinFont: 40
+  MaxFontValue: 50
+  skillDamageColor: {r: 1, g: 0, b: 0, a: 0}
+  buffDamageColor: {r: 1, g: 0, b: 0.9557743, a: 0}
+  cureDamageColor: {r: 0.13039613, g: 1, b: 0, a: 0}
+  slowDamageColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 0}
 --- !u!1 &3405857723594591339
 GameObject:
   m_ObjectHideFlags: 0

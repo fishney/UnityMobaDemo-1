@@ -18,16 +18,30 @@ public class HPWindow : WindowBase
     public int jumpNumCount;// 缓存池数量
 
     private Dictionary<MainLogicUnit, ItemHP> itemDic;
+    private JumpNumPool jumpNumPool;
     
     protected override void InitWindow()
     {
         base.InitWindow();
         itemDic = new Dictionary<MainLogicUnit, ItemHP>();
+        jumpNumPool = new JumpNumPool(jumpNumCount, jumpNumRoot);
     }
     
     protected override void ClearWindow()
     {
         base.ClearWindow();
+
+        for (int i = hpItemRoot.childCount; i >= 0 ; i--)
+        {
+            Destroy(hpItemRoot.GetChild(i));
+        }
+        
+        for (int i = jumpNumRoot.childCount; i >= 0 ; i--)
+        {
+            Destroy(jumpNumRoot.GetChild(i));
+        }
+        
+        itemDic.Clear();
     }
     
     public void AddHPItemInfo(MainLogicUnit unit,Transform trans,int hp)
@@ -78,11 +92,20 @@ public class HPWindow : WindowBase
         }
     }
 
-    public void SetHPVal(MainLogicUnit key, int hp)
+    public void SetHPVal(MainLogicUnit key, int hp, JumpUpdateInfo ji = null)
     {
         if (itemDic.TryGetValue(key,out var item))
         {
             item.UpdateHPPrg(hp);
+        }
+
+        if (ji != null)
+        {
+            JumpNum jn = jumpNumPool.PopOne();
+            if (jn != null)
+            {
+                jn.Show(ji);
+            }
         }
     }
 }

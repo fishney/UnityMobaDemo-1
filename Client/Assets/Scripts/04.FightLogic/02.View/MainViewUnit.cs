@@ -7,10 +7,12 @@
     功能：主要表现控制
 *****************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using PEMath;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 /// <summary>
 /// 攻速、移速的表现速度
@@ -50,6 +52,29 @@ public abstract class MainViewUnit : ViewUnit
         hpWindow.AddHPItemInfo(mainLogicUnit,hpRoot,mainLogicUnit.Hp.RawInt);
         
         playWindow = GameRootResources.Instance().playWindow;
+
+        mainLogicUnit.OnHPChange += UpdateHP;
+    }
+    
+    private void UpdateHP(int hp, JumpUpdateInfo ji)
+    {
+        if (ji != null)
+        {
+            float scaleRate = 1.0f * ClientConfig.ScreenStandardHeight / Screen.height;
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1, 0));
+            ji.pos = scaleRate * screenPos;
+        }
+        hpWindow.SetHPVal(mainLogicUnit,hp,ji);
+    }
+
+    private void OnDestroy()
+    {
+        mainLogicUnit.OnHPChange -= UpdateHP;
+    }
+
+    public virtual void OnDeath(MainLogicUnit unit)
+    {
+        
     }
 
     protected override void Update()
@@ -69,7 +94,7 @@ public abstract class MainViewUnit : ViewUnit
         
         base.Update();
     }
-
+    
     public override void PlayAni(string aniName)
     {
         if (aniName == "atk")

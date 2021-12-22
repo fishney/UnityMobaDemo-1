@@ -17,7 +17,10 @@ using PEMath;
 /// </summary>
 public partial class MainLogicUnit
 {
-
+    /// <summary>
+    /// 血量变化 飘字回调
+    /// </summary>
+    public Action<int, JumpUpdateInfo> OnHPChange;
     /// <summary>
     /// 受到伤害回调
     /// </summary>
@@ -112,6 +115,18 @@ public partial class MainLogicUnit
                 PlayAni("death");
                 this.Log($"{unitName} hp=0, Died.");
             }
+
+            JumpUpdateInfo ji = null;
+            if (IsPlayerSelf() || skill.owner.IsPlayerSelf())
+            {
+                ji = new JumpUpdateInfo()
+                {
+                    jumpVal = hurt.RawInt,
+                    jumpType = JumpTypeEnum.SkillDamage,
+                    jumpAni = JumpAniEnum.LeftCurve,
+                };
+            }
+            OnHPChange?.Invoke(Hp.RawInt, ji);
         }
     }
 

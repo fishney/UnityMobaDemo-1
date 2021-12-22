@@ -34,4 +34,13 @@ public class Hero : MainLogicUnit
         base.LogicUnInit();
         
     }
+
+    #region API Func
+
+    public override bool IsPlayerSelf()
+    {
+        return posIndex == GameRoot.SelfPosIndex;
+    }
+
+    #endregion
 }

@@ -220,7 +220,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                 {
                     mapId = 102,
                     blueBorn = new PEVector3(-27,0,0),
-                    redBorn = new PEVector3(27,0,0),
+                    redBorn = new PEVector3(-27,0,0),
                     bornDelay = 15000,
                     bornInterval = 2000,
                     waveInterval = 50000,

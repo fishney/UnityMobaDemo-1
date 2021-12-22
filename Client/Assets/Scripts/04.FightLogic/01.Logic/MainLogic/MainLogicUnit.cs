@@ -96,6 +96,11 @@ public abstract partial class MainLogicUnit : LogicUnit
     {
         mainViewUnit.PlayAni(aniName);
     }
+
+    public virtual bool IsPlayerSelf()
+    {
+        return false;
+    }
 }
 
 public enum UnitStateEnum
