@@ -22,6 +22,8 @@ public class Skill
     /// </summary>
     public Action FreeAniCallback;
 
+    public Action<Skill> SpellSuccessBp;
+
     public Skill(int skillId,MainLogicUnit owner)
     {
         this.skillId = skillId;
@@ -99,6 +101,44 @@ public class Skill
             // 技能被中断或后摇被移动取消需要调用动画重置
         }
     }
+
+    /// <summary>
+    /// 技能释放完成
+    /// </summary>
+    void SkillSpellAfter()
+    {
+        skillState = SKillState.SpellAfter;
+        if (skillCfg.audio_work != null)
+        {
+            owner.PlayAudio(skillCfg.audio_work);
+        }
+        
+        // TODO 施法成功，消耗相应资源
+        if (owner.IsPlayerSelf() && !skillCfg.isNormalAttack)
+        {
+            // 进入技能cd
+        }
+        
+        // 技能释放成功回调，以供提供事件给buff使用(比如累计3次普攻有特效)
+        SpellSuccessBp?.Invoke(this);
+
+        // 恢复原先玩家输入的方向信息
+        if (skillCfg.aniName != null)
+        {
+            owner.RecoverUIInput();
+        }
+        
+        // 启动定时器，在后摇完成后的时间点，将技能状态重置为null（因此闪现无法重置普攻）
+        if (skillTime > spellTime)
+        {
+            
+        }
+        else
+        {
+            // 技能总时长小于了施法时间，再去用定时器没意义
+            SkillEnd();
+        }
+    }
     
     /// <summary>
     /// 施法后摇动作完成，角色切换到Idle状态
@@ -131,6 +171,9 @@ public class Skill
                 {
                     // 立即生效
                     CalcSkillAttack(lockTarget);
+                    // 附着buff
+                    AttachSkillBuffToCaster();
+                    SkillSpellAfter();
                 }
                 else
                 {
@@ -149,6 +192,26 @@ public class Skill
             }
         }
         // 非目标技能
+    }
+
+    void AttachSkillBuffToCaster()
+    {
+        if (skillCfg.buffIdArr == null)
+        {
+            return;
+        }
+
+        for (int i = 0; i < skillCfg.buffIdArr.Length; i++)
+        {
+            int buffId = skillCfg.buffIdArr[i];
+            if (buffId == 0)
+            {
+                this.Warn("SkillId: "+ skillCfg.skillId +" buffId = 0,Check it.");
+                continue;
+            }
+            
+            // TODO buff
+        }
     }
 }
 

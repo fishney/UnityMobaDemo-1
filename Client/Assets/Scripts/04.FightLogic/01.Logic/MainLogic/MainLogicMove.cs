@@ -95,7 +95,23 @@ public partial class MainLogicUnit
     /// </summary>
     public void InputMoveKey(PEVector3 dir)
     {
-        InputDir = dir;
+        UIInputDir = InputDir = dir;
+    }
+
+    /// <summary>
+    /// 临时存储UI输入方向，便于在技能释放结束后恢复方向输入
+    /// </summary>
+    private PEVector3 UIInputDir;
+    
+    /// <summary>
+    /// 恢复UI输入
+    /// </summary>
+    public void RecoverUIInput()
+    {
+        if (_inputDir != UIInputDir)
+        {
+            _inputDir = UIInputDir;
+        }
     }
 }
 

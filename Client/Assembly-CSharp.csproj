@@ -84,6 +84,7 @@
      <Compile Include="Assets\Scripts\03.UIWindows\SelectWindow.cs" />
      <Compile Include="Assets\Scripts\02.Systems\SystemBase.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\Configs\ResCfgs.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\JumpNum.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\TipsWindow.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\00.Common\MapRoot.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\SkillWindow.cs" />
@@ -101,7 +102,6 @@
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\MainLogicMove.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SKill\CalcRule.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\ItemHP.cs" />
-     <Compile Include="Assets\Scripts\03.UIWindows\JumpNum.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
