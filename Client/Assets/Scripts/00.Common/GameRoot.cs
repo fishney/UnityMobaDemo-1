@@ -38,7 +38,29 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         ClearUIRoot();
         Init();
     }
-    
+
+    private void Update()
+    {
+        if (tempTimerList.Count > 0)
+        {
+            timerList.AddRange(tempTimerList);
+            tempTimerList.Clear();
+        }
+
+        for (int i = timerList.Count - 1; i >= 0; --i)
+        {
+            MonoTimer timer = timerList[i];
+            if (timer.IsActive)
+            {
+                timer.TickTimer(Time.deltaTime * 1000);
+            }
+            else
+            {
+                timerList.RemoveAt(i);
+            }
+        }
+    }
+
     /// <summary>
     /// 初始化所有窗口，隐藏他们，除了显示Tips的DynamicWindow
     /// </summary>
@@ -60,6 +82,9 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
 
     private void Init()
     {
+        tempTimerList = new List<MonoTimer>();
+        timerList = new List<MonoTimer>();
+
         netSvc = GetComponent<NetSvc>();
         netSvc.InitSvc();
         audioSvc = GetComponent<AudioSvc>();
@@ -118,16 +143,19 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
     /// 房间内所有玩家信息
     /// </summary>
     public static List<BattleHeroData> battleHeroList;
-    
-    
-    
-    #endregion
 
-    
+    #endregion
     
     public int GetMaxExp(int lv)
     {
         return (lv+1) * 1000;
+    }
+
+    private List<MonoTimer> tempTimerList;
+    private List<MonoTimer> timerList;
+    public void AddMonoTimer(MonoTimer timer)
+    {
+        tempTimerList.Add(timer);
     }
     
 }

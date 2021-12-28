@@ -185,5 +185,22 @@ public class WindowBase : MonoBehaviour
         listener.args = args;
     }
     #endregion
+
+    #region Timer
+
+    protected MonoTimer CreateMonoTimer(
+        Action<int> cbAction,
+        float intervalTime,
+        int loopCount = 1,
+        Action<bool, float, float> prgAction = null,
+        Action endAction = null,
+        float delayTime = 0)
+    {
+        MonoTimer timer = new MonoTimer(cbAction, intervalTime, loopCount, prgAction, endAction, delayTime);
+        GameRoot.Instance().AddMonoTimer(timer);
+        return timer;
+    }
+
+    #endregion
     
 }
