@@ -137,6 +137,11 @@ public class BattleSys : SystemBase
         }
     }
 
+    public void EnterCDState(int skillId,int cdTime)
+    {
+        gameRootResources.playWindow.EnterCDState(skillId,cdTime);
+    }
+
     public MainLogicUnit GetSelfHero()
     {
         return fightMgr.GetSelfHero(GameRoot.SelfPosIndex);

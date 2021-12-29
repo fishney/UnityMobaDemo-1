@@ -214,6 +214,37 @@ public class SkillItem : WindowBase
         }
     }
 
+    public bool CheckSkillId(int skillId)
+    {
+        return skillCfg.skillId == skillId;
+    }
+
+    public void EnterCDState(int cdTime)
+    {
+        int sec = cdTime / 1000;
+        int ms = cdTime % 1000;
+        CreateMonoTimer(
+            (loopCount) => { SetText(txtCD, sec - loopCount); }, 
+            1000,
+            sec,
+            (isDelay, loopPrg, allPrg) => { imgCd.fillAmount = 1 - allPrg;},
+            () =>
+            {
+                SetActive(imgCd,false);
+                SetActive(txtCD,false);
+                audioSvc.PlayUIAudio("com_cd_ok");
+                ShowEffect();
+                skillIcon.raycastTarget = true;
+            },
+            ms
+        );
+        
+        SetActive(imgCd);
+        SetActive(txtCD);
+        SetText(txtCD,sec);
+        skillIcon.raycastTarget = false;
+    }
+    
     public void ClickSkillItem()
     {
         BattleSys.Instance.SendSkillKey(skillCfg.skillId,Vector3.zero);
@@ -227,6 +258,6 @@ public class SkillItem : WindowBase
     
     public void SetForbidState(bool state)
     {
-        SetActive(imgForbid);
+        SetActive(imgForbid,state);
     }
 }

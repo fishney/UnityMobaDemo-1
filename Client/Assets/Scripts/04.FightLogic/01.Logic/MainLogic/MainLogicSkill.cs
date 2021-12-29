@@ -7,6 +7,7 @@
     功能：Unknown
 *****************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using HOKProtocol;
@@ -18,11 +19,13 @@ using PEMath;
 public partial class MainLogicUnit
 {
     protected Skill[] skillArr;
+    private List<LogicTimer> timerList;
     
     void InitSkill()
     {
         int len = ud.unitCfg.skillArr.Length;
         skillArr = new Skill[len];
+        timerList = new List<LogicTimer>();
         for (int i = 0; i < len; i++)
         {
             skillArr[i] = new Skill(ud.unitCfg.skillArr[i],this);
@@ -31,7 +34,18 @@ public partial class MainLogicUnit
     
     void TickSkill()
     {
-        
+        for (int i = timerList.Count - 1; i >= 0; --i)
+        {
+            LogicTimer timer = timerList[i];
+            if (timer.IsActive)
+            {
+                timer.TickTimer();
+            }
+            else
+            {
+                timerList.RemoveAt(i);
+            }
+        }
     }
     
     void UnInitSkill()
@@ -62,6 +76,16 @@ public partial class MainLogicUnit
     public Skill GetNormalSkill()
     {
         return skillArr[0];
+    }
+
+    #endregion
+
+    #region LogicTimer
+    
+    public void CreateLogicTimer(Action cb,PEInt delayTime,int loopTime = 0)
+    {
+        LogicTimer timer = new LogicTimer(cb, delayTime,loopTime);
+        timerList.Add(timer);
     }
 
     #endregion

@@ -125,5 +125,29 @@ public partial class PlayWindow : WindowBase
             }
         }
     }
+
+    public void EnterCDState(int skillId,int cdTime)
+    {
+        if (skaItem.CheckSkillId(skillId))
+        {
+            skaItem.EnterCDState(cdTime);
+        }
+        else if (sk1Item.CheckSkillId(skillId))
+        {
+            sk1Item.EnterCDState(cdTime);
+        }
+        else if (sk2Item.CheckSkillId(skillId))
+        {
+            sk2Item.EnterCDState(cdTime);
+        }
+        else if (sk3Item.CheckSkillId(skillId))
+        {
+            sk3Item.EnterCDState(cdTime);
+        }
+        else
+        {
+            this.Error("skillId:" + skillId + " is not existed from EnterCDState!");
+        }
+    }
         
 }

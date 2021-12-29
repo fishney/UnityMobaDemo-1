@@ -117,6 +117,7 @@ public class Skill
         if (owner.IsPlayerSelf() && !skillCfg.isNormalAttack)
         {
             // 进入技能cd
+            BattleSys.Instance.EnterCDState(skillId,skillCfg.cdTime);
         }
         
         // 技能释放成功回调，以供提供事件给buff使用(比如累计3次普攻有特效)
@@ -131,7 +132,7 @@ public class Skill
         // 启动定时器，在后摇完成后的时间点，将技能状态重置为null（因此闪现无法重置普攻）
         if (skillTime > spellTime)
         {
-            
+            owner.CreateLogicTimer(SkillEnd,skillTime - spellTime);
         }
         else
         {
@@ -166,18 +167,39 @@ public class Skill
             {
                 PEVector3 spellDir = lockTarget.LogicPos - owner.LogicPos;
                 SkillSpellStart(spellDir);
-
-                if (spellTime == 0)
+                
+                // 立即生效
+                void SkillWork()
                 {
-                    // 立即生效
                     CalcSkillAttack(lockTarget);
                     // 附着buff
                     AttachSkillBuffToCaster();
                     SkillSpellAfter();
                 }
+
+                if (spellTime == 0)
+                {
+                    
+                    SkillWork();
+                }
                 else
                 {
                     // 定时处理
+                    void DelaySkillWork()
+                    {
+                        lockTarget = CalcRule.FindSingleTargetByRule(owner, skillCfg.targetCfg, skillArgs);
+                        if (lockTarget != null)
+                        {
+                            // 如果目标还在范围内
+                            SkillWork();
+                        }
+                        else
+                        {
+                            SkillEnd();
+                        }
+                    }
+                    
+                    owner.CreateLogicTimer(DelaySkillWork,spellTime);
                 }
                 
                 FreeAniCallback = () =>
@@ -192,6 +214,10 @@ public class Skill
             }
         }
         // 非目标技能
+        else
+        {
+            
+        }
     }
 
     void AttachSkillBuffToCaster()
