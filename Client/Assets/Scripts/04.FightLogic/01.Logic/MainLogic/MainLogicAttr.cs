@@ -29,6 +29,10 @@ public partial class MainLogicUnit
     /// 死亡时回调
     /// </summary>
     public Action<MainLogicUnit> OnDeath;
+    /// <summary>
+    /// 被减速时
+    /// </summary>
+    public Action<JumpUpdateInfo> OnSlowDown;
 
     private PEInt _hp;
     public PEInt Hp
@@ -127,6 +131,27 @@ public partial class MainLogicUnit
                 };
             }
             OnHPChange?.Invoke(Hp.RawInt, ji);
+        }
+    }
+
+    /// <summary>
+    /// 人物加速减速
+    /// </summary>
+    /// <param name="value">移速偏移量offset</param>
+    /// <param name="jumpInfo">减速时是否跳字</param>
+    public void ModifyMoveSpeed(PEInt value, Buff buff, bool jumpInfo) { 
+        LogicMoveSpeed += value;
+        
+        if(value < 0 && jumpInfo) {
+            //减速跳字
+            JumpUpdateInfo jui = null;
+            if(IsPlayerSelf()) {
+                jui = new JumpUpdateInfo {
+                    jumpType = JumpTypeEnum.SlowSpeed,
+                    jumpAni = JumpAniEnum.CenterUp
+                };
+            }
+            OnSlowDown?.Invoke(jui);
         }
     }
 

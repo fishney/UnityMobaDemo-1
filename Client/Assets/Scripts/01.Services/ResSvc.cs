@@ -166,7 +166,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
 
     #endregion
 
-    #region 英雄信息
+    #region 技能信息
     
     public SkillCfg GetSkillConfigById(int skillId)
     {
@@ -194,6 +194,57 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                 this.Error("Get SkillCfg Failed,Id: " + skillId);
                 return null;
         }
+    }
+
+    #endregion
+    
+    #region Buff信息
+
+    public Buff CreateBuff(MainLogicUnit source, MainLogicUnit owner, Skill skill, int buffID, object[] args) {
+        BuffCfg cfg = GetBuffConfigById(buffID);
+        switch(cfg.buffType) {
+            case BuffTypeEnum.MoveAttack:
+                return new MoveAttackBuff(source, owner, skill, buffID, args);
+            case BuffTypeEnum.MoveSpeed_Single:
+                return new MoveSpeedBuff_Single(source, owner, skill, buffID, args);
+            case BuffTypeEnum.MoveSpeed_DynamicGroup:
+                return new MoveSpeedBuff_DynamicGroup(source, owner, skill, buffID, args);
+            case BuffTypeEnum.ModifySkill:
+                return new CommonModifySkillBuff(source, owner, skill, buffID, args);
+            case BuffTypeEnum.Silense:
+                return new SilenseBuff_Single(source, owner, skill, buffID, args);
+            case BuffTypeEnum.ArthurMark:
+                return new ArthurMarkBuff(source, owner, skill, buffID, args);
+            case BuffTypeEnum.HPCure:
+                return new HPCureBuff_Single(source, owner, skill, buffID, args);
+            case BuffTypeEnum.None:
+            default:
+                this.Error("Create Buff Failed,BuffID:" + buffID);
+                return null;
+        }
+    }
+    
+    public BuffCfg GetBuffConfigById(int buffId) {
+        switch(buffId) {
+            case 10100:
+                return ResBuffConfigs.buff_10100;
+            case 10110://移速加速
+                return ResBuffConfigs.buff_10110;
+            case 10111:
+                return ResBuffConfigs.buff_10111;
+            case 10140:
+                return ResBuffConfigs.buff_10140;
+            case 10141:
+                return ResBuffConfigs.buff_10141;
+            case 10142:
+                return ResBuffConfigs.buff_10142;
+            case 90000:
+                return ResBuffConfigs.buff_90000;
+            default:
+                break;
+        }
+        this.Error("Get Buff Config Failed,buffId:" + buffId);
+        return null;
     }
 
     #endregion
@@ -331,6 +382,6 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     }
 
     #endregion
-    
-    
+
+ 
 }

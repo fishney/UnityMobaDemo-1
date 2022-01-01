@@ -216,7 +216,29 @@ public class Skill
         // 非目标技能
         else
         {
+            SkillSpellStart(skillArgs);
             
+            if(spellTime == 0) {
+                if(skillCfg.bulletCfg != null) {
+                    DirectionBullet();
+                }
+                AttachSkillBuffToCaster();
+                SkillSpellAfter();
+            }
+            else {
+                owner.CreateLogicTimer(() => {
+                    if(skillCfg.bulletCfg != null) {
+                        DirectionBullet();
+                    }
+                    AttachSkillBuffToCaster();
+                    SkillSpellAfter();
+                }, spellTime);
+            }
+            
+            void DirectionBullet() {
+                //非目标弹道技能
+                //TODO
+            }
         }
     }
 
@@ -236,7 +258,11 @@ public class Skill
                 continue;
             }
             
-            // TODO buff
+            // buff
+            BuffCfg buffCfg = ResSvc.Instance().GetBuffConfigById(buffId);
+            if(buffCfg.attacher == AttachTypeEnum.Caster || buffCfg.attacher == AttachTypeEnum.Indie) {
+                owner.CreateSkillBuff(owner, this, buffId);
+            }
         }
     }
 }

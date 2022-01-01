@@ -20,12 +20,15 @@ public partial class MainLogicUnit
 {
     protected Skill[] skillArr;
     private List<LogicTimer> timerList;
+    private List<Buff> buffList;
     
     void InitSkill()
     {
         int len = ud.unitCfg.skillArr.Length;
         skillArr = new Skill[len];
         timerList = new List<LogicTimer>();
+        buffList = new List<Buff>();
+        
         for (int i = 0; i < len; i++)
         {
             skillArr[i] = new Skill(ud.unitCfg.skillArr[i],this);
@@ -34,6 +37,22 @@ public partial class MainLogicUnit
     
     void TickSkill()
     {
+        // buffList
+        for (int i = buffList.Count - 1; i >= 0; --i)
+        {
+            Buff buff = buffList[i];
+            if (buff.unitState == SubUnitState.None)
+            {
+                buff.LogicUnInit();
+                buffList.RemoveAt(i);
+            }
+            else
+            {
+                buffList[i].LogicTick();
+            }
+        }
+        
+        // timerList
         for (int i = timerList.Count - 1; i >= 0; --i)
         {
             LogicTimer timer = timerList[i];
@@ -69,6 +88,15 @@ public partial class MainLogicUnit
             }
         }
         this.Error("skillId "+key.skillId+" is not exist.");
+    }
+
+    public Buff CreateSkillBuff(MainLogicUnit source, Skill skill, int buffId, object[] args = null)
+    {
+        Buff buff = ResSvc.Instance().CreateBuff(source, this, skill, buffId, args);
+        buff.LogicInit();
+        buffList.Add(buff);
+        
+        return buff;
     }
 
     #region API Func

@@ -50,7 +50,11 @@ public class ResSkillConfigs {
         spellTime = 0,
         isNormalAttack = false,
         skillTime = 0,
-        damage = 0
+        damage = 0,
+        
+        //1.加速buff；2.普攻强化Buff（技能修改）
+        buffIdArr = new int[] { 10110, 10111 },
+        audio_start = "arthur_sk1_rls",
     };
     /// <summary>
     /// Arthur技能2:回旋打击
