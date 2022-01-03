@@ -93,7 +93,7 @@ public class ResBuffConfigs
 
     public static BuffCfg buff_10141 = new ArthurMarkBuffCfg {
         //通用buff属性
-        buffID = 10141,
+        buffId = 10141,
         buffName = "Arthur1技能标记",
         buffType = BuffTypeEnum.ArthurMark,
 
@@ -116,7 +116,7 @@ public class ResBuffConfigs
         attacher = AttachTypeEnum.Target,
         impacter = new TargetCfg {
             targetTeam = TargetTeamEnum.Enemy,
-            selectRule = SelectRuleEnum.TargetClosetMultiple,
+            selectRule = SelectRuleEnum.TargetClosestMulti,
             targetTypeArr = new UnitTypeEnum[] {
                 UnitTypeEnum.Hero
             },

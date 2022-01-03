@@ -43,23 +43,36 @@ public class Skill
 
     void HitTarget(MainLogicUnit target, object[] args = null)
     {
+        //音效表现
         if (skillCfg.audio_hit != null)
         {
             target.PlayAudio(skillCfg.audio_hit);
-        }
-
+        } 
+        
+        //可能全为buff伤害，这里为0
         if (skillCfg.damage != 0)
         {
             PEInt damage = skillCfg.damage;
             target.GetDamageBySkill(damage,this);
         }
-        // 附加buff
+        
+        // 附加buff(To Target or Bullet)
         if (skillCfg.buffIdArr == null)
         {
             return;
         }
         
-        
+        for(int i = 0; i < skillCfg.buffIdArr.Length; i++) {
+            int buffID = skillCfg.buffIdArr[i];
+            if(buffID == 0) {
+                this.Warn($"SkillID:{skillCfg.skillId} exist buffID == 0,check your buffID Configs");
+                continue;
+            }
+            BuffCfg buffCfg = ResSvc.Instance().GetBuffConfigById(buffID);
+            if(buffCfg.attacher == AttachTypeEnum.Target || buffCfg.attacher == AttachTypeEnum.Bullet) {
+                target.CreateSkillBuff(owner, this, buffID, args);
+            }
+        }
     }
     
 
@@ -279,7 +292,7 @@ public class Skill
                 continue;
             }
             
-            // buff
+            // buff(To Caster or Indie)
             BuffCfg buffCfg = ResSvc.Instance().GetBuffConfigById(buffId);
             if(buffCfg.attacher == AttachTypeEnum.Caster || buffCfg.attacher == AttachTypeEnum.Indie) {
                 owner.CreateSkillBuff(owner, this, buffId);

@@ -245,6 +245,41 @@ public partial class MainLogicUnit
         
         OnHPChange?.Invoke(Hp.RawInt,jui);
     }
+    
+    /// <summary>
+    /// GetDamageByBuff
+    /// </summary>
+    /// <param name="calcCB">是否需要再次触发OnHurt</param>
+    public void GetDamageByBuff(PEInt damage, Buff buff, bool calcCB = true) {
+        if(calcCB) {
+            OnHurt?.Invoke();
+        }
+        if(buff.cfg.hitTickAudio != null) {
+            PlayAudio(buff.cfg.hitTickAudio);
+        }
+
+        PEInt hurt = damage - Def;
+        if(hurt > 0) {
+            Hp -= hurt;
+            if(Hp <= 0) {
+                Hp = 0;
+                unitState = UnitStateEnum.Dead;//状态切换
+                InputFakeMoveKey(PEVector3.zero);
+                OnDeath?.Invoke(buff.source);
+                PlayAni("death");
+            }
+
+            JumpUpdateInfo jui = null;
+            if(IsPlayerSelf() || buff.source.IsPlayerSelf() || buff.owner.IsPlayerSelf()) {
+                jui = new JumpUpdateInfo {
+                    jumpVal = hurt.RawInt,
+                    jumpType = JumpTypeEnum.BuffDamage,
+                    jumpAni = JumpAniEnum.RightCurve
+                };
+            }
+            OnHPChange?.Invoke(Hp.RawInt, jui);
+        }
+    }
 
     /// <summary>
     /// 人物加速减速

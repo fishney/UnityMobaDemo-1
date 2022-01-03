@@ -78,8 +78,9 @@ public enum StaticPosTypeEnum {
 /// </summary>
 public enum AttachTypeEnum {
     None,
-    Caster,//给自己，Arthur的1技能加速buff
-    Target,//给目标，Arthur的1技能沉默buff
-    Indie,//区域，Arthur大招(位置固定)产生的持续范围伤害
-    Bullet,//Houyi大招命中(位置动态)目标时产生的范围伤害
+    Caster,//由施术者自己确定：给自己，Arthur的1技能加速buff
+    Indie,//由施术者自己确定：区域，Arthur大招(位置固定)产生的持续范围伤害
+    
+    Target,//由受击者确定：给目标，Arthur的1技能沉默buff
+    Bullet,//由受击者确定：Houyi大招命中(位置动态)目标时产生的范围伤害
 }

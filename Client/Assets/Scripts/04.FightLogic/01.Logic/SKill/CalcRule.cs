@@ -16,6 +16,8 @@ public static class CalcRule
     public static List<Soldier> blueTeamSoldier = new List<Soldier>();
     public static List<Soldier> redTeamSoldier = new List<Soldier>();
 
+    #region 单个目标查找
+
     /// <summary>
     /// 通过规则找到最近的单个目标
     /// </summary>
@@ -46,7 +48,7 @@ public static class CalcRule
 
         return null;
     }
-
+    
     static MainLogicUnit FindMinDisTarget(MainLogicUnit self,List<MainLogicUnit> targetList, PEInt range)
     {
         if (targetList == null || targetList.Count < 1)
@@ -160,5 +162,72 @@ public static class CalcRule
 
         return targetList;
     }
-    
+
+    #endregion
+
+    #region 多个目标查找
+    public static List<MainLogicUnit> FindMulipleTargetByRule(MainLogicUnit self, TargetCfg cfg, PEVector3 pos) {
+        List<MainLogicUnit> searchTeam = GetTargetTeam(self, cfg);
+        List<MainLogicUnit> targetLst = null;
+        switch(cfg.selectRule) {
+            case SelectRuleEnum.TargetClosestMulti:
+                targetLst = FindRangeDisTargetInTeam(self, searchTeam, (PEInt)cfg.selectRange);
+                break;
+            case SelectRuleEnum.PositionClosestMulti:
+                targetLst = FindRangeDisTargetInPos(pos, searchTeam, (PEInt)cfg.selectRange);
+                break;
+            case SelectRuleEnum.Hero:
+                //TODO
+                targetLst = new List<MainLogicUnit>();
+                targetLst.AddRange(searchTeam);
+                break;
+            default:
+                PELog.Warn("select target error,check your target cfg.");
+                break;
+        }
+        return targetLst;
+    }
+
+    /// <summary>
+    /// 指定列表中，离指定目标角色半径范围的所有目标
+    /// </summary>
+    static List<MainLogicUnit> FindRangeDisTargetInTeam(MainLogicUnit self, List<MainLogicUnit> targetTeam, PEInt range) {
+        if(targetTeam == null || range < 0) {
+            return null;
+        }
+
+        List<MainLogicUnit> targetLst = new List<MainLogicUnit>();
+        PEVector3 selfPos = self.LogicPos;
+        for(int i = 0; i < targetTeam.Count; i++) {
+            PEInt sumRaius = targetTeam[i].ud.unitCfg.colliCfg.mRadius + self.ud.unitCfg.colliCfg.mRadius;
+            PEInt sqrLen = (targetTeam[i].LogicPos - selfPos).sqrMagnitude;
+            // 优化了一下，不用模Magnitude而是用平方长度sqrMagnitude，免去一次开根
+            // 可以观察下面的判断条件，其实就是 sqrLen开根 < range + sumRaius
+            if(sqrLen < (range + sumRaius) * (range + sumRaius)) {
+                targetLst.Add(targetTeam[i]);
+            }
+        }
+        return targetLst;
+    }
+    /// <summary>
+    /// 指定列表中，离指定目标点位置半径范围的所有目标
+    /// </summary>
+    static List<MainLogicUnit> FindRangeDisTargetInPos(PEVector3 pos, List<MainLogicUnit> targetTeam, PEInt range) {
+        if(targetTeam == null || range < 0) {
+            return null;
+        }
+
+        List<MainLogicUnit> targetLst = new List<MainLogicUnit>();
+        int count = targetTeam.Count;
+        for(int i = 0; i < count; i++) {
+            PEInt radius = targetTeam[i].ud.unitCfg.colliCfg.mRadius;
+            PEInt sqrLen = (targetTeam[i].LogicPos - pos).sqrMagnitude;
+            if(sqrLen < (range + radius) * (range + radius)) {
+                targetLst.Add(targetTeam[i]);
+            }
+        }
+        return targetLst;
+    }
+
+    #endregion
 }
