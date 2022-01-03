@@ -18,6 +18,11 @@ using PEMath;
 public partial class MainLogicUnit
 {
     /// <summary>
+    /// 状态改变回调
+    /// para:State, isShow
+    /// </summary>
+    public Action<StateEnum, bool> OnStateChange;
+    /// <summary>
     /// 血量变化 飘字回调
     /// </summary>
     public Action<int, JumpUpdateInfo> OnHPChange;
@@ -83,6 +88,82 @@ public partial class MainLogicUnit
         }
     }
 
+    #region 状态改变
+
+    // -------------沉默：沉默时无法施放技能-------------
+    int silenceCount;
+    public int SilenceCount {
+        get {
+            return silenceCount;
+        }
+        set {
+            silenceCount = value;
+            if(IsSilenced()) {
+                // 1.进入沉默状态并触发OnStateChange
+                OnStateChange?.Invoke(StateEnum.Silenced, true);
+            }
+            else {
+                OnStateChange?.Invoke(StateEnum.Silenced, false);
+            }
+        }
+    }
+    
+    bool IsSilenced() {
+        return silenceCount != 0;
+    }
+    
+    // -------------晕眩：无法移动，无法施放技能（包括普攻），可以被水银净化解控(水银未实现)-------------
+    int stunnedCount;
+    public int StunnedCount {
+        get {
+            return stunnedCount;
+        }
+        set {
+            stunnedCount = value;
+            if(IsStunned()) {
+                // 1.立即停止移动
+                InputFakeMoveKey(PEVector3.zero);
+                // 2.进入眩晕状态并触发OnStateChange
+                OnStateChange?.Invoke(StateEnum.Stunned, true);
+            }
+            else {
+                OnStateChange?.Invoke(StateEnum.Stunned, false);
+            }
+        }
+    }
+    bool IsStunned() {
+        return stunnedCount != 0;
+    }
+
+    // -------------击飞：无法移动，无法施放技能（包括普攻）,无法被水银净化解控(水银未实现)-------------
+    int knockupCount;
+    public int KnockupCount {
+        get {
+            return knockupCount;
+        }
+        set {
+            knockupCount = value;
+            if(IsKnockup()) {
+                // 1.立即停止移动
+                InputFakeMoveKey(PEVector3.zero);
+                // 2.进入击飞状态并触发OnStateChange
+                OnStateChange?.Invoke(StateEnum.Knockup, true);
+                // 3.表现上得高度变更
+                LogicPos += new PEVector3(0, (PEInt)0.5F, 0);
+            }
+            else {
+                OnStateChange?.Invoke(StateEnum.Knockup, false);
+                // 表现上得高度变更回来
+                LogicPos += new PEVector3(0, (PEInt)(-0.5F), 0);
+            }
+        }
+    }
+    bool IsKnockup() {
+        return knockupCount != 0;
+    }
+    #endregion
+    
+
 
     void InitProperties()
     {
@@ -134,6 +215,37 @@ public partial class MainLogicUnit
         }
     }
 
+    public void GetCureByBuff(PEInt cure,Buff buff)
+    {
+        if (Hp >= ud.unitCfg.hp)
+        {
+            // 血量溢出
+            return;
+        }
+
+        var beforeCure = Hp;
+        Hp = (Hp + cure) > ud.unitCfg.hp 
+            ? ud.unitCfg.hp 
+            : (Hp + cure);
+        var realCure = Hp - beforeCure;
+
+        JumpUpdateInfo jui = null;
+        // 作用目标是英雄自己
+        // buff来源是英雄自己
+        // buff附着目标是英雄角色自己
+        if (IsPlayerSelf() || buff.source.IsPlayerSelf() || buff.owner.IsPlayerSelf())
+        {
+            jui = new JumpUpdateInfo()
+            {
+                jumpVal = realCure.RawInt,
+                jumpType = JumpTypeEnum.Cure,
+                jumpAni = JumpAniEnum.CenterUp,
+            };
+        }
+        
+        OnHPChange?.Invoke(Hp.RawInt,jui);
+    }
+
     /// <summary>
     /// 人物加速减速
     /// </summary>
@@ -143,7 +255,7 @@ public partial class MainLogicUnit
         LogicMoveSpeed += value;
         
         if(value < 0 && jumpInfo) {
-            //减速跳字
+            // 减速跳字,加速不跳字
             JumpUpdateInfo jui = null;
             if(IsPlayerSelf()) {
                 jui = new JumpUpdateInfo {

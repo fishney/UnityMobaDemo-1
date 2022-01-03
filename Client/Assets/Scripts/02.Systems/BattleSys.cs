@@ -155,9 +155,16 @@ public class BattleSys : SystemBase
 
     #region api func
 
+    /// <summary>
     /// 发送移动帧操作到服务器
+    /// </summary>
     public bool SendMoveKey(PEVector3 logicDir)
     {
+        if (!CanMove())
+        {
+            return false;
+        }
+        
         GameMsg msg = new GameMsg()
         {
             cmd = CMD.SendOpKey,
@@ -183,7 +190,13 @@ public class BattleSys : SystemBase
 
     public void SendSkillKey(int skillId,Vector3 vec)
     {
-        // TODO 发送技能释放指令
+        if (!CanReleaseSkill(skillId))
+        {
+            // 当前技能不能释放!
+            return;
+        }
+        
+        // 发送技能释放指令
         GameMsg netSKillMsg = new GameMsg()
         {
             cmd = CMD.SendOpKey,
@@ -206,5 +219,23 @@ public class BattleSys : SystemBase
         netSvc.SendMsg(netSKillMsg);
     }
     
+    bool CanMove() {
+        return fightMgr.CanMove(GameRoot.SelfPosIndex);
+    }
+    /// <summary>
+    /// 是否禁止本玩家释放当前技能
+    /// </summary>
+    /// <param name="skillID"></param>
+    /// <returns></returns>
+    bool CanReleaseSkill(int skillID) {
+        return fightMgr.CanReleaseSkill(GameRoot.SelfPosIndex, skillID);
+    }
+    
+    /// <summary>
+    /// 是否禁止本玩家释放所有技能
+    /// </summary>
+    public bool IsForbidAllSkill_SelfPlayer() {
+        return fightMgr.IsForbidAllSkill(GameRoot.SelfPosIndex);
+    }
     #endregion
 }

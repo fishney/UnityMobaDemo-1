@@ -97,6 +97,43 @@ public class ResSkillConfigs {
         skillTime = 0,
         damage = 0
     };
+    
+    /// <summary>
+    /// Arthur强化版普攻，用于替换技能
+    /// 3.沉默命中目标1.5秒
+    /// 4.同时标记目标，持续5秒。技能和普攻会对标记目标可额外造成目标最大生命1%的伤害，
+    /// 5.标记附近的友军会增加10%的移速
+    /// </summary>
+    public static SkillCfg sk_1014 = new SkillCfg {
+        skillId = 1010,
+        aniName = "sk1_atk",
+        releaseMode = ReleaseModeEnum.None,
+        //最近的敌方目标
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestSingle,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+                UnitTypeEnum.Tower
+            },
+            selectRange = 2f,
+            searchDis = 10f,
+        },
+        bulletCfg = null,
+        cdTime = 0,
+        spellTime = 800,//施法时间（技能前摇）
+        isNormalAttack = true,
+        skillTime = 1400,
+        damage = 90,
+        //沉默buff
+        buffIdArr = new int[] { 10140, 10141, 10142 },
+
+        //audio
+        audio_start = null,
+        audio_work = null,
+        audio_hit = "arthur_sk1_hit",
+    };
     #endregion
 
     #region Houyi技能

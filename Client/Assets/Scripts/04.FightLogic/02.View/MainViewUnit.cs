@@ -54,6 +54,8 @@ public abstract class MainViewUnit : ViewUnit
         playWindow = GameRootResources.Instance().playWindow;
 
         mainLogicUnit.OnHPChange += UpdateHP;
+        mainLogicUnit.OnStateChange += UpdateState;
+        mainLogicUnit.OnSlowDown += UpdateJui;
     }
     
     private void UpdateHP(int hp, JumpUpdateInfo ji)
@@ -66,6 +68,28 @@ public abstract class MainViewUnit : ViewUnit
         }
         hpWindow.SetHPVal(mainLogicUnit,hp,ji);
     }
+    
+    public void UpdateState(StateEnum state, bool show) {
+        if(state == StateEnum.Knockup
+           || state == StateEnum.Silenced
+           || state == StateEnum.Silenced) {
+            if(mainLogicUnit.IsPlayerSelf() && show) {
+                playWindow.SetAllSkillForbidState();
+            }
+        }
+
+        hpWindow.SetStateInfo(mainLogicUnit, state, show);
+    }
+    
+    public void UpdateJui(JumpUpdateInfo jui) {
+        if(jui != null) {
+            float scaleRate = 1.0f * ClientConfig.ScreenStandardHeight / Screen.height;
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1, 0));
+            jui.pos = screenPos * scaleRate;
+        }
+        hpWindow.SetJumpUpdateInfo(jui);
+    }
+
 
     private void OnDestroy()
     {
@@ -79,7 +103,7 @@ public abstract class MainViewUnit : ViewUnit
 
     protected override void Update()
     {
-        if (mainLogicUnit.isDirChanged)
+        if (mainLogicUnit.isDirChanged && !mainLogicUnit.IsSkillSpelling())
         {
             // 朝向变更
             if (mainLogicUnit.LogicDir.ConvertViewVector3().Equals(Vector3.zero))

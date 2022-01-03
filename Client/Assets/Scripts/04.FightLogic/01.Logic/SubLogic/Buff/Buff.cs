@@ -4,7 +4,7 @@ using HOKProtocol;
 public class Buff : SubLogicUnit
 {
     /// buff附着单位
-    protected MainLogicUnit owner;
+    public MainLogicUnit owner;
     protected int buffId;
     protected object[] args;
     
@@ -17,8 +17,8 @@ public class Buff : SubLogicUnit
     public BuffCfg cfg;
     
     // 群体buff作用目标列表
-    protected List<MainLogicUnit> targetLst;
-    public Buff(MainLogicUnit source, Skill skill,MainLogicUnit owner,int buffId,object[] args = null) : base(source, skill)
+    protected List<MainLogicUnit> targetList;
+    public Buff(MainLogicUnit source,MainLogicUnit owner, Skill skill, int buffId,object[] args = null) : base(source, skill)
     {
         this.owner = owner;
         this.buffId = buffId;
@@ -48,6 +48,7 @@ public class Buff : SubLogicUnit
                 }
                 break;
             case SubUnitState.Tick:
+                // 频率触发型buff需要按照频率来Tick，比如点燃
                 if(cfg.buffInterval > 0) {
                     tickCount += Configs.ServerLogicFrameIntervelMs;
                     if(tickCount >= cfg.buffInterval) {
@@ -55,6 +56,7 @@ public class Buff : SubLogicUnit
                         Tick();
                     }
                 }
+                
                 durationCount += Configs.ServerLogicFrameIntervelMs;
                 if(durationCount >= buffDuration && buffDuration != -1) {
                     unitState = SubUnitState.End;

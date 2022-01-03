@@ -9,7 +9,7 @@ public class MoveSpeedBuff_Single : Buff {
     private PEInt speedOffset;
 
     public MoveSpeedBuff_Single(MainLogicUnit source, MainLogicUnit owner, Skill skill, int buffID, object[] args = null)
-        : base(source, skill, owner, buffID, args) {
+        : base(source, owner,skill, buffID, args) {
     }
 
     public override void LogicInit() {

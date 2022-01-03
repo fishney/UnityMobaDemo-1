@@ -36,6 +36,10 @@ public class UnitCfg
    public ColliderConfig colliCfg;
    
    // 技能Id数组
+   /// <summary>
+   /// 被动技能buff
+   /// </summary>
+   public int[] pasvBuff;
    public int[] skillArr;
 }
 

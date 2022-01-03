@@ -10,6 +10,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using HOKProtocol;
 using PEMath;
 
@@ -33,6 +34,15 @@ public partial class MainLogicUnit
         {
             skillArr[i] = new Skill(ud.unitCfg.skillArr[i],this);
         }
+        
+        // 被动buff
+        int[] pasvBuffArr = ud.unitCfg.pasvBuff;
+        foreach (var pBuff in pasvBuffArr)
+        {
+            CreateSkillBuff(this, null, pBuff);
+        }
+
+        OnDirChange += ClearFreeAniCallBack;
     }
     
     void TickSkill()
@@ -105,7 +115,59 @@ public partial class MainLogicUnit
     {
         return skillArr[0];
     }
+    
+    public Skill GetSkillByID(int skillID)
+    {
+        return skillArr.FirstOrDefault(o=>o.skillId == skillID);
+    }
 
+    /// <summary>
+    /// 是否在施展某技能前摇阶段
+    /// </summary>
+    public bool IsSkillSpelling() {
+        for(int i = 0; i < skillArr.Length; i++) {
+            if(skillArr[i].skillState == SkillState.SpellStart) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    /// <summary>
+    /// 是否某skillID的技能已准备完毕
+    /// </summary>
+    private bool IsSkillReady(int skillID) {
+        for(int i = 0; i < skillArr.Length; i++) {
+            if(skillArr[i].skillId == skillID) {
+                return skillArr[i].skillState == SkillState.None;
+            }
+        }
+        this.Warn("skill id config error.");
+        return false;
+    }
+    
+    /// <summary>
+    /// 是否可以施放技能
+    /// </summary>
+    /// <param name="skillID"></param>
+    /// <returns></returns>
+    public bool CanReleaseSkill(int skillID) {
+        return IsSilenced() == false
+               && IsStunned() == false
+               && IsKnockup() == false
+               && IsSkillSpelling() == false
+               && IsSkillReady(skillID);
+    }
+    
+    /// <summary>
+    /// 是否禁止施放所有技能
+    /// </summary>
+    /// <returns></returns>
+    public bool IsForbidAllSkill() {
+        return IsSilenced()
+               || IsStunned()
+               || IsKnockup();
+    }
     #endregion
 
     #region LogicTimer
@@ -116,5 +178,10 @@ public partial class MainLogicUnit
         timerList.Add(timer);
     }
 
+    public void ClearFreeAniCallBack() {
+        for(int i = 0; i < skillArr.Length; i++) {
+            skillArr[i].FreeAniCallback = null;
+        }
+    }
     #endregion
 }

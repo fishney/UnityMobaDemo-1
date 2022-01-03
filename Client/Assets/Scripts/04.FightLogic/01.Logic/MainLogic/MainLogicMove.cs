@@ -95,7 +95,14 @@ public partial class MainLogicUnit
     /// </summary>
     public void InputMoveKey(PEVector3 dir)
     {
-        UIInputDir = InputDir = dir;
+        UIInputDir = dir;
+        
+        // 如果在技能前摇or被控制，就屏蔽从服务端传来的UI输入
+        if(IsSkillSpelling() == false
+           && IsStunned() == false
+           && IsKnockup() == false) {
+            InputDir = dir;
+        }
     }
 
     /// <summary>
@@ -112,6 +119,18 @@ public partial class MainLogicUnit
         {
             _inputDir = UIInputDir;
         }
+    }
+
+    /// <summary>
+    /// 是否能移动
+    /// 未被眩晕/击飞
+    /// 未在其他技能施法得前摇阶段
+    /// </summary>
+    public bool CanMove()
+    {
+        return IsStunned() == false
+               && IsKnockup() == false
+               && IsSkillSpelling() == false;
     }
 }
 

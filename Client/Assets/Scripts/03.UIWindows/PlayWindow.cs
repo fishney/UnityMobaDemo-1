@@ -59,6 +59,8 @@ public partial class PlayWindow : WindowBase
             InputMoveKey(keyDir);
             lastKeyDir = keyDir;
         }
+
+        UpdateSkillWnd();
     }
 
   

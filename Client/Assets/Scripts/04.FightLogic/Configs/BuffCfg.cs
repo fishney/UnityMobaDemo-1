@@ -16,7 +16,7 @@ public class BuffCfg
     public StaticPosTypeEnum staticPosType;
     
     /// <summary>
-    /// buff作用目标，为null默认影响附着对象
+    /// buff作用目标，如果为null默认影响附着对象
     /// </summary>
     public TargetCfg impacter;
 

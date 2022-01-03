@@ -92,19 +92,28 @@ public class HPWindow : WindowBase
         }
     }
 
-    public void SetHPVal(MainLogicUnit key, int hp, JumpUpdateInfo ji = null)
+    public void SetHPVal(MainLogicUnit key, int hp, JumpUpdateInfo jui = null)
     {
         if (itemDic.TryGetValue(key,out var item))
         {
             item.UpdateHPPrg(hp);
         }
 
-        if (ji != null)
-        {
+        SetJumpUpdateInfo(jui);
+    }
+
+    public void SetStateInfo(MainLogicUnit key,StateEnum state,bool show = true)
+    {
+        if(itemDic.TryGetValue(key, out ItemHP item)) {
+            item.SetStateInfo(state, show);
+        }
+    }
+    
+    public void SetJumpUpdateInfo(JumpUpdateInfo jui) {
+        if(jui != null) {
             JumpNum jn = jumpNumPool.PopOne();
-            if (jn != null)
-            {
-                jn.Show(ji);
+            if(jn != null) {
+                jn.Show(jui);
             }
         }
     }

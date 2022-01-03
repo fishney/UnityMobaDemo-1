@@ -38,6 +38,9 @@ public class HeroView : MainViewUnit
     
     protected override Vector3 GetUnitViewDir()
     {
+        if(hero.IsSkillSpelling()) {
+            return viewTargetDir;
+        }
         // 玩家朝向使用UI输入位置朝向，不使用物理引擎运算修正方向
         // 从而防止特殊情况，比如撞上墙会被物理引擎修正朝向
         return hero.InputDir.ConvertViewVector3();

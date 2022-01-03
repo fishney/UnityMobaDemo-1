@@ -8,7 +8,7 @@ public class Skill
     public SkillCfg skillCfg;
     public PEVector3 skillArgs;
     public MainLogicUnit lockTarget;
-    public SKillState skillState = SKillState.None;
+    public SkillState skillState = SkillState.None;
     
     /// 施法时间
     public PEInt spellTime;
@@ -21,7 +21,9 @@ public class Skill
     /// 回到free动画，被中断技能或者取消后摇会到这个动作
     /// </summary>
     public Action FreeAniCallback;
-
+    /// <summary>
+    /// 释放成功得callback
+    /// </summary>
     public Action<Skill> SpellSuccessBp;
 
     public Skill(int skillId,MainLogicUnit owner)
@@ -82,7 +84,7 @@ public class Skill
     void SkillSpellStart(PEVector3 spellDir)
     {
         // 0.切换技能状态
-        skillState = SKillState.SpellStart;
+        skillState = SkillState.SpellStart;
         // 1.播放音效
         if (skillCfg.audio_start != null)
         {
@@ -99,6 +101,9 @@ public class Skill
             owner.InputFakeMoveKey(PEVector3.zero);// 释放技能所以先取消移动
             owner.PlayAni(skillCfg.aniName);
             // 技能被中断或后摇被移动取消需要调用动画重置
+            FreeAniCallback = () => {
+                owner.PlayAni("free");
+            };
         }
     }
 
@@ -107,7 +112,7 @@ public class Skill
     /// </summary>
     void SkillSpellAfter()
     {
-        skillState = SKillState.SpellAfter;
+        skillState = SkillState.SpellAfter;
         if (skillCfg.audio_work != null)
         {
             owner.PlayAudio(skillCfg.audio_work);
@@ -146,13 +151,29 @@ public class Skill
     /// </summary>
     void SkillEnd()
     {
+        // if(skillState == SkillState.None || skillState == SkillState.SpellStart) {
+        //     if(owner.IsPlayerSelf()) {
+        //         if(skillCfg.targetCfg != null
+        //            && skillCfg.targetCfg.targetTeam == TargetTeamEnum.Enemy
+        //            && skillCfg.targetCfg.searchDis > 0) {
+        //             Buff mf = owner.GetBuffById(ClientConfig.CommonMoveAttackBuffID);
+        //             if(mf != null) {
+        //                 mf.unitState = SubUnitState.End;
+        //             }
+        //
+        //             this.Log("技能未施放成功，添加通用移动攻击buff.");
+        //             owner.CreateSkillBuff(owner, this, ClientConfig.CommonMoveAttackBuffID);
+        //         }
+        //     }
+        // }
+        
         if (FreeAniCallback != null)
         {
             FreeAniCallback.Invoke();
             FreeAniCallback = null;
         }
 
-        skillState = SKillState.None;
+        skillState = SkillState.None;
         lockTarget = null;
     }
 
@@ -265,9 +286,23 @@ public class Skill
             }
         }
     }
+
+    /// 技能替换
+    public void ReplaceSkillCfg(int replaceId) {
+        if(skillId == replaceId) {
+            this.Log("Set replaceId == skillId:" + replaceId);
+        }
+
+        skillCfg = ResSvc.Instance().GetSkillConfigById(replaceId);
+        spellTime = skillCfg.spellTime;
+        skillTime = skillCfg.skillTime;
+        if(skillCfg.isNormalAttack) {
+            owner.InitAttackSpeedRate(1000 / skillTime);
+        }
+    }
 }
 
-public enum SKillState
+public enum SkillState
 {
     None,
     SpellStart,// 前摇

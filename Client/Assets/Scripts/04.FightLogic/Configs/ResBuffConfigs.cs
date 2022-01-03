@@ -22,7 +22,7 @@ public class ResBuffConfigs
     #region Arthur被动技能Buff
     public static BuffCfg buff_10100 = new HPCureBuffCfg {
         //通用buff属性
-        buffID = 10100,
+        buffId = 10100,
         buffName = "被动治疗",
         buffType = BuffTypeEnum.HPCure,
 
@@ -58,7 +58,7 @@ public class ResBuffConfigs
 
     public static BuffCfg buff_10111 = new CommonModifySkillBuffCfg {
         //通用buff属性
-        buffID = 10111,
+        buffId = 10111,
         buffName = "替换普攻",
         buffType = BuffTypeEnum.ModifySkill,
 
@@ -79,7 +79,7 @@ public class ResBuffConfigs
     /// </summary>
     public static BuffCfg buff_10140 = new BuffCfg {
         //通用buff属性
-        buffID = 10140,
+        buffId = 10140,
         buffName = "沉默",
         buffType = BuffTypeEnum.Silense,
 
@@ -109,7 +109,7 @@ public class ResBuffConfigs
 
     public static BuffCfg buff_10142 = new MoveSpeedBuffCfg {
         //通用buff属性
-        buffID = 10142,
+        buffId = 10142,
         buffName = "范围友军加速",
         buffType = BuffTypeEnum.MoveSpeed_DynamicGroup,
 

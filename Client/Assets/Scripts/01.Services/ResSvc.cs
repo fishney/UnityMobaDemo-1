@@ -139,6 +139,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                         mType = ColliderType.Cylinder, //所有角色都是圆柱体
                         mRadius = (PEInt)0.5f,
                     },
+                    pasvBuff = new []{10100},
                     skillArr = new []{1010,1011,1012,1013},
                 };
             case 102:

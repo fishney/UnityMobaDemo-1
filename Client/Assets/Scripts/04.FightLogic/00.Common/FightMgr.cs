@@ -193,4 +193,17 @@ public class FightMgr : MonoBehaviour
     {
         return heroList[posIndex];
     }
+
+    public bool CanMove(int posIndex)
+    {
+        return heroList[posIndex].CanMove();
+    }
+
+    public bool CanReleaseSkill(int posIndex, int skillID) {
+        return heroList[posIndex].CanReleaseSkill(skillID);
+    }
+    public bool IsForbidAllSkill(int posIndex)
+    {
+        return heroList[posIndex].IsForbidAllSkill();
+    }
 }

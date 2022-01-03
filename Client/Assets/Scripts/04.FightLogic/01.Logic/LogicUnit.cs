@@ -10,12 +10,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using PEMath;
+using System;
 
 public abstract class LogicUnit : ILogic
 {
 
     #region Key Properties
-
+    /// <summary>
+    /// 产生UI输入时
+    /// </summary>
+    public Action OnDirChange;
     /// 单位名称
     public string unitName;
 
@@ -48,6 +52,7 @@ public abstract class LogicUnit : ILogic
         {
             _logicDir = value;
             isDirChanged = true;
+            OnDirChange?.Invoke();
         }
     }
 
