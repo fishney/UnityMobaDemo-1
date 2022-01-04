@@ -101,6 +101,8 @@ public abstract partial class MainLogicUnit : LogicUnit
     {
         return false;
     }
+    
+    
 }
 
 public enum UnitStateEnum

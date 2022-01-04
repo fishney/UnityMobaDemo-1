@@ -37,9 +37,12 @@ public partial class MainLogicUnit
         
         // 被动buff
         int[] pasvBuffArr = ud.unitCfg.pasvBuff;
-        foreach (var pBuff in pasvBuffArr)
+        if (pasvBuffArr?.Length > 0)
         {
-            CreateSkillBuff(this, null, pBuff);
+            foreach (var pBuff in pasvBuffArr)
+            {
+                CreateSkillBuff(this, null, pBuff);
+            }
         }
 
         OnDirChange += ClearFreeAniCallBack;
@@ -167,6 +170,11 @@ public partial class MainLogicUnit
         return IsSilenced()
                || IsStunned()
                || IsKnockup();
+    }
+
+    public Buff GetBuffById(int id)
+    {
+        return buffList.FirstOrDefault(o => o.cfg.buffId == id);
     }
     #endregion
 

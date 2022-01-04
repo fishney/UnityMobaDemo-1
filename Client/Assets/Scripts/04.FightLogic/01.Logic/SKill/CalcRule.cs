@@ -163,6 +163,27 @@ public static class CalcRule
         return targetList;
     }
 
+    /// <summary>
+    /// 返回最近的技能目标(无范围限制)
+    /// </summary>
+    public static MainLogicUnit FindMinDisEnemyTarget(MainLogicUnit self, TargetCfg cfg)
+    {
+        MainLogicUnit target = null;
+        List<MainLogicUnit> targetTeam = GetTargetTeam(self, cfg);
+        
+        int count = targetTeam.Count;
+        PEVector3 selfPos = self.LogicPos;
+        PEInt len = 0;
+        for(int i = 0; i < count; i++) {
+            PEInt sumRaius = targetTeam[i].ud.unitCfg.colliCfg.mRadius + self.ud.unitCfg.colliCfg.mRadius;
+            PEInt tempLen = (targetTeam[i].LogicPos - selfPos).magnitude - sumRaius;
+            if(len == 0 || tempLen < len) {
+                len = tempLen;
+                target = targetTeam[i];
+            }
+        }
+        return target;
+    }
     #endregion
 
     #region 多个目标查找

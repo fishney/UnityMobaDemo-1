@@ -20,26 +20,26 @@ public class MoveSpeedBuff_DynamicGroup: Buff
     protected override void Start() {
         base.Start();
 
-        ModifyMoveSpeed(speedOffset, true);
+        ModifyTargetsMoveSpeed(speedOffset, true);
     }
 
     protected override void Tick() {
         base.Tick();
-        ModifyMoveSpeed(-speedOffset);
+        ModifyTargetsMoveSpeed(-speedOffset);
 
         targetList.Clear();
         targetList.AddRange(CalcRule.FindMulipleTargetByRule(owner, cfg.impacter, PEVector3.zero));
-        ModifyMoveSpeed(speedOffset);
+        ModifyTargetsMoveSpeed(speedOffset);
     }
 
     protected override void End() {
         base.End();
-        ModifyMoveSpeed(-speedOffset);
+        ModifyTargetsMoveSpeed(-speedOffset);
         targetList.Clear();
         targetList = null;
     }
 
-    void ModifyMoveSpeed(PEInt value, bool showJump = false) {
+    void ModifyTargetsMoveSpeed(PEInt value, bool showJump = false) {
         for(int i = 0; i < targetList.Count; i++) {
             PEInt offset = targetList[i].moveSpeedBase * (value / 100);
             targetList[i].ModifyMoveSpeed(offset, this, showJump);

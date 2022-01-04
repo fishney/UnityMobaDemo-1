@@ -35,7 +35,6 @@ public static class Constants
 
 
     #endregion
-
 }
 
 public static class ClientConfig {
@@ -45,4 +44,6 @@ public static class ClientConfig {
     public const int ScreenOPDis = 135;
     public const int SkillOPDis = 125;
     public const int SkillCancelDis = 500;
+
+    public const int CommonMoveAttackBuffId = 90000;
 }

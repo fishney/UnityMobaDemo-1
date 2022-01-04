@@ -14,8 +14,8 @@ public class ResBuffConfigs
         impacter = null,
 
         buffDelay = 0,
-        buffInterval = 66,
-        buffDuration = 5000
+        buffInterval = 66,// 1帧检测1次
+        buffDuration = 5000,// 单次持续时间
     };
     #endregion
 

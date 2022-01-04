@@ -136,6 +136,10 @@ public class BattleSys : SystemBase
             fightMgr.Tick();
         }
     }
+    
+    public bool CheckUIInput() {
+        return gameRootResources.playWindow.IsUIInput();
+    }
 
     public void EnterCDState(int skillId,int cdTime)
     {
@@ -188,6 +192,10 @@ public class BattleSys : SystemBase
         return true;
     }
 
+    public void SendSkillKey(int skillId) {
+        SendSkillKey(skillId, Vector3.zero);
+    }
+    
     public void SendSkillKey(int skillId,Vector3 vec)
     {
         if (!CanReleaseSkill(skillId))

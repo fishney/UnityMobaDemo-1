@@ -35,9 +35,7 @@ public partial class PlayWindow : WindowBase
 
         RegisterMoveEvts();
     }
-    
-   
-    
+
     protected override void ClearWindow()
     {
         base.ClearWindow();
@@ -115,9 +113,14 @@ public partial class PlayWindow : WindowBase
             PEVector3 logicDir = PEVector3.zero;
             if (dir != Vector2.zero)
             {
+                isUIInput = true;
                 logicDir.x = (PEInt) dirVector3.x;
                 logicDir.y = (PEInt) dirVector3.y;
                 logicDir.z = (PEInt) dirVector3.z;
+            }
+            else
+            {
+                isUIInput = false;
             }
 
             bool isSend = BattleSys.Instance.SendMoveKey(logicDir);
@@ -128,6 +131,14 @@ public partial class PlayWindow : WindowBase
         }
     }
 
+    bool isUIInput = false;
+    /// <summary>
+    /// 是否有UI输入
+    /// </summary>
+    public bool IsUIInput() {
+        return isUIInput;
+    }
+    
     public void EnterCDState(int skillId,int cdTime)
     {
         if (skaItem.CheckSkillId(skillId))

@@ -164,21 +164,24 @@ public class Skill
     /// </summary>
     void SkillEnd()
     {
-        // if(skillState == SkillState.None || skillState == SkillState.SpellStart) {
-        //     if(owner.IsPlayerSelf()) {
-        //         if(skillCfg.targetCfg != null
-        //            && skillCfg.targetCfg.targetTeam == TargetTeamEnum.Enemy
-        //            && skillCfg.targetCfg.searchDis > 0) {
-        //             Buff mf = owner.GetBuffById(ClientConfig.CommonMoveAttackBuffID);
-        //             if(mf != null) {
-        //                 mf.unitState = SubUnitState.End;
-        //             }
-        //
-        //             this.Log("技能未施放成功，添加通用移动攻击buff.");
-        //             owner.CreateSkillBuff(owner, this, ClientConfig.CommonMoveAttackBuffID);
-        //         }
-        //     }
-        // }
+        // 如果不是SpellAfter说明技能没有释放成功，具体看 SkillWork() 代码
+        if(skillState == SkillState.None || skillState == SkillState.SpellStart) {
+            if(owner.IsPlayerSelf()) {
+                // TODO 下面的if条件是什么原因?
+                if(skillCfg.targetCfg != null
+                   && skillCfg.targetCfg.targetTeam == TargetTeamEnum.Enemy
+                   && skillCfg.targetCfg.searchDis > 0) {
+                    Buff mf = owner.GetBuffById(ClientConfig.CommonMoveAttackBuffId);
+                    if(mf != null) {
+                        // 如果已存在移动buff，就结束过去的，添加新的。从而保持只有一个起效。
+                        mf.unitState = SubUnitState.End;
+                    }
+        
+                    // 技能未施放成功，添加通用移动攻击buff
+                    owner.CreateSkillBuff(owner, this, ClientConfig.CommonMoveAttackBuffId);
+                }
+            }
+        }
         
         if (FreeAniCallback != null)
         {
@@ -202,18 +205,18 @@ public class Skill
                 PEVector3 spellDir = lockTarget.LogicPos - owner.LogicPos;
                 SkillSpellStart(spellDir);
                 
-                // 立即生效
                 void SkillWork()
                 {
                     CalcSkillAttack(lockTarget);
                     // 附着buff
                     AttachSkillBuffToCaster();
                     SkillSpellAfter();
-                }
-
+                } 
+                
+                
                 if (spellTime == 0)
                 {
-                    
+                    // 立即生效
                     SkillWork();
                 }
                 else
