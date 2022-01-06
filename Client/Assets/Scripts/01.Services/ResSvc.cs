@@ -218,6 +218,35 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                 return new ArthurMarkBuff(source, owner, skill, buffID, args);
             case BuffTypeEnum.HPCure:
                 return new HPCureBuff_Single(source, owner, skill, buffID, args);
+            case BuffTypeEnum.Knockup_Group:
+                return new KnockUpBuff_Group(source, owner, skill, buffID, args);
+            case BuffTypeEnum.Damage_DynamicGroup:
+                return new DamageBuff_DynamicGroup(source, owner, skill, buffID, args);
+            case BuffTypeEnum.TargetFlashMove:
+                return new TargetFlashMoveBuff(source, owner, skill, buffID, args);
+            case BuffTypeEnum.ExecuteDamage:
+                return new ExecuteDamageBuff(source, owner, skill, buffID, args);
+            case BuffTypeEnum.Damage_StaticGroup:
+                return new DamageBuff_StaticGroup(source, owner, skill, buffID, args);
+
+            case BuffTypeEnum.HouyiPasvAttackSpeed:
+                return new HouyiPasvAttackSpeedBuff(source, owner, skill, buffID, args);
+            case BuffTypeEnum.HouyiPasvSkillModify:
+                return new HouyiMultipleSkillModifyBuff(source, owner, skill, buffID, args);
+            case BuffTypeEnum.HouyiPasvMultiArrow:
+                return new HouyiMultipleArrowBuff(source, owner, skill, buffID, args);
+            case BuffTypeEnum.HouyiActiveSkillModify:
+                return new HouyiScatterSkillModifyBuff(source, owner, skill, buffID, args);
+            case BuffTypeEnum.Scatter:
+                return new HouyiScatterArrowBuff(source, owner, skill, buffID, args);
+            case BuffTypeEnum.HouyiMixedMultiScatter:
+                return new HouyiMixedMultiScatterBuff(source, owner, skill, buffID, args);
+            case BuffTypeEnum.MoveSpeed_StaticGroup:
+                return new MoveSpeedBuff_StaticGroup(source, owner, skill, buffID, args);
+
+            case BuffTypeEnum.Stun_Single_DynamicTime:
+                return new StunBuff_DynamicTime(source, owner, skill, buffID, args);
+            //TOADD
             case BuffTypeEnum.None:
             default:
                 this.Error("Create Buff Failed,BuffID:" + buffID);
@@ -229,6 +258,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         switch(buffId) {
             case 10100:
                 return ResBuffConfigs.buff_10100;
+            //Arthur1技能
             case 10110://移速加速
                 return ResBuffConfigs.buff_10110;
             case 10111:
@@ -239,6 +269,47 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                 return ResBuffConfigs.buff_10141;
             case 10142:
                 return ResBuffConfigs.buff_10142;
+            //Arthur2技能
+            case 10120:
+                return ResBuffConfigs.buff_10120;
+            //Arthur3技能
+            case 10130:
+                return ResBuffConfigs.buff_10130;
+            case 10131:
+                return ResBuffConfigs.buff_10131;
+            case 10132:
+                return ResBuffConfigs.buff_10132;
+            case 10133:
+                return ResBuffConfigs.buff_10133;
+            //Houyi被动技能
+            case 10200:
+                return ResBuffConfigs.buff_10200;
+            case 10201:
+                return ResBuffConfigs.buff_10201;
+            case 10250:
+                return ResBuffConfigs.buff_10250;
+            //Houyi1技能
+            case 10210://技能替换
+                return ResBuffConfigs.buff_10210;
+            case 10240://scatter
+                return ResBuffConfigs.buff_10240;
+            case 10260://mixed
+                return ResBuffConfigs.buff_10260;
+            //Houyi2技能
+            case 10220:
+                return ResBuffConfigs.buff_10220;
+            case 10221:
+                return ResBuffConfigs.buff_10221;
+            case 10222:
+                return ResBuffConfigs.buff_10222;
+            case 10223:
+                return ResBuffConfigs.buff_10223;
+            //Houyi3技能
+            case 10230:
+                return ResBuffConfigs.buff_10230;
+            case 10231:
+                return ResBuffConfigs.buff_10231;
+            //通用
             case 90000:
                 return ResBuffConfigs.buff_90000;
             default:
@@ -271,8 +342,8 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                 return new MapCfg()
                 {
                     mapId = 102,
-                    blueBorn = new PEVector3(-27,0,0),
-                    redBorn = new PEVector3(-27,0,0),
+                    blueBorn = new PEVector3(-5,0,-3),
+                    redBorn = new PEVector3(5,0,-3),
                     bornDelay = 15000,
                     bornInterval = 2000,
                     waveInterval = 50000,

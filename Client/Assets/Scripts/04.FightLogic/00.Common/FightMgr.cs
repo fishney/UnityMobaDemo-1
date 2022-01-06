@@ -101,14 +101,14 @@ public class FightMgr : MonoBehaviour
             if (i < sep)
             {
                 hd.teamEnum = TeamEnum.Blue;
-                hd.bornPos = mapCfg.blueBorn;
+                hd.bornPos = mapCfg.blueBorn + new PEVector3(0,0,i * (PEInt)1.5f);// 出生点偏移
                 hero = new Hero(hd);
                 blueTeamHero[i] = hero;
             }
             else
             {
                 hd.teamEnum = TeamEnum.Red;
-                hd.bornPos = mapCfg.redBorn;
+                hd.bornPos = mapCfg.redBorn  + new PEVector3(0,0, (i-sep) * (PEInt)1.5f);
                 hero = new Hero(hd);
                 redTeamHero[i-sep] = hero;
             }

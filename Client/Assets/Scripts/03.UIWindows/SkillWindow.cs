@@ -54,6 +54,25 @@ public partial class PlayWindow
         if(Input.GetKeyDown(KeyCode.Alpha3)) {
             sk3Item.ClickSkillItem();
         }
+        
+        if(Input.GetKeyDown(KeyCode.Q)) {
+            GameRoot.SelfPosIndex = 0;
+        }
+        else if(Input.GetKeyDown(KeyCode.W)) {
+            GameRoot.SelfPosIndex = 1;
+        }
+        else if(Input.GetKeyDown(KeyCode.E)) {
+            GameRoot.SelfPosIndex = 2;
+        }
+        else if(Input.GetKeyDown(KeyCode.R)) {
+            GameRoot.SelfPosIndex = 3;
+        }
+        else if(Input.GetKeyDown(KeyCode.T)) {
+            GameRoot.SelfPosIndex = 4;
+        }
+        else if(Input.GetKeyDown(KeyCode.Y)) {
+            GameRoot.SelfPosIndex = 5;
+        }
     }
 
 

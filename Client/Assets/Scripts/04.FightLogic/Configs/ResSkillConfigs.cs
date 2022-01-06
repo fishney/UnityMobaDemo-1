@@ -70,7 +70,11 @@ public class ResSkillConfigs {
         cdTime = 5000,
         isNormalAttack = false,
         skillTime = 0,
-        damage = 0
+        damage = 0,
+
+        //1.范围伤害buff
+        buffIdArr = new int[] { 10120 },
+        audio_start = "arthur_sk2_rls",
     };
     /// <summary>
     /// Arthur技能3：圣剑裁决

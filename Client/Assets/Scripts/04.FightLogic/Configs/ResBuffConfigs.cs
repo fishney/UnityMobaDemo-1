@@ -130,4 +130,35 @@ public class ResBuffConfigs
         amount = 10
     };
     #endregion
+    
+    #region Arthur2技能Buff
+    public static BuffCfg buff_10120 = new DamageBuffCfg_DynamicGroup {
+        //通用buff属性
+        buffId = 10120,
+        buffName = "范围伤害",
+        buffType = BuffTypeEnum.Damage_DynamicGroup,
+
+        attacher = AttachTypeEnum.Caster,
+        impacter = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestMulti,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+            },
+            selectRange = 2f
+        },
+
+        buffDelay = 0,
+        buffInterval = 1000,
+        buffDuration = 5000,
+        staticPosType = StaticPosTypeEnum.None,
+
+        hitTickAudio = "com_hit1",
+        buffEffect = "Effect_sk2",
+
+        //专有参数
+        damage = 100
+    };
+    #endregion
 }

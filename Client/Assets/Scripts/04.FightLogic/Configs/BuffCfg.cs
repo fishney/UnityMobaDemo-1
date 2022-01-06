@@ -60,6 +60,7 @@ public enum BuffTypeEnum {
     HPCure,//治疗
     MoveSpeed_DynamicGroup,//Arthur1技能的动态群体移速Buff
     MoveAttack,//移动攻击
+    Damage_DynamicGroup,//Arthur2技能的动态群体伤害
 }
 
 /// <summary>
