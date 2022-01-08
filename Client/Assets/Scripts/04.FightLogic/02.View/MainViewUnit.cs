@@ -173,4 +173,10 @@ public abstract class MainViewUnit : ViewUnit
     {
         viewTargetDir = skillRotation.ConvertViewVector3();
     }
+    
+    public void SetBuffFollower(BuffView buffView) {
+        buffView.transform.SetParent(this.transform);
+        buffView.transform.localPosition = Vector3.zero;
+        buffView.transform.localScale = Vector3.one;
+    }
 }

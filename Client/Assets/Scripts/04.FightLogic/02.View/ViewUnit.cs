@@ -162,7 +162,10 @@ public abstract class ViewUnit : MonoBehaviour
         return Quaternion.FromToRotation(Vector3.forward, targetDir);
     }
 
-    public abstract void PlayAni(string aniName);
+    public virtual void PlayAni(string aniName)
+    {
+        
+    }
 
     public virtual void PlayAudio(string auName,bool loop = false,int delay = 0)
     {

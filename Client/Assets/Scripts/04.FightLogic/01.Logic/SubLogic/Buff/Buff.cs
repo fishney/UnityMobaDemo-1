@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using HOKProtocol;
+using UnityEngine;
 
 public class Buff : SubLogicUnit
 {
@@ -7,6 +8,8 @@ public class Buff : SubLogicUnit
     public MainLogicUnit owner;
     protected int buffId;
     protected object[] args;
+    // buff表现
+    private BuffView buffView;
     
     protected int buffDuration
     {
@@ -67,16 +70,52 @@ public class Buff : SubLogicUnit
     
     protected override void Start()
     {
+        //根据staticPosType决定Buff初始位置
+        if(cfg.staticPosType == StaticPosTypeEnum.None) {
+            LogicPos = owner.LogicPos;
+        }
         
+        if (cfg.buffEffect != null)
+        {
+            // 只是用资源，在服务端跑可以进行条件编译，这一段不需要
+            GameObject go = ResSvc.Instance().LoadPrefab("ResImages/ResEffects/" + cfg.buffEffect);
+            go.name = source.unitName + "_" + cfg.buffName;
+            buffView = go.GetComponent<BuffView>();
+            if (buffView == null)
+            {
+                this.Error("Get BuffView Error:" + unitName);
+            }
+            // 设定位置跟随
+            if(cfg.staticPosType == StaticPosTypeEnum.None) {
+                owner.mainViewUnit.SetBuffFollower(buffView);
+            }
+            buffView.Init(this);
+
+            if(cfg.buffAudio != null) {
+                buffView.PlayAudio(cfg.buffAudio);
+            }
+        }
+        else {
+            // 附着性buff
+            if(cfg.buffAudio != null) {
+                owner.PlayAudio(cfg.buffAudio);
+            }
+        }
     }
 
     protected override void Tick()
     {
-        
+        if (cfg.hitTickAudio != null && targetList?.Count > 0)
+        {
+            owner.PlayAudio(cfg.hitTickAudio);
+        }
     }
 
     protected override void End()
     {
-        
+        if (cfg.buffEffect != null)
+        {
+            buffView.DestroyBuff();
+        }
     }
 }

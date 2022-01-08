@@ -53,14 +53,37 @@ public class BuffCfg
 /// </summary>
 public enum BuffTypeEnum {
     None,
+    HPCure,//治疗
+
     ModifySkill,
     MoveSpeed_Single,//单体加速buff
-    Silense,//沉默
     ArthurMark,//Arthur1技能的标记伤害Buff
-    HPCure,//治疗
-    MoveSpeed_DynamicGroup,//Arthur1技能的动态群体移速Buff
+    Silense,//沉默
+    TargetFlashMove,
+    DirectionFlashMove,//TODO
+    ExecuteDamage,
+    Knockup_Group,//群体击飞
+
+    Stun_Single_DynamicTime,
+
+    //houyi专区buff
+    HouyiActiveSkillModify,//Houyi主动技能修改buff
+    Scatter,
+
+    HouyiPasvAttackSpeed,//Houyi被动攻速加成buff
+    HouyiPasvSkillModify,//Houyi被动技能修改Buff
+    HouyiPasvMultiArrow,//Houyi被动技能多重射击Buff
+    HouyiMixedMultiScatter,//混合多重射击与散射
+
+
+    MoveSpeed_DynamicGroup,//动态群体移速Buff
+    MoveSpeed_StaticGroup,//静态群体移速buff
+    Damage_DynamicGroup,//动态群体伤害
+    Damage_StaticGroup,
     MoveAttack,//移动攻击
-    Damage_DynamicGroup,//Arthur2技能的动态群体伤害
+    
+    
+    
 }
 
 /// <summary>

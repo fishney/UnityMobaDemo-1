@@ -51,13 +51,13 @@ public class HeroView : MainViewUnit
         switch (skillIndex)
         {
             case 1:
-                sk1.gameObject.SetActive(false);
+                if(sk1 != null) sk1.gameObject.SetActive(false);
                 break;
             case 2:
-                sk2.gameObject.SetActive(false);
+                if(sk2 != null) sk2.gameObject.SetActive(false);
                 break;
             case 3:
-                sk3.gameObject.SetActive(false);
+                if(sk3 != null) sk3.gameObject.SetActive(false);
                 break;
         }
     }

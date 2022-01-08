@@ -161,4 +161,90 @@ public class ResBuffConfigs
         damage = 100
     };
     #endregion
+    
+    #region Arthur3技能Buff
+    public static BuffCfg buff_10130 = new TargetFlashMoveBuffCfg {
+        //通用buff属性
+        buffId = 10130,
+        buffName = "目标闪现跳跃",
+        buffType = BuffTypeEnum.TargetFlashMove,
+
+        attacher = AttachTypeEnum.Caster,
+        impacter = null,
+
+        buffDelay = 0,
+        buffInterval = 0,
+        buffDuration = 0,
+
+        //专有参数
+        offset = 1.5F
+    };
+    public static BuffCfg buff_10131 = new ExecuteDamageBuffCfg {
+        //通用buff属性
+        buffID = 10131,
+        buffName = "百分比生命伤害",
+        buffType = BuffTypeEnum.ExecuteDamage,
+
+        attacher = AttachTypeEnum.Target,
+        impacter = null,
+
+        buffDelay = 0,
+        buffInterval = 0,
+        buffDuration = 0,
+
+        //专有参数
+        damagePct = 12
+    };
+
+    public static BuffCfg buff_10132 = new ExecuteDamageBuffCfg {
+        //通用buff属性
+        buffID = 10132,
+        buffName = "范围击飞",
+        buffType = BuffTypeEnum.Knockup_Group,
+
+        attacher = AttachTypeEnum.Target,
+        impacter = new TargetCfg {
+            targetTeam = TargetTeamEnum.Friend,
+            selectRule = SelectRuleEnum.TargetClosetMultiple,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier
+            },
+            selectRange = 2f
+        },
+
+        buffDelay = 100,
+        buffInterval = 0,
+        buffDuration = 500,
+    };
+
+    public static BuffCfg buff_10133 = new DamageBuffCfg_StaticGroup {
+        //通用buff属性
+        buffID = 10133,
+        buffName = "固定位置范围伤害",
+        buffType = BuffTypeEnum.Damage_StaticGroup,
+
+        attacher = AttachTypeEnum.Indie,
+        impacter = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.PositionClosestMultiple,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier
+            },
+            selectRange = 2f
+        },
+
+        buffDelay = 100,
+        buffInterval = 1000,
+        buffDuration = 5000,
+        staticPosType = StaticPosTypeEnum.SkillLockTargetPos,
+
+        //effect
+        buffEffect = "Effect_sk3",
+        hitTickAudio = "com_hit1",
+
+        damage = 50
+    };
+     #endregion
 }

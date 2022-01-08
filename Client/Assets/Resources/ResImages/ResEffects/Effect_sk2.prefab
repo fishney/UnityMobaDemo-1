@@ -4882,6 +4882,7 @@ GameObject:
   - component: {fileID: 2359198176235965265}
   - component: {fileID: 7939313724088488680}
   - component: {fileID: 1911708379518516013}
+  - component: {fileID: 3921691400934372444}
   m_Layer: 8
   m_Name: Effect_sk2
   m_TagString: Untagged
@@ -5022,6 +5023,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3921691400934372444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4085507725322606878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52fa0a7861af4a2b928c40c1a2c7c7e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsSyncPos: 0
+  PredictPos: 0
+  PredictMaxCount: 0
+  SmoothPos: 0
+  viewPosAccer: 0
+  IsSyncDir: 0
+  SmoothDir: 0
+  viewDirAccer: 0
+  AngleMultiplier: 0
+  RotationRoot: {fileID: 0}
 --- !u!1 &6085188049492129293
 GameObject:
   m_ObjectHideFlags: 0

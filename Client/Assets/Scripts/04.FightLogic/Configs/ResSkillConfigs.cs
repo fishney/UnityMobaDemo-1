@@ -78,7 +78,9 @@ public class ResSkillConfigs {
     };
     /// <summary>
     /// Arthur技能3：圣剑裁决
-    /// 跃向目标英雄，造成其最大生命12%的伤害并会将范围内的敌人击飞0.5秒，
+    /// 跃向目标英雄
+    /// 造成其最大生命12%的伤害
+    /// 并会将范围内的敌人击飞0.5秒
     /// 在目标区域留下的圣印将持续5秒对敌人造成伤害。
     /// </summary>
     public static SkillCfg sk_1013 = new SkillCfg {
@@ -96,10 +98,18 @@ public class ResSkillConfigs {
             searchDis = 10f,
         },
         cdTime = 10000,
-        spellTime = 100,
+        spellTime = 250,
         isNormalAttack = false,
-        skillTime = 0,
-        damage = 0
+        skillTime = 1300,
+        damage = 0,
+
+        //10130：目标移动buff
+        //10131：百分比血量斩杀buff
+        //10132：击飞buff
+        //10133：范围伤害buff（静态位置）
+        buffIdArr = new int[] { 10130, 10131, 10132, 10133 },
+
+        audio_start = "arthur_sk3_rls",
     };
     
     /// <summary>
