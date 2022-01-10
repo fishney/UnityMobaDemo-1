@@ -6,6 +6,9 @@ public class Skill
 {
     public int skillId;
     public SkillCfg skillCfg;
+    /// <summary>
+    /// 技能偏移参数：从UI轮盘转换成的地图偏移量
+    /// </summary>
     public PEVector3 skillArgs;
     public MainLogicUnit lockTarget;
     public SkillState skillState = SkillState.None;
@@ -113,6 +116,7 @@ public class Skill
         {
             owner.InputFakeMoveKey(PEVector3.zero);// 释放技能所以先取消移动
             owner.PlayAni(skillCfg.aniName);
+            owner.ClearFreeAniCallBack();
             // 技能被中断或后摇被移动取消需要调用动画重置
             FreeAniCallback = () => {
                 owner.PlayAni("free");

@@ -227,15 +227,15 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                 return new HPCureBuff_Single(source, owner, skill, buffID, args);
             case BuffTypeEnum.Damage_DynamicGroup:
                 return new DamageBuff_DynamicGroup(source, owner, skill, buffID, args);
-            // case BuffTypeEnum.Knockup_Group:
-            //     return new KnockUpBuff_Group(source, owner, skill, buffID, args);
+            case BuffTypeEnum.Knockup_Group:
+                 return new KnockUpBuff_Group(source, owner, skill, buffID, args);
             case BuffTypeEnum.TargetFlashMove:
                 return new TargetFlashMoveBuff(source, owner, skill, buffID, args);
-            // case BuffTypeEnum.ExecuteDamage:
-            //     return new ExecuteDamageBuff(source, owner, skill, buffID, args);
-            // case BuffTypeEnum.Damage_StaticGroup:
-            //     return new DamageBuff_StaticGroup(source, owner, skill, buffID, args);
-            //
+            case BuffTypeEnum.ExecuteDamage:
+                return new ExecuteDamageBuff(source, owner, skill, buffID, args);
+             case BuffTypeEnum.Damage_StaticGroup:
+                 return new DamageBuff_StaticGroup(source, owner, skill, buffID, args);
+             
             // case BuffTypeEnum.HouyiPasvAttackSpeed:
             //     return new HouyiPasvAttackSpeedBuff(source, owner, skill, buffID, args);
             // case BuffTypeEnum.HouyiPasvSkillModify:
@@ -282,12 +282,12 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
             //Arthur3技能
             case 10130:
                 return ResBuffConfigs.buff_10130;
-            // case 10131:
-            //     return ResBuffConfigs.buff_10131;
-            // case 10132:
-            //     return ResBuffConfigs.buff_10132;
-            // case 10133:
-            //     return ResBuffConfigs.buff_10133;
+            case 10131:
+                return ResBuffConfigs.buff_10131;
+            case 10132:
+                return ResBuffConfigs.buff_10132;
+            case 10133:
+                return ResBuffConfigs.buff_10133;
             // //Houyi被动技能
             // case 10200:
             //     return ResBuffConfigs.buff_10200;

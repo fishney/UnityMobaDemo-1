@@ -21,6 +21,9 @@ public class TargetCfg
     #endregion
 }
 
+/// <summary>
+/// 目标选择规则
+/// </summary>
 public enum SelectRuleEnum
 {
     None,

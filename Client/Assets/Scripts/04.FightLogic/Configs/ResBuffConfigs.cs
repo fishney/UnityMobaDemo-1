@@ -115,7 +115,7 @@ public class ResBuffConfigs
 
         attacher = AttachTypeEnum.Target,
         impacter = new TargetCfg {
-            targetTeam = TargetTeamEnum.Enemy,
+            targetTeam = TargetTeamEnum.Enemy,// 目标的敌人 = 友军
             selectRule = SelectRuleEnum.TargetClosestMulti,
             targetTypeArr = new UnitTypeEnum[] {
                 UnitTypeEnum.Hero
@@ -140,7 +140,7 @@ public class ResBuffConfigs
 
         attacher = AttachTypeEnum.Caster,
         impacter = new TargetCfg {
-            targetTeam = TargetTeamEnum.Enemy,
+            targetTeam = TargetTeamEnum.Enemy,// 目标的友军 = 敌人
             selectRule = SelectRuleEnum.TargetClosestMulti,
             targetTypeArr = new UnitTypeEnum[] {
                 UnitTypeEnum.Hero,
@@ -181,7 +181,7 @@ public class ResBuffConfigs
     };
     public static BuffCfg buff_10131 = new ExecuteDamageBuffCfg {
         //通用buff属性
-        buffID = 10131,
+        buffId = 10131,
         buffName = "百分比生命伤害",
         buffType = BuffTypeEnum.ExecuteDamage,
 
@@ -198,14 +198,14 @@ public class ResBuffConfigs
 
     public static BuffCfg buff_10132 = new ExecuteDamageBuffCfg {
         //通用buff属性
-        buffID = 10132,
+        buffId = 10132,
         buffName = "范围击飞",
         buffType = BuffTypeEnum.Knockup_Group,
 
         attacher = AttachTypeEnum.Target,
         impacter = new TargetCfg {
-            targetTeam = TargetTeamEnum.Friend,
-            selectRule = SelectRuleEnum.TargetClosetMultiple,
+            targetTeam = TargetTeamEnum.Friend,// 目标的友军 = 敌人
+            selectRule = SelectRuleEnum.TargetClosestMulti,
             targetTypeArr = new UnitTypeEnum[] {
                 UnitTypeEnum.Hero,
                 UnitTypeEnum.Soldier
@@ -220,14 +220,14 @@ public class ResBuffConfigs
 
     public static BuffCfg buff_10133 = new DamageBuffCfg_StaticGroup {
         //通用buff属性
-        buffID = 10133,
+        buffId = 10133,
         buffName = "固定位置范围伤害",
         buffType = BuffTypeEnum.Damage_StaticGroup,
 
         attacher = AttachTypeEnum.Indie,
         impacter = new TargetCfg {
             targetTeam = TargetTeamEnum.Enemy,
-            selectRule = SelectRuleEnum.PositionClosestMultiple,
+            selectRule = SelectRuleEnum.PositionClosestMulti,
             targetTypeArr = new UnitTypeEnum[] {
                 UnitTypeEnum.Hero,
                 UnitTypeEnum.Soldier

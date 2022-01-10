@@ -25,6 +25,7 @@ public class TargetFlashMoveBuff : Buff {
 
         MainLogicUnit target = CalcRule.FindSingleTargetByRule(owner, skill.skillCfg.targetCfg, PEVector3.zero);
         if(target == null) {
+            // 预防目标死亡,报空
             unitState = SubUnitState.End;
         }
         else {
