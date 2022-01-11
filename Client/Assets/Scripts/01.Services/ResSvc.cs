@@ -129,6 +129,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                     unitId = 101,
                     unitName = "亚瑟",
                     resName = "arthur",
+                    hitHeight = (PEInt)1.5F,
                     
                     hp = 6500,
                     def = 0,
@@ -148,6 +149,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                     unitId = 102,
                     unitName = "后羿",
                     resName = "houyi",
+                    hitHeight = (PEInt)1.5F,
                     
                     hp = 3500,
                     def = 10,
@@ -324,6 +326,24 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         }
         this.Error("Get Buff Config Failed,buffId:" + buffId);
         return null;
+    }
+
+    #endregion
+
+    #region Bullet信息
+
+    public Bullet CreateBullet(MainLogicUnit source, MainLogicUnit target, Skill skill) {
+        switch(skill.skillCfg.bulletCfg.bulletType) {
+            case BulletTypeEnum.SkillTarget:
+                return new TargetBullet(source, target, skill);
+            // case BulletTypeEnum.UIDirection:
+            //     return new DirectionBullet(source, skill);
+            case BulletTypeEnum.UIPosition:
+            case BulletTypeEnum.BuffSearch:
+            default:
+                this.Error("Create Bullet Error.");
+                return null;
+        }
     }
 
     #endregion

@@ -171,11 +171,26 @@ public class ResSkillConfigs {
             selectRange = 5f,
             searchDis = 15f,
         },
+        bulletCfg = new BulletCfg {
+            bulletType = BulletTypeEnum.SkillTarget,
+            bulletName = "后羿普攻子弹",
+            resPath = "houyi_ska_bullet",
+            bulletSpeed = 1f,
+            bulletSize = 0.1f,
+            bulletHeight = 1.5f,
+            bulletOffset = 0.5f,
+            bulletDelay = 0,
+        },
         cdTime = 0,
         spellTime = 550,//施法时间（技能前摇）
         isNormalAttack = true,
         skillTime = 1400,
         damage = 50,
+
+        buffIdArr = null,
+        audio_start = null,
+        audio_work = "houyi_ska_rls",
+        audio_hit = "com_hit2"
     };
     /// <summary>
     /// Houyi1技能：多重箭矢

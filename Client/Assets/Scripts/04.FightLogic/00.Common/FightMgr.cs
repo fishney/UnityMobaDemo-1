@@ -23,10 +23,12 @@ public class FightMgr : MonoBehaviour
     private List<Hero> heroList;
 
     private Transform transFollow;
+    private List<Bullet> bulletList;
     
     public void Init(List<BattleHeroData> battleHeroList,MapCfg mapCfg)
     {
         heroList = new List<Hero>();
+        bulletList = new List<Bullet>();
         
         // 初始化碰撞环境
         InitEnv();
@@ -47,6 +49,18 @@ public class FightMgr : MonoBehaviour
     /// </summary>
     public void Tick()
     {
+        //bullet tick
+        for(int i = bulletList.Count - 1; i >= 0; --i) {
+            if(bulletList[i].unitState == SubUnitState.None) {
+                bulletList[i].LogicUnInit();
+                bulletList.RemoveAt(i);
+            }
+            else {
+                bulletList[i].LogicTick();
+            }
+        }
+
+        //hero tick
         for (int i = 0; i < heroList.Count; i++)
         {
             heroList[i].LogicTick();
@@ -56,6 +70,7 @@ public class FightMgr : MonoBehaviour
     public void UnInit()
     {
         heroList.Clear();
+        bulletList.Clear();
     }
     
     /// <summary>
@@ -128,7 +143,9 @@ public class FightMgr : MonoBehaviour
         transFollow = heroList[posIndex].mainViewUnit.transform;
     }
     
-    
+    public void AddBullet(Bullet bullet) {
+        bulletList.Add(bullet);
+    }
 
     // TODO 以后要学，这里是录入位置、大小、朝向、半径等信息，且转换浮点型Vector3为定点型PEVector3
     List<ColliderConfig> GenerateEnvColliderCfgs(Transform transEnvRoot)

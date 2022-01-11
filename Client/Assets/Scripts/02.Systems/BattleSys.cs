@@ -245,5 +245,10 @@ public class BattleSys : SystemBase
     public bool IsForbidAllSkill_SelfPlayer() {
         return fightMgr.IsForbidAllSkill(GameRoot.SelfPosIndex);
     }
+    
+    public void AddBullet(Bullet bullet) {
+        fightMgr.AddBullet(bullet);
+    }
+    
     #endregion
 }

@@ -5,6 +5,9 @@ public class BulletCfg {
     public float bulletSpeed;
     public float bulletSize;
     public float bulletHeight;
+    /// <summary>
+    /// 发射子弹的时候，要往发射方向偏移一小段而不是从中心
+    /// </summary>
     public float bulletOffset;
     public int bulletDelay;//ms
     public bool canBlock;

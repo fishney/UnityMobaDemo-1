@@ -111,6 +111,13 @@ public partial class MainLogicUnit
         
         return buff;
     }
+    
+    public Bullet CreateSkillBullet(MainLogicUnit source, MainLogicUnit target, Skill skill) {
+        Bullet bullet = ResSvc.Instance().CreateBullet(source, target, skill);
+        bullet.LogicInit();
+        BattleSys.Instance.AddBullet(bullet);
+        return bullet;
+    }
 
     #region API Func
 

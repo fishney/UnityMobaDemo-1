@@ -26,7 +26,8 @@ public class UnitCfg
    public int unitId;
    public string unitName;//单位角色名
    public string resName;//资源
-
+   public PEInt hitHeight;// 被子弹命中的高度
+   
    // 核心属性
    public int hp;
    public int def;

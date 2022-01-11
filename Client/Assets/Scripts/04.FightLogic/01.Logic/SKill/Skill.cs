@@ -86,7 +86,8 @@ public class Skill
     {
         if (skillCfg.bulletCfg != null)
         {
-            
+            TargetBullet bullet = owner.CreateSkillBullet(owner,lockTarget,this) as TargetBullet;
+            bullet.HitTargetCB = HitTarget;
         }
         else
         {
