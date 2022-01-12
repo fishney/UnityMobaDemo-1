@@ -302,5 +302,9 @@ public partial class MainLogicUnit
         }
     }
 
+    public void ModifyAttackSpeed(PEInt value) {
+        AttackSpeedRateCurrent += value;
+    }
+    
     #endregion
 }

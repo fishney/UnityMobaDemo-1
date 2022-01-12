@@ -1,5 +1,6 @@
 using HOKProtocol;
 using UnityEngine;
+using UnityEngine.UI;
 
 public partial class PlayWindow
 {
@@ -9,6 +10,8 @@ public partial class PlayWindow
     public SkillItem sk3Item;
 
     public Transform imgInfoRoot;
+    public Image imgInfoCD;
+    
     /// <summary>
     /// 禁止释放所有技能
     /// </summary>
@@ -81,6 +84,35 @@ public partial class PlayWindow
         sk1Item.SetForbidState(state);
         sk2Item.SetForbidState(state);
         sk3Item.SetForbidState(state);
+    }
+    
+    /// <summary>
+    /// 被动buff小图标显示
+    /// </summary>
+    /// <param name="cdTime">持续时间</param>
+    public void SetImgInfo(int cdTime) {
+        SetActive(imgInfoRoot);
+        showImgInfo = true;
+        showTimeCounter = 0;
+        showTime = cdTime * 1.0F / 1000;
+    }
+    
+    bool showImgInfo;
+    float showTimeCounter;
+    float showTime;
+    void UpdateImgInfo(float delta) {
+        if(showImgInfo) {
+            showTimeCounter += delta;
+            if(showTimeCounter >= showTime) {
+                showTimeCounter = 0;
+                SetActive(imgInfoCD, false);
+                showImgInfo = false;
+                SetActive(imgInfoRoot,false);// TODO ture???
+            }
+            else {
+                imgInfoCD.fillAmount = 1 - showTimeCounter / showTime;
+            }
+        }
     }
 }
     

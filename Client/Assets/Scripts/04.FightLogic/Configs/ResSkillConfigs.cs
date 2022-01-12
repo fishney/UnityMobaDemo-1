@@ -247,5 +247,128 @@ public class ResSkillConfigs {
         damage = 0,
         buffIdArr = new int[] { 10230, 10231 },
     };
+    
+    //1技能强化普攻为散射射击
+    public static SkillCfg sk_1024 = new SkillCfg {
+        skillId = 1024,
+        iconName = null,
+        aniName = "atk",
+        releaseMode = ReleaseModeEnum.None,
+        //最近的敌方目标
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestSingle,
+            targetTypeArr = new UnitTypeEnum[] {
+                //散射普攻目标可以是所有，散射子弹的目标通过buff里的目标来配置
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+                UnitTypeEnum.Tower,
+            },
+            selectRange = 5f,
+            searchDis = 15f,
+        },
+        bulletCfg = new BulletCfg {
+            bulletType = BulletTypeEnum.SkillTarget,//技能锁定的目标
+            bulletName = "后羿1技能强化普攻子弹",
+            resPath = "houyi_ska_bullet_skenhance",
+            bulletSpeed = 1f,
+            bulletSize = 0.1f,
+            bulletHeight = 1.5f,
+            bulletOffset = 0.5f,
+            bulletDelay = 0,
+        },
+        cdTime = 0,
+        spellTime = 550,//施法时间（技能前摇）
+        isNormalAttack = true,
+        skillTime = 1400,
+        damage = 40,
+        buffIdArr = new int[] { 10240 },
+
+        audio_start = null,
+        audio_work = "houyi_ska_rls",
+        audio_hit = "com_hit2"
+    };
+    
+    //被动强化普攻为多重射击
+    public static SkillCfg sk_1025 = new SkillCfg {
+        skillId = 1025,
+        iconName = null,
+        aniName = "atk",
+        releaseMode = ReleaseModeEnum.None,
+        //最近的敌方目标
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestSingle,
+            targetTypeArr = new UnitTypeEnum[] {
+                //散射普攻目标可以是所有，散射子弹的目标通过buff里的目标来配置
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+                UnitTypeEnum.Tower,
+            },
+            selectRange = 5f,
+            searchDis = 15f,
+        },
+        bulletCfg = new BulletCfg {
+            bulletType = BulletTypeEnum.SkillTarget,//技能锁定的目标
+            bulletName = "后羿被动强化普攻子弹",
+            resPath = "houyi_ska_bullet_edenhance",
+            bulletSpeed = 1f,
+            bulletSize = 0.1f,
+            bulletHeight = 1.5f,
+            bulletOffset = 0.5f,
+            bulletDelay = 0,
+        },
+        cdTime = 0,
+        spellTime = 550,//施法时间（技能前摇）
+        isNormalAttack = true,
+        skillTime = 1400,
+        damage = 20,
+        buffIdArr = new int[] { 10250 },
+
+        audio_start = null,
+        audio_work = "houyi_ska_multiarrow",
+        audio_hit = "houyi_multi_hit"
+    };
+    
+    //技能强化与被动强化混合
+    public static SkillCfg sk_1026 = new SkillCfg {
+        skillId = 1024,
+        iconName = null,
+        aniName = "atk",
+        releaseMode = ReleaseModeEnum.None,
+        //最近的敌方目标
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestSingle,
+            targetTypeArr = new UnitTypeEnum[] {
+                //散射普攻目标可以是所有，散射子弹的目标通过buff里的目标来配置
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+                UnitTypeEnum.Tower,
+            },
+            selectRange = 5f,
+            searchDis = 15f,
+        },
+        bulletCfg = new BulletCfg {
+            bulletType = BulletTypeEnum.SkillTarget,//技能锁定的目标
+            bulletName = "后羿技能强化普攻子弹",
+            resPath = "houyi_ska_bullet_edskmixed",
+            bulletSpeed = 1f,
+            bulletSize = 0.1f,
+            bulletHeight = 1.5f,
+            bulletOffset = 0.5f,
+            bulletDelay = 0,
+        },
+        cdTime = 0,
+        spellTime = 550,//施法时间（技能前摇）
+        isNormalAttack = true,
+        skillTime = 1400,
+        damage = 100,
+        buffIdArr = new int[] { 10260 },
+
+        audio_start = null,
+        audio_work = "houyi_ska_multiarrow",
+        audio_hit = "houyi_multi_hit"
+    };
     #endregion
 }

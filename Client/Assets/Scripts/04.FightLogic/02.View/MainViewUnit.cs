@@ -179,4 +179,10 @@ public abstract class MainViewUnit : ViewUnit
         buffView.transform.localPosition = Vector3.zero;
         buffView.transform.localScale = Vector3.one;
     }
+    
+    public void SetImgInfo(int cdTime) {
+        if(mainLogicUnit.IsPlayerSelf()) {
+            playWindow.SetImgInfo(cdTime);
+        }
+    }
 }

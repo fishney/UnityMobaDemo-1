@@ -247,4 +247,64 @@ public class ResBuffConfigs
         damage = 50
     };
      #endregion
+     
+     #region Houyi被动技能Buff
+     public static BuffCfg buff_10200 = new HouyiPasvAttackSpeedBuffCfg {
+         //通用buff属性
+         buffId = 10200,
+         buffName = "被动攻速加成叠加",
+         buffType = BuffTypeEnum.HouyiPasvAttackSpeed,
+
+         attacher = AttachTypeEnum.Caster,
+         impacter = null,
+
+         buffDelay = 0,
+         buffInterval = 66,
+         buffDuration = -1,
+
+         //专有属性
+         overCount = 3,
+         speedAddtion = 90,
+         resetTime = 3000,
+     };
+     public static BuffCfg buff_10201 = new HouyiMultipleSkillModifyBuffCfg {
+         //通用buff属性
+         buffId = 10201,
+         buffName = "被动普攻修改buff",
+         buffType = BuffTypeEnum.HouyiPasvSkillModify,
+
+         attacher = AttachTypeEnum.Caster,
+         impacter = null,
+
+         buffDelay = 0,
+         buffInterval = 66,
+         buffDuration = -1,
+
+         //专有属性
+         originalID = 1020,
+         powerID = 1025,
+         superPowerID = 1026,
+         triggerOverCount = 3,
+         resetTime = 3000,
+     };
+
+     //Houyi被动技能强化普攻为多重射击
+     // public static BuffCfg buff_10250 = new HouyiMultipleArrowBuffCfg {
+     //     //通用buff属性
+     //     buffId = 10250,
+     //     buffName = "1技能强化普攻为多重射击",
+     //     buffType = BuffTypeEnum.HouyiPasvMultiArrow,
+     //
+     //     attacher = AttachTypeEnum.Caster,
+     //     impacter = null,
+     //     buffDelay = 0,
+     //     buffInterval = 0,
+     //     buffDuration = 0,
+     //
+     //     //专用属性
+     //     arrowCount = 2,
+     //     arrowDelay = 100,
+     //     posOffset = 0.3f,
+     // };
+     #endregion
 }

@@ -308,10 +308,23 @@ public class Skill
         }
     }
 
+    int tempSkillID;
+    public int TempSkillID {
+        set {
+            tempSkillID = value;
+        }
+        get {
+            return tempSkillID;
+        }
+    }
+    
     /// 技能替换
     public void ReplaceSkillCfg(int replaceId) {
         if(skillId == replaceId) {
-            this.Log("Set replaceId == skillId:" + replaceId);
+            TempSkillID = 0;
+        }
+        else {
+            TempSkillID = replaceId;
         }
 
         skillCfg = ResSvc.Instance().GetSkillConfigById(replaceId);

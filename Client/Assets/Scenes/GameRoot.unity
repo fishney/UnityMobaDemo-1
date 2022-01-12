@@ -2979,6 +2979,7 @@ MonoBehaviour:
   sk2Item: {fileID: 1631411692}
   sk3Item: {fileID: 1631411691}
   imgInfoRoot: {fileID: 1631411686}
+  imgInfoCD: {fileID: 1631411718}
 --- !u!224 &1631411686 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9097302048462082107, guid: a6904fc30642caf41829d7dc95fb5aa9, type: 3}
@@ -3301,6 +3302,17 @@ MonoBehaviour:
 --- !u!114 &1631411717 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 366162956, guid: a6904fc30642caf41829d7dc95fb5aa9, type: 3}
+  m_PrefabInstance: {fileID: 1631411682}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1631411718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5774470337648145107, guid: a6904fc30642caf41829d7dc95fb5aa9, type: 3}
   m_PrefabInstance: {fileID: 1631411682}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

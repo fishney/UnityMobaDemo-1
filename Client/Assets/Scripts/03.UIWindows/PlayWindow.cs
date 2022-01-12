@@ -59,6 +59,7 @@ public partial class PlayWindow : WindowBase
         }
 
         UpdateSkillWnd();
+        UpdateImgInfo(Time.deltaTime);
     }
 
   

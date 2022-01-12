@@ -179,6 +179,10 @@ public partial class MainLogicUnit
                || IsKnockup();
     }
 
+    public Skill[] GetAllSkill() {
+        return skillArr;
+    }
+    
     public Buff GetBuffById(int id)
     {
         return buffList.FirstOrDefault(o => o.cfg.buffId == id);
