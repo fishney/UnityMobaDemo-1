@@ -194,12 +194,12 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                 return ResSkillConfigs.sk_1022;
             case 1023:
                 return ResSkillConfigs.sk_1023;
-            // case 1024:
-            //     return ResSkillConfigs.sk_1024;
-            // case 1025:
-            //     return ResSkillConfigs.sk_1025;
-            // case 1026:
-            //     return ResSkillConfigs.sk_1026;
+            case 1024:
+                return ResSkillConfigs.sk_1024;
+            case 1025:
+                return ResSkillConfigs.sk_1025;
+            case 1026:
+                return ResSkillConfigs.sk_1026;
             
             default:
                 this.Error("Get SkillCfg Failed,Id: " + skillId);
@@ -239,24 +239,24 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
              case BuffTypeEnum.Damage_StaticGroup:
                  return new DamageBuff_StaticGroup(source, owner, skill, buffID, args);
              
-            // case BuffTypeEnum.HouyiPasvAttackSpeed:
-            //     return new HouyiPasvAttackSpeedBuff(source, owner, skill, buffID, args);
-            // case BuffTypeEnum.HouyiPasvSkillModify:
-            //     return new HouyiMultipleSkillModifyBuff(source, owner, skill, buffID, args);
-            // case BuffTypeEnum.HouyiPasvMultiArrow:
-            //     return new HouyiMultipleArrowBuff(source, owner, skill, buffID, args);
-            // case BuffTypeEnum.HouyiActiveSkillModify:
-            //     return new HouyiScatterSkillModifyBuff(source, owner, skill, buffID, args);
-            // case BuffTypeEnum.Scatter:
-            //     return new HouyiScatterArrowBuff(source, owner, skill, buffID, args);
-            // case BuffTypeEnum.HouyiMixedMultiScatter:
-            //     return new HouyiMixedMultiScatterBuff(source, owner, skill, buffID, args);
-            // case BuffTypeEnum.MoveSpeed_StaticGroup:
-            //     return new MoveSpeedBuff_StaticGroup(source, owner, skill, buffID, args);
+             case BuffTypeEnum.HouyiPasvAttackSpeed:
+                 return new HouyiPasvAttackSpeedBuff(source, owner, skill, buffID, args);
+             case BuffTypeEnum.HouyiPasvSkillModify:
+                 return new HouyiMultipleSkillModifyBuff(source, owner, skill, buffID, args);
+             case BuffTypeEnum.HouyiPasvMultiArrow:
+                 return new HouyiMultipleArrowBuff(source, owner, skill, buffID, args);
+            case BuffTypeEnum.HouyiActiveSkillModify:
+                return new HouyiScatterSkillModifyBuff(source, owner, skill, buffID, args);
+            case BuffTypeEnum.Scatter:
+                return new HouyiScatterArrowBuff(source, owner, skill, buffID, args);
+            case BuffTypeEnum.HouyiMixedMultiScatter:
+                return new HouyiMixedMultiScatterBuff(source, owner, skill, buffID, args);
+            //  case BuffTypeEnum.MoveSpeed_StaticGroup:
+            //      return new MoveSpeedBuff_StaticGroup(source, owner, skill, buffID, args);
             //
-            // case BuffTypeEnum.Stun_Single_DynamicTime:
-            //     return new StunBuff_DynamicTime(source, owner, skill, buffID, args);
-            //TOADD
+            //  case BuffTypeEnum.Stun_Single_DynamicTime:
+            //      return new StunBuff_DynamicTime(source, owner, skill, buffID, args);
+            // TOADD
             case BuffTypeEnum.None:
             default:
                 this.Error("Create Buff Failed,BuffID:" + buffID);
@@ -292,19 +292,19 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
             case 10133:
                 return ResBuffConfigs.buff_10133;
             // //Houyi被动技能
-            // case 10200:
-            //     return ResBuffConfigs.buff_10200;
-            // case 10201:
-            //     return ResBuffConfigs.buff_10201;
-            // case 10250:
-            //     return ResBuffConfigs.buff_10250;
-            // //Houyi1技能
-            // case 10210://技能替换
-            //     return ResBuffConfigs.buff_10210;
-            // case 10240://scatter
-            //     return ResBuffConfigs.buff_10240;
-            // case 10260://mixed
-            //     return ResBuffConfigs.buff_10260;
+            case 10200:
+                return ResBuffConfigs.buff_10200;
+            case 10201:
+                return ResBuffConfigs.buff_10201;
+            case 10250:
+                return ResBuffConfigs.buff_10250;
+            //Houyi1技能
+            case 10210://技能替换
+                return ResBuffConfigs.buff_10210;
+            case 10240://scatter
+                return ResBuffConfigs.buff_10240;
+            case 10260://mixed
+                return ResBuffConfigs.buff_10260;
             // //Houyi2技能
             // case 10220:
             //     return ResBuffConfigs.buff_10220;

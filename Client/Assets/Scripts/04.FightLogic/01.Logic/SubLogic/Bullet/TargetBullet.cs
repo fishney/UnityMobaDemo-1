@@ -111,4 +111,24 @@ public class TargetBullet: Bullet
             HitTargetCB?.Invoke(target, null);
         }
     }
+    
+    public void SetDelayData(int delay) {
+        delayCounter = delay;
+        unitState = SubUnitState.Delay;
+    }
+    
+    public void SetOffsetPos(PEVector3 offset) {
+        LogicPos += offset;
+        PEVector3 targetPos = target.LogicPos + new PEVector3(0, target.ud.unitCfg.hitHeight, 0);
+        LogicDir = (targetPos - LogicPos).normalized;
+    }
+
+    public void SetCurveDir() {
+        PEVector3 targetPos = target.LogicPos + new PEVector3(0, target.ud.unitCfg.hitHeight, 0);
+        PEVector3 v1 = PEVector3.Cross((targetPos - LogicPos), PEVector3.up).normalized;
+        v1 *= RandomUtils.GetRandom(-100, 100);
+        PEVector3 v2 = PEVector3.up * RandomUtils.GetRandom(0, 100);
+        curveDir = (v1 + v2).normalized / 2;
+        LogicDir += curveDir;
+    }
 }

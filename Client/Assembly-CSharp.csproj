@@ -53,9 +53,11 @@
      <Compile Include="Assets\Scripts\02.Systems\LoginSys.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\MainLogicAttr.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\Soldier.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiPasvAttackSpeedBuff.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\Hero.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\PlayWindow.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\WindowBase.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMultipleSkillModifyBuff.cs" />
      <Compile Include="Assets\Scripts\02.Systems\GMSystem.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\Configs\ResBuffConfigs.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\MatchWindow.cs" />
@@ -124,8 +126,11 @@
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SKill\CalcRule.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\ItemHP.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\SilenseBuff_Single.cs" />
-     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiPasvAttackSpeedBuff.cs" />
-     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMultipleSkillModifyBuff.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMultipleArrowBuff.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiScatterSkillModifyBuff.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiScatterArrowBuff.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMixedMultiScatterBuff.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\00.Common\RandomUtils.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

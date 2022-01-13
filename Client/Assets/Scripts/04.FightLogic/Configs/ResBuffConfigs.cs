@@ -289,22 +289,106 @@ public class ResBuffConfigs
      };
 
      //Houyi被动技能强化普攻为多重射击
-     // public static BuffCfg buff_10250 = new HouyiMultipleArrowBuffCfg {
-     //     //通用buff属性
-     //     buffId = 10250,
-     //     buffName = "1技能强化普攻为多重射击",
-     //     buffType = BuffTypeEnum.HouyiPasvMultiArrow,
-     //
-     //     attacher = AttachTypeEnum.Caster,
-     //     impacter = null,
-     //     buffDelay = 0,
-     //     buffInterval = 0,
-     //     buffDuration = 0,
-     //
-     //     //专用属性
-     //     arrowCount = 2,
-     //     arrowDelay = 100,
-     //     posOffset = 0.3f,
-     // };
+     public static BuffCfg buff_10250 = new HouyiMultipleArrowBuffCfg {
+         //通用buff属性
+         buffId = 10250,
+         buffName = "1技能强化普攻为多重射击",
+         buffType = BuffTypeEnum.HouyiPasvMultiArrow,
+     
+         attacher = AttachTypeEnum.Caster,
+         impacter = null,
+         buffDelay = 0,
+         buffInterval = 0,
+         buffDuration = 0,
+     
+         //专用属性
+         arrowCount = 2,
+         arrowDelay = 100,
+         posOffset = 0.3f,
+     };
      #endregion
+     
+     #region Houyi1技能Buff
+    /// <summary>
+    /// Houyi1技能普攻替换buff
+    /// </summary>
+    public static BuffCfg buff_10210 = new HouyiScatterSkillModifyBuffCfg {
+        //通用buff属性
+        buffId = 10210,
+        buffName = "技能强化普攻",
+        buffType = BuffTypeEnum.HouyiActiveSkillModify,
+
+        attacher = AttachTypeEnum.Caster,
+        impacter = null,
+
+        buffDelay = 0,
+        buffInterval = 0,
+        buffDuration = 5000,//散射buff有效时间
+
+        //专有属性
+        originalID = 1020,
+        powerID = 1024,
+        superPowerID = 1026,
+    };
+    /// <summary>
+    /// Houyi1技能强化普攻后，散射buff
+    /// </summary>
+    public static BuffCfg buff_10240 = new HouyiScatterArrowBuffCfg {
+        //通用buff属性
+        buffId = 10240,
+        buffName = "1技能强化普攻为散射",
+        buffType = BuffTypeEnum.Scatter,
+
+        attacher = AttachTypeEnum.Caster,
+        impacter = null,
+        buffDelay = 0,
+        buffInterval = 0,
+        buffDuration = 0,
+
+        //专用属性
+        scatterCount = 2,
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestMulti,
+            //散射只能作用于小兵或英雄
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+            },
+            selectRange = 5
+        },
+
+        damagePct = 50,
+    };
+    //Houyi1技能与被动混合强化普攻Buff:多重射击与散射混合
+    public static BuffCfg buff_10260 = new HouyiMixedMultiScatterBuffCfg {
+        //通用buff属性
+        buffId = 10260,
+        buffName = "1技能强化普攻为散射",
+        buffType = BuffTypeEnum.HouyiMixedMultiScatter,
+
+        attacher = AttachTypeEnum.Caster,
+        impacter = null,
+        buffDelay = 0,
+        buffInterval = 0,
+        buffDuration = 0,
+
+        //专用属性
+        scatterCount = 2,
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestMulti,
+            targetTypeArr = new UnitTypeEnum[] {
+                //散射普攻目标可以是所有，散射子弹的目标通过buff里的目标来配置
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+            },
+            selectRange = 5
+        },
+        damagePct = 50,
+        arrowCount = 2,
+        arrowDelay = 50,
+        posOffset = 0.3f,
+    };
+    #endregion
 }

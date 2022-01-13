@@ -199,14 +199,19 @@ public class ResSkillConfigs {
     public static SkillCfg sk_1021 = new SkillCfg {
         skillId = 1021,
         iconName = "houyi_sk1",
-        aniName = null,
         releaseMode = ReleaseModeEnum.Click,
+        aniName = null,
         targetCfg = null,
+        bulletCfg = null,
         cdTime = 5000,//ms
         spellTime = 0,
         isNormalAttack = false,
         skillTime = 0,
         damage = 0,
+        //普攻强化buff（技能修改）
+        buffIdArr = new int[] { 10210 },
+        
+        audio_start = "houyi_sk1_rls"
     };
     /// <summary>
     /// Houyi2技能：落日余晖
