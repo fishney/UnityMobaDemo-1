@@ -279,7 +279,14 @@ public class Skill
             
             void DirectionBullet() {
                 //非目标弹道技能
-                //TODO
+                DirectionBullet bullet = owner.CreateSkillBullet(owner, null, this) as DirectionBullet;
+                bullet.hitTargetCB = (MainLogicUnit target, object[] args) => {
+                    this.Log("路径上击中目标：" + target.unitName);
+                    HitTarget(target, args);
+                };
+                bullet.ReachPosCB = () => {
+                    this.Log("子弹达到最终位置");
+                };
             }
         }
     }

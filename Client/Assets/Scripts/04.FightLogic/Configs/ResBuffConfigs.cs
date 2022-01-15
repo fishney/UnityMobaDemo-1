@@ -248,7 +248,7 @@ public class ResBuffConfigs
     };
      #endregion
      
-     #region Houyi被动技能Buff
+    #region Houyi被动技能Buff
      public static BuffCfg buff_10200 = new HouyiPasvAttackSpeedBuffCfg {
          //通用buff属性
          buffId = 10200,
@@ -308,7 +308,7 @@ public class ResBuffConfigs
      };
      #endregion
      
-     #region Houyi1技能Buff
+    #region Houyi1技能Buff
     /// <summary>
     /// Houyi1技能普攻替换buff
     /// </summary>
@@ -389,6 +389,174 @@ public class ResBuffConfigs
         arrowCount = 2,
         arrowDelay = 50,
         posOffset = 0.3f,
+    };
+    #endregion
+    
+    #region Houyi2技能Buff
+    /// <summary>
+    /// 后羿2技能动态范围伤害1，基于UI输入位置创建buff
+    /// </summary>
+    public static BuffCfg buff_10220 = new DamageBuffCfg_StaticGroup {
+        //通用buff属性
+        buffId = 10220,
+        buffName = "后羿2技能范围伤害1",
+        buffType = BuffTypeEnum.Damage_StaticGroup,
+
+        attacher = AttachTypeEnum.Indie,
+        impacter = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.PositionClosestMulti,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+            },
+            selectRange = 2f
+        },
+
+        buffDelay = 0,
+        buffInterval = 0,
+        buffDuration = 2000,
+        staticPosType = StaticPosTypeEnum.UIInputPos,
+
+        damage = 200,
+        buffEffect = "houyi_sk2_effect",
+    };
+    /// <summary>
+    /// 中心位置的额外伤害
+    /// 后羿2技能额外动态范围伤害2，基于UI输入位置创建buff
+    /// </summary>
+    public static BuffCfg buff_10221 = new DamageBuffCfg_StaticGroup {
+        //通用buff属性
+        buffId = 10221,
+        buffName = "后羿2技能额外范围伤害2",
+        buffType = BuffTypeEnum.Damage_StaticGroup,
+
+        attacher = AttachTypeEnum.Indie,
+        impacter = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.PositionClosestMulti,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+            },
+            selectRange = 1f
+        },
+
+        buffDelay = 0,
+        buffInterval = 0,
+        buffDuration = 0,
+        staticPosType = StaticPosTypeEnum.UIInputPos,
+
+        damage = 100,
+    };
+
+    /// <summary>
+    /// 后羿2技能静态范围移速1
+    /// </summary>
+    public static BuffCfg buff_10222 = new MoveSpeedBuffCfg {
+        //通用buff属性
+        buffId = 10222,
+        buffName = "后羿2技能动态范围移速1",
+        buffType = BuffTypeEnum.MoveSpeed_StaticGroup,
+        //施法时候释放的独立buff
+        attacher = AttachTypeEnum.Indie,
+        impacter = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.PositionClosestMulti,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+            },
+            selectRange = 2f
+        },
+        buffDelay = 0,
+        buffInterval = 0,// 注意！！！buff检测频率为0，所以只进行一次
+        buffDuration = 2000,//减速2秒
+        staticPosType = StaticPosTypeEnum.UIInputPos,
+
+        //专用参数
+        amount = -30,
+    };
+    /// <summary>
+    /// 后羿2技能额外静态范围移速2
+    /// </summary>
+    public static BuffCfg buff_10223 = new MoveSpeedBuffCfg {
+        //通用buff属性
+        buffId = 10223,
+        buffName = "后羿2技能额外动态范围移速2",
+        buffType = BuffTypeEnum.MoveSpeed_StaticGroup,
+        //施法时候释放的独立buff
+        attacher = AttachTypeEnum.Indie,
+        impacter = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.PositionClosestMulti,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+            },
+            selectRange = 1f
+        },
+        buffDelay = 0,
+        buffInterval = 0,
+        buffDuration = 2000,
+        staticPosType = StaticPosTypeEnum.UIInputPos,
+
+        //专用参数
+        amount = -20,
+    };
+    #endregion
+    
+    #region Houyi3技能Buff
+    /// <summary>
+    /// Houyi3技能动态时间眩晕buff
+    /// </summary>
+    public static BuffCfg buff_10230 = new StunBuffCfg_DynamicTime {
+        //通用buff属性
+        buffId = 10230,
+        buffName = "动态时间眩晕",
+
+        attacher = AttachTypeEnum.Bullet,
+        impacter = null,
+
+        buffDelay = 0,
+        buffInterval = 0,
+        buffDuration = 0,
+        buffType = BuffTypeEnum.Stun_Single_DynamicTime,
+
+        //专用参数
+        minStunTime = 1000,
+        maxStunTime = 3500,
+    };
+    /// <summary>
+    /// Houyi3技能范围伤害buff，基于子弹击中位置创建buff
+    /// </summary>
+    public static BuffCfg buff_10231 = new DamageBuffCfg_StaticGroup {
+        //通用buff属性
+        buffId = 10130,
+        buffName = "范围伤害",
+
+        attacher = AttachTypeEnum.Bullet,
+        impacter = new TargetCfg {
+            targetTeam = TargetTeamEnum.Friend,
+            selectRule = SelectRuleEnum.PositionClosestMulti,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+            },
+            selectRange = 2f
+        },
+
+        buffDelay = 0,
+        buffInterval = 0,
+        buffDuration = 0,
+        buffType = BuffTypeEnum.Damage_StaticGroup,
+        staticPosType = StaticPosTypeEnum.BulletHitTargetPos,
+
+        //damageAudio = "com_hit1",
+        //effect
+        //buffEffect = "Effect_sk3",
+
+        damage = 100,
     };
     #endregion
 }

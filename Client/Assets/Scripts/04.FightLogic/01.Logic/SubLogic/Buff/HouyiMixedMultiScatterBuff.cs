@@ -42,9 +42,9 @@ public class HouyiMixedMultiScatterBuff : Buff {
         lockTarget = skill.lockTarget;
 
         // 主箭3连射
-        MultiArrow(lockTarget, skill.skillCfg.damage, false);
+        CreateMultiArrow(lockTarget, skill.skillCfg.damage, false);
 
-        // 技能1散射3个目标
+        // 技能1散射3个目标 => 寻找额外的2个目标
         var findLst = CalcRule.FindMulipleTargetByRule(owner, targetCfg, PEVector3.zero);
         int count = 0;
         for(int i = 0; i < findLst.Count; i++) {
@@ -66,11 +66,11 @@ public class HouyiMixedMultiScatterBuff : Buff {
                 target.GetDamageByBuff(skill.skillCfg.damage * damagePct / 100, this);
             };
 
-            MultiArrow(targetList[i], skill.skillCfg.damage * damagePct / 100, true);
+            CreateMultiArrow(targetList[i], skill.skillCfg.damage * damagePct / 100, true);
         }
     }
 
-    void MultiArrow(MainLogicUnit target, PEInt damage, bool isCurve = false) {
+    void CreateMultiArrow(MainLogicUnit target, PEInt damage, bool isCurve = false) {
         for(int i = 0; i < arrowCount; i++) {
             TargetBullet bullet = source.CreateSkillBullet(source, target, skill) as TargetBullet;
             if(isCurve) {

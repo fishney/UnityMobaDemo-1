@@ -140,7 +140,7 @@ public class ResSkillConfigs {
         isNormalAttack = true,
         skillTime = 1400,
         damage = 90,
-        //沉默buff
+        
         buffIdArr = new int[] { 10140, 10141, 10142 },
 
         //audio
@@ -233,6 +233,12 @@ public class ResSkillConfigs {
         spellTime = 630,//施法时间（技能前摇）
         skillTime = 1200,
         damage = 0,
+        
+        buffIdArr = new int[] { 10220, 10221, 10222, 10223 },
+
+        audio_start = "houyi_sk2_rls",
+        audio_work = null,
+        audio_hit = null
     };
     /// <summary>
     /// Houyi3技能：灼日之矢
@@ -245,12 +251,35 @@ public class ResSkillConfigs {
         aniName = "sk3",
         releaseMode = ReleaseModeEnum.Direction,
         targetCfg = null,
+        bulletCfg = new BulletCfg {
+            bulletType = BulletTypeEnum.UIDirection,//技能锁定的目标
+            bulletName = "后羿大招-灼日之矢",
+            resPath = "houyi_sk3_bullet",
+            bulletSpeed = 1f,
+            bulletSize = 0.5f,
+            bulletHeight = 1.5f,
+            bulletOffset = 1f,
+            bulletDelay = 0,
+
+            canBlock = true,
+            //受影响的目标
+            impacter = new TargetCfg {
+                targetTeam = TargetTeamEnum.Enemy,
+                selectRule = SelectRuleEnum.Hero,
+                targetTypeArr = new UnitTypeEnum[] { UnitTypeEnum.Hero },
+            },
+            bulletDuration = 5000,//确保不击中目标的情况下能飞出地图
+        },
         cdTime = 8000,
         spellTime = 230,//施法时间（技能前摇）
         isNormalAttack = false,
         skillTime = 800,
         damage = 0,
         buffIdArr = new int[] { 10230, 10231 },
+
+        audio_start = "houyi_sk3_rls",
+        audio_work = null,
+        audio_hit = "houyi_sk3_hit",//技能命中后，命中目标播放音效
     };
     
     //1技能强化普攻为散射射击

@@ -74,6 +74,25 @@ public static class CalcRule
         return len < range ? target : null;
     }
 
+    public static MainLogicUnit FindMinDisTargetInPos(PEVector3 pos, MainLogicUnit[] targetTeam) {
+        if(targetTeam == null) {
+            return null;
+        }
+
+        MainLogicUnit target = null;
+        int count = targetTeam.Length;
+        PEInt len = 0;
+        for(int i = 0; i < count; i++) {
+            PEInt radius = targetTeam[i].ud.unitCfg.colliCfg.mRadius;
+            PEInt tempLen = (targetTeam[i].LogicPos - pos).magnitude - radius;
+            if(len == 0 || tempLen < len) {
+                len = tempLen;
+                target = targetTeam[i];
+            }
+        }
+        return target;
+    }
+    
     static List<MainLogicUnit> GetTargetTeam(MainLogicUnit self, TargetCfg cfg)
     {
         var targetList = new List<MainLogicUnit>();

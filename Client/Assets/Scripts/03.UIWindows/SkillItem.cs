@@ -118,7 +118,8 @@ public class SkillItem : WindowBase
             
             OnClickUp(skillIcon.gameObject, (evt, args) =>
             {
-                Vector2 dir = evt.position = startPos;
+                this.Log("OnClickUp");
+                Vector2 dir = evt.position - startPos;
                 imgPoint.transform.position = startPos;
                 SetActive(imgCycle,false);
                 SetActive(imgPoint,false);
@@ -128,21 +129,23 @@ public class SkillItem : WindowBase
 
                 if (dir.magnitude >= ClientConfig.SkillCancelDis)
                 {
+                    this.Log("取消技能施放 " + dir.magnitude + " " + ClientConfig.SkillCancelDis);
                     viewHero.DisableSkillGuide(skillIndex);
                     return;
                 }
 
                 if (skillCfg.releaseMode == ReleaseModeEnum.Click)
                 {
+                    this.Log("直接施放技能");
                     // 直接释放技能
                     viewHero.DisableSkillGuide(skillIndex);
                     ClickSkillItem();
                 }
                 else if (skillCfg.releaseMode == ReleaseModeEnum.Position)
                 {
-                    viewHero.DisableSkillGuide(skillIndex);
                     dir = BattleSys.Instance.SkillDisMultiplier * dir;
                     Vector2 clampDir = Vector2.ClampMagnitude(dir, skillCfg.targetCfg.selectRange);
+                    viewHero.DisableSkillGuide(skillIndex);
                     Vector3 clampDirVector3 = new Vector3(clampDir.x, 0, clampDir.y);
                     clampDirVector3 = Quaternion.Euler(0, 45, 0) * clampDirVector3;// 这里的45度是相机偏移的45度
                     ClickSkillItem(clampDirVector3);
@@ -157,7 +160,7 @@ public class SkillItem : WindowBase
                     
                     Vector3 dirVector3 = new Vector3(dir.x, 0, dir.y);
                     dirVector3 = Quaternion.Euler(0, 45, 0) * dirVector3;// 这里的45度是相机偏移的45度
-                    ClickSkillItem(dirVector3);
+                    ClickSkillItem(dirVector3.normalized);
                 }
                 else
                 {

@@ -26,7 +26,7 @@ public class BuffCfg
 
     public int buffDelay;
     /// <summary>
-    /// buff效果触发频率(比如持续1秒1次)
+    /// buff效果触发频率(比如持续1秒1次)，如果为0就只调用Start，LogicTick不会调用到Tick
     /// </summary>
     public int buffInterval;
     /// <summary>

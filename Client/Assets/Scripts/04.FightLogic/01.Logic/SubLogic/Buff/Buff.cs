@@ -7,6 +7,9 @@ public class Buff : SubLogicUnit
     /// buff附着单位
     public MainLogicUnit owner;
     protected int buffId;
+    /// <summary>
+    /// 值在DirectionBullet类里有输入，通过调用 hitTargetCB 来获得的
+    /// </summary>
     protected object[] args;
     // buff表现
     private BuffView buffView;

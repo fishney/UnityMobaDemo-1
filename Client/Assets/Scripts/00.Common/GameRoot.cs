@@ -34,6 +34,7 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         PELog.InitSettings(cfg);
         PELog.ColorLog(LogColor.Green,"GameRoot Init...");
         
+        RandomUtils.InitRandom(666);
         DontDestroyOnLoad(this);
         ClearUIRoot();
         Init();

@@ -251,11 +251,11 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                 return new HouyiScatterArrowBuff(source, owner, skill, buffID, args);
             case BuffTypeEnum.HouyiMixedMultiScatter:
                 return new HouyiMixedMultiScatterBuff(source, owner, skill, buffID, args);
-            //  case BuffTypeEnum.MoveSpeed_StaticGroup:
-            //      return new MoveSpeedBuff_StaticGroup(source, owner, skill, buffID, args);
-            //
-            //  case BuffTypeEnum.Stun_Single_DynamicTime:
-            //      return new StunBuff_DynamicTime(source, owner, skill, buffID, args);
+            case BuffTypeEnum.MoveSpeed_StaticGroup:
+                return new MoveSpeedBuff_StaticGroup(source, owner, skill, buffID, args);
+            
+            case BuffTypeEnum.Stun_Single_DynamicTime:
+                return new StunBuff_DynamicTime(source, owner, skill, buffID, args);
             // TOADD
             case BuffTypeEnum.None:
             default:
@@ -306,19 +306,19 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
             case 10260://mixed
                 return ResBuffConfigs.buff_10260;
             // //Houyi2技能
-            // case 10220:
-            //     return ResBuffConfigs.buff_10220;
-            // case 10221:
-            //     return ResBuffConfigs.buff_10221;
-            // case 10222:
-            //     return ResBuffConfigs.buff_10222;
-            // case 10223:
-            //     return ResBuffConfigs.buff_10223;
+            case 10220:
+                return ResBuffConfigs.buff_10220;
+            case 10221:
+                return ResBuffConfigs.buff_10221;
+            case 10222:
+                return ResBuffConfigs.buff_10222;
+            case 10223:
+                return ResBuffConfigs.buff_10223;
             // //Houyi3技能
-            // case 10230:
-            //     return ResBuffConfigs.buff_10230;
-            // case 10231:
-            //     return ResBuffConfigs.buff_10231;
+            case 10230:
+                return ResBuffConfigs.buff_10230;
+            case 10231:
+                return ResBuffConfigs.buff_10231;
             //通用
             case 90000:
                 return ResBuffConfigs.buff_90000;
@@ -337,10 +337,10 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         switch(skill.skillCfg.bulletCfg.bulletType) {
             case BulletTypeEnum.SkillTarget:
                 return new TargetBullet(source, target, skill);
-            // case BulletTypeEnum.UIDirection:
-            //     return new DirectionBullet(source, skill);
-            case BulletTypeEnum.UIPosition:
-            case BulletTypeEnum.BuffSearch:
+            case BulletTypeEnum.UIDirection:
+                return new DirectionBullet(source, skill);
+            case BulletTypeEnum.UIPosition: // TODO 
+            case BulletTypeEnum.BuffSearch: // TODO 
             default:
                 this.Error("Create Bullet Error.");
                 return null;
