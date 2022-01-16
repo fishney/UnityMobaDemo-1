@@ -163,6 +163,131 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                     pasvBuff = new int[] { 10200, 10201 },
                     skillArr = new []{1020,1021,1022,1023},
                 };
+            
+            case 1001:
+                return new UnitCfg {
+                    unitId = 1001,
+                    unitName = "蓝方一塔",
+                    resName = "blueTower",
+                    hitHeight = (PEInt)1.5f,
+                    hp = 400,
+                    def = 0,
+                    colliCfg = new ColliderConfig {
+                        mType = ColliderType.Cylinder,
+                        mRadius = (PEInt)0.25f,
+                    },
+                    pasvBuff = null,
+                    skillArr = new int[] { 10010 }
+                };
+            case 1002:
+                return new UnitCfg {
+                    unitId = 1002,
+                    unitName = "蓝方水晶",
+                    resName = "blueCrystal",
+                    hitHeight = (PEInt)1f,
+                    hp = 800,
+                    def = 0,
+                    colliCfg = new ColliderConfig {
+                        mType = ColliderType.Cylinder,
+                        mRadius = (PEInt)1f,
+                    },
+                    pasvBuff = null,
+                    skillArr = new int[] { 10020 }
+                };
+            case 1003:
+                return new UnitCfg {
+                    unitId = 1003,
+                    unitName = "蓝方近战小兵",
+                    resName = "xb_blue_jz",
+                    hitHeight = (PEInt)0.6f,
+                    hp = 500,
+                    def = 0,
+                    moveSpeed = 2,
+                    colliCfg = new ColliderConfig {
+                        mType = ColliderType.Cylinder,
+                        mRadius = (PEInt)0.25f,
+                    },
+                    pasvBuff = null,
+                    skillArr = new int[] { 10030 }
+                };
+            case 1004:
+                return new UnitCfg {
+                    unitId = 1004,
+                    unitName = "蓝方远程小兵",
+                    resName = "xb_blue_yc",
+                    hitHeight = (PEInt)0.6f,
+                    hp = 300,
+                    def = 0,
+                    moveSpeed = 2,
+                    colliCfg = new ColliderConfig {
+                        mType = ColliderType.Cylinder,
+                        mRadius = (PEInt)0.25f,
+                    },
+                    pasvBuff = null,
+                    skillArr = new int[] { 10040 }
+                };
+            case 2001:
+                return new UnitCfg {
+                    unitId = 2001,
+                    unitName = "红方一塔",
+                    resName = "redTower",
+                    hitHeight = (PEInt)1.5f,
+                    hp = 400,
+                    def = 0,
+                    colliCfg = new ColliderConfig {
+                        mType = ColliderType.Cylinder,
+                        mRadius = (PEInt)0.25f,
+                    },
+                    pasvBuff = null,
+                    skillArr = new int[] { 20010 }
+                };
+            case 2002:
+                return new UnitCfg {
+                    unitId = 2002,
+                    unitName = "红方水晶",
+                    resName = "redCrystal",
+                    hitHeight = (PEInt)1f,
+                    hp = 800,
+                    def = 0,
+                    colliCfg = new ColliderConfig {
+                        mType = ColliderType.Cylinder,
+                        mRadius = (PEInt)1f,
+                    },
+                    pasvBuff = null,
+                    skillArr = new int[] { 20020 }
+                };
+            case 2003:
+                return new UnitCfg {
+                    unitId = 2003,
+                    unitName = "红方近战小兵",
+                    resName = "xb_red_jz",
+                    hitHeight = (PEInt)0.6f,
+                    hp = 500,
+                    def = 0,
+                    moveSpeed = 2,
+                    colliCfg = new ColliderConfig {
+                        mType = ColliderType.Cylinder,
+                        mRadius = (PEInt)0.25f,
+                    },
+                    pasvBuff = null,
+                    skillArr = new int[] { 20030 }
+                };
+            case 2004:
+                return new UnitCfg {
+                    unitId = 2004,
+                    unitName = "红方远程小兵",
+                    resName = "xb_red_yc",
+                    hitHeight = (PEInt)0.6f,
+                    hp = 300,
+                    def = 0,
+                    moveSpeed = 2,
+                    colliCfg = new ColliderConfig {
+                        mType = ColliderType.Cylinder,
+                        mRadius = (PEInt)0.25f,
+                    },
+                    pasvBuff = null,
+                    skillArr = new int[] { 20040 }
+                };
         }
 
         return null;
@@ -201,6 +326,23 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
             case 1026:
                 return ResSkillConfigs.sk_1026;
             
+            //防御塔与水晶的技能
+            case 10010:
+                return ResSkillConfigs.sk_10010;
+            case 10020:
+                return ResSkillConfigs.sk_10020;
+            case 10030:
+                return ResSkillConfigs.sk_10030;
+            case 10040:
+                return ResSkillConfigs.sk_10040;
+            case 20010:
+                return ResSkillConfigs.sk_20010;
+            case 20020:
+                return ResSkillConfigs.sk_20020;
+            case 20030:
+                return ResSkillConfigs.sk_20030;
+            case 20040:
+                return ResSkillConfigs.sk_20040;
             default:
                 this.Error("Get SkillCfg Failed,Id: " + skillId);
                 return null;
@@ -356,25 +498,68 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         // TODO 简写了,可以改成读取配置表
         switch (mapId)
         {
-            case 101:
-                return new MapCfg()
-                {
+           case 101:
+                return new MapCfg {
                     mapId = 101,
-                    blueBorn = new PEVector3(-27,0,0),
-                    redBorn = new PEVector3(27,0,0),
+                    //blueBorn = new PEVector3(-27, 0, 0),
+                    //redBorn = new PEVector3(27, 0, 0),
+                    blueBorn = new PEVector3(-5, 0, -3),
+                    redBorn = new PEVector3(5, 0, -3),
+                    towerIDArr = new int[] { 1001, 1002, 2001, 2002 },
+                    towerPosArr = new PEVector3[] {
+                        new PEVector3(-(PEInt)12.6f, 0, -(PEInt)0.2f),
+                        new PEVector3(-(PEInt)24.1f, 0, -(PEInt)0.2f),
+                        new PEVector3((PEInt)12.6f, 0, -(PEInt)0.2f),
+                        new PEVector3((PEInt)24.1f, 0, -(PEInt)0.2f)
+                    },
                     bornDelay = 15000,
                     bornInterval = 2000,
                     waveInterval = 50000,
+                    blueSoldierIDArr = new int[] { 1003, 1003, 1004, 1004 },
+                    blueSoldierPosArr = new PEVector3[] {
+                        new PEVector3(-22,0,-(PEInt)1.7f),
+                        new PEVector3(-22,0,(PEInt)1.7f),
+                        new PEVector3(-22,0,-(PEInt)1.7f),
+                        new PEVector3(-22,0,(PEInt)1.7f),
+                    },
+                    redSoldierIDArr = new int[] { 2003, 2003, 2004, 2004 },
+                    redSoldierPosArr = new PEVector3[] {
+                        new PEVector3(22,0,-(PEInt)1.7f),
+                        new PEVector3(22,0,(PEInt)1.7f),
+                        new PEVector3(22,0,-(PEInt)1.7f),
+                        new PEVector3(22,0,(PEInt)1.7f),
+                    },
+
                 };
             case 102:
-                return new MapCfg()
-                {
+                return new MapCfg {
                     mapId = 102,
-                    blueBorn = new PEVector3(-5,0,-3),
-                    redBorn = new PEVector3(5,0,-3),
+                    blueBorn = new PEVector3(-5, 0, -3),
+                    redBorn = new PEVector3(5, 0, -3),
+                    towerIDArr = new int[] { 1001, 1002, 2001, 2002 },
+                    towerPosArr = new PEVector3[] {
+                        new PEVector3(-(PEInt)12.6f, 0, -(PEInt)0.2f),
+                        new PEVector3(-(PEInt)24.1f, 0, -(PEInt)0.2f),
+                        new PEVector3((PEInt)12.6f, 0, -(PEInt)0.2f),
+                        new PEVector3((PEInt)24.1f, 0, -(PEInt)0.2f)
+                    },
                     bornDelay = 15000,
                     bornInterval = 2000,
                     waveInterval = 50000,
+                    blueSoldierIDArr = new int[] { 1003, 1003, 1004, 1004 },
+                    blueSoldierPosArr = new PEVector3[] {
+                        new PEVector3(-22,0,-(PEInt)1.7f),
+                        new PEVector3(-22,0,(PEInt)1.7f),
+                        new PEVector3(-22,0,-(PEInt)1.7f),
+                        new PEVector3(-22,0,(PEInt)1.7f),
+                    },
+                    redSoldierIDArr = new int[] { 2003, 2003, 2004, 2004 },
+                    redSoldierPosArr = new PEVector3[] {
+                        new PEVector3(22,0,-(PEInt)1.7f),
+                        new PEVector3(22,0,(PEInt)1.7f),
+                        new PEVector3(22,0,-(PEInt)1.7f),
+                        new PEVector3(22,0,(PEInt)1.7f),
+                    },
                 };
         }
 

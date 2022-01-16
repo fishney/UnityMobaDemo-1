@@ -405,4 +405,271 @@ public class ResSkillConfigs {
         audio_hit = "houyi_multi_hit"
     };
     #endregion
+    
+    #region 塔与水晶技能
+    //蓝方塔攻击
+    public static SkillCfg sk_10010 = new SkillCfg {
+        skillId = 10010,
+        iconName = null,
+        aniName = null,
+        releaseMode = ReleaseModeEnum.None,
+        //最近的敌方目标
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestSingle,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+            },
+            selectRange = 6f,
+            searchDis = 0f,
+        },
+        bulletCfg = new BulletCfg {
+            bulletType = BulletTypeEnum.SkillTarget,//技能锁定的目标
+            bulletName = "蓝方防御塔攻击子弹",
+            resPath = "tower_ska_bullet",
+            bulletSpeed = 1f,
+            bulletSize = 0.1f,
+            bulletHeight = 4f,//子弹出发点高度，如果是方向指向技能，则子弹一直保持这个高度
+            bulletOffset = 0,
+            bulletDelay = 0,
+        },
+        cdTime = 0,
+        spellTime = 1000,//施法时间（技能前摇）
+        isNormalAttack = true,
+        skillTime = 2000,
+        damage = 50,
+
+        audio_start = null,
+        audio_work = "tower_ska_rls",
+        audio_hit = "tower_ska_hit"
+    };
+    //蓝方水晶攻击
+    public static SkillCfg sk_10020 = new SkillCfg {
+        skillId = 10020,
+        iconName = null,
+        aniName = null,
+        releaseMode = ReleaseModeEnum.None,
+        //最近的敌方目标
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestSingle,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+            },
+            selectRange = 6f,
+            searchDis = 0f,
+        },
+        bulletCfg = new BulletCfg {
+            bulletType = BulletTypeEnum.SkillTarget,//技能锁定的目标
+            bulletName = "蓝方水晶攻击子弹",
+            resPath = "tower_ska_bullet",
+            bulletSpeed = 1f,
+            bulletSize = 0.1f,
+            bulletHeight = 2.5f,
+            bulletOffset = 0,
+            bulletDelay = 0,
+        },
+        cdTime = 0,
+        spellTime = 1000,//施法时间（技能前摇）
+        isNormalAttack = true,
+        skillTime = 2000,
+        damage = 100,
+
+        audio_start = null,
+        audio_work = "tower_ska_rls",
+        audio_hit = "tower_ska_hit"
+    };
+    //蓝方小兵近战普攻
+    public static SkillCfg sk_10030 = new SkillCfg {
+        skillId = 10030,
+        iconName = null,
+        aniName = "attack",
+        releaseMode = ReleaseModeEnum.None,
+        //最近的敌方目标
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestSingle,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+                UnitTypeEnum.Tower,
+            },
+            selectRange = 1.5f,
+            searchDis = 5f,
+        },
+        cdTime = 0,
+        spellTime = 400,//施法时间（技能前摇）
+        isNormalAttack = true,
+        skillTime = 1200,
+        damage = 20,
+    };
+    //蓝方小兵远程普攻
+    public static SkillCfg sk_10040 = new SkillCfg {
+        skillId = 10040,
+        iconName = null,
+        aniName = "attack",
+        releaseMode = ReleaseModeEnum.None,
+        //最近的敌方目标
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestSingle,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+                UnitTypeEnum.Tower,
+            },
+            selectRange = 4f,
+            searchDis = 7f,
+        },
+        bulletCfg = new BulletCfg {
+            bulletType = BulletTypeEnum.SkillTarget,//技能锁定的目标
+            bulletName = "蓝方防远程小兵攻击子弹",
+            resPath = "bluesoldier_ska_bullet",
+            bulletSpeed = 0.5f,
+            bulletSize = 0.1f,
+            bulletHeight = 0.6f,//子弹出发点高度，如果是方向指向技能，则子弹一直保持这个高度
+            bulletOffset = 0,
+            bulletDelay = 0,
+        },
+        cdTime = 0,
+        spellTime = 400,//施法时间（技能前摇）
+        isNormalAttack = true,
+        skillTime = 1200,
+        damage = 30,
+    };
+    //红方塔攻击
+    public static SkillCfg sk_20010 = new SkillCfg {
+        skillId = 20010,
+        iconName = null,
+        aniName = null,
+        releaseMode = ReleaseModeEnum.None,
+        //最近的敌方目标
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestSingle,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+            },
+            selectRange = 6f,
+            searchDis = 0f,
+        },
+        bulletCfg = new BulletCfg {
+            bulletType = BulletTypeEnum.SkillTarget,//技能锁定的目标
+            bulletName = "红方防御塔攻击子弹",
+            resPath = "tower_ska_bullet",
+            bulletSpeed = 1f,
+            bulletSize = 0.1f,
+            bulletHeight = 4f,
+            bulletOffset = 0,
+            bulletDelay = 0,
+        },
+        cdTime = 0,
+        spellTime = 1000,//施法时间（技能前摇）
+        isNormalAttack = true,
+        skillTime = 2000,
+        damage = 50,
+
+        audio_start = null,
+        audio_work = "tower_ska_rls",
+        audio_hit = "tower_ska_hit"
+    };
+    //红方水晶攻击
+    public static SkillCfg sk_20020 = new SkillCfg {
+        skillId = 20020,
+        iconName = null,
+        aniName = null,
+        releaseMode = ReleaseModeEnum.None,
+        //最近的敌方目标
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestSingle,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+            },
+            selectRange = 6f,
+            searchDis = 0f,
+        },
+        bulletCfg = new BulletCfg {
+            bulletType = BulletTypeEnum.SkillTarget,//技能锁定的目标
+            bulletName = "红方水晶攻击子弹",
+            resPath = "tower_ska_bullet",
+            bulletSpeed = 1f,
+            bulletSize = 0.1f,
+            bulletHeight = 2.5f,
+            bulletOffset = 0,
+            bulletDelay = 0,
+        },
+        cdTime = 0,
+        spellTime = 1000,//施法时间（技能前摇）
+        isNormalAttack = true,
+        skillTime = 2000,
+        damage = 100,
+
+        audio_start = null,
+        audio_work = "tower_ska_rls",
+        audio_hit = "tower_ska_hit"
+    };
+    //红方小兵近战普攻
+    public static SkillCfg sk_20030 = new SkillCfg {
+        skillId = 20030,
+        iconName = null,
+        aniName = "attack",
+        releaseMode = ReleaseModeEnum.None,
+        //最近的敌方目标
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestSingle,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+                UnitTypeEnum.Tower,
+            },
+            selectRange = 1.5f,
+            searchDis = 5f,
+        },
+        cdTime = 0,
+        spellTime = 400,//施法时间（技能前摇）
+        isNormalAttack = true,
+        skillTime = 1200,
+        damage = 20,
+    };
+    //红方小兵远程普攻
+    public static SkillCfg sk_20040 = new SkillCfg {
+        skillId = 20040,
+        iconName = null,
+        aniName = "attack",
+        releaseMode = ReleaseModeEnum.None,
+        //最近的敌方目标
+        targetCfg = new TargetCfg {
+            targetTeam = TargetTeamEnum.Enemy,
+            selectRule = SelectRuleEnum.TargetClosestSingle,
+            targetTypeArr = new UnitTypeEnum[] {
+                UnitTypeEnum.Hero,
+                UnitTypeEnum.Soldier,
+                UnitTypeEnum.Tower,
+            },
+            selectRange = 4f,
+            searchDis = 7f,
+        },
+        bulletCfg = new BulletCfg {
+            bulletType = BulletTypeEnum.SkillTarget,//技能锁定的目标
+            bulletName = "红方防远程小兵攻击子弹",
+            resPath = "redsoldier_ska_bullet",
+            bulletSpeed = 0.5f,
+            bulletSize = 0.1f,
+            bulletHeight = 0.6f,//子弹出发点高度，如果是方向指向技能，则子弹一直保持这个高度
+            bulletOffset = 0,
+            bulletDelay = 0,
+        },
+        cdTime = 0,
+        spellTime = 400,//施法时间（技能前摇）
+        isNormalAttack = true,
+        skillTime = 1200,
+        damage = 30,
+    };
+    #endregion
 }

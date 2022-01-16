@@ -20,20 +20,22 @@ public class FightMgr : MonoBehaviour
     private MapRoot mapRoot;
     private EnvColliders logicEnv;
 
-    private List<Hero> heroList;
-
     private Transform transFollow;
+    
+    private List<Hero> heroList;
     private List<Bullet> bulletList;
+    private List<Tower> towerList;
     
     public void Init(List<BattleHeroData> battleHeroList,MapCfg mapCfg)
     {
         heroList = new List<Hero>();
         bulletList = new List<Bullet>();
+        towerList = new List<Tower>();
         
         // 初始化碰撞环境
         InitEnv();
         // 防御塔
-
+        InitTower(mapCfg);
         // 英雄
         InitHero(battleHeroList,mapCfg);
         
@@ -64,6 +66,18 @@ public class FightMgr : MonoBehaviour
         for (int i = 0; i < heroList.Count; i++)
         {
             heroList[i].LogicTick();
+        }
+        
+        //tower tick
+        for(int i = towerList.Count - 1; i >= 0; --i) {
+            Tower tower = towerList[i];
+            if(tower.unitState != UnitStateEnum.Dead) {
+                tower.LogicTick();
+            }
+            else {
+                towerList[i].LogicUnInit();
+                towerList.RemoveAt(i);
+            }
         }
     }
     
@@ -136,7 +150,37 @@ public class FightMgr : MonoBehaviour
         CalcRule.redTeamHero = redTeamHero;
     }
 
-  
+    void InitTower(MapCfg mapCfg) {
+        int sep = mapCfg.towerIDArr.Length / 2;
+        Tower[] blueTeamTower = new Tower[sep];
+        Tower[] redTeamTower = new Tower[sep];
+        for(int i = 0; i < mapCfg.towerIDArr.Length; i++) {
+            TowerData td = new TowerData {
+                towerID = mapCfg.towerIDArr[i],
+                towerIndex = i,
+                unitCfg = ResSvc.Instance().GetUnitConfigById(mapCfg.towerIDArr[i])
+            };
+
+            Tower tower;
+            if(i < sep) {
+                td.teamEnum = TeamEnum.Blue;
+                td.bornPos = mapCfg.towerPosArr[i];
+                tower = new Tower(td);
+                blueTeamTower[i] = tower;
+            }
+            else {
+                td.teamEnum = TeamEnum.Red;
+                td.bornPos = mapCfg.towerPosArr[i];
+                tower = new Tower(td);
+                redTeamTower[i - sep] = tower;
+            }
+            tower.LogicInit();
+            towerList.Add(tower);
+        }
+
+        CalcRule.blueTeamTower = blueTeamTower;
+        CalcRule.redTeamTower = redTeamTower;
+    }
 
     public void InitCamFollowTrans(int posIndex)
     {

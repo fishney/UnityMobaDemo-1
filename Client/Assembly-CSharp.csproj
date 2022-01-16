@@ -51,6 +51,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\02.Systems\LoginSys.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Effects\EffectRotate.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\MainLogicAttr.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\Soldier.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiPasvAttackSpeedBuff.cs" />
@@ -62,6 +63,7 @@
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMultipleSkillModifyBuff.cs" />
      <Compile Include="Assets\Scripts\02.Systems\GMSystem.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\Configs\ResBuffConfigs.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Bullet\DirectionBullet.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\MatchWindow.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\HPWindow.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\Configs\ResSkillConfigs.cs" />
@@ -111,6 +113,7 @@
      <Compile Include="Assets\Scripts\03.UIWindows\SkillWindow.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\GroupBuff\DamageBuff_DynamicGroup.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\MainLogicSkill.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\StunBuff_DynamicTime.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Bullet\Bullet.cs" />
      <Compile Include="Assets\Scripts\01.Services\AudioSvc.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\02.View\ViewUnit.cs" />
@@ -123,6 +126,7 @@
      <Compile Include="Assets\Scripts\04.FightLogic\Configs\BulletCfg.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\Configs\TargetCfg.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMultipleArrowBuff.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\GroupBuff\MoveSpeedBuff_StaticGroup.cs" />
      <Compile Include="Assets\Scripts\01.Services\NetSvc.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\ItemHPTower.cs" />
      <Compile Include="Assets\Scripts\00.Common\GameRootResources.cs" />
@@ -131,36 +135,32 @@
      <Compile Include="Assets\Scripts\03.UIWindows\ItemHP.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\SilenseBuff_Single.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMixedMultiScatterBuff.cs" />
-     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\GroupBuff\MoveSpeedBuff_StaticGroup.cs" />
-     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Bullet\DirectionBullet.cs" />
-     <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\StunBuff_DynamicTime.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Effects\EffectRotate.cs" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -352,34 +352,34 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
  </Reference>
  <Reference Include="PEUtils">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/MyLibrary/Others/PEUtils.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/MyLibrary/Others/PEUtils.dll</HintPath>
  </Reference>
  <Reference Include="PEMath">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/Libs/PEMath.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Scripts/00.Common/Libs/PEMath.dll</HintPath>
  </Reference>
  <Reference Include="PEPhysx">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/Libs/PEPhysx.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Scripts/00.Common/Libs/PEPhysx.dll</HintPath>
  </Reference>
  <Reference Include="HOKProtocol">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/HOKProtocol.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/HOKProtocol.dll</HintPath>
  </Reference>
  <Reference Include="Kcp">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/Kcp.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/Kcp.dll</HintPath>
  </Reference>
  <Reference Include="KCPNet">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/KCPNet.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/KCPNet.dll</HintPath>
  </Reference>
  <Reference Include="System.Buffers">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/System.Buffers.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/System.Buffers.dll</HintPath>
  </Reference>
  <Reference Include="System.Memory">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/System.Memory.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/System.Memory.dll</HintPath>
  </Reference>
  <Reference Include="System.Numerics.Vectors">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/System.Numerics.Vectors.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/System.Numerics.Vectors.dll</HintPath>
  </Reference>
  <Reference Include="System.Runtime.CompilerServices.Unsafe">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
