@@ -1,10 +1,10 @@
-[L]# 10:40:36--733  ThreadID:1 >> DBMgr Init Done.
-[L]# 10:40:36--803  ThreadID:1 >> NetSvc init.
-[L]# 10:40:36--812  ThreadID:1 >> Server Start...
-[L]# 10:40:36--813  ThreadID:1 >> ServerSession init Completed by NetSvc.
-[L]# 10:40:36--876  ThreadID:1 >> TimerSvc init.
-[L]# 10:40:36--877  ThreadID:1 >> CacheSvc init.
-[L]# 10:40:36--877  ThreadID:1 >> LoginSys init.
-[L]# 10:40:36--877  ThreadID:1 >> MatchSys init.
-[L]# 10:40:36--878  ThreadID:1 >> RoomSys init.
-[L]# 10:40:36--878  ThreadID:1 >> ServerRoot init Completed.
+[L]# 08:59:07--066  ThreadID:1 >> DBMgr Init Done.
+[L]# 08:59:07--097  ThreadID:1 >> NetSvc init.
+[L]# 08:59:07--107  ThreadID:1 >> Server Start...
+[L]# 08:59:07--108  ThreadID:1 >> ServerSession init Completed by NetSvc.
+[L]# 08:59:07--133  ThreadID:1 >> TimerSvc init.
+[L]# 08:59:07--133  ThreadID:1 >> CacheSvc init.
+[L]# 08:59:07--134  ThreadID:1 >> LoginSys init.
+[L]# 08:59:07--134  ThreadID:1 >> MatchSys init.
+[L]# 08:59:07--134  ThreadID:1 >> RoomSys init.
+[L]# 08:59:07--134  ThreadID:1 >> ServerRoot init Completed.

@@ -188,6 +188,16 @@ public class WindowBase : MonoBehaviour
 
     #region Timer
 
+    /// <summary>
+    /// MonoTimer UI显示进度用定时器
+    /// </summary>
+    /// <param name="cbAction">循环调用cb：SetText</param>
+    /// <param name="intervalTime">循环周期：1000ms</param>
+    /// <param name="loopCount">循环次数：5回</param>
+    /// <param name="prgAction">进度修改cb：fillAmount = ...</param>
+    /// <param name="endAction">结束回调(1次)</param>
+    /// <param name="delayTime">延迟时长</param>
+    /// <returns></returns>
     protected MonoTimer CreateMonoTimer(
         Action<int> cbAction,
         float intervalTime,

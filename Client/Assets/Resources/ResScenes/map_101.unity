@@ -417,6 +417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 241098699}
+  - component: {fileID: 241098698}
   m_Layer: 0
   m_Name: MapRoot
   m_TagString: MapRoot
@@ -424,6 +425,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &241098698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241098697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9d505ba613bba45866f0bbdbb1282b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transCameraRoot: {fileID: 1376273955}
+  transEnvCollider: {fileID: 1741007344}
+  blueTower: {fileID: 6892474745067065552}
+  redTower: {fileID: 6892474745067065551}
+  blueCrystal: {fileID: 6892474745067065550}
+  redCrystal: {fileID: 6892474745067065549}
+  desBlueTower: {fileID: 6892474745067065548}
+  desRedTower: {fileID: 6892474745067065547}
+  desBlueCrystal: {fileID: 1109587649}
+  desRedCrystal: {fileID: 1141336089}
 --- !u!4 &241098699
 Transform:
   m_ObjectHideFlags: 0
@@ -2717,6 +2740,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b89588f22af145f4382d746b6f5c25e9, type: 3}
+--- !u!4 &1109587649 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400016, guid: b89588f22af145f4382d746b6f5c25e9, type: 3}
+  m_PrefabInstance: {fileID: 1109587648}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1141336088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2778,6 +2806,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd2f6db707d1e9e4ab24966bb977e43c, type: 3}
+--- !u!4 &1141336089 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: cd2f6db707d1e9e4ab24966bb977e43c, type: 3}
+  m_PrefabInstance: {fileID: 1141336088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1194141971
 GameObject:
   m_ObjectHideFlags: 0
@@ -4892,5 +4925,15 @@ Transform:
 --- !u!4 &6892474745067065550 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6892474744670630570, guid: 54e9c3e2cd2f306458b917a563cd7c6f, type: 3}
+  m_PrefabInstance: {fileID: 6892474745067065546}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6892474745067065551 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6892474744670630568, guid: 54e9c3e2cd2f306458b917a563cd7c6f, type: 3}
+  m_PrefabInstance: {fileID: 6892474745067065546}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6892474745067065552 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6892474744670630560, guid: 54e9c3e2cd2f306458b917a563cd7c6f, type: 3}
   m_PrefabInstance: {fileID: 6892474745067065546}
   m_PrefabAsset: {fileID: 0}

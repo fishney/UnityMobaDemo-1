@@ -35,29 +35,10 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
     public PlayWindow playWindow;
     
     public HPWindow hpWindow;
-    //
-    // public CreateWindow createWindow;
-    //     
-    // public MainCityWindow mainCityWindow;
-    //
-    // public InfoWindow infoWindow;
-    //
-    // public GuideWindow guideWindow;
-    //
-    // public StrongWindow strongWindow;
-    //
-    // public ChatWindow chatWindow;
-    //
-    // public BuyWindow buyWindow;
-    //
-    // public TaskWindow taskWindow;
-    //
-    // public DungeonWindow dungeonWindow;
-    //
-    // public PlayerCtrlWindow playerCtrlWindow;
-    //
-    // public BattleEndWindow battleEndWindow;
-    //     
+
+    public ResultWindow resultWindow;
+    
+    
     public void ShowTips(string tip)
     {
         tipsWindow.AddTips(tip);

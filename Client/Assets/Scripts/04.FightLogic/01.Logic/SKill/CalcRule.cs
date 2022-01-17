@@ -38,9 +38,9 @@ public static class CalcRule
             case SelectRuleEnum.MinHpPercent:
                 break;
             case SelectRuleEnum.TargetClosestSingle:
-                return FindMinDisTarget(self,targetList,(PEInt)cfg.selectRange);
+                return FindMinDisTargetInTeamWithRange(self,targetList,(PEInt)cfg.selectRange);
             case SelectRuleEnum.PositionClosestSingle:
-                break;
+                return FindMinDisTargetInPosWithRange(pos, targetList, (PEInt)cfg.selectRange);
             default:
                 PELog.Warn("selectRule unknown error");
                 break;
@@ -49,7 +49,7 @@ public static class CalcRule
         return null;
     }
     
-    static MainLogicUnit FindMinDisTarget(MainLogicUnit self,List<MainLogicUnit> targetList, PEInt range)
+    static MainLogicUnit FindMinDisTargetInTeamWithRange(MainLogicUnit self,List<MainLogicUnit> targetList, PEInt range)
     {
         if (targetList == null || targetList.Count < 1)
         {
@@ -74,13 +74,13 @@ public static class CalcRule
         return len < range ? target : null;
     }
 
-    public static MainLogicUnit FindMinDisTargetInPos(PEVector3 pos, MainLogicUnit[] targetTeam) {
+    public static MainLogicUnit FindMinDisTargetInPosWithoutRange(PEVector3 pos, List<MainLogicUnit> targetTeam) {
         if(targetTeam == null) {
             return null;
         }
 
         MainLogicUnit target = null;
-        int count = targetTeam.Length;
+        int count = targetTeam.Count;
         PEInt len = 0;
         for(int i = 0; i < count; i++) {
             PEInt radius = targetTeam[i].ud.unitCfg.colliCfg.mRadius;
@@ -92,6 +92,31 @@ public static class CalcRule
         }
         return target;
     }
+    
+    static MainLogicUnit FindMinDisTargetInPosWithRange(PEVector3 pos, List<MainLogicUnit> targetTeam, PEInt range) {
+        if(targetTeam == null) {
+            return null;
+        }
+        MainLogicUnit target = null;
+        int count = targetTeam.Count;
+        PEInt len = 0;
+        for(int i = 0; i < count; i++) {
+            PEInt radius = targetTeam[i].ud.unitCfg.colliCfg.mRadius;
+            PEInt tempLen = (targetTeam[i].LogicPos - pos).magnitude - radius;
+            if(len == 0 || tempLen < len) {
+                len = tempLen;
+                target = targetTeam[i];
+            }
+        }
+
+        if(len < range) {
+            return target;
+        }
+        else {
+            return null;
+        }
+    }
+
     
     static List<MainLogicUnit> GetTargetTeam(MainLogicUnit self, TargetCfg cfg)
     {
@@ -185,7 +210,7 @@ public static class CalcRule
     /// <summary>
     /// 返回最近的技能目标(无范围限制)
     /// </summary>
-    public static MainLogicUnit FindMinDisEnemyTarget(MainLogicUnit self, TargetCfg cfg)
+    public static MainLogicUnit FindMinDisEnemyTargetWithoutRange(MainLogicUnit self, TargetCfg cfg)
     {
         MainLogicUnit target = null;
         List<MainLogicUnit> targetTeam = GetTargetTeam(self, cfg);
@@ -211,10 +236,10 @@ public static class CalcRule
         List<MainLogicUnit> targetLst = null;
         switch(cfg.selectRule) {
             case SelectRuleEnum.TargetClosestMulti:
-                targetLst = FindRangeDisTargetInTeam(self, searchTeam, (PEInt)cfg.selectRange);
+                targetLst = FindRangeDisTargetInTeamWithRange(self, searchTeam, (PEInt)cfg.selectRange);
                 break;
             case SelectRuleEnum.PositionClosestMulti:
-                targetLst = FindRangeDisTargetInPos(pos, searchTeam, (PEInt)cfg.selectRange);
+                targetLst = FindRangeDisTargetInPosWithRange(pos, searchTeam, (PEInt)cfg.selectRange);
                 break;
             case SelectRuleEnum.Hero:
                 //TODO
@@ -231,7 +256,7 @@ public static class CalcRule
     /// <summary>
     /// 指定列表中，离指定目标角色半径范围的所有目标
     /// </summary>
-    static List<MainLogicUnit> FindRangeDisTargetInTeam(MainLogicUnit self, List<MainLogicUnit> targetTeam, PEInt range) {
+    static List<MainLogicUnit> FindRangeDisTargetInTeamWithRange(MainLogicUnit self, List<MainLogicUnit> targetTeam, PEInt range) {
         if(targetTeam == null || range < 0) {
             return null;
         }
@@ -252,7 +277,7 @@ public static class CalcRule
     /// <summary>
     /// 指定列表中，离指定目标点位置半径范围的所有目标
     /// </summary>
-    static List<MainLogicUnit> FindRangeDisTargetInPos(PEVector3 pos, List<MainLogicUnit> targetTeam, PEInt range) {
+    static List<MainLogicUnit> FindRangeDisTargetInPosWithRange(PEVector3 pos, List<MainLogicUnit> targetTeam, PEInt range) {
         if(targetTeam == null || range < 0) {
             return null;
         }

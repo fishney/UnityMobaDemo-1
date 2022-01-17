@@ -134,7 +134,7 @@ public class DirectionBullet : Bullet {
             //可被阻挡，只作用与上一个位置最近的目标，eg:houyi 大招
             if(hitLst.Count > 0) {
                 // 用上一帧的位置来定位最近的命中者，感觉会更精准
-                MainLogicUnit hitTarget = CalcRule.FindMinDisTargetInPos(lastPos, hitLst.ToArray());
+                MainLogicUnit hitTarget = CalcRule.FindMinDisTargetInPosWithoutRange(lastPos, hitLst);
                 hitTargetCB(hitTarget, new object[] { bulletTime, hitTarget.LogicPos });
                 unitState = SubUnitState.End;
             }

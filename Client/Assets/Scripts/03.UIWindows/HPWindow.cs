@@ -44,6 +44,12 @@ public class HPWindow : WindowBase
         itemDic.Clear();
     }
     
+    private void Update() {
+        foreach(var item in itemDic) {
+            item.Value.UpdateCheck();
+        }
+    }
+    
     public void AddHPItemInfo(MainLogicUnit unit,Transform trans,int hp)
     {
         if (itemDic.ContainsKey(unit))
@@ -99,7 +105,14 @@ public class HPWindow : WindowBase
             item.UpdateHPPrg(hp);
         }
 
-        SetJumpUpdateInfo(jui);
+        if (jui != null)
+        {
+            JumpNum jn = jumpNumPool.PopOne();
+            item.AddHPJumpNum(jn, jui);
+        }
+        
+        // SetJumpUpdateInfo(jui);
+        
     }
 
     public void SetStateInfo(MainLogicUnit key,StateEnum state,bool show = true)

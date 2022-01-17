@@ -92,6 +92,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rect: {fileID: 1832708731826116729}
   imgPrg: {fileID: 7265988019760851697}
+  JumpNumInterval: 200
+  JumpNumCounter: 0
   iconState: {fileID: 2943337045507877638}
 --- !u!1 &3383099913704110313
 GameObject:

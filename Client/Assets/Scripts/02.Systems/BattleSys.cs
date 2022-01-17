@@ -250,5 +250,20 @@ public class BattleSys : SystemBase
         fightMgr.AddBullet(bullet);
     }
     
+    public void PlayBattleFieldAudio(string name) {
+        audioSvc.PlayEntityAudio(name, battleAudio);
+    }
+
+    public void EndBattle(bool isSucc)
+    {
+        gameRootResources.playWindow.SetWindowState(false);
+        StartCoroutine(ShowResult(isSucc));
+    }
+    
+    IEnumerator ShowResult(bool isSucc) {
+        yield return new WaitForSeconds(0.5f);
+        gameRootResources.resultWindow.SetWindowState();
+        gameRootResources.resultWindow.SetBattleResult(isSucc);
+    }
     #endregion
 }

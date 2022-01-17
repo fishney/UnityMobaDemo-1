@@ -78,9 +78,12 @@ public partial class MainLogicUnit
 
             Skill skill = GetNormalSkill();
             // 新攻击动画时间 = 原攻击动画时间 * 新频率(1秒n次)/原频率(1秒n次)
-            skill.skillTime = skill.skillCfg.skillTime * AttackSpeedRateBase / _attackSpeedRateCurrent;
-            skill.spellTime = skill.skillCfg.spellTime * AttackSpeedRateBase / _attackSpeedRateCurrent;
-            
+            this.Log("-------"+skill + " "+ skillArr.Length);
+            if (skill != null)
+            {
+                skill.skillTime = skill.skillCfg.skillTime * AttackSpeedRateBase / _attackSpeedRateCurrent;
+                skill.spellTime = skill.skillCfg.spellTime * AttackSpeedRateBase / _attackSpeedRateCurrent;
+            }
         }
         get
         {
@@ -174,7 +177,7 @@ public partial class MainLogicUnit
     public void InitAttackSpeedRate(PEInt rate)
     {
         AttackSpeedRateBase = rate;
-        _attackSpeedRateCurrent = rate;
+        AttackSpeedRateCurrent = rate;
     }
 
     public bool IsTeam(TeamEnum teamEnum)

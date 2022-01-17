@@ -185,4 +185,9 @@ public abstract class MainViewUnit : ViewUnit
             playWindow.SetImgInfo(cdTime);
         }
     }
+    
+    public void RemoveUIItemInfo() {
+        hpWindow.RemoveHPItemInfo(mainLogicUnit);
+        // playWindow.RmvMapIconItemInfo(mainLogicUnit);
+    }
 }

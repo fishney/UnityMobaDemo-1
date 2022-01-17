@@ -135,6 +135,8 @@
      <Compile Include="Assets\Scripts\03.UIWindows\ItemHP.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\SilenseBuff_Single.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMixedMultiScatterBuff.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\02.View\TowerView.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\ResultWindow.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

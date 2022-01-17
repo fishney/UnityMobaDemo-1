@@ -48,7 +48,7 @@ public class GMSystem : SystemBase
             cmd = CMD.NotifyLoadRes,
             notifyLoadRes = new NotifyLoadRes()
             {
-                mapId = 102,
+                mapId = 101,
                 heroList = new List<BattleHeroData>()
                 {
                     new BattleHeroData{ heroId = 102,userName = "P1"},

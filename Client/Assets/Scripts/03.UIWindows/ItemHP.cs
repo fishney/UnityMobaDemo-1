@@ -1,4 +1,7 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using HOKProtocol;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -53,16 +56,54 @@ public abstract class ItemHP : WindowBase
     {
         
     }
+    
+    class JumpPack {
+        public JumpNum jn;
+        public JumpUpdateInfo jui;
+    }
+    Queue<JumpPack> jpq = new Queue<JumpPack>();
+    public void AddHPJumpNum(JumpNum jn, JumpUpdateInfo jui) {
+        jpq.Enqueue(new JumpPack { jn = jn, jui = jui });
+    }
 
-    private void Update()
-    {
-        if (rootTrans)
-        {
-            // 标准高度：自适应高度，取出比例
-            float scaleRate = 1.0f * ClientConfig.ScreenStandardHeight / Screen.height;
-            var screenPos = Camera.main.WorldToScreenPoint(rootTrans.position);
+    public float JumpNumInterval;
+    float JumpNumCounter = 0;
+    bool canShow = true;
+    float delayTimeCounter = 0;
+    public void UpdateCheck() {
+        if(jpq.Count > 0 && canShow) {
+            if (JumpNumCounter < JumpNumInterval)
+            {
+                JumpNumCounter += Configs.ServerLogicFrameIntervelMs;
+            }
+            else
+            {
+                JumpNumCounter -= JumpNumInterval;
+                canShow = false;
+                JumpPack jp = jpq.Dequeue();
+                jp.jn.Show(jp.jui);
+            }
+        }
+
+        if(canShow == false) {
+            delayTimeCounter += Time.deltaTime;
+            if(delayTimeCounter > JumpNumInterval / 1000) {
+                delayTimeCounter = 0;
+                canShow = true;
+            }
+        }
+
+        if(rootTrans) {
+            float scaleRate = 1.0F * ClientConfig.ScreenStandardHeight / Screen.height;
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(rootTrans.position);
             rect.anchoredPosition = screenPos * scaleRate;
         }
+    }
+
+    IEnumerator Show(JumpPack jp)
+    {
+        yield return new WaitForSeconds(3);
+        jp.jn.Show(jp.jui);
     }
 }
 

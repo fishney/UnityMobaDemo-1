@@ -45,7 +45,7 @@ public class MoveAttackBuff: Buff
     }
     
     void MoveToTarget() {
-        moveTarget = CalcRule.FindMinDisEnemyTarget(owner, skill.skillCfg.targetCfg);
+        moveTarget = CalcRule.FindMinDisEnemyTargetWithoutRange(owner, skill.skillCfg.targetCfg);
         if(moveTarget == null) {
             return;
         }

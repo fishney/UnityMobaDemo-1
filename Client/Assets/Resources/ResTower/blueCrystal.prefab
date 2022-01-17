@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5670345508209205757}
   - component: {fileID: 637407446919482890}
+  - component: {fileID: 4666764956166450038}
   m_Layer: 0
   m_Name: blueCrystal
   m_TagString: Untagged
@@ -130,6 +131,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4666764956166450038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745575334038572042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eda406961d84311af2e9fb5905e7951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsSyncPos: 0
+  PredictPos: 0
+  PredictMaxCount: 0
+  SmoothPos: 0
+  viewPosAccer: 0
+  IsSyncDir: 0
+  SmoothDir: 0
+  viewDirAccer: 0
+  AngleMultiplier: 0
+  RotationRoot: {fileID: 0}
+  skillRange: {fileID: 3185570500951954470}
+  fade: 0
+  ani: {fileID: 0}
+  hpRoot: {fileID: 4969740131723423030}
 --- !u!1 &1446648169362659008
 GameObject:
   m_ObjectHideFlags: 0

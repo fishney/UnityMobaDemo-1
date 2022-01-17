@@ -335,11 +335,11 @@ public class Skill
         }
 
         skillCfg = ResSvc.Instance().GetSkillConfigById(replaceId);
-        spellTime = skillCfg.spellTime;
-        skillTime = skillCfg.skillTime;
-        if(skillCfg.isNormalAttack) {
-            owner.InitAttackSpeedRate(1000 / skillTime);
-        }
+        // spellTime = skillCfg.spellTime;
+        // skillTime = skillCfg.skillTime;
+        // if(skillCfg.isNormalAttack) {
+        //     owner.InitAttackSpeedRate(1000 / skillTime);
+        // }
     }
 }
 

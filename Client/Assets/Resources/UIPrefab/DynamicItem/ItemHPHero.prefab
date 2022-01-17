@@ -170,6 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rect: {fileID: 1832708731826116729}
   imgPrg: {fileID: 7265988019760851697}
+  JumpNumInterval: 200
+  JumpNumCounter: 0
   iconState: {fileID: 3148682186327598253}
   imgState: {fileID: 3841409544690388434}
   txtName: {fileID: 1366336343942577773}
