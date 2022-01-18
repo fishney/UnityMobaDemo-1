@@ -86,6 +86,10 @@ public class WindowBase : MonoBehaviour
         txt.gameObject.SetActive(isActive);
     }
 
+    protected void SetActive(InputField ipt, bool isActive = true)
+    {
+        ipt.gameObject.SetActive(isActive);
+    }
 
     protected void SetText(Text txt, string context = "")
     {

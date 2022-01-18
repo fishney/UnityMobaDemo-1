@@ -101,8 +101,11 @@ public abstract partial class MainLogicUnit : LogicUnit
     {
         return false;
     }
-    
-    
+
+    public virtual bool Equals(MainLogicUnit mainLogicUnit)
+    {
+        return false;
+    }
 }
 
 public enum UnitStateEnum

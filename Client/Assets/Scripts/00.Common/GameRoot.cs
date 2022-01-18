@@ -126,6 +126,16 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
     #region 客户端全局信息
 
     /// <summary>
+    /// 游戏房间开始时间
+    /// </summary>
+    public static DateTime ActiveRoomStartTime;
+    
+    /// <summary>
+    /// 每秒固定增长金币
+    /// </summary>
+    public static int IncomeInterval = 3;
+    
+    /// <summary>
     /// 游戏中房间ID
     /// </summary>
     public static int ActiveRoomId;
@@ -139,6 +149,11 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
     /// 玩家在房间玩家List里的相对位置
     /// </summary>
     public static int SelfPosIndex;
+    
+    /// <summary>
+    /// 延迟
+    /// </summary>
+    public static int NetDelay;
 
     /// <summary>
     /// 房间内所有玩家信息

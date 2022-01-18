@@ -309,5 +309,9 @@ public partial class MainLogicUnit
         AttackSpeedRateCurrent += value;
     }
     
+    public void ResetHP() {
+        Hp = ud.unitCfg.hp;
+        OnHPChange?.Invoke(Hp.RawInt, null);
+    }
     #endregion
 }

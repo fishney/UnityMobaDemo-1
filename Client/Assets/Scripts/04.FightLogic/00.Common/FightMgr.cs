@@ -25,12 +25,18 @@ public class FightMgr : MonoBehaviour
     private List<Hero> heroList;
     private List<Bullet> bulletList;
     private List<Tower> towerList;
+    List<LogicTimer> timerLst;
+    
+    int waveIndex = 0;
+    int income = 500;
+    
     
     public void Init(List<BattleHeroData> battleHeroList,MapCfg mapCfg)
     {
         heroList = new List<Hero>();
         bulletList = new List<Bullet>();
         towerList = new List<Tower>();
+        timerLst = new List<LogicTimer>();
         
         // 初始化碰撞环境
         InitEnv();
@@ -42,8 +48,7 @@ public class FightMgr : MonoBehaviour
         // 小兵
 
         // delay后出生小兵,按波次出生
-
-
+        InitIncome();
     }
     
     /// <summary>
@@ -79,12 +84,36 @@ public class FightMgr : MonoBehaviour
                 towerList.RemoveAt(i);
             }
         }
+        
+        //global timer
+        //timer tick
+        for(int i = timerLst.Count - 1; i >= 0; --i) {
+            LogicTimer timer = timerLst[i];
+            if(timer.IsActive) {
+                timer.TickTimer();
+            }
+            else {
+                timerLst.RemoveAt(i);
+            }
+        }
     }
     
     public void UnInit()
     {
         heroList.Clear();
+        towerList.Clear();
+        //soldierList.Clear();
         bulletList.Clear();
+        CalcRule.blueTeamSoldier.Clear();
+        CalcRule.redTeamSoldier.Clear();
+    }
+    
+    void InitIncome() {
+        LogicTimer pt = new LogicTimer(() => {
+            income += GameRoot.IncomeInterval;
+            BattleSys.Instance.RefreshIncome(income);
+        }, 0, 1000);
+        timerLst.Add(pt);
     }
     
     /// <summary>

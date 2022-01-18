@@ -7,6 +7,7 @@
     功能：Unknown
 *****************************************************/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using HOKProtocol;
@@ -120,6 +121,7 @@ public class BattleSys : SystemBase
         audioSvc.PlayBGMusic(Constants.BGBattle);
 
         isTickFight = true;
+        GameRoot.ActiveRoomStartTime = DateTime.Now;
     }
     
     public List<PEColliderBase> GetEnvColliders()
@@ -264,6 +266,19 @@ public class BattleSys : SystemBase
         yield return new WaitForSeconds(0.5f);
         gameRootResources.resultWindow.SetWindowState();
         gameRootResources.resultWindow.SetBattleResult(isSucc);
+    }
+    
+    public void RefreshIncome(int income) {
+        gameRootResources.playWindow.RefreshIncome(income);
+    }
+    
+    public void SetKillData(TeamEnum killHeroTeam) {
+        gameRootResources.playWindow.SetKillData(killHeroTeam);
+    }
+
+    public void SetReviveState(bool isRevive, int reviveMs = 0)
+    {
+        gameRootResources.playWindow.SetReviveTime(isRevive, reviveMs / 1000);
     }
     #endregion
 }
