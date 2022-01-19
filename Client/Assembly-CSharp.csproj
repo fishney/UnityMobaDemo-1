@@ -51,6 +51,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\02.Systems\LoginSys.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\ItemMapIcon.cs" />
      <Compile Include="Assets\Scripts\00.Common\Effects\EffectRotate.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\MainLogicAttr.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\Soldier.cs" />
@@ -77,6 +78,7 @@
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\MainLogicUnit.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\02.View\HeroView.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\LogicUnit.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\MiniMapWindow.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SKill\Skill.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\LoginWindow.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\GroupBuff\MoveSpeedBuff_DynamicGroup.cs" />
@@ -133,11 +135,11 @@
      <Compile Include="Assets\Scripts\03.UIWindows\ItemHPTower.cs" />
      <Compile Include="Assets\Scripts\00.Common\GameRootResources.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\MainLogicMove.cs" />
+     <Compile Include="Assets\Scripts\04.FightLogic\02.View\SoldierView.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SKill\CalcRule.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\ItemHP.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\SilenseBuff_Single.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMixedMultiScatterBuff.cs" />
-     <Compile Include="Assets\Scripts\03.UIWindows\ItemMapIcon.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

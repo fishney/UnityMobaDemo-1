@@ -65,11 +65,20 @@ public partial class PlayWindow : WindowBase
         defaultPos = imgDirBg.transform.position;
 
         RegisterMoveEvts();
+
+        InitMiniMap();
     }
 
     protected override void ClearWindow()
     {
         base.ClearWindow();
+
+        UnInitMiniMap();
+        
+        if(chatLst != null) {
+            chatLst.Clear();
+            chatLst = null;
+        }
     }
     
 
@@ -302,7 +311,9 @@ public partial class PlayWindow : WindowBase
     {
         var startTime = GameRoot.ActiveRoomStartTime;
         var spendTime = DateTime.Now.Subtract(startTime);
+        //this.Log(spendTime.Hours + " " + spendTime.Minutes + " " + spendTime.Seconds);
         battleSecondCount = spendTime.Hours * 3600 + spendTime.Minutes * 60 + spendTime.Seconds;
+        RefreshBattleTime();
     }
     
     void RefreshBattleTime() {

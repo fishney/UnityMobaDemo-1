@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ItemMapIcon : WindowBase {
+    /// <summary>
+    /// 缩放比例
+    /// </summary>
     public float scaler;
     public RectTransform rectTrans;
     public Image imgIcon;
@@ -10,7 +13,9 @@ public class ItemMapIcon : WindowBase {
     MainLogicUnit unit;
     Vector3 refPos;
 
-    public void InitItem(MainLogicUnit unit, Vector3 refPos) {
+    public void InitItem(MainLogicUnit unit, Vector3 refPos)
+    {
+        base.InitWindow();
         this.unit = unit;
         this.refPos = refPos;
 

@@ -25,7 +25,8 @@ public class FightMgr : MonoBehaviour
     private List<Hero> heroList;
     private List<Bullet> bulletList;
     private List<Tower> towerList;
-    List<LogicTimer> timerLst;
+    private List<Soldier> soldierLst;
+    private List<LogicTimer> timerLst;
     
     int waveIndex = 0;
     int income = 500;
@@ -37,6 +38,7 @@ public class FightMgr : MonoBehaviour
         bulletList = new List<Bullet>();
         towerList = new List<Tower>();
         timerLst = new List<LogicTimer>();
+        soldierLst = new List<Soldier>();
         
         // 初始化碰撞环境
         InitEnv();
@@ -46,8 +48,15 @@ public class FightMgr : MonoBehaviour
         InitHero(battleHeroList,mapCfg);
         
         // 小兵
-
+        ++waveIndex;
         // delay后出生小兵,按波次出生
+        void CreateSoldier() {
+            CreateSoldierBatch(mapCfg, TeamEnum.Blue);
+            CreateSoldierBatch(mapCfg, TeamEnum.Red);
+        }
+        LogicTimer pt = new LogicTimer(CreateSoldier, mapCfg.bornDelay, mapCfg.waveInterval);
+        timerLst.Add(pt);
+        
         InitIncome();
     }
     
@@ -85,6 +94,25 @@ public class FightMgr : MonoBehaviour
             }
         }
         
+        for(int i = soldierLst.Count - 1; i >= 0; --i) {
+            Soldier soldier = soldierLst[i];
+            if(soldier.unitState != UnitStateEnum.Dead) {
+                soldier.LogicTick();
+            }
+            else {
+                if(soldier.IsTeam(TeamEnum.Blue)) {
+                    int index = CalcRule.blueTeamSoldier.IndexOf(soldier);
+                    CalcRule.blueTeamSoldier.RemoveAt(index);
+                }
+                else {
+                    int index = CalcRule.redTeamSoldier.IndexOf(soldier);
+                    CalcRule.redTeamSoldier.RemoveAt(index);
+                }
+                soldierLst[i].LogicUnInit();
+                soldierLst.RemoveAt(i);
+            }
+        }
+        
         //global timer
         //timer tick
         for(int i = timerLst.Count - 1; i >= 0; --i) {
@@ -102,7 +130,7 @@ public class FightMgr : MonoBehaviour
     {
         heroList.Clear();
         towerList.Clear();
-        //soldierList.Clear();
+        soldierLst.Clear();
         bulletList.Clear();
         CalcRule.blueTeamSoldier.Clear();
         CalcRule.redTeamSoldier.Clear();
@@ -124,6 +152,44 @@ public class FightMgr : MonoBehaviour
         if (transFollow != null)
         {
             mapRoot.transCameraRoot.position = transFollow.position;
+        }
+    }
+    
+    void CreateSoldierBatch(MapCfg cfg, TeamEnum team) {
+        int[] idArr;
+        PEVector3[] posArr;
+        if(team == TeamEnum.Blue) {
+            idArr = cfg.blueSoldierIDArr;
+            posArr = cfg.blueSoldierPosArr;
+        }
+        else {
+            idArr = cfg.redSoldierIDArr;
+            posArr = cfg.redSoldierPosArr;
+        }
+
+        for(int i = 0; i < idArr.Length; i++) {
+            SoldierData sd = new SoldierData {
+                soldierID = idArr[i],
+                waveIndex = waveIndex,
+                orderIndex = i,
+                soldierName = "soldier_" + idArr[i],
+                teamEnum = team,
+                bornPos = posArr[i],
+                unitCfg = ResSvc.Instance().GetUnitConfigById(idArr[i]),
+            };
+
+            LogicTimer pt = new LogicTimer(() => {
+                Soldier soldier = new Soldier(sd);
+                soldier.LogicInit();
+                if(sd.teamEnum == TeamEnum.Blue) {
+                    CalcRule.blueTeamSoldier.Add(soldier);
+                }
+                else {
+                    CalcRule.redTeamSoldier.Add(soldier);
+                }
+                soldierLst.Add(soldier);
+            }, (i / 2) * cfg.bornInterval); // 为什么i/2？设想一波4个兵，i=0,i=1时 => i/2 = 0; i=2,i=3 时 => i/2 = 1,从而保持一波2、2的队列
+            timerLst.Add(pt);
         }
     }
     

@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 6614685380317166836}
   - component: {fileID: 2410283385076627998}
   - component: {fileID: 7349046791071073571}
+  - component: {fileID: -1964728172810061429}
   m_Layer: 5
   m_Name: ItemMapIconHero
   m_TagString: Untagged
@@ -151,3 +152,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-1964728172810061429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8050943145528418604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503f78602b784a23b6cdf64ce039c885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaler: 5
+  rectTrans: {fileID: 6614685380317166836}
+  imgIcon: {fileID: 7349046791071073571}
+  imgFrame: {fileID: 6595800034372857851}

@@ -2974,6 +2974,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922b34a1ece98ef4189f1efce1adb8a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapIconRoot: {fileID: 1631411731}
+  mapHeroIconRoot: {fileID: 1631411730}
   imgCancelSkill: {fileID: 1631411717}
   imgTouch: {fileID: 1104776289}
   imgDirBg: {fileID: 538819750}
@@ -3460,6 +3462,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1631411730 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7817150672920447818, guid: a6904fc30642caf41829d7dc95fb5aa9, type: 3}
+  m_PrefabInstance: {fileID: 1631411682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1631411731 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5809571949196438180, guid: a6904fc30642caf41829d7dc95fb5aa9, type: 3}
+  m_PrefabInstance: {fileID: 1631411682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1701030033
 GameObject:
   m_ObjectHideFlags: 0

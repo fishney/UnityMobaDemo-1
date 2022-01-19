@@ -52,7 +52,8 @@ public abstract class MainViewUnit : ViewUnit
         hpWindow.AddHPItemInfo(mainLogicUnit,hpRoot,mainLogicUnit.Hp.RawInt);
         
         playWindow = GameRootResources.Instance().playWindow;
-
+        playWindow.AddMiniIconItemInfo(mainLogicUnit);
+        
         mainLogicUnit.OnHPChange += UpdateHP;
         mainLogicUnit.OnStateChange += UpdateState;
         mainLogicUnit.OnSlowDown += UpdateJui;
@@ -188,6 +189,6 @@ public abstract class MainViewUnit : ViewUnit
     
     public void RemoveUIItemInfo() {
         hpWindow.RemoveHPItemInfo(mainLogicUnit);
-        // playWindow.RmvMapIconItemInfo(mainLogicUnit);
+        playWindow.RemoveMapIconItemInfo(mainLogicUnit);
     }
 }

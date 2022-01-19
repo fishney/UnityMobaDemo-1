@@ -60,7 +60,7 @@ public partial class MainLogicUnit
         collider.mPos += moveDir * LogicMoveSpeed * (PEInt) Configs.ClientLogicFromDeltaSec;
         // adj:位置矫正数据
         PEVector3 adj = PEVector3.zero;
-        // 用定点数运算出碰撞结果,这块也是跑在服务器上的?
+        // 用定点数运算出碰撞结果,这块也是可以跑在服务器上的
         collider.CalcCollidersInteraction(envColliList,ref moveDir,ref adj);
         if (LogicDir != moveDir)
         {
