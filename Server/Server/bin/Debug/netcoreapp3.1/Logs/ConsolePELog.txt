@@ -1,10 +1,20 @@
-[L]# 12:12:01--117  ThreadID:1 >> DBMgr Init Done.
-[L]# 12:12:01--171  ThreadID:1 >> NetSvc init.
-[L]# 12:12:01--184  ThreadID:1 >> Server Start...
-[L]# 12:12:01--185  ThreadID:1 >> ServerSession init Completed by NetSvc.
-[L]# 12:12:01--213  ThreadID:1 >> TimerSvc init.
-[L]# 12:12:01--214  ThreadID:1 >> CacheSvc init.
-[L]# 12:12:01--214  ThreadID:1 >> LoginSys init.
-[L]# 12:12:01--215  ThreadID:1 >> MatchSys init.
-[L]# 12:12:01--215  ThreadID:1 >> RoomSys init.
-[L]# 12:12:01--215  ThreadID:1 >> ServerRoot init Completed.
+[L]# 11:49:25--887  ThreadID:1 >> DBMgr Init Done.
+[L]# 11:49:25--920  ThreadID:1 >> NetSvc init.
+[L]# 11:49:25--931  ThreadID:1 >> Server Start...
+[L]# 11:49:25--932  ThreadID:1 >> ServerSession init Completed by NetSvc.
+[L]# 11:49:25--957  ThreadID:1 >> TimerSvc init.
+[L]# 11:49:25--957  ThreadID:1 >> CacheSvc init.
+[L]# 11:49:25--958  ThreadID:1 >> LoginSys init.
+[L]# 11:49:25--958  ThreadID:1 >> MatchSys init.
+[L]# 11:49:25--958  ThreadID:1 >> RoomSys init.
+[L]# 11:49:25--959  ThreadID:1 >> ServerRoot init Completed.
+[L]# 11:49:41--775  ThreadID:9 >> SessionId:0 Client Connect1
+[L]# 11:49:42--839  ThreadID:9 >> SessionId:1 Client Connect2
+[L]# 11:49:45--001  ThreadID:1 >> RoomID:0 所有玩家确认，进入英雄选择。
+[L]# 11:49:48--031  ThreadID:1 >> RoomID:0 所有玩家选择完成，进入游戏加载。
+[L]# 11:49:48--630  ThreadID:1 >> RoomId:0: 所有玩家加载完成,进入游戏
+[L]# 12:28:22--118  ThreadID:11 >> SessionId:2 Client Connect5
+[L]# 12:28:41--006  ThreadID:7 >> SessionId:3 Client Connect6
+[L]# 12:28:43--162  ThreadID:1 >> RoomID:1 所有玩家确认，进入英雄选择。
+[L]# 12:28:50--293  ThreadID:1 >> RoomID:1 所有玩家选择完成，进入游戏加载。
+[L]# 12:28:50--811  ThreadID:1 >> RoomId:1: 所有玩家加载完成,进入游戏

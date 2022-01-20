@@ -200,7 +200,9 @@ public class SkillItem : WindowBase
             SetActive(EffectRoot,false);
         }
         SetActive(EffectRoot);
-        ct = StartCoroutine(DisableEffect());
+        if(gameObject.activeInHierarchy) {
+            ct = StartCoroutine(DisableEffect());
+        }
     }
 
     IEnumerator DisableEffect()

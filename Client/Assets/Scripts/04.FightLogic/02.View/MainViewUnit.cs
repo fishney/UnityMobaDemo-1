@@ -72,7 +72,7 @@ public abstract class MainViewUnit : ViewUnit
     
     public void UpdateState(StateEnum state, bool show) {
         if(state == StateEnum.Knockup
-           || state == StateEnum.Silenced
+           || state == StateEnum.Stunned
            || state == StateEnum.Silenced) {
             if(mainLogicUnit.IsPlayerSelf() && show) {
                 playWindow.SetAllSkillForbidState();

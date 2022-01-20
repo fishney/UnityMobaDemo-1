@@ -92,6 +92,11 @@ public class GMSystem : SystemBase
 
     private void FixedUpdate()
     {
+        if (isActive == false)
+        {
+            return;
+        }
+        
         ++frameId;
         GameMsg msg = new GameMsg()
         {

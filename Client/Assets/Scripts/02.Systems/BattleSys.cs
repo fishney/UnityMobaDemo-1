@@ -124,6 +124,18 @@ public class BattleSys : SystemBase
         GameRoot.ActiveRoomStartTime = DateTime.Now;
     }
     
+    public void RspBattleEnd(GameMsg msg) {
+        gameRootResources.playWindow.SetWindowState(false);
+        gameRootResources.hpWindow.SetWindowState(false);
+        gameRootResources.resultWindow.SetWindowState(false);
+        if(fightMgr != null) {
+            fightMgr.UnInit();
+        }
+        DestroyImmediate(fightGO);
+        LobbySys.Instance.EnterLobby();
+        audioSvc.PlayBGMusic(Constants.BGMainCity);
+    }
+    
     public List<PEColliderBase> GetEnvColliders()
     {
         return fightMgr.GetEnvColliders();
@@ -190,7 +202,7 @@ public class BattleSys : SystemBase
         msg.sendOpKey.opKey.moveKey.z = logicDir.z.ScaledValue;
         msg.sendOpKey.opKey.moveKey.keyId = KeyId;
         
-        netSvc.SendMsg(msg);// TODO 1122
+        netSvc.SendMsg(msg);
         return true;
     }
 

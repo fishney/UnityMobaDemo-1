@@ -14,7 +14,7 @@ namespace Server
             {
                 ServerRoot.Instance().Update();
                 // 降低执行频率
-                Thread.Sleep(20);
+                Thread.Sleep(10);
             }
 		}
 	}

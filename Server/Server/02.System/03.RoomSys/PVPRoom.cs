@@ -132,6 +132,17 @@ namespace Server
                 }
             }
         }
+
+        public void SendOpKey(OpKey key)
+        {
+            if (currentState == RoomStateEnum.Fight)
+            {
+                if (fsm[currentState] is RoomStateFight state)
+                {
+                    state.UpdateOpKey(key);
+                }
+            }
+        }
     }
 
 }

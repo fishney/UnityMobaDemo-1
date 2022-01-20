@@ -12,6 +12,7 @@ namespace HOKProtocol
 	{
         public CMD cmd;
         public ErrorCode err;
+        public bool isEmpty;
 
 		public ReqLogin reqLogin;
 		public RspLogin rspLogin;

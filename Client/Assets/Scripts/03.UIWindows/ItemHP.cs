@@ -71,19 +71,25 @@ public abstract class ItemHP : WindowBase
     bool canShow = true;
     float delayTimeCounter = 0;
     public void UpdateCheck() {
+        // if(jpq.Count > 0 && canShow) {
+        //     if (JumpNumCounter < JumpNumInterval)
+        //     {
+        //         JumpNumCounter += Configs.ServerLogicFrameIntervelMs;
+        //     }
+        //     else
+        //     {
+        //         JumpNumCounter -= JumpNumInterval;
+        //         canShow = false;
+        //         JumpPack jp = jpq.Dequeue();
+        //         jp.jn.Show(jp.jui);
+        //     }
+        // }
+        
         if(jpq.Count > 0 && canShow) {
-            if (JumpNumCounter < JumpNumInterval)
-            {
-                JumpNumCounter += Configs.ServerLogicFrameIntervelMs;
-            }
-            else
-            {
-                JumpNumCounter -= JumpNumInterval;
-                canShow = false;
-                JumpPack jp = jpq.Dequeue();
-                jp.jn.Show(jp.jui);
-            }
+            JumpPack jp = jpq.Dequeue();
+            jp.jn.Show(jp.jui);
         }
+
 
         if(canShow == false) {
             delayTimeCounter += Time.deltaTime;

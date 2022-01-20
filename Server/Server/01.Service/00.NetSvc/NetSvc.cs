@@ -42,8 +42,7 @@ namespace Server
 
 			if (msgPackQue?.Count > 0)
 			{
-				this.Log("PacCount:" + msgPackQue?.Count);
-				lock (obj)
+                lock (obj)
 				{
 					MsgPack msg = msgPackQue.Dequeue();
 					HandOutMsg(msg);
@@ -80,6 +79,9 @@ namespace Server
                     break;
                 case CMD.ReqBattleStart:
                     RoomSys.Instance().ReqBattleStart(msgPack);
+                    break;
+				case CMD.SendOpKey:
+                    RoomSys.Instance().SendOpKey(msgPack);
                     break;
 
 			}

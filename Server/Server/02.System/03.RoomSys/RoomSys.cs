@@ -83,6 +83,21 @@ namespace Server
             }
 
         }
-        
+
+        public void SendOpKey(MsgPack msgPack)
+        {
+            SendOpKey req = msgPack.msg.sendOpKey;
+
+            var room = pvpRoomList.Find(o => o.roomId == req.roomId);
+
+            if (room != null)
+            {
+                room.SendOpKey(req.opKey);
+            }
+            else
+            {
+                this.Warn(req.roomId + " PVPRoom is not existed.");
+            }
+        }
     }
 }
