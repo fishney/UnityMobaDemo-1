@@ -117,7 +117,7 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
 
         if (client != null && client.clientSession != null)
         {
-            if (msgQue?.Count > 0)
+            while (msgQue?.Count > 0)
             {
                 lock (obj)
                 {

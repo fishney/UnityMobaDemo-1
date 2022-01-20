@@ -40,7 +40,7 @@ namespace Server
 		{
 			base.Update();
 
-			if (msgPackQue?.Count > 0)
+			while (msgPackQue?.Count > 0)
 			{
                 lock (obj)
 				{
