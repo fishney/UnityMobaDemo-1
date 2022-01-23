@@ -296,6 +296,21 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    Assets/Scenes/MainCity.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
   scriptHashData:
   - hash:
       serializedVersion: 2
@@ -938,4 +953,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/GameRoot.unity
   - Assets/Resources/ResScenes/map_101.unity
   - Assets/Resources/ResScenes/map_102.unity
-  playerPath: D:/release/demo/hok/HOK.exe
+  - Assets/Scenes/MainCity.unity
+  playerPath: C:/Release/hok/HOK.exe

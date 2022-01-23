@@ -31,14 +31,14 @@ public class HPWindow : WindowBase
     {
         base.ClearWindow();
 
-        for (int i = hpItemRoot.childCount; i >= 0 ; i--)
+        for (int i = hpItemRoot.childCount - 1; i >= 0 ; --i)
         {
-            Destroy(hpItemRoot.GetChild(i));
+            Destroy(hpItemRoot.GetChild(i).gameObject);
         }
         
-        for (int i = jumpNumRoot.childCount; i >= 0 ; i--)
+        for (int i = jumpNumRoot.childCount - 1; i >= 0 ; --i)
         {
-            Destroy(jumpNumRoot.GetChild(i));
+            Destroy(jumpNumRoot.GetChild(i).gameObject);
         }
         
         itemDic.Clear();

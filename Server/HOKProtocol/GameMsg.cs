@@ -30,9 +30,17 @@ namespace HOKProtocol
 
         public ReqBattleStart reqBattleStart;
         public RspBattleStart rspBattleStart;
+        public ReqBattleEnd reqBattleEnd;
+        public RspBattleEnd rspBattleEnd;
+
+        public SendChat sendChat;
+        public NotifyChat notifyChat;
 
         public SendOpKey sendOpKey;
         public NotifyOpKey notifyOpKey;
+
+        public ReqPing reqPing;
+        public RspPing rspPing;
     }
 
     #region 登陆相关
@@ -236,6 +244,18 @@ namespace HOKProtocol
     }
 
     [Serializable]
+    public class ReqBattleEnd
+    {
+	    public int roomId;
+    }
+
+    [Serializable]
+    public class RspBattleEnd
+    {
+        // 结算数据
+    }
+
+    [Serializable]
     public class SendOpKey
     {
         public int roomId;
@@ -248,6 +268,34 @@ namespace HOKProtocol
         public int frameId;
         public List<OpKey> keyList;
     }
+
+    [Serializable]
+    public class SendChat
+    {
+	    public int roomId;
+	    public string chatMsg;
+    }
+
+    [Serializable]
+    public class NotifyChat
+    {
+	    public string chatMsg;
+    }
+
+    [Serializable]
+    public class ReqPing
+    {
+	    public uint pingId;
+	    public ulong sendTime;
+	    public ulong backTime;
+    }
+
+    [Serializable]
+    public class RspPing
+    {
+	    public uint pingId;
+    }
+    
     #endregion
 
     #region 数据类型
@@ -383,6 +431,16 @@ namespace HOKProtocol
         // 战斗
         ReqBattleStart = 112,
         RspBattleStart = 113,
+        ReqBattleEnd = 114,
+        RspBattleEnd = 115,
+
+        //PING
+        ReqPing = 1,
+        RspPing = 2,
+
+        // 聊天
+        SendChat = 201,
+        NotifyChat = 202,
 
         // 操作码
         SendOpKey = 1000,

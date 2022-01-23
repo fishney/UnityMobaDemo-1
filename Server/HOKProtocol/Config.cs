@@ -6,8 +6,22 @@ namespace HOKProtocol
 {
 	public class ServerConfig
 	{
+        /// <summary>
+        /// 本地IP
+        /// </summary>
 		public const string LocalDevInnerIp = "127.0.0.1";
-		public const int UdpPort = 17666;
+
+        /// <summary>
+        /// 远端IP（公网）
+        /// </summary>
+        public const string RemoteGateIp = "47.102.42.164";
+
+        /// <summary>
+        /// 云服务器IP 远端转发绑定IP（私网）
+        /// </summary>
+        public const string RemoteServerIp = "172.22.18.183";
+
+        public const int UdpPort = 17666;
 
 		// 确认匹配倒计时
         public const int ConfirmCountDown = 15;

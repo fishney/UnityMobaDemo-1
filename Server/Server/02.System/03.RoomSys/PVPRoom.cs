@@ -143,6 +143,37 @@ namespace Server
                 }
             }
         }
-    }
 
+        public void SendChat(string chatMsg)
+        {
+	        GameMsg msg = new GameMsg
+	        {
+		        cmd = CMD.NotifyChat,
+		        notifyChat = new NotifyChat
+		        {
+			        chatMsg = chatMsg,
+		        }
+	        };
+
+	        PublishMsg(msg);
+        }
+
+        public void ReqBattleEnd(ServerSession session)
+        {
+	        if (currentState == RoomStateEnum.Fight)
+	        {
+		        if (fsm[currentState] is RoomStateFight state)
+		        {
+			        state.UpdateEndState(GetPosIndex(session));
+		        }
+	        }
+        }
+
+        public void Clear()
+        {
+            selectArr = null;
+            sessionArr = null;
+            fsm = null;
+        }
+    }
 }

@@ -14,8 +14,14 @@ namespace Server
         private List<OpKey> opKeyList = new List<OpKey>();
         private int checkTaskId;
 
+        /// <summary>
+        /// 点结束的用户列表
+        /// </summary>
+        private bool[] endArr;
+
         public RoomStateFight(PVPRoom r) : base(r)
         {
+	        endArr = new bool[room.sessionArr.Count];
         }
 
         public override void Enter()
@@ -57,11 +63,28 @@ namespace Server
         {
             checkTaskId = 0;
             opKeyList.Clear();
+            endArr = null;
         }
 
         public void UpdateOpKey(OpKey key)
         {
             opKeyList.Add(key);
+        }
+
+        public void UpdateEndState(int posIndex)
+        {
+            endArr[posIndex] = true;
+
+	        if (TimerSvc.Instance().DeleteTask(checkTaskId))
+	        {
+		        this.ColorLog(PEUtils.LogColor.Green,"Delete Sync Task Success.");
+			}
+	        else
+	        {
+		        this.Warn("Delete Sync Task Failed.");
+	        }
+
+	        room.ChangeRoomState(RoomStateEnum.End);
         }
     }
 }

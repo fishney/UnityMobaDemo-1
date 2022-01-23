@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using HOKProtocol;
 
 namespace Server
 {
@@ -15,7 +16,17 @@ namespace Server
 
         public override void Enter()
         {
-            
+	        GameMsg msg = new GameMsg
+            {
+		        cmd = CMD.RspBattleEnd,
+		        rspBattleEnd = new RspBattleEnd
+		        {
+			        // TODO 结算数据
+		        }
+	        };
+
+	        room.PublishMsg(msg);
+	        Exit();
         }
 
         public override void Update()
@@ -25,7 +36,7 @@ namespace Server
 
         public override void Exit()
         {
-            
+	        RoomSys.Instance().DestroyRoom(room.roomId);
         }
     }
 }

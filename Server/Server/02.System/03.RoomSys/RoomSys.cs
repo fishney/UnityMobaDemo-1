@@ -9,11 +9,20 @@ namespace Server
     {
         private List<PVPRoom> pvpRoomList = null;
         private RoomSys() { }
+        private object pvpRoomListLock = new object();
 
 		public override void Init()
 		{
 			base.Init();
             pvpRoomList = new List<PVPRoom>();
+
+            TimerSvc.Instance().AddTask(5000, CheckStatus, null, 0);
+
+        }
+
+		void CheckStatus(int id)
+		{
+			this.ColorLog(PEUtils.LogColor.Magenta, $"对战房间负载：{pvpRoomList.Count}个");
 		}
 
         public void AddPvpRoom(ServerSession[] sessions,PvpEnum pvpType)
@@ -97,6 +106,53 @@ namespace Server
             else
             {
                 this.Warn(req.roomId + " PVPRoom is not existed.");
+            }
+        }
+
+        public void SendChat(MsgPack msgPack)
+        {
+	        SendChat req = msgPack.msg.sendChat;
+
+	        var room = pvpRoomList.Find(o => o.roomId == req.roomId);
+
+	        if (room != null)
+	        {
+		        room.SendChat(req.chatMsg);
+	        }
+	        else
+	        {
+		        this.Warn(req.roomId + " PVPRoom is not existed.");
+	        }
+        }
+
+        public void ReqBattleEnd(MsgPack msgPack)
+        {
+	        ReqBattleEnd req = msgPack.msg.reqBattleEnd;
+
+	        var room = pvpRoomList.Find(o => o.roomId == req.roomId);
+
+	        if (room != null)
+	        {
+		        room.ReqBattleEnd(msgPack.session);
+	        }
+
+        }
+
+        public void DestroyRoom(int roomId)
+        {
+	        lock (pvpRoomListLock)
+	        {
+		        var roomIndex = pvpRoomList.FindIndex(o => o.roomId == roomId);
+
+		        if (roomIndex >= 0)
+		        {
+			        pvpRoomList.RemoveAt(roomIndex);
+
+		        }
+		        else
+		        {
+			        this.Error("PVPRoom is not exist ID:" + roomId);
+		        }
             }
         }
     }

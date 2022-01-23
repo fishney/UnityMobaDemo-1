@@ -31,7 +31,12 @@ namespace Server
 			};
 
 			//启动
+#if DEBUG
 			server.StartAsServer(ServerConfig.LocalDevInnerIp, ServerConfig.UdpPort);
+#else
+            server.StartAsServer(ServerConfig.RemoteServerIp, ServerConfig.UdpPort);
+#endif
+
 			this.Log("ServerSession init Completed by NetSvc.");
 
 		}
@@ -83,9 +88,31 @@ namespace Server
 				case CMD.SendOpKey:
                     RoomSys.Instance().SendOpKey(msgPack);
                     break;
-
-			}
+				case CMD.SendChat:
+					RoomSys.Instance().SendChat(msgPack);
+					break;
+				case CMD.ReqBattleEnd:
+					RoomSys.Instance().ReqBattleEnd(msgPack);
+					break;
+				case CMD.ReqPing:
+					SyncPingCMD(msgPack);
+					break;
+            }
         }
+
+		private void SyncPingCMD(MsgPack pack)
+		{
+			ReqPing req = pack.msg.reqPing;
+			GameMsg msg = new GameMsg
+			{
+				cmd = CMD.RspPing,
+				rspPing = new RspPing
+				{
+					pingId = req.pingId,
+				}
+			};
+			pack.session.SendMsg(msg);
+		}
 
 	}
 }

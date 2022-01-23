@@ -36,15 +36,17 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
             this.ColorLog((LogColor)color,msg);
         };
 
-        string svcIP = ServerConfig.LocalDevInnerIp;
+        string svcIP = ServerConfig.RemoteGateIp;
         if (GameRootResources.Instance().loginWindow != null)
         {
-            if (GameRootResources.Instance().loginWindow.togServer.isOn)
+            if (! GameRootResources.Instance().loginWindow.togServer.isOn)
             {
-                // TODO 公网IP svcIP
+                svcIP = ServerConfig.LocalDevInnerIp;
             }
         }
 
+        this.ColorLog(LogColor.Green, "ServerIP:" + svcIP);
+        CancelInvoke("NetPing");
         //启动
         client.StartAsClient(svcIP, ServerConfig.UdpPort);
         // 检测成功间隔
@@ -96,12 +98,14 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                 this.Log("ConnectServer Success.");
                 checkTask = null;
                 GameRootResources.Instance().ShowTips("服务器连接成功");
-                // TODO send ping msg
+                
+                // method name, delay time (second), interval time (second)
+                InvokeRepeating("NetPing", 5, 5);
             }
             else
             {
                 ++counter;
-                if (counter>4)
+                if (counter > 4)
                 {
                     this.Error($"ConnectServer Failed{counter}.Please Check.");
                     GameRootResources.Instance().ShowTips("服务器连接失败次数过多，请检查网络");
@@ -125,22 +129,62 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                     HandleRsp(msg);
                 }
             }
-            // Debug.Log("Plane is wrong!!!");
-            // return;
         }
 
         // 模拟收到服务器消息
-        // if (GMSystem.Instance.isActive)
-        // {
-        //     if (msgQue?.Count > 0)
-        //     {
-        //         lock (obj)
-        //         {
-        //             var msg = msgQue.Dequeue();
-        //             HandleRsp(msg);
-        //         }
-        //     }
-        // }
+        if (GMSystem.Instance.isActive)
+        {
+            if (msgQue?.Count > 0)
+            {
+                lock (obj)
+                {
+                    var msg = msgQue.Dequeue();
+                    HandleRsp(msg);
+                }
+            }
+        }
+    }
+    
+    uint sendPingId = 0;
+    int pingCounter = 0;
+    Dictionary<uint, DateTime> pingDic = new Dictionary<uint, DateTime>();
+
+    public void NetPing() {
+        ++sendPingId;
+        SendMsg(new GameMsg() {
+            cmd = CMD.ReqPing,
+            reqPing = new ReqPing {
+                pingId = sendPingId,
+                sendTime = KCPTool.GetUTCStartMilliseconds(),
+            }
+        });
+
+        //检测Ping有没有回应，累计三次没有回应，弹出提示
+        if(pingDic.Count > 0) {
+            ++pingCounter;
+            if(pingCounter >= 3) {
+                GameRootResources.Instance().ShowTips("网络异常，检测手机网络环境");
+                pingCounter = 0;
+            }
+        }
+        pingDic.Add(sendPingId, DateTime.Now);
+    }
+    
+    void RspPing(GameMsg msg) {
+        RspPing rsp = msg.rspPing;
+        
+        this.Log("Get pingId:" + rsp + ",count:" + pingDic.Count);
+        
+        uint recivePingID = rsp.pingId;
+        if(pingDic.ContainsKey(recivePingID)) {
+            TimeSpan ts = DateTime.Now - pingDic[recivePingID];
+            GameRoot.NetDelay = (int)ts.TotalMilliseconds;
+            pingDic.Clear();
+            pingCounter = 0;
+        }
+        else {
+            this.Warn("Net Ping ID Error:" + recivePingID);
+        }
     }
     
     private void HandleRsp(GameMsg msg)
@@ -217,6 +261,15 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                 break;
             case CMD.NotifyOpKey:
                 BattleSys.Instance.NotifyOpKey(msg);
+                break;
+            case CMD.NotifyChat:
+                BattleSys.Instance.NotifyChat(msg);
+                break;
+            case CMD.RspBattleEnd:
+                BattleSys.Instance.RspBattleEnd(msg);
+                break;
+            case CMD.RspPing:
+                RspPing(msg);
                 break;
     
         }

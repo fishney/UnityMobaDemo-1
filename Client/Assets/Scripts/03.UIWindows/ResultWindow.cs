@@ -36,14 +36,14 @@ public class ResultWindow : WindowBase
     }
 
     public void ClickContinueBtn() {
-        // if(gameObject.activeSelf) {
-        //     GameMsg msg = new GameMsg {
-        //         cmd = CMD.ReqBattleEnd,
-        //         reqBattleEnd = new ReqBattleEnd {
-        //             roomId = GameRoot.ActiveRoomId
-        //         }
-        //     };
-        //     netSvc.SendMsg(msg);
-        // }
+        if(gameObject.activeSelf) {
+            GameMsg msg = new GameMsg {
+                cmd = CMD.ReqBattleEnd,
+                reqBattleEnd = new ReqBattleEnd {
+                    roomId = GameRoot.ActiveRoomId
+                }
+            };
+            netSvc.SendMsg(msg);
+        }
     }
 }

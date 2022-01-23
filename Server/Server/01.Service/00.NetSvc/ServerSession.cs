@@ -23,7 +23,7 @@ namespace Server
 
 		protected override void OnReciveMsg(GameMsg msg)
 		{
-			//this.Log("SessionId:" + sessionId + " RcvPack CMD:");
+			this.Log("SessionId:" + sessionId + " RcvPack CMD:");
 
 			// 向消息队列添加新的消息处理，等待被轮询执行（执行线程不固定）
 			NetSvc.Instance().AddMsgQue(this, msg);

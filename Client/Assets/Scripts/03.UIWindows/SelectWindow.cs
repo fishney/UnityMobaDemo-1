@@ -40,7 +40,7 @@ public class SelectWindow : WindowBase
         timeCount = ServerConfig.SelectCountDown;
         heroSelectList = GameRoot.Instance().PlayerData.heroSelectData;
 
-        for (int i = 0;i < transScrollRoot.childCount; i++)
+        for (int i = transScrollRoot.childCount - 1;i >= 0; --i)
         {
             DestroyImmediate(transScrollRoot.GetChild(i).gameObject);
         }

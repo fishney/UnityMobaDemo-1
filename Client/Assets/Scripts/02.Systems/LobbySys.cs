@@ -26,6 +26,7 @@ public class LobbySys : SystemBase
 
     public void EnterLobby()
     {
+        resSvc.AsyncLoadScene("MainCity", null, null);
         gameRootResources.lobbyWindow.SetWindowState();
     }
 

@@ -45,6 +45,7 @@ public partial class PlayWindow
             }
         }
 
+        /*
         if(Input.GetKeyDown(KeyCode.Space)) {
             skaItem.ClickSkillItem();
         }
@@ -76,6 +77,7 @@ public partial class PlayWindow
         else if(Input.GetKeyDown(KeyCode.Y)) {
             GameRoot.SelfPosIndex = 5;
         }
+        */
     }
 
 
@@ -105,9 +107,8 @@ public partial class PlayWindow
             showTimeCounter += delta;
             if(showTimeCounter >= showTime) {
                 showTimeCounter = 0;
-                SetActive(imgInfoCD, false);
                 showImgInfo = false;
-                SetActive(imgInfoRoot,false);// TODO ture???
+                SetActive(imgInfoRoot,false);
             }
             else {
                 imgInfoCD.fillAmount = 1 - showTimeCounter / showTime;

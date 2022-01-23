@@ -264,7 +264,7 @@ public class ResBuffConfigs
 
          //专有属性
          overCount = 3,
-         speedAddtion = 90,
+         speedAddtion = 10,
          resetTime = 3000,
      };
      public static BuffCfg buff_10201 = new HouyiMultipleSkillModifyBuffCfg {

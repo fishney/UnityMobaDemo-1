@@ -122,6 +122,7 @@ public class BattleSys : SystemBase
 
         isTickFight = true;
         GameRoot.ActiveRoomStartTime = DateTime.Now;
+        PlayBattleFieldAudio("welcombattle");
     }
     
     public void RspBattleEnd(GameMsg msg) {
@@ -140,10 +141,9 @@ public class BattleSys : SystemBase
     {
         return fightMgr.GetEnvColliders();
     }
-
+    
     public void NotifyOpKey(GameMsg msg)
     {
-        // 每逻辑帧66ms一次
         if (isTickFight)
         {
             fightMgr.InputKey(msg.notifyOpKey.keyList);
@@ -151,6 +151,12 @@ public class BattleSys : SystemBase
         }
     }
     
+    public void NotifyChat(GameMsg msg)
+    {
+        string chatMsg = msg.notifyChat.chatMsg;
+        gameRootResources.playWindow.AddChatMsg(chatMsg);
+    }
+
     public bool CheckUIInput() {
         return gameRootResources.playWindow.IsUIInput();
     }

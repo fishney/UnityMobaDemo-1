@@ -627,7 +627,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                 var tmpProgress = displayProgress + 15;
                 displayProgress = tmpProgress > toProgress ? tmpProgress : toProgress;
                 //GameRootResources.Instance().loadingWindow.SetProgress(displayProgress);
-                updateProgress.Invoke(displayProgress);
+                updateProgress?.Invoke(displayProgress);
                 yield return new WaitForEndOfFrame();
             }
         }
@@ -655,7 +655,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
             }
             
             //GameRootResources.Instance().loadingWindow.SetProgress(displayProgress);
-            updateProgress.Invoke(displayProgress);
+            updateProgress?.Invoke(displayProgress);
             yield return new WaitForEndOfFrame();
         }
         op.allowSceneActivation = true;

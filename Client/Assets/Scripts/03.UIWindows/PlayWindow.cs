@@ -85,6 +85,7 @@ public partial class PlayWindow : WindowBase
     private Vector2 lastKeyDir = Vector2.zero;
     private void Update()
     {
+        /*
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         Vector2 keyDir = new Vector2(h, v);
@@ -97,7 +98,7 @@ public partial class PlayWindow : WindowBase
             InputMoveKey(keyDir);
             lastKeyDir = keyDir;
         }
-
+        */
         
         UpdateSkillWnd();
         float delta = Time.deltaTime;
@@ -217,32 +218,37 @@ public partial class PlayWindow : WindowBase
 
             string chatStr = iptChat.text;
             MainLogicUnit selfHero = BattleSys.Instance.GetSelfHero();
-            string userName = (selfHero as Hero).userName;
-            int unitID = selfHero.ud.unitCfg.unitId;
-            string heroName = ResSvc.Instance().GetUnitConfigById(unitID).unitName;
+            
+            if (selfHero is Hero hero)
+            {
+                string userName = hero.userName;
+                int unitID = selfHero.ud.unitCfg.unitId;
+                string heroName = ResSvc.Instance().GetUnitConfigById(unitID).unitName;
 
-            if(chatStr != null && chatStr != "") {
-                if(chatStr.Length >= maxChatLen) {
-                    GameRootResources.Instance().ShowTips("最多发送20个字");
-                    return;
-                }
-                if(selfHero.IsTeam(TeamEnum.Blue)) {
-                    chatStr = string.Format("<color=#2B91D1>[全部]{0}({1}):</color>{2}", userName, heroName, chatStr);
-                }
-                else {
-                    chatStr = string.Format("<color=#C83535>[全部]{0}({1}):</color>{2}", userName, heroName, chatStr);
-                }
+                if(!String.IsNullOrEmpty(chatStr)) {
+                    if(chatStr.Length >= maxChatLen) {
+                        GameRootResources.Instance().ShowTips("最多发送20个字");
+                        return;
+                    }
+                    if(selfHero.IsTeam(TeamEnum.Blue)) {
+                        chatStr = string.Format("<color=#2B91D1>[全部]{0}({1}):</color>{2}", userName, heroName, chatStr);
+                    }
+                    else {
+                        chatStr = string.Format("<color=#C83535>[全部]{0}({1}):</color>{2}", userName, heroName, chatStr);
+                    }
 
-                // GameMsg msg = new GameMsg {
-                //     cmd = CMD.SndChat,
-                //     sndChat = new SndChat {
-                //         roomID = root.RoomID,
-                //         chatMsg = chatStr
-                //     }
-                // };
-                //netSvc.SendMsg(msg);
-                iptChat.text = "";
+                    GameMsg msg = new GameMsg {
+                        cmd = CMD.SendChat,
+                        sendChat = new SendChat {
+                            roomId = GameRoot.ActiveRoomId,
+                            chatMsg = chatStr
+                        }
+                    };
+                    netSvc.SendMsg(msg);
+                    iptChat.text = "";
+                }
             }
+            
         }
         else {
             iptChat.gameObject.SetActive(true);
@@ -250,10 +256,15 @@ public partial class PlayWindow : WindowBase
     }
 
     class ChatItem {
+        /// <summary>
+        /// 生命时长
+        /// </summary>
         public float timeCounter;
         public string chatMsg;
     }
+    
     public void AddChatMsg(string msg) {
+        // 最多显示x条记录
         while(chatLst.Count > maxChatCount - 1) {
             chatLst.RemoveAt(0);
         }

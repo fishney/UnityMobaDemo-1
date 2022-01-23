@@ -1,0 +1,2 @@
+[L]# 02:01:26--096  ThreadID:1 >> DBMgr Init Done.
+[L]# 02:01:26--142  ThreadID:1 >> NetSvc init.

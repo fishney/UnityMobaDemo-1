@@ -23,9 +23,15 @@ namespace Server
             que2V2 = new Queue<ServerSession>();
             que5V5 = new Queue<ServerSession>();
 
-        }
+            TimerSvc.Instance().AddTask(5000, CheckStatus, null, 0);
+		}
 
-		public override void Update()
+        void CheckStatus(int id)
+		{
+			this.ColorLog(PEUtils.LogColor.Yellow, $"匹配队列负载：1v1=>{que1V1.Count}人，2v2=>{que2V2.Count}人，5v5=>{que5V5.Count}人");
+		}
+
+        public override void Update()
 		{
 			base.Update();
 
