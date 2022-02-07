@@ -337,11 +337,14 @@ public class FightMgr : MonoBehaviour
 
     public void InputKey(List<OpKey> keyList)
     {
-        for (int i = 0; i < keyList.Count; i++)
+        if (keyList != null)
         {
-            OpKey key = keyList[i];
-            MainLogicUnit hero = heroList[key.opIndex];
-            hero.InputKey(key);
+            for (int i = 0; i < keyList.Count; i++)
+            {
+                OpKey key = keyList[i];
+                MainLogicUnit hero = heroList[key.opIndex];
+                hero.InputKey(key);
+            }
         }
     }
 

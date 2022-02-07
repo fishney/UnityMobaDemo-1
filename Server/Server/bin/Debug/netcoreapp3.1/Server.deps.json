@@ -10,10 +10,13 @@
         "dependencies": {
           "HOKProtocol": "1.0.0",
           "MySql.Data": "8.0.27",
-          "Kcp": "2.0.0.0",
-          "KCPNet": "1.0.0.0",
+          "CodingK_Session": "1.0.0.0",
+          "Kcp": "2.3.0.0",
           "PETimer": "1.0.0.0",
-          "PEUtils": "1.0.0.0"
+          "PEUtils": "1.0.0.0",
+          "protobuf-net.Core": "3.0.0.0",
+          "protobuf-net": "3.0.0.0",
+          "System.Collections.Immutable": "5.0.0.0"
         },
         "runtime": {
           "Server.dll": {}
@@ -230,19 +233,19 @@
           "HOKProtocol.dll": {}
         }
       },
-      "Kcp/2.0.0.0": {
+      "CodingK_Session/1.0.0.0": {
         "runtime": {
-          "Kcp.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
+          "CodingK_Session.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
-      "KCPNet/1.0.0.0": {
+      "Kcp/2.3.0.0": {
         "runtime": {
-          "KCPNet.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+          "Kcp.dll": {
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.0.0"
           }
         }
       },
@@ -259,6 +262,30 @@
           "PEUtils.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "protobuf-net.Core/3.0.0.0": {
+        "runtime": {
+          "protobuf-net.Core.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.62.765"
+          }
+        }
+      },
+      "protobuf-net/3.0.0.0": {
+        "runtime": {
+          "protobuf-net.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.62.765"
+          }
+        }
+      },
+      "System.Collections.Immutable/5.0.0.0": {
+        "runtime": {
+          "System.Collections.Immutable.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         }
       }
@@ -408,12 +435,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Kcp/2.0.0.0": {
+    "CodingK_Session/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "KCPNet/1.0.0.0": {
+    "Kcp/2.3.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -424,6 +451,21 @@
       "sha512": ""
     },
     "PEUtils/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "protobuf-net.Core/3.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "protobuf-net/3.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Collections.Immutable/5.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net.Sockets.Kcp;
 using System.Text;
+using CodingK_Session;
 using HOKProtocol;
-using PENet;
 using PEUtils;
 
 namespace Server
@@ -11,31 +10,31 @@ namespace Server
 	public class NetSvc : ServiceBase<NetSvc>
 	{
 		private NetSvc() { }
-		private KCPNet<ServerSession, GameMsg> server = null;
+		private CodingK_Net<ServerSession, GameMsg> server = null;
 		private Queue<MsgPack> msgPackQue = null;
 		private static readonly string obj = "lock";
 
 		public override void Init()
 		{
 			base.Init();
-			server = new KCPNet<ServerSession, GameMsg>();
+			server = new CodingK_Net<ServerSession, GameMsg>();
 			msgPackQue = new Queue<MsgPack>();
 
 			// 配置Log = 委托
-			KCPTool.LogFunc = this.Log;
-			KCPTool.WarnFunc = this.Warn;
-			KCPTool.ErrorFunc = this.Error;
-			KCPTool.ColorLogFunc = (color,msg) =>
+            CodingK_SessionTool.LogFunc = this.Log;
+            CodingK_SessionTool.WarnFunc = this.Warn;
+            CodingK_SessionTool.ErrorFunc = this.Error;
+            CodingK_SessionTool.ColorLogFunc = (color,msg) =>
 			{
 				this.ColorLog((LogColor)color,msg);
 			};
 
 			//启动
-#if DEBUG
-			server.StartAsServer(ServerConfig.LocalDevInnerIp, ServerConfig.UdpPort);
-#else
-            server.StartAsServer(ServerConfig.RemoteServerIp, ServerConfig.UdpPort);
-#endif
+//#if DEBUG
+			server.StartAsServer(ServerConfig.LocalDevInnerIp, ServerConfig.UdpPort, ServerRoot.Instance().protocolMode);
+// #else
+//             server.StartAsServer(ServerConfig.RemoteServerIp, ServerConfig.UdpPort);
+// #endif
 
 			this.Log("ServerSession init Completed by NetSvc.");
 

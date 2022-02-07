@@ -10,9 +10,10 @@
       "Server/1.0.0": {
         "dependencies": {
           "HOKProtocol": "1.0.0",
+          "Kcp": "2.3.0",
           "MySql.Data": "8.0.27",
-          "Kcp": "2.0.0.0",
-          "KCPNet": "1.0.0.0",
+          "protobuf-net": "3.0.62",
+          "CodingK_Session": "1.0.0.0",
           "PETimer": "1.0.0.0",
           "PEUtils": "1.0.0.0",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "3.1.22"
@@ -902,6 +903,14 @@
           }
         }
       },
+      "Kcp/2.3.0": {
+        "runtime": {
+          "lib/netstandard2.1/Kcp.dll": {
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.0.0"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {},
       "Microsoft.Win32.SystemEvents/4.7.0": {
         "dependencies": {
@@ -937,6 +946,25 @@
           "lib/netstandard2.1/ZstdNet.dll": {
             "assemblyVersion": "1.4.5.0",
             "fileVersion": "1.4.5.0"
+          }
+        }
+      },
+      "protobuf-net/3.0.62": {
+        "dependencies": {
+          "protobuf-net.Core": "3.0.62"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/protobuf-net.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.62.765"
+          }
+        }
+      },
+      "protobuf-net.Core/3.0.62": {
+        "runtime": {
+          "lib/netcoreapp3.1/protobuf-net.Core.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.62.765"
           }
         }
       },
@@ -1021,17 +1049,9 @@
           "HOKProtocol.dll": {}
         }
       },
-      "Kcp/2.0.0.0": {
+      "CodingK_Session/1.0.0.0": {
         "runtime": {
-          "Kcp.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
-          }
-        }
-      },
-      "KCPNet/1.0.0.0": {
-        "runtime": {
-          "KCPNet.dll": {
+          "CodingK_Session.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1101,6 +1121,13 @@
       "path": "k4os.hash.xxhash/1.0.6",
       "hashPath": "k4os.hash.xxhash.1.0.6.nupkg.sha512"
     },
+    "Kcp/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cegDiYxgyQ9aVGOpEuVTNMhb4P7Sfc4lUnZmlC2Mj5QVuvnglVU2ol3yTWZyQDDkmV2F8qzgF3OkAmbY3cwSPw==",
+      "path": "kcp/2.3.0",
+      "hashPath": "kcp.2.3.0.nupkg.sha512"
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",
       "serviceable": true,
@@ -1121,6 +1148,20 @@
       "sha512": "sha512-Ef+sH12/nGAiF9yLZFkuXh7vtVvEPiLKyZNJiDk+VBULzLcXj0lmfU7qcmWNCSVX5n6zu5jMV+JaNf1C+a+T8g==",
       "path": "mysql.data/8.0.27",
       "hashPath": "mysql.data.8.0.27.nupkg.sha512"
+    },
+    "protobuf-net/3.0.62": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EqdVJU6BXj6SVMcZObrUV5DUThRyvWBn8jKRaTccgdB3NC/DAjNDABz85luptyPMxabWaCBYcWp3S8z9Qtbyyw==",
+      "path": "protobuf-net/3.0.62",
+      "hashPath": "protobuf-net.3.0.62.nupkg.sha512"
+    },
+    "protobuf-net.Core/3.0.62": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UfLUKkMe2VhFvlY1kwm0wzg1rGU0/2NElvKcQweB3TGGD+MBtGQ5sQA9ZFPRjqi0n/fDF2oq0D0oAYFSwVpHTg==",
+      "path": "protobuf-net.core/3.0.62",
+      "hashPath": "protobuf-net.core.3.0.62.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",
@@ -1204,12 +1245,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Kcp/2.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "KCPNet/1.0.0.0": {
+    "CodingK_Session/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

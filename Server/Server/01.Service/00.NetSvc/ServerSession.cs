@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 using HOKProtocol;
-using PENet;
+using CodingK_Session;
 
 namespace Server
 {
-	public class ServerSession : KCPSession<GameMsg>
+	public class ServerSession : CodingK_Session<GameMsg>
 	{
 		public int sessionId = 0;
 
-		protected override void OnUpdate(DateTime now)
+		protected override void OnUpDate(DateTime now)
 		{
 			
 		}
@@ -18,10 +18,10 @@ namespace Server
 		protected override void OnConnected()
 		{
 			sessionId = ServerRoot.Instance().GetSessionId();
-			this.Log("SessionId:" + sessionId + " Client Connect" + m_sid);
+			this.Log("SessionId:" + sessionId + " Client Connect" + m_sessionId);
 		}
 
-		protected override void OnReciveMsg(GameMsg msg)
+		protected override void OnReceiveMsg(GameMsg msg)
 		{
 			this.Log("SessionId:" + sessionId + " RcvPack CMD:");
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CodingK_Session;
 using PEUtils;
 
 namespace Server
@@ -9,6 +10,7 @@ namespace Server
 	{
 		private ServerRoot(){}
 		private int sessionId = 0;
+        public CodingK_ProtocolMode protocolMode = CodingK_ProtocolMode.Proto;
 
 		public override void Init()
 		{

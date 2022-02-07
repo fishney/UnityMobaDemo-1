@@ -13,34 +13,35 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using HOKProtocol;
-using PENet;
+using CodingK_Session;
 using PEUtils;
 
 public class NetSvc : GameRootMonoSingleton<NetSvc>
 {
-    private KCPNet<ClientSession, GameMsg> client = null;
+    private CodingK_Net<ClientSession, GameMsg> client = null;
     private Queue<GameMsg> msgQue = null;
     private static readonly string obj = "lock";
     private Task<bool> checkTask = null;
     
     public void InitSvc()
     {
-        client = new KCPNet<ClientSession, GameMsg>();
+        client = new CodingK_Net<ClientSession, GameMsg>();
         msgQue = new Queue<GameMsg>();
         
-        KCPTool.LogFunc = this.Log;
-        KCPTool.WarnFunc = this.Warn;
-        KCPTool.ErrorFunc = this.Error;
-        KCPTool.ColorLogFunc = (color,msg) =>
+        CodingK_SessionTool.LogFunc = this.Log;
+        CodingK_SessionTool.WarnFunc = this.Warn;
+        CodingK_SessionTool.ErrorFunc = this.Error;
+        CodingK_SessionTool.ColorLogFunc = (color,msg) =>
         {
             this.ColorLog((LogColor)color,msg);
         };
 
-        string svcIP = ServerConfig.RemoteGateIp;
+        string svcIP = ServerConfig.LocalDevInnerIp;//RemoteGateIp;
         if (GameRootResources.Instance().loginWindow != null)
         {
             if (! GameRootResources.Instance().loginWindow.togServer.isOn)
             {
+                Debug.Log("内网启动");
                 svcIP = ServerConfig.LocalDevInnerIp;
             }
         }
@@ -48,7 +49,7 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
         this.ColorLog(LogColor.Green, "ServerIP:" + svcIP);
         CancelInvoke("NetPing");
         //启动
-        client.StartAsClient(svcIP, ServerConfig.UdpPort);
+        client.StartAsClient(svcIP, ServerConfig.UdpPort,CodingK_ProtocolMode.Proto);
         // 检测成功间隔
         checkTask = client.ConnectServer(100);
         Debug.Log("NetSvc Init Completed.");
@@ -155,7 +156,7 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
             cmd = CMD.ReqPing,
             reqPing = new ReqPing {
                 pingId = sendPingId,
-                sendTime = KCPTool.GetUTCStartMilliseconds(),
+                sendTime = CodingK_SessionTool.GetUTCStartMilliseconds(),
             }
         });
 

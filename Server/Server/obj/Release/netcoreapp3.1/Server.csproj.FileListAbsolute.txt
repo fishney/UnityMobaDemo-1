@@ -1,4 +1,3 @@
-C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.csprojAssemblyReference.cache
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.AssemblyInfoInputs.cache
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.AssemblyInfo.cs
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.csproj.CoreCompileInputs.cache
@@ -30,7 +29,6 @@ C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\runtimes\win\lib
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\HOKProtocol.dll
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\Kcp.dll
-C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\KCPNet.dll
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\PETimer.dll
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\PEUtils.dll
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\HOKProtocol.pdb
@@ -38,3 +36,10 @@ C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.csproj.Co
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.dll
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.pdb
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.genruntimeconfig.cache
+C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\protobuf-net.dll
+C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\protobuf-net.Core.dll
+C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\CodingK_Session.dll
+C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\CodingK_Session.pdb
+C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.csproj.AssemblyReference.cache
+C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\System.Collections.Immutable.dll

@@ -360,31 +360,43 @@
  <HintPath>C:/Github/UnityMobaDemo/Client/Assets/MyLibrary/Others/PEUtils.dll</HintPath>
  </Reference>
  <Reference Include="PEMath">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/Libs/PEMath.dll</HintPath>
+ <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEMath.dll</HintPath>
  </Reference>
  <Reference Include="PEPhysx">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/Libs/PEPhysx.dll</HintPath>
- </Reference>
- <Reference Include="HOKProtocol">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/HOKProtocol.dll</HintPath>
- </Reference>
- <Reference Include="Kcp">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/Kcp.dll</HintPath>
- </Reference>
- <Reference Include="KCPNet">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/KCPNet.dll</HintPath>
- </Reference>
- <Reference Include="System.Buffers">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/System.Buffers.dll</HintPath>
+ <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEPhysx.dll</HintPath>
  </Reference>
  <Reference Include="System.Memory">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/System.Memory.dll</HintPath>
+ <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Memory.dll</HintPath>
+ </Reference>
+ <Reference Include="CodingK_Session">
+ <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/CodingK_Session.dll</HintPath>
+ </Reference>
+ <Reference Include="protobuf-net">
+ <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/protobuf-net.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Threading.Tasks.Extensions">
+ <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Threading.Tasks.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="System.Numerics.Vectors">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/System.Numerics.Vectors.dll</HintPath>
+ <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Numerics.Vectors.dll</HintPath>
+ </Reference>
+ <Reference Include="protobuf-net.Core">
+ <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/protobuf-net.Core.dll</HintPath>
  </Reference>
  <Reference Include="System.Runtime.CompilerServices.Unsafe">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+ <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+ </Reference>
+ <Reference Include="HOKProtocol">
+ <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/HOKProtocol.dll</HintPath>
+ </Reference>
+ <Reference Include="Kcp">
+ <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/Kcp.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Buffers">
+ <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Buffers.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Collections.Immutable">
+ <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Collections.Immutable.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

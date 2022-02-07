@@ -2,13 +2,14 @@
 
 using System;
 using HOKProtocol;
-using PENet;
+using CodingK_Session;
 
-public class ClientSession: KCPSession<GameMsg>
+
+public class ClientSession: CodingK_Session<GameMsg>
 {
     public int sessionId = 0;
 
-    protected override void OnUpdate(DateTime now)
+    protected override void OnUpDate(DateTime now)
     {
 			
     }
@@ -19,9 +20,9 @@ public class ClientSession: KCPSession<GameMsg>
         this.Log("SessionId:" + sessionId + " Client Connect");
     }
 
-    protected override void OnReciveMsg(GameMsg msg)
+    protected override void OnReceiveMsg(GameMsg msg)
     {
-        //this.Log("SessionId:" + sessionId + " RcvPack CMD:");
+        this.Log("SessionId:" + sessionId + " RcvPack CMD:");
 
         // 向消息队列添加新的消息处理，等待被轮询执行（执行线程不固定）
         NetSvc.Instance().AddNetMsg(msg);

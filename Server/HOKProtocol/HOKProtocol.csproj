@@ -2,15 +2,43 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <BaseOutputPath></BaseOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\..\Client\Assets\Scripts\00.Common</OutputPath>
+    <OutputPath>C:\Github\UnityMobaDemo\Client\Assets\Plugins\Protocol\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="KCPNet">
-      <HintPath>..\..\Libs\KCPNetLibs\KCPNet.dll</HintPath>
+    <Reference Include="CodingK_Session">
+      <HintPath>..\..\Libs\CodingK_Session_Libs\CodingK_Session.dll</HintPath>
+    </Reference>
+    <Reference Include="Kcp">
+      <HintPath>..\..\Libs\CodingK_Session_Libs\Kcp.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\Libs\CodingK_Session_Libs\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net.Core">
+      <HintPath>..\..\Libs\CodingK_Session_Libs\protobuf-net.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>..\..\Libs\CodingK_Session_Libs\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\..\Libs\CodingK_Session_Libs\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>..\..\Libs\CodingK_Session_Libs\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>..\..\Libs\CodingK_Session_Libs\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\..\Libs\CodingK_Session_Libs\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>..\..\Libs\CodingK_Session_Libs\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
   </ItemGroup>
 
