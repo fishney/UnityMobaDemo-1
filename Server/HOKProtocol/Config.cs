@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HOKProtocol
+namespace proto.HOKProtocol
 {
 	public class ServerConfig
 	{

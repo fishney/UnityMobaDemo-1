@@ -1,6 +1,6 @@
 
 using System.Collections;
-using HOKProtocol;
+using proto.HOKProtocol;
 using UnityEngine;
 using UnityEngine.UI;
 

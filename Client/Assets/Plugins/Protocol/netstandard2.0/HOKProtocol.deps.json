@@ -12,8 +12,6 @@
           "NETStandard.Library": "2.0.3",
           "CodingK_Session": "1.0.0.0",
           "Kcp": "2.3.0.0",
-          "protobuf-net.Core": "3.0.0.0",
-          "protobuf-net": "3.0.0.0",
           "System.Buffers": "4.0.3.0",
           "System.Collections.Immutable": "5.0.0.0",
           "System.Memory": "4.0.1.1",
@@ -44,22 +42,6 @@
           "Kcp.dll": {
             "assemblyVersion": "2.3.0.0",
             "fileVersion": "2.3.0.0"
-          }
-        }
-      },
-      "protobuf-net.Core/3.0.0.0": {
-        "runtime": {
-          "protobuf-net.Core.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.62.765"
-          }
-        }
-      },
-      "protobuf-net/3.0.0.0": {
-        "runtime": {
-          "protobuf-net.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.62.765"
           }
         }
       },
@@ -139,16 +121,6 @@
       "sha512": ""
     },
     "Kcp/2.3.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "protobuf-net.Core/3.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "protobuf-net/3.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

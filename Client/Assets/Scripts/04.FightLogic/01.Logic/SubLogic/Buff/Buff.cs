@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using HOKProtocol;
+using proto.HOKProtocol;
 using UnityEngine;
 
 public class Buff : SubLogicUnit

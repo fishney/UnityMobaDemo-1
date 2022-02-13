@@ -2,4 +2,5 @@
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;Assembly Path="C:\Github\UnityMobaDemo\Libs\KCPNetLibs\KCPNet.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Github\UnityMobaDemo\Libs\CodingK_Session_Libs\CodingK_Session.dll" /&gt;&#xD;
+  &lt;Assembly Path="D:\github\UnityMobaDemo\Libs\CodingK_Session_Libs\CodingK_Session.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>

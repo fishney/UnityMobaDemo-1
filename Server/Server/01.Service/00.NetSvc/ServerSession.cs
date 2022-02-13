@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using HOKProtocol;
+using proto.HOKProtocol;
 using CodingK_Session;
 
 namespace Server

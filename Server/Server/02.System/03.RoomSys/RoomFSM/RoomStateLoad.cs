@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using HOKProtocol;
+using proto.HOKProtocol;
 
 namespace Server
 {
@@ -17,8 +17,6 @@ namespace Server
         /// 进度数据前几次先略过。
         /// </summary>
         private int notifyCount;
-
-        
 
         public RoomStateLoad(PVPRoom r) : base(r)
         {

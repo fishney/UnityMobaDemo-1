@@ -1,4 +1,4 @@
-using HOKProtocol;
+using proto.HOKProtocol;
 using UnityEngine.UI;
 
 public class ResultWindow : WindowBase

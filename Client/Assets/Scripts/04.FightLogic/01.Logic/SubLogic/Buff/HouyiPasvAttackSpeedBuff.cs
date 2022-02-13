@@ -1,5 +1,5 @@
 
-using HOKProtocol;
+using proto.HOKProtocol;
 using PEMath;
 
 public class HouyiPasvAttackSpeedBuffCfg : BuffCfg {

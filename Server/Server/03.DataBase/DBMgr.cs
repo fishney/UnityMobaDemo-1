@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using HOKProtocol;
+using proto.HOKProtocol;
 using MySql.Data.MySqlClient;
 
 namespace Server

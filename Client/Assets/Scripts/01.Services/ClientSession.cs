@@ -1,7 +1,7 @@
 
 
 using System;
-using HOKProtocol;
+using proto.HOKProtocol;
 using CodingK_Session;
 
 
@@ -22,7 +22,7 @@ public class ClientSession: CodingK_Session<GameMsg>
 
     protected override void OnReceiveMsg(GameMsg msg)
     {
-        this.Log("SessionId:" + sessionId + " RcvPack CMD:");
+        // this.Log("SessionId:" + sessionId + " RcvPack CMD:");
 
         // 向消息队列添加新的消息处理，等待被轮询执行（执行线程不固定）
         NetSvc.Instance().AddNetMsg(msg);

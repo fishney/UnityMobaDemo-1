@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using HOKProtocol;
+using proto.HOKProtocol;
 
 namespace Server
 {

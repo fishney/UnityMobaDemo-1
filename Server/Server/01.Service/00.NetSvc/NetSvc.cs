@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using CodingK_Session;
-using HOKProtocol;
+using proto.HOKProtocol;
 using PEUtils;
 
 namespace Server

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using HOKProtocol;
+using proto.HOKProtocol;
 using MySql.Data.MySqlClient;
 
 namespace Server

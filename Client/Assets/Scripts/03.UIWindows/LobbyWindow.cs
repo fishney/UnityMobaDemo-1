@@ -10,7 +10,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using HOKProtocol;
+using proto.HOKProtocol;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -9,7 +9,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using HOKProtocol;
+using proto.HOKProtocol;
 using UnityEngine;
 
 public class LobbySys : SystemBase

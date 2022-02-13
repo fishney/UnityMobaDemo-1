@@ -20,17 +20,17 @@
     <Reference Include="Kcp">
       <HintPath>..\..\Libs\CodingK_Session_Libs\Kcp.dll</HintPath>
     </Reference>
+    <Reference Include="PEMath">
+      <HintPath>..\..\Libs\PEMath.dll</HintPath>
+    </Reference>
+    <Reference Include="PEPhysx">
+      <HintPath>..\..\Libs\PEPhysx.dll</HintPath>
+    </Reference>
     <Reference Include="PETimer">
       <HintPath>..\..\Libs\PETimer.dll</HintPath>
     </Reference>
     <Reference Include="PEUtils">
       <HintPath>..\..\Libs\PEUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net">
-      <HintPath>..\..\Libs\CodingK_Session_Libs\protobuf-net.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net.Core">
-      <HintPath>..\..\Libs\CodingK_Session_Libs\protobuf-net.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers">
       <HintPath>..\..\Libs\CodingK_Session_Libs\System.Buffers.dll</HintPath>

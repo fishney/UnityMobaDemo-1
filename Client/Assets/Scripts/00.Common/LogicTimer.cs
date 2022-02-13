@@ -1,5 +1,5 @@
 using System;
-using HOKProtocol;
+using proto.HOKProtocol;
 using PEMath;
 
 /// <summary>

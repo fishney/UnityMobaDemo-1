@@ -1,4 +1,4 @@
-using HOKProtocol;
+using proto.HOKProtocol;
 
 /// <summary>
 /// 辅助类逻辑单元基类

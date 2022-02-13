@@ -1,4 +1,4 @@
-using HOKProtocol;
+using proto.HOKProtocol;
 using PEMath;
 using PEPhysx;
 using System;

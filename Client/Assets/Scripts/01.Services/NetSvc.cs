@@ -12,7 +12,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
-using HOKProtocol;
+using proto.HOKProtocol;
 using CodingK_Session;
 using PEUtils;
 
@@ -146,9 +146,9 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
         }
     }
     
-    uint sendPingId = 0;
+    int sendPingId = 0;
     int pingCounter = 0;
-    Dictionary<uint, DateTime> pingDic = new Dictionary<uint, DateTime>();
+    Dictionary<int, DateTime> pingDic = new Dictionary<int, DateTime>();
 
     public void NetPing() {
         ++sendPingId;
@@ -156,7 +156,7 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
             cmd = CMD.ReqPing,
             reqPing = new ReqPing {
                 pingId = sendPingId,
-                sendTime = CodingK_SessionTool.GetUTCStartMilliseconds(),
+                sendTime = (long)CodingK_SessionTool.GetUTCStartMilliseconds(),
             }
         });
 
@@ -174,9 +174,9 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
     void RspPing(GameMsg msg) {
         RspPing rsp = msg.rspPing;
         
-        this.Log("Get pingId:" + rsp + ",count:" + pingDic.Count);
+        this.Log("Get pingId:" + rsp.pingId + ",count:" + pingDic.Count);
         
-        uint recivePingID = rsp.pingId;
+        int recivePingID = rsp.pingId;
         if(pingDic.ContainsKey(recivePingID)) {
             TimeSpan ts = DateTime.Now - pingDic[recivePingID];
             GameRoot.NetDelay = (int)ts.TotalMilliseconds;
@@ -190,7 +190,7 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
     
     private void HandleRsp(GameMsg msg)
     {
-       if (msg.err != (int)ErrorCode.None)
+       if (msg.err != null && msg.err != (int)ErrorCode.None)
         {
             switch ((ErrorCode)msg.err)
             {

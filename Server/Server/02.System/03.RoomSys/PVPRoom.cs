@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using CodingK_Session;
-using HOKProtocol;
+using proto.HOKProtocol;
 
 namespace Server
 {
@@ -73,15 +73,7 @@ namespace Server
         public void PublishMsg(GameMsg msg)
         {
             byte[] bytes;
-            if (ServerRoot.Instance().protocolMode == CodingK_ProtocolMode.Proto)
-            {
-                bytes = CodingK_SessionTool.ProtoSerialize(msg);
-            }
-            else
-            {
-                bytes = CodingK_SessionTool.Serialize(msg);
-            }
-                
+            bytes = CodingK_SessionTool.ProtoSerialize(msg);
 
             foreach (var session in sessionArr)
             {

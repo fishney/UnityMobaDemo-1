@@ -141,31 +141,31 @@
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\SilenseBuff_Single.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMixedMultiScatterBuff.cs" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -357,46 +357,40 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
  </Reference>
  <Reference Include="PEUtils">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/MyLibrary/Others/PEUtils.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/MyLibrary/Others/PEUtils.dll</HintPath>
  </Reference>
  <Reference Include="PEMath">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEMath.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEMath.dll</HintPath>
  </Reference>
  <Reference Include="PEPhysx">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEPhysx.dll</HintPath>
- </Reference>
- <Reference Include="System.Memory">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Memory.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEPhysx.dll</HintPath>
  </Reference>
  <Reference Include="CodingK_Session">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/CodingK_Session.dll</HintPath>
- </Reference>
- <Reference Include="protobuf-net">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/protobuf-net.dll</HintPath>
- </Reference>
- <Reference Include="System.Threading.Tasks.Extensions">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Threading.Tasks.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="System.Numerics.Vectors">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Numerics.Vectors.dll</HintPath>
- </Reference>
- <Reference Include="protobuf-net.Core">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/protobuf-net.Core.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime.CompilerServices.Unsafe">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/CodingK_Session.dll</HintPath>
  </Reference>
  <Reference Include="HOKProtocol">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/HOKProtocol.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/HOKProtocol.dll</HintPath>
  </Reference>
  <Reference Include="Kcp">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/Kcp.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/Kcp.dll</HintPath>
  </Reference>
  <Reference Include="System.Buffers">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Buffers.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Buffers.dll</HintPath>
  </Reference>
  <Reference Include="System.Collections.Immutable">
- <HintPath>C:/Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Collections.Immutable.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Collections.Immutable.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Memory">
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Memory.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Numerics.Vectors">
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Numerics.Vectors.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.CompilerServices.Unsafe">
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Threading.Tasks.Extensions">
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Threading.Tasks.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

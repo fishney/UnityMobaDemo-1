@@ -10,7 +10,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
-using HOKProtocol;
+using proto.HOKProtocol;
 using UnityEngine;
 
 public class LoginSys : SystemBase
