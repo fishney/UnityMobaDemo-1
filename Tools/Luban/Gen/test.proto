@@ -1,0 +1,73 @@
+syntax = "proto2";
+
+package cfg;
+
+// luban internal types begin
+message Vector2 {
+    required float x = 1;
+    required float y = 2;
+}
+
+message Vector3 {
+    required float x = 1;
+    required float y = 2;
+    required float z = 3;
+}
+
+message Vector4 {
+    required float x = 1;
+    required float y = 2;
+    required float z = 3;
+    required float w = 4;
+}
+// luban internal types end
+
+
+enum ConstantsColor {
+    ConstantsColor_White = 1;
+    ConstantsColor_Black = 2;
+    ConstantsColor_Blue = 3;
+    ConstantsColor_Red = 4;
+}
+
+enum ConstantsQuality {
+    ConstantsQuality_Highest = 1;
+    ConstantsQuality_Unique = 2;
+    ConstantsQuality_Normal = 4;
+    ConstantsQuality_Enchanted = 8;
+    ConstantsQuality_EnchantedUnique = 10;
+    ConstantsQuality_EnchantedNormal = 12;
+}
+
+
+message DatasSKillCfg {
+    required int32 skill_Id = 1 ;
+    required int32 skill_Time = 2 ;
+}
+
+message DatasEquip {
+    oneof value {
+        DatasWeapon Weapon = 1;
+    }
+}
+
+message DatasWeapon {
+    required int32 Id = 1 ;
+    required ConstantsColor Color = 2 ;
+    required ConstantsQuality Quality = 3 ;
+    required string Name = 4 ;
+    required int32 ATK = 5 ;
+    required int32 DEF = 6 ;
+    required int32 SPD = 7 ;
+    repeated DatasSKillCfg Skill = 8 [packed = false];
+}
+
+
+message SKillCfg {
+    repeated DatasSKillCfg data_list = 1 [packed = false];
+}
+
+message Weapon {
+    repeated DatasWeapon data_list = 1 [packed = false];
+}
+

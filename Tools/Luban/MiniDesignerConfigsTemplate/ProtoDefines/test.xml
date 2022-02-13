@@ -1,0 +1,38 @@
+<module name="test">
+
+<enum name="CMD">
+    <var name="None" value="1"/>
+    <var name="Ping" value="2"/>
+    <var name="ReqLogin" value="3"/>
+    <var name="RspLogin" value="4"/>
+</enum>
+
+<bean name="Ping">
+    <var name="isOver" type="bool"/>
+</bean>
+
+<bean name="ReqLogin">
+    <var name="acct" type="string"/>
+    <var name="psd" type="string"/>
+</bean>
+
+<bean name="RspLogin">
+    <var name="info" type="list,LoginInfo"/>
+</bean>
+
+<bean name="LoginInfo">
+    <var name="lv" type="string"/>
+    <var name="exp" type="string"/>
+    <var name="money" type="string"/>
+</bean>
+
+<proto name="NetMsg">
+    <var name="info" type="string?"/>
+    <var name="cmd" type="CMD?"/>
+    <var name="ping" type="Ping?"/>
+    <var name="reqLogin" type="ReqLogin?"/>
+    <var name="rspLogin" type="RspLogin?"/>
+</proto>
+
+
+</module>
