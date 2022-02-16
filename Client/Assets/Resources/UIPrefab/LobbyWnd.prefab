@@ -1653,7 +1653,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cbcff2e43423a754681587b2ae51a8ab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 72c28dec401307440b411a6f7b51c9a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2391,7 +2391,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PlaneZhong
+  m_Text: CodingK
 --- !u!1 &7344079745605870685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2853,7 +2853,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0.00390625, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &684370374032260943
 CanvasRenderer:
@@ -2883,7 +2883,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c90aaecb2f8b1914ba324a4e9416a965, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 47a5eb5220ccffb46ab8f4884d6ad032, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
