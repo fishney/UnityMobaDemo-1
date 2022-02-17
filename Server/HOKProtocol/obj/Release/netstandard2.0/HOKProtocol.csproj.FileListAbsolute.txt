@@ -1,0 +1,9 @@
+D:\github\UnityMobaDemo\Libs\hokProtocol\Release\netstandard2.0\HOKProtocol.deps.json
+D:\github\UnityMobaDemo\Libs\hokProtocol\Release\netstandard2.0\HOKProtocol.dll
+D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Release\netstandard2.0\HOKProtocol.csproj.AssemblyReference.cache
+D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Release\netstandard2.0\HOKProtocol.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Release\netstandard2.0\HOKProtocol.AssemblyInfoInputs.cache
+D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Release\netstandard2.0\HOKProtocol.AssemblyInfo.cs
+D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Release\netstandard2.0\HOKProtocol.csproj.CoreCompileInputs.cache
+D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Release\netstandard2.0\HOKProtocol.csproj.CopyComplete
+D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Release\netstandard2.0\HOKProtocol.dll

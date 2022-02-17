@@ -38,6 +38,8 @@ public class GameRootResources : GameRootMonoSingleton<GameRootResources>
 
     public ResultWindow resultWindow;
     
+    public BagWindow bagWindow;
+    
     
     public void ShowTips(string tip)
     {

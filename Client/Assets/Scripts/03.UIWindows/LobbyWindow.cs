@@ -172,6 +172,13 @@ public class LobbyWindow : WindowBase
         });
     }
 
+    public void ClickBag()
+    {
+        audioSvc.PlayUIAudio("matchBtnClick");
+        
+        GameRootResources.Instance().bagWindow.SetWindowState();
+    }
+
     #endregion
     
     

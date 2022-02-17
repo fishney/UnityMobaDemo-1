@@ -20,6 +20,8 @@ namespace CodingK.UI
         private RectTransform view;
         public int viewPortH;
         public int viewPortW;
+        public int viewPaddingLeft;
+        public int viewPaddingTop;
 
         public bool isShowing;
 
@@ -45,7 +47,7 @@ namespace CodingK.UI
         private int index_MinValue;
         private int index_MaxValue;
 
-        public CodingK_SV(List<T> data, RectTransform content, RectTransform scrollViewer, GameObject itemPrefab, int poolCapacity = 100)
+        public CodingK_SV(List<T> data, RectTransform content, RectTransform scrollViewer, GameObject itemPrefab, int poolCapacity)
         {
             dataList = data;
             this.content = content;
@@ -57,12 +59,14 @@ namespace CodingK.UI
             RefreshPanelSize();
         }
 
-        public void InitItemView(int paddingWidth = -1, int paddingHeight = -1)
+        public void InitItemView(int left, int top, int paddingWidth, int paddingHeight)
         {
             var rect = itemPrefab.GetComponent<RectTransform>().rect;
             this.childWidth = (int)rect.width;
             this.childHeight = (int)rect.height;
-            
+
+            this.viewPaddingLeft = left;
+            this.viewPaddingTop = top;
             this.paddingWidth = paddingWidth >= 0 ? paddingWidth : childWidth / 4;
             this.paddingHeight = paddingHeight >= 0 ? paddingHeight : childHeight / 4;
             this.oneRowColumns = ((int)view.rect.width + paddingWidth) / (this.childWidth + paddingWidth);
@@ -83,7 +87,7 @@ namespace CodingK.UI
         public void Show()
         {
             content.sizeDelta = new Vector2(0,
-                Mathf.CeilToInt((float)dataList.Count / (float)oneRowColumns ) * (childHeight + paddingHeight) - paddingHeight);
+                (Mathf.CeilToInt((float)dataList.Count / (float)oneRowColumns ) - 2) * (childHeight + paddingHeight) - paddingHeight - viewPaddingTop);
             isShowing = true;
         }
 
@@ -187,7 +191,8 @@ namespace CodingK.UI
                 go.transform.SetParent(content);
                 go.transform.localScale = Vector3.one;
                 // 算出它在履带上的位置就行，虚拟画面可视化那是ScrollerView实现的：
-                go.transform.localPosition = new Vector3((index % oneRowColumns) * (childWidth + paddingWidth), - (index / oneRowColumns) * (childHeight + paddingHeight),0);
+                // 并带上第一行和第一列的偏移量
+                go.transform.localPosition = new Vector3((index % oneRowColumns) * (childWidth + paddingWidth) + viewPaddingLeft, - (index / oneRowColumns) * (childHeight + paddingHeight) - viewPaddingTop,0);
                 // 更新格子信息
                 if (showingItems.ContainsKey(index))
                 {
