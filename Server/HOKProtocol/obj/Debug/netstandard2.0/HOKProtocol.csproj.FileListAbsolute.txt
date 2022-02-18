@@ -6,3 +6,10 @@ D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.
 D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.csproj.CoreCompileInputs.cache
 D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.csproj.CopyComplete
 D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.dll
+E:\My Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.csproj.AssemblyReference.cache
+E:\My Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.GeneratedMSBuildEditorConfig.editorconfig
+E:\My Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.AssemblyInfoInputs.cache
+E:\My Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.AssemblyInfo.cs
+E:\My Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.csproj.CoreCompileInputs.cache
+E:\My Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.csproj.CopyComplete
+E:\My Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.dll

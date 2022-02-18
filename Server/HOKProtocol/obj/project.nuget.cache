@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VRwvKfUW+TTC/LHsfON3vpDre5tKQa4XuU/ta3UI1XdTMa4CFzUmxGwr+2GPH+fWc51C8a9jYJv8aTUynQYTkw==",
+  "dgSpecHash": "3T4ufsCWoL7qtBcfYU1qnEJdC/t18WRr76vBs21vRthUaKetxwrlmE4h3J11H49s80hEZJFSGsyWvyv20j1+Nw==",
   "success": true,
-  "projectFilePath": "D:\\github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj",
+  "projectFilePath": "E:\\My Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

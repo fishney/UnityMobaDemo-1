@@ -1,3 +1,3 @@
-.\soft\protogen --csharp_out=..\Assets Gen\test.proto
+.\soft\protoc --csharp_out=.\GenerateDatas\excel2proto\csFile GenerateDatas\excel2proto\protoFile\test.proto
 
 pause

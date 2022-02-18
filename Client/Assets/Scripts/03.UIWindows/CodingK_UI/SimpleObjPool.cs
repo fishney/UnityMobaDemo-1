@@ -7,6 +7,16 @@ namespace CodingK.UI
     public interface IPoolObj<T>
     {
         /// <summary>
+        /// 创建时操作
+        /// </summary>
+        void Init();
+        
+        /// <summary>
+        /// 销毁时操作
+        /// </summary>
+        void UnInit();
+        
+        /// <summary>
         /// 复用时的处理，数据层更新显示层，一般需要gameObject.SetActive(true)！
         /// </summary>
         void Load(T t);
@@ -55,6 +65,7 @@ namespace CodingK.UI
             go.transform.localScale = Vector3.one;
             go.SetActive(false);
             K jn = go.GetComponent<K>();
+            jn.Init();
             return jn;
         }
     
@@ -97,6 +108,24 @@ namespace CodingK.UI
         public void PushOne(K jn) {
             jn.UnLoad();
             queue.Enqueue(jn);
+        }
+
+        /// <summary>
+        /// 回收并销毁所有对象
+        /// </summary>
+        public void ClearPool()
+        {
+            var obj = queue.Dequeue();
+            while (obj != null)
+            {
+                obj.UnLoad();
+                obj.UnInit();
+                obj = queue.Dequeue();
+            }
+
+            queue = null;
+            prefab = null;
+            poolRoot = null;
         }
     }
 }

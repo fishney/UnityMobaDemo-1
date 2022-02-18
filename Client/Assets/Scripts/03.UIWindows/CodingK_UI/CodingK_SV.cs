@@ -125,11 +125,6 @@ namespace CodingK.UI
             }
         
             CheckShowOrHide();
-
-            foreach (var item in showingItems.Values)
-            {
-                
-            }
         }
         
         private void CheckShowOrHide() 

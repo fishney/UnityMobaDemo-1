@@ -4176,6 +4176,10 @@ MonoBehaviour:
   content: {fileID: 6306070644189905096}
   bagItem: {fileID: 5904261547721047829, guid: 1730115a4ad81d547b40139d119e05d5, type: 3}
   poolCapacity: 80
+  selectedItemName: {fileID: 1452541955}
+  selectedItemNum: {fileID: 223162665}
+  selectedItemImg: {fileID: 85036370}
+  selectedItemDes: {fileID: 45453187}
 --- !u!1 &8283111415023961981
 GameObject:
   m_ObjectHideFlags: 0

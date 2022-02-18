@@ -87,3 +87,47 @@ D:\github\UnityMobaDemo\Server\Server\obj\Debug\netcoreapp3.1\Server.csproj.Copy
 D:\github\UnityMobaDemo\Server\Server\obj\Debug\netcoreapp3.1\Server.dll
 D:\github\UnityMobaDemo\Server\Server\obj\Debug\netcoreapp3.1\Server.pdb
 D:\github\UnityMobaDemo\Server\Server\obj\Debug\netcoreapp3.1\Server.genruntimeconfig.cache
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\Server.exe
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\Server.deps.json
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\Server.runtimeconfig.json
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\Server.runtimeconfig.dev.json
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\Server.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\Server.pdb
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\MySql.Data.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\ZstdNet.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\CodingK_Session.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\HOKProtocol.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\Kcp.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\PEMath.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\PEPhysx.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\PETimer.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\PEUtils.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+E:\My Github\UnityMobaDemo\Server\Server\bin\Debug\netcoreapp3.1\CodingK_Session.pdb
+E:\My Github\UnityMobaDemo\Server\Server\obj\Debug\netcoreapp3.1\Server.csproj.AssemblyReference.cache
+E:\My Github\UnityMobaDemo\Server\Server\obj\Debug\netcoreapp3.1\Server.GeneratedMSBuildEditorConfig.editorconfig
+E:\My Github\UnityMobaDemo\Server\Server\obj\Debug\netcoreapp3.1\Server.AssemblyInfoInputs.cache
+E:\My Github\UnityMobaDemo\Server\Server\obj\Debug\netcoreapp3.1\Server.AssemblyInfo.cs
+E:\My Github\UnityMobaDemo\Server\Server\obj\Debug\netcoreapp3.1\Server.csproj.CoreCompileInputs.cache
+E:\My Github\UnityMobaDemo\Server\Server\obj\Debug\netcoreapp3.1\Server.csproj.CopyComplete
+E:\My Github\UnityMobaDemo\Server\Server\obj\Debug\netcoreapp3.1\Server.dll
+E:\My Github\UnityMobaDemo\Server\Server\obj\Debug\netcoreapp3.1\Server.pdb
+E:\My Github\UnityMobaDemo\Server\Server\obj\Debug\netcoreapp3.1\Server.genruntimeconfig.cache

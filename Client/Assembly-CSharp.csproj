@@ -51,6 +51,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\02.Systems\LoginSys.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\BagItem.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\ItemMapIcon.cs" />
      <Compile Include="Assets\Scripts\00.Common\Effects\EffectRotate.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\MainLogicAttr.cs" />
@@ -63,6 +64,7 @@
      <Compile Include="Assets\Scripts\03.UIWindows\WindowBase.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMultipleSkillModifyBuff.cs" />
      <Compile Include="Assets\Scripts\02.Systems\GMSystem.cs" />
+     <Compile Include="Assets\Scripts\00.Common\CodingK_Expansion.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\Configs\ResBuffConfigs.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Bullet\DirectionBullet.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\MatchWindow.cs" />
@@ -94,6 +96,7 @@
      <Compile Include="Assets\Scripts\03.UIWindows\ResultWindow.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\StartWindow.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\ExecuteDamageBuff.cs" />
+     <Compile Include="Assets\Scripts\03.UIWindows\BagWindow.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\02.View\BuffView.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\Buff.cs" />
      <Compile Include="Assets\Scripts\00.Common\MonoTimer.cs" />
@@ -142,34 +145,36 @@
      <Compile Include="Assets\Scripts\03.UIWindows\ItemHP.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\SilenseBuff_Single.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMixedMultiScatterBuff.cs" />
-     <Compile Include="Assets\Scripts\03.UIWindows\BagWindow.cs" />
-     <Compile Include="Assets\Scripts\03.UIWindows\BagItem.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Gen_Cfg\Tables.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Gen_Cfg\Datas\TbItemCfg.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Gen_Cfg\Datas\ItemCfg.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\ItemInfo.cs" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -361,40 +366,40 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
  </Reference>
  <Reference Include="PEUtils">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/MyLibrary/Others/PEUtils.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/MyLibrary/Others/PEUtils.dll</HintPath>
  </Reference>
  <Reference Include="PEMath">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEMath.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEMath.dll</HintPath>
  </Reference>
  <Reference Include="PEPhysx">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEPhysx.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEPhysx.dll</HintPath>
  </Reference>
  <Reference Include="CodingK_Session">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/CodingK_Session.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/CodingK_Session.dll</HintPath>
  </Reference>
  <Reference Include="HOKProtocol">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/HOKProtocol.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/HOKProtocol.dll</HintPath>
  </Reference>
  <Reference Include="Kcp">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/Kcp.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/Kcp.dll</HintPath>
  </Reference>
  <Reference Include="System.Buffers">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Buffers.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Buffers.dll</HintPath>
  </Reference>
  <Reference Include="System.Collections.Immutable">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Collections.Immutable.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Collections.Immutable.dll</HintPath>
  </Reference>
  <Reference Include="System.Memory">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Memory.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Memory.dll</HintPath>
  </Reference>
  <Reference Include="System.Numerics.Vectors">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Numerics.Vectors.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Numerics.Vectors.dll</HintPath>
  </Reference>
  <Reference Include="System.Runtime.CompilerServices.Unsafe">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
  </Reference>
  <Reference Include="System.Threading.Tasks.Extensions">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Threading.Tasks.Extensions.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Threading.Tasks.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -741,6 +746,12 @@
  <Reference Include="System.Xml.Serialization">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{8e399d07-fc4a-7ecd-7881-f923d075ebd1}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

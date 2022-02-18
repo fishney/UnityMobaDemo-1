@@ -10,8 +10,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using Bright.Serialization;
+using cfg.Datas;
+using CodingK_Session;
 using PEMath;
 using PEPhysx;
+using proto.HOKProtocol;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,10 +24,45 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
 {
     public void InitSvc()
     {
+
+        // bag
+        LoadItemInfo();
         
         
         Debug.Log("ResSvc Init Completed.");
     }
+
+    #region Bag
+
+    private Dictionary<int, ItemCfg> itemCfgDic;
+    
+    public void LoadItemInfo()
+    {
+        itemCfgDic = new Dictionary<int, ItemCfg>();
+        //TextAsset txt = Resources.Load(@"ResCfg\datas_tbitemcfg") as TextAsset;
+        var tables = new cfg.Tables(LoadByteBuf);
+        foreach (var cfg in tables.TbItemCfg.DataList)
+        {
+            itemCfgDic.Add(cfg.id, cfg);
+        }
+    }
+    
+    private static ByteBuf LoadByteBuf(string file)
+    {
+        return new ByteBuf(File.ReadAllBytes($"{Application.dataPath}/Resources/ResCfg/{file}.bytes"));
+    }
+    
+    public ItemCfg GetItemCfgById(int id)
+    {
+        if (itemCfgDic.TryGetValue(id,out var itemCfg))
+        {
+            return itemCfg;
+        }
+
+        return null;
+    }
+
+    #endregion
 
     #region Audio
     
@@ -115,9 +155,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     #endregion
 
     #region 英雄信息
-    
-    
-    
+
     public UnitCfg GetUnitConfigById(int unitId)
     {
         // TODO 简写了,可以改成读取配置表
