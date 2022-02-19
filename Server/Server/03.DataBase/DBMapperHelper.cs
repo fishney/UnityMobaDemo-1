@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using proto.HOKProtocol;
 using MySql.Data.MySqlClient;
@@ -103,6 +104,7 @@ namespace Server
 				// PlayerData特殊
 
 				dto.heroSelectData = reader.GetString("heroSelectData").ToHeroSelectDataArr();
+				dto.bagData = reader.GetString("bag").ToBagItemDataArr();
 				//dto.taskArr = reader.GetString("taskArr").ToStringArr();
 
                 backupList.Add(dto);
@@ -135,17 +137,27 @@ namespace Server
 		/// </summary>
 		public static void SetPlayerDataParas(this MySqlCommand cmd, PlayerData dto)
 		{
-			foreach (var propertyInfo in dto.GetType().GetProperties())
-			{
-				// 数据Mapper
-				if (propertyInfo.GetValue(dto) != null)
-				{
-					cmd.Parameters.AddWithValue(propertyInfo.Name.ToLower(), propertyInfo.GetValue(dto));
-				}
-			}
+            cmd.Parameters.AddWithValue("name", dto.name);
+            cmd.Parameters.AddWithValue("level", dto.level);
+            cmd.Parameters.AddWithValue("exp", dto.exp);
+            cmd.Parameters.AddWithValue("coin", dto.coin);
+            cmd.Parameters.AddWithValue("diamond", dto.diamond);
+            cmd.Parameters.AddWithValue("ticket", dto.ticket);
+            cmd.Parameters.AddWithValue("id", dto.id);
+
+
+   //          foreach (var propertyInfo in dto.GetType().GetProperties())
+			// {
+			// 	// 数据Mapper
+			// 	if (propertyInfo.GetValue(dto) != null)
+			// 	{
+			// 		cmd.Parameters.AddWithValue(propertyInfo.Name.ToLower(), propertyInfo.GetValue(dto));
+			// 	}
+			// }
 
 			// PlayerData特殊
 			cmd.Parameters.AddWithValue("heroSelectData", dto.heroSelectData.ToStringArr());
+			cmd.Parameters.AddWithValue("bag", dto.bagData.ToStringArr());
         }
 
 
@@ -215,6 +227,55 @@ namespace Server
                     heroID = Int32.Parse(stringList[i]),
                 });
             }
+            return list;
+        }
+
+        /// <summary>
+        /// 把List<BagItemData>转换为string的数据库用结构，分隔符默认#
+        /// </summary>
+        public static string ToStringArr(this List<BagItemData> list, char para = '#')
+        {
+            StringBuilder strongArr = new StringBuilder();
+            // 感觉不需要排序
+            //if (list.Count > 0)
+            //{
+            //    list = list.OrderBy(o=>o.itemId).ToList();
+            //}
+
+			for (int i = 0; i < list.Count; i++)
+            {
+                strongArr.Append(list[i].itemId);
+                strongArr.Append(":");
+                strongArr.Append(list[i].itemNum);
+
+                if (i < list.Count - 1)
+                {
+                    strongArr.Append(para);
+                }
+            }
+
+            return strongArr.ToString();
+        }
+
+		/// <summary>
+		/// 把string的数据库用结构转换为List<BagItemData>，分隔符默认#
+		/// </summary>
+		public static List<BagItemData> ToBagItemDataArr(this string stringArr, char para = '#')
+        {
+            var stringList = stringArr.Split(para);
+            List<BagItemData> list = new List<BagItemData>();
+
+            foreach (string str in stringList)
+            {
+                var oneLine = str.Split(':');
+                list.Add(new BagItemData
+                {
+                    itemId = Int32.Parse(oneLine[0]),
+                    itemNum = Int32.Parse(oneLine[1]),
+				});
+
+			}
+
             return list;
         }
 

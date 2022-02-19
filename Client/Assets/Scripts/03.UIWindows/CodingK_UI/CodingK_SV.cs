@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace CodingK.UI
@@ -101,7 +102,10 @@ namespace CodingK.UI
         {
             foreach (var go in showingItems.Values)
             {
-                objPool.PushOne(go);
+                if (go != null)
+                {
+                    objPool.PushOne(go);
+                }
             }
             content.localPosition = Vector3.zero;
 
@@ -111,6 +115,8 @@ namespace CodingK.UI
             content = null;
             view = null;
             itemPrefab = null;
+            objPool.ClearPool();
+            objPool = null;
         }
         
         /// <summary>
@@ -119,16 +125,51 @@ namespace CodingK.UI
         public void Tick()
         {
             // 防止越下界
-            if (content.anchoredPosition.y < 0)
-            {
-                return;
-            }
+            // if (content.anchoredPosition.y < 0)
+            // {
+            //     return;
+            // }
         
             CheckShowOrHide();
+        }
+
+        private bool isRemoving = false;
+        public void RemoveData(T data)
+        {
+            isRemoving = true;
+            dataList.Remove(data);
+            // for (int i = oldMaxIndex; i >= oldMinIndex; --i)
+            // {
+            //     objPool.PushOne(showingItems[i]);
+            //     showingItems.Remove(i);
+            // }
+
+            foreach (var go in showingItems)
+            {
+                if (go.Value != null)
+                {
+                    objPool.PushOne(go.Value);
+                }
+            }
+            showingItems.Clear();
+
+
+            // for (var go in showingItems)
+            // {
+            //     objPool.PushOne(go.Value);
+            //     showingItems.Remove(go.Key);
+            // }
+            RefreshPanelSize();
+            isRemoving = false;
         }
         
         private void CheckShowOrHide() 
         {
+            if (isRemoving)
+            {
+                this.Warn("isRemoving");
+                return;
+            }
             // 检测哪些要显示
             // 左上索引
             int minIndex = (int)(content.anchoredPosition.y / (childHeight + paddingHeight)) * oneRowColumns;
@@ -136,6 +177,8 @@ namespace CodingK.UI
             int maxIndex = Mathf.CeilToInt((content.anchoredPosition.y + viewPortH ) / (childHeight + paddingHeight)) * oneRowColumns - 1;
             // 防止越上界,不能超出道具总数量
             maxIndex = Math.Min(maxIndex, index_MaxValue);
+            // 防止越下界,不能小于0
+            minIndex = Math.Max(minIndex, 0);
 
             // 根据上一次索引和这一次新算出来的索引，来判断哪些该移除
             for (int i = oldMinIndex; i < minIndex; ++i)
@@ -180,7 +223,6 @@ namespace CodingK.UI
                 }
                 int index = i;
                 showingItems.Add(index, null);
-                
                 var go = objPool.PopOne(dataList[index]);
 
                 go.transform.SetParent(content);
@@ -202,6 +244,4 @@ namespace CodingK.UI
         
         }
     }
-    
-    
 }

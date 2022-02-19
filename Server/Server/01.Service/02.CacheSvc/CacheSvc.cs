@@ -41,6 +41,14 @@ namespace Server
             }
         }
 
+        /// <summary>
+        /// Update PlayerData to DB
+        /// </summary>
+        public void UpdatePlayerData(PlayerData data)
+        {
+            DBMgr.Instance().UpdatePlayerData(data);
+        }
+
         #region base
         private CacheSvc() { }
 

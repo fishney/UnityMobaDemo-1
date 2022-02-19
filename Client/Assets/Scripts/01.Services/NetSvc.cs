@@ -232,6 +232,10 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                     this.Log("作弊检测：体力不足",LogType.Error);
                     GameRootResources.Instance().ShowTips("体力不足");
                     break;
+                case ErrorCode.BagItemError :
+                    this.Log("网络波动或作弊：物品不足",LogType.Error);
+                    GameRootResources.Instance().ShowTips("网络波动，物品使用失败");
+                    break;
             }
             
             return;
@@ -253,6 +257,9 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                 break;
             case CMD.NotifyLoadRes:
                 LobbySys.Instance.NotifyLoadRes(msg);
+                break;
+            case CMD.RspBagItem:
+                LobbySys.Instance.RspUseItem(msg);
                 break;
             case CMD.NotifyLoadPrg:
                 BattleSys.Instance.NotifyLoadPrg(msg);

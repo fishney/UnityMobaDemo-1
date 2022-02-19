@@ -13,3 +13,10 @@ E:\My Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtoc
 E:\My Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.csproj.CoreCompileInputs.cache
 E:\My Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.csproj.CopyComplete
 E:\My Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.dll
+C:\Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.AssemblyInfoInputs.cache
+C:\Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.AssemblyInfo.cs
+C:\Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.csproj.CoreCompileInputs.cache
+C:\Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.csproj.CopyComplete
+C:\Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.dll
+C:\Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.csproj.AssemblyReference.cache
+C:\Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.GeneratedMSBuildEditorConfig.editorconfig

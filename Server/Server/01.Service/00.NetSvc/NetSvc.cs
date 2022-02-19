@@ -69,7 +69,10 @@ namespace Server
                 case CMD.ReqLogin:
                     LoginSys.Instance().ReqLogin(msgPack);
                     break;
-                case CMD.ReqMatch:
+                case CMD.ReqBagItem:
+                    LobbySys.Instance().ReqBagItem(msgPack);
+                    break;
+				case CMD.ReqMatch:
                     MatchSys.Instance().ReqMatch(msgPack);
                     break;
                 case CMD.SendConfirm:

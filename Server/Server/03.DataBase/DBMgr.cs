@@ -70,8 +70,9 @@ namespace Server
                         {
                             heroID = 102,
                         },
-					}
-                };
+					},
+					bagData = GetNewBag(),
+				};
 				playerData.id = InsertNewAcctData(acct, pass, playerData);
 			}
 
@@ -82,7 +83,7 @@ namespace Server
 		{
 			// TODO add column
 			MySqlCommand cmd = new MySqlCommand(
-				"insert into account set acct = @acct,pass = @pass,name = @name,level = @level,exp = @exp,coin = @coin,diamond = @diamond,ticket = @ticket,heroSelectData = @heroSelectData", conn);
+				"insert into account set acct = @acct,pass = @pass,name = @name,level = @level,exp = @exp,coin = @coin,diamond = @diamond,ticket = @ticket,heroSelectData = @heroSelectData,bag = @bag", conn);
 			cmd.Parameters.AddWithValue("acct", acct);
 			cmd.Parameters.AddWithValue("pass", pass);
 			cmd.Parameters.AddWithValue("name", pd.name);
@@ -92,6 +93,7 @@ namespace Server
 			cmd.Parameters.AddWithValue("diamond", pd.diamond);
 			cmd.Parameters.AddWithValue("ticket", pd.ticket);
 			cmd.Parameters.AddWithValue("heroSelectData", pd.heroSelectData.ToStringArr());
+			cmd.Parameters.AddWithValue("bag", pd.bagData.ToStringArr());
 
             cmd.ExecuteNonQuery();
 			return (int)cmd.LastInsertedId;
@@ -110,13 +112,29 @@ namespace Server
 		public void UpdatePlayerData(PlayerData pd)
         {
             MySqlCommand cmd = new MySqlCommand(
-				"update account set name = @name,level = @level,exp = @exp,power = @power,coin = @coin,diamond = @diamond,ticket = @ticket where id = @id,heroSelectData = @heroSelectData");
+				"update account set name = @name,level = @level,exp = @exp,coin = @coin,diamond = @diamond,ticket = @ticket,heroSelectData = @heroSelectData,bag = @bag where id = @id", conn);
 			cmd.SetPlayerDataParas(pd);
 			cmd.ExecuteNonQuery();
 		}
 
 		#endregion
 
+        public List<BagItemData> GetNewBag()
+        {
+            var list = new List<BagItemData>();
+
+			// TODO 测试用
+            for (int i = 0; i < 80; i++)
+            {
+                list.Add(new BagItemData
+                {
+					itemId=i,
+					itemNum= 6 - i/20,
+                });
+            }
+
+            return list;
+        }
 
 	}
 }

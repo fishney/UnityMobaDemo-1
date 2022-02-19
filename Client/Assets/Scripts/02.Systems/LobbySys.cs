@@ -79,5 +79,17 @@ public class LobbySys : SystemBase
         // 流程转入战斗系统
         BattleSys.Instance.EnterBattle();
     }
+
+    public void RspUseItem(GameMsg msg)
+    {
+        var updatedPlayerData = msg.rspBagItem.updatedPlayerData;
+        GameRoot.Instance().SetPlayerData(updatedPlayerData,true);
+        
+        var usedItemId = msg.rspBagItem.usedItem;
+        if (gameRootResources.bagWindow.gameObject.activeSelf)
+        {
+            gameRootResources.bagWindow.RspUseItem(usedItemId, true);
+        }
+    }
     
 }

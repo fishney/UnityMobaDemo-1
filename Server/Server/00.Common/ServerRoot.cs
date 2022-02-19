@@ -31,6 +31,7 @@ namespace Server
 			LoginSys.Instance().Init();
 			MatchSys.Instance().Init();
 			RoomSys.Instance().Init();
+			LobbySys.Instance().Init();
 
 			this.ColorLog(LogColor.Green,"ServerRoot init Completed.");
 		}
@@ -58,7 +59,5 @@ namespace Server
 		{
 			return sessionId == int.MaxValue ? 0 : sessionId++;
 		}
-
-
-	}
+    }
 }

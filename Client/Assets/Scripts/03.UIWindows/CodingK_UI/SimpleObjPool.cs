@@ -49,7 +49,7 @@ namespace CodingK.UI
             
             for (int i = 0; i < capacity; i++)
             {
-                PushOne(CreateOne());
+                PushNewOne(CreateOne());
             }
         }
 
@@ -81,7 +81,7 @@ namespace CodingK.UI
             }
             else {
                 Debug.Log(typeof(K) + "动态调整上限");
-                PushOne(CreateOne());
+                PushNewOne(CreateOne());
                 return PopOne(t);
             }
         }
@@ -97,7 +97,7 @@ namespace CodingK.UI
             }
             else {
                 Debug.Log(typeof(K) + "动态调整上限");
-                PushOne(CreateOne());
+                PushNewOne(CreateOne());
                 return PopOne();
             }
         }
@@ -109,18 +109,21 @@ namespace CodingK.UI
             jn.UnLoad();
             queue.Enqueue(jn);
         }
+        
+        private void PushNewOne(K jn) {
+            queue.Enqueue(jn);
+        }
 
         /// <summary>
         /// 回收并销毁所有对象
         /// </summary>
         public void ClearPool()
         {
-            var obj = queue.Dequeue();
-            while (obj != null)
+            while (queue.Count > 0)
             {
+                var obj = queue.Dequeue();
                 obj.UnLoad();
                 obj.UnInit();
-                obj = queue.Dequeue();
             }
 
             queue = null;

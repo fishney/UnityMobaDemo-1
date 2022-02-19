@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <BaseOutputPath>D:\github\UnityMobaDemo\Libs\hokProtocol</BaseOutputPath>
+    <BaseOutputPath>C:\Github_VSOutputer\hokProtocol</BaseOutputPath>
     <DebugType>embedded</DebugType>
   </PropertyGroup>
 
@@ -13,6 +13,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <Optimize>False</Optimize>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="oldproto\**" />
+    <EmbeddedResource Remove="oldproto\**" />
+    <None Remove="oldproto\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="GameMsg.cs" />

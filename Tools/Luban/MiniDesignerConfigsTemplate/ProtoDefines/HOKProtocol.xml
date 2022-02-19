@@ -17,6 +17,8 @@
     <var name="RspBattleStart" value="113"/>
     <var name="ReqBattleEnd" value="114"/>
     <var name="RspBattleEnd" value="115"/>
+    <var name="ReqBagItem" value="116"/>
+    <var name="RspBagItem" value="117"/>
     <var name="ReqPing" value="1"/>
     <var name="RspPing" value="2"/>
     <var name="SendChat" value="201"/>
@@ -39,6 +41,7 @@
     <var name="LackDiamond" value="10"/>
     <var name="LackPower" value="11"/>
     <var name="TaskError" value="12"/>
+    <var name="BagItemError" value="13"/>
 </enum>
 
 <enum name="PvpEnum">
@@ -79,6 +82,8 @@
     <var name="notifyOpKey" type="NotifyOpKey?"/>
     <var name="reqPing" type="ReqPing?"/>
     <var name="rspPing" type="RspPing?"/>
+    <var name="reqBagItem" type="ReqBagItem?"/>
+    <var name="rspBagItem" type="RspBagItem?"/>
 </proto>
 
 <bean name="ReqLogin">
@@ -201,6 +206,12 @@
     <var name="diamond" type="int"/>
     <var name="ticket" type="int"/>
     <var name="heroSelectData" type="list,HeroSelectData"/>
+    <var name="bagData" type="list,BagItemData"/>
+</bean>
+
+<bean name="BagItemData">
+    <var name="itemId" type="int"/>
+    <var name="itemNum" type="int"/>
 </bean>
 
 <bean name="HeroSelectData">
@@ -231,9 +242,15 @@
     <var name="z_val" type="long"/>
 </bean>
 
+<bean name="ReqBagItem">
+    <var name="itemId" type="int"/>
+    <var name="itemNum" type="int"/>
+</bean>
 
-
-
+<bean name="RspBagItem">
+    <var name="updatedPlayerData" type="PlayerData"/>
+    <var name="usedItem" type="int"/>
+</bean>
 
 
 

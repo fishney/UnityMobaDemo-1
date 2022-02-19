@@ -22,13 +22,21 @@ public class BagItem : MonoBehaviour, IPoolObj<ItemInfo>
 
     public void UnInit()
     {
-       
+       GameObject.DestroyImmediate(this.gameObject);
     }
 
     public void Load(ItemInfo t)
     {
         gameObject.SetActive(true);
         info = t;
+        info.NumChanged = (newVal) =>
+        {
+            // if (newVal == 0)
+            // {
+            //     return;
+            // }
+            txtNum.text = newVal.ToString();
+        };
         //imgItem.SetSprite(t.imgPath);
         txtNum.text = t.num.ToString();
         
@@ -40,7 +48,12 @@ public class BagItem : MonoBehaviour, IPoolObj<ItemInfo>
     {
         btnSelect.onClick.RemoveAllListeners();
         selectedFrame.gameObject.SetActive(false);
-        info = null;
+        if (info != null)
+        {
+            info.NumChanged = null;
+            info = null;
+        }
+        
         txtNum.text = string.Empty;
         //imgItem.SetSprite(null);
         gameObject.SetActive(false);

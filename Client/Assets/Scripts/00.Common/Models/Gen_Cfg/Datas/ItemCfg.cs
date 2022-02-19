@@ -21,6 +21,7 @@ public sealed partial class ItemCfg :  Bright.Config.BeanBase
         name = _buf.ReadString();
         imgPath = _buf.ReadString();
         des = _buf.ReadString();
+        {int n = System.Math.Min(_buf.ReadSize(), _buf.Size);effectList = new System.Collections.Generic.List<int>(n);for(var i = 0 ; i < n ; i++) { int _e;  _e = _buf.ReadInt(); effectList.Add(_e);}}
         PostInit();
     }
 
@@ -33,12 +34,15 @@ public sealed partial class ItemCfg :  Bright.Config.BeanBase
     public string name { get; private set; }
     public string imgPath { get; private set; }
     public string des { get; private set; }
+    public System.Collections.Generic.List<int> effectList { get; private set; }
+    public System.Collections.Generic.List<Datas.ItemEffectCfg> effectList_Ref { get; private set; }
 
     public const int __ID__ = 1931547948;
     public override int GetTypeId() => __ID__;
 
     public  void Resolve(Dictionary<string, object> _tables)
     {
+        { Datas.TbItemEffectCfg __table = (Datas.TbItemEffectCfg)_tables["Datas.TbItemEffectCfg"]; this.effectList_Ref = new System.Collections.Generic.List<Datas.ItemEffectCfg>(); foreach(var __e in effectList) { this.effectList_Ref.Add(__table.GetOrDefault(__e)); } }
         PostResolve();
     }
 
@@ -53,6 +57,7 @@ public sealed partial class ItemCfg :  Bright.Config.BeanBase
         + "name:" + name + ","
         + "imgPath:" + imgPath + ","
         + "des:" + des + ","
+        + "effectList:" + Bright.Common.StringUtil.CollectionToString(effectList) + ","
         + "}";
     }
     

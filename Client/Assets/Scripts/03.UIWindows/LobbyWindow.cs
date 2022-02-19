@@ -38,7 +38,16 @@ public class LobbyWindow : WindowBase
     {
         base.InitWindow();
         SetActive(transMatchRoot,false);
+
+        RefreshPlayerData();
         
+        SetText(txtPreTime,"00:00");
+        SetText(txtCountTime,"00:00");
+        
+    }
+
+    public void RefreshPlayerData()
+    {
         pd = GameRoot.Instance().PlayerData;
         var maxExp = GameRoot.Instance().GetMaxExp(pd.level);
         SetText(txtName,pd.name);
@@ -48,11 +57,7 @@ public class LobbyWindow : WindowBase
         SetText(txtDiamond,pd.diamond);
         SetText(txtTicket,pd.ticket);
         fgExp.fillAmount = 1.0f * pd.exp / maxExp;
-        SetText(txtPreTime,"00:00");
-        SetText(txtCountTime,"00:00");
-        
     }
-
 
 
 
@@ -174,7 +179,7 @@ public class LobbyWindow : WindowBase
 
     public void ClickBag()
     {
-        audioSvc.PlayUIAudio("matchBtnClick");
+        audioSvc.PlayUIAudio("com_click1");
         
         GameRootResources.Instance().bagWindow.SetWindowState();
     }

@@ -1,23 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\My Github\\UnityMobaDemo\\Server\\Server\\Server.csproj": {}
+    "C:\\Github\\UnityMobaDemo\\Server\\Server\\Server.csproj": {}
   },
   "projects": {
-    "E:\\My Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj": {
+    "C:\\Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\My Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj",
+        "projectUniqueName": "C:\\Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj",
         "projectName": "HOKProtocol",
-        "projectPath": "E:\\My Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj",
-        "packagesPath": "C:\\Users\\79982\\.nuget\\packages\\",
-        "outputPath": "E:\\My Github\\UnityMobaDemo\\Server\\HOKProtocol\\obj\\",
+        "projectPath": "C:\\Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj",
+        "packagesPath": "C:\\Users\\YAN JUNJIE\\.nuget\\packages\\",
+        "outputPath": "C:\\Github\\UnityMobaDemo\\Server\\HOKProtocol\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\79982\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\YAN JUNJIE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,20 +66,22 @@
         }
       }
     },
-    "E:\\My Github\\UnityMobaDemo\\Server\\Server\\Server.csproj": {
+    "C:\\Github\\UnityMobaDemo\\Server\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\My Github\\UnityMobaDemo\\Server\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Github\\UnityMobaDemo\\Server\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "E:\\My Github\\UnityMobaDemo\\Server\\Server\\Server.csproj",
-        "packagesPath": "C:\\Users\\79982\\.nuget\\packages\\",
-        "outputPath": "E:\\My Github\\UnityMobaDemo\\Server\\Server\\obj\\",
+        "projectPath": "C:\\Github\\UnityMobaDemo\\Server\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\YAN JUNJIE\\.nuget\\packages\\",
+        "outputPath": "C:\\Github\\UnityMobaDemo\\Server\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\79982\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\YAN JUNJIE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -91,8 +95,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "E:\\My Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj": {
-                "projectPath": "E:\\My Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj"
+              "C:\\Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj": {
+                "projectPath": "C:\\Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj"
               }
             }
           }
@@ -122,12 +126,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.22, 3.1.22]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

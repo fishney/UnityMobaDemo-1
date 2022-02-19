@@ -116,9 +116,15 @@ public class GameRoot : GameRootMonoSingleton<GameRoot>
         private set;
     }
     
-    public void SetPlayerData(PlayerData pd)
+    public void SetPlayerData(PlayerData pd, bool refresh = false)
     {
         PlayerData = pd;
+
+        if (refresh)
+        {
+            GameRootResources.Instance()?.lobbyWindow.RefreshPlayerData();
+            GameRootResources.Instance()?.bagWindow.RefreshPlayData();
+        }
     }
 
 
