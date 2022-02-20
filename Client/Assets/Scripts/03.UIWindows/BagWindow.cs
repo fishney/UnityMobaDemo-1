@@ -50,6 +50,7 @@ public class BagWindow : WindowBase
     public Text selectedItemNum;
     public Image selectedItemImg;
     public Text selectedItemDes;
+    public Transform ItemInfoPanel;
 
     private int waitingCBCount = 0;
     private List<int> usedItemList;
@@ -63,6 +64,7 @@ public class BagWindow : WindowBase
 
         RefreshPlayData();
         InitItemInfo();
+        InitView();
 
         ShowPanel();
     }
@@ -83,8 +85,13 @@ public class BagWindow : WindowBase
         }
     }
 
-    public List<ItemInfo> items = new List<ItemInfo>();
+    private void InitView()
+    {
+        ItemInfoPanel.gameObject.SetActive(false);
+    }
 
+    public List<ItemInfo> items = new List<ItemInfo>();
+    
     private void InitItemInfo()
     {
         items = new List<ItemInfo>();
@@ -140,10 +147,14 @@ public class BagWindow : WindowBase
         isShowing = false;
         SetWindowState(false);
     }
-
+    
     public void UpdateSelectedItemPanel(ItemInfo info)
     {
         audioSvc.PlayUIAudio("com_click1");
+        if (!ItemInfoPanel.gameObject.activeSelf)
+        {
+            ItemInfoPanel.gameObject.SetActive(true);
+        }
         
         // 如果已经选中，就修正画面显示中其他被选择的状态
         if (lastSelectingItemId != -1)
@@ -174,12 +185,12 @@ public class BagWindow : WindowBase
         selectedItemName.text = info.cfg.name;
         selectedItemNum.text = info.num.ToString();
         selectedItemDes.text = info.cfg.des;
-        //selectedItemImg.SetSprite(cfg.imgPath);
+        selectedItemImg.SetBagItemSprite(info.cfg.imgPath);
     }
 
     public void ClickUseButton()
     {
-        audioSvc.PlayUIAudio("com_click1");
+        audioSvc.PlayUIAudio("bag_useitem");
         if (waitingCBCount > 0)
         {
             ShowTips("使用物品太过频繁，请稍后。");
@@ -255,7 +266,8 @@ public class BagWindow : WindowBase
                 usedItem.isSelected = false;
                 customSV.RemoveData(usedItem);
             }
-            
+
+            UpdateSelectedItemPanelNum(usedItemId,usedItem.num);
             
             ShowTips(tip.ToString());
             
@@ -266,5 +278,22 @@ public class BagWindow : WindowBase
             ShowTips("物品使用失败！");
         }
     }
+    
+    
+    private void UpdateSelectedItemPanelNum(int id, int num)
+    {
+        if (this.gameObject.activeSelf && lastSelectingItemId == id)
+        {
+            if (num > 0)
+            {
+                selectedItemNum.text = num.ToString();
+            }
+            else
+            {
+                ItemInfoPanel.gameObject.SetActive(false);
+            }
+        }
+    }
+
 }
 

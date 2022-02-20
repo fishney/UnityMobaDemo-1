@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtNum: {fileID: 5904261546595724750}
-  imgItem: {fileID: 0}
+  imgItem: {fileID: 1375790672}
   btnSelect: {fileID: 5190128745516503178}
   selectedFrame: {fileID: 5904261547876583485}
 --- !u!114 &5190128745516503178

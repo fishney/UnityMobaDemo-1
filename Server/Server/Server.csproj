@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="00.Common\Cfg\**" />
+    <EmbeddedResource Remove="00.Common\Cfg\**" />
+    <None Remove="00.Common\Cfg\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.27" />
   </ItemGroup>
 
@@ -41,6 +47,11 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
       <HintPath>..\..\Libs\CodingK_Session_Libs\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="99.Models\" />
+    <Folder Include="99.Libs\" />
   </ItemGroup>
 
 </Project>

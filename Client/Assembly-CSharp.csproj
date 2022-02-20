@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\03.UIWindows\PlayWindow.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\WindowBase.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMultipleSkillModifyBuff.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Gen_Cfg\Datas\TbItemEffectCfg.cs" />
      <Compile Include="Assets\Scripts\02.Systems\GMSystem.cs" />
      <Compile Include="Assets\Scripts\00.Common\CodingK_Expansion.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\Configs\ResBuffConfigs.cs" />
@@ -90,6 +91,8 @@
      <Compile Include="Assets\Scripts\02.Systems\BattleSys.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiScatterSkillModifyBuff.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\LoadWindow.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Gen_Cfg\Enums\ItemEffectType.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Gen_Cfg\Datas\ItemEffectCfg.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\GroupBuff\DamageBuff_StaticGroup.cs" />
      <Compile Include="Assets\Scripts\01.Services\ClientSession.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\02.View\BulletView.cs" />
@@ -149,9 +152,6 @@
      <Compile Include="Assets\Scripts\03.UIWindows\ItemHP.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\SilenseBuff_Single.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMixedMultiScatterBuff.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Gen_Cfg\Datas\TbItemEffectCfg.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Gen_Cfg\Enums\ItemEffectType.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Gen_Cfg\Datas\ItemEffectCfg.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

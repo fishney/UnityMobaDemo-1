@@ -26,6 +26,7 @@ namespace Server
 			NetSvc.Instance().Init();
 			TimerSvc.Instance().Init();
 			CacheSvc.Instance().Init();
+			CfgSvc.Instance().Init();
 
 			// System
 			LoginSys.Instance().Init();

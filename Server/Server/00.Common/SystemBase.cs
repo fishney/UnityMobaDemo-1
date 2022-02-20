@@ -12,6 +12,7 @@ namespace Server
 		protected NetSvc netSvc;
 		protected CacheSvc cacheSvc;
 		protected TimerSvc timerSvc;
+		protected CfgSvc cfgSvc;
 
 		public override void Init()
 		{
@@ -20,6 +21,7 @@ namespace Server
 			netSvc = NetSvc.Instance();
 			cacheSvc = CacheSvc.Instance();
 			timerSvc = TimerSvc.Instance();
+            cfgSvc = CfgSvc.Instance();
 
 			this.Log($"{GetType().Name} init.");
 		}

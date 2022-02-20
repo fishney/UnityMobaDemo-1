@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using proto.HOKProtocol;
 using System.Linq;
+using cfg.Enums;
 
 namespace Server
 {
@@ -54,11 +55,38 @@ namespace Server
             }
 
             // TODO 读表并计算出返回效果
-            item.itemNum -= data.itemNum;
-            localPlayerData.coin += 300;
-            localPlayerData.diamond += 300;
+            var itemCfg = cfgSvc.GetItemCfgById(item.itemId);
+            if (itemCfg == null)
+            {
+                msg.err = ErrorCode.BagItemError;
+                msgPack.session.SendMsg(msg);
+                return;
+            }
 
-            var addedExp = 300;
+            item.itemNum -= data.itemNum;
+            var addedExp = 0;
+            var addedCoin = 0;
+            var addedDiamond = 0;
+            var addedTicket = 0;
+            foreach (var effect in itemCfg.effectList_Ref)
+            {
+                switch (effect.effectType)
+                {
+                    case ItemEffectType.Coin:
+                        addedCoin += effect.effectVal;
+                        break;
+                    case ItemEffectType.Exp:
+                        addedExp += effect.effectVal;
+                        break;
+                    case ItemEffectType.Diamond:
+                        addedDiamond += effect.effectVal;
+                        break;
+                    case ItemEffectType.Ticket:
+                        addedTicket += effect.effectVal;
+                        break;
+                }
+            }
+
             if (addedExp > 0)
             {
                 localPlayerData.exp += addedExp;
@@ -70,6 +98,11 @@ namespace Server
                     needExp = GetMaxExp(localPlayerData.level);
                 }
             }
+
+            if (addedCoin > 0) localPlayerData.coin += addedCoin;
+            if (addedDiamond > 0) localPlayerData.diamond += addedDiamond;
+            if (addedTicket > 0) localPlayerData.ticket += addedTicket;
+
             // 更新数据库数据
             cacheSvc.UpdatePlayerData(localPlayerData);
 

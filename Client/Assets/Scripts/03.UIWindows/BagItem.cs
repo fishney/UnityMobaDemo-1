@@ -39,6 +39,7 @@ public class BagItem : MonoBehaviour, IPoolObj<ItemInfo>
         };
         //imgItem.SetSprite(t.imgPath);
         txtNum.text = t.num.ToString();
+        imgItem.SetBagItemSprite(info.cfg.imgPath);
         
         if (info.isSelected) selectedFrame.gameObject.SetActive(true);
         btnSelect.onClick.AddListener(() => ClickItemButton(info));
@@ -53,9 +54,6 @@ public class BagItem : MonoBehaviour, IPoolObj<ItemInfo>
             info.NumChanged = null;
             info = null;
         }
-        
-        txtNum.text = string.Empty;
-        //imgItem.SetSprite(null);
         gameObject.SetActive(false);
     }
 

@@ -1,4 +1,4 @@
-﻿C:/Github/UnityMobaDemo/Client/Assets/Resources/ResCfg/datas_tbitemcfg.bytes,23E032FFF5A0E93338A85529C3A8FC67,5177,1645264016504
+﻿C:/Github/UnityMobaDemo/Client/Assets/Resources/ResCfg/datas_tbitemcfg.bytes,6B74AA6638EF44F8D99479E874452CFD,7212,1645336289502
 C:/Github/UnityMobaDemo/Client/Assets/Resources/ResCfg/datas_tbitemeffectcfg.bytes,70BC9399A56AAC8B3CE6AA030832991,227,1645263300020
 C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/Models/Gen_Cfg/Datas/ItemCfg.cs,4ACBA0AEC0239AD3E19F39E6F6E7585,2297,1645264016504
 C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/Models/Gen_Cfg/Datas/ItemEffectCfg.cs,76CA35E65B20D73E1D29C9738087EB6F,1760,1645263300018
@@ -6,6 +6,14 @@ C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/Models/Gen_Cfg/Datas/TbI
 C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/Models/Gen_Cfg/Datas/TbItemEffectCfg.cs,D5EA0A7D3C52882579FA99EEEC9B496,1858,1645263300018
 C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/Models/Gen_Cfg/Enums/ItemEffectType.cs,81C647DFF47F27E7A3686DC9F934F7A5,754,1645263300022
 C:/Github/UnityMobaDemo/Client/Assets/Scripts/00.Common/Models/Gen_Cfg/Tables.cs,614693AB1D3821E581CBF825ADE311E3,1335,1645263300023
+C:/Github/UnityMobaDemo/Server/Datas/ResCfg/datas_tbitemcfg.bytes,6B74AA6638EF44F8D99479E874452CFD,7212,1645336295947
+C:/Github/UnityMobaDemo/Server/Datas/ResCfg/datas_tbitemeffectcfg.bytes,70BC9399A56AAC8B3CE6AA030832991,227,1645336295947
+C:/Github/UnityMobaDemo/Server/Server/99.Models/Gen_Cfg/Datas/ItemCfg.cs,4ACBA0AEC0239AD3E19F39E6F6E7585,2297,1645326777839
+C:/Github/UnityMobaDemo/Server/Server/99.Models/Gen_Cfg/Datas/ItemEffectCfg.cs,76CA35E65B20D73E1D29C9738087EB6F,1760,1645326777839
+C:/Github/UnityMobaDemo/Server/Server/99.Models/Gen_Cfg/Datas/TbItemCfg.cs,2BCEEB7C8BCF113A778EEDBB77937366,1774,1645326777838
+C:/Github/UnityMobaDemo/Server/Server/99.Models/Gen_Cfg/Datas/TbItemEffectCfg.cs,D5EA0A7D3C52882579FA99EEEC9B496,1858,1645326777840
+C:/Github/UnityMobaDemo/Server/Server/99.Models/Gen_Cfg/Enums/ItemEffectType.cs,81C647DFF47F27E7A3686DC9F934F7A5,754,1645326777839
+C:/Github/UnityMobaDemo/Server/Server/99.Models/Gen_Cfg/Tables.cs,614693AB1D3821E581CBF825ADE311E3,1335,1645326777838
 C:/Github/UnityMobaDemo/Tools/Luban/Gen/HOKProtocol/BagItemData.cs,5C6122F61A1A18563EA699D17E8D74F,1619,1645273355443
 C:/Github/UnityMobaDemo/Tools/Luban/Gen/HOKProtocol/BattleHeroData.cs,47BCC9E95B854EBC077A8ACD1D76FDA,1687,1645273355415
 C:/Github/UnityMobaDemo/Tools/Luban/Gen/HOKProtocol/CMD.cs,CF96827AC76F176AE88746F8E3CCB0F6,1042,1645273355422
@@ -47,9 +55,8 @@ C:/Github/UnityMobaDemo/Tools/Luban/Gen/HOKProtocol/SendSelect.cs,95621A1BF6E966
 C:/Github/UnityMobaDemo/Tools/Luban/Gen/HOKProtocol/SkillKey.cs,8F8AFAEA55EA5CF7BCC0DCEB594BE,1728,1645273355417
 C:/Github/UnityMobaDemo/Tools/Luban/Gen/ProtocolStub.cs,30A61646F4DB334356F5F43E7C26BAE6,754,1645273355453
 C:/Github/UnityMobaDemo/Tools/Luban/MiniDesignerConfigsTemplate/Datas/__beans__.xlsx,9E32995F5E438385B67F16B8E5F2ECE,9465,1645248224558
-C:/Github/UnityMobaDemo/Tools/Luban/MiniDesignerConfigsTemplate/Datas/__enums__.xlsx,D63AB0D3CE5B3DDA606AF2FF279745B9,9484,1645262282006
-C:/Github/UnityMobaDemo/Tools/Luban/MiniDesignerConfigsTemplate/Datas/__tables__.xlsx,5DDC3BCA9035C0D3612F72921254D54,9573,1645263732970
-C:/Github/UnityMobaDemo/Tools/Luban/MiniDesignerConfigsTemplate/Datas/datas/itemcfg.xlsx,61E5EBC4C660CCA979E07E322A2D7B,12502,1645263993205
-C:/Github/UnityMobaDemo/Tools/Luban/MiniDesignerConfigsTemplate/Datas/datas/itemeffectcfg.xlsx,C5FB6FBFAF919DB2FAFB50B2868F7CB0,9958,1645262188733
-C:/Github/UnityMobaDemo/Tools/Luban/MiniDesignerConfigsTemplate/Datas/datas/itemEffectCfg.xlsx,C5FB6FBFAF919DB2FAFB50B2868F7CB0,9958,1645262188733
+C:/Github/UnityMobaDemo/Tools/Luban/MiniDesignerConfigsTemplate/Datas/__enums__.xlsx,3827ED1D91934E7D9F82BFCD852E7D6C,9526,1645326774361
+C:/Github/UnityMobaDemo/Tools/Luban/MiniDesignerConfigsTemplate/Datas/__tables__.xlsx,4E4891FFA6124BA82E2EFB2A878C5,9576,1645293973448
+C:/Github/UnityMobaDemo/Tools/Luban/MiniDesignerConfigsTemplate/Datas/datas/itemcfg.xlsx,797B81BE4FB644B55F4361E462B27F5C,12257,1645336167940
+C:/Github/UnityMobaDemo/Tools/Luban/MiniDesignerConfigsTemplate/Datas/datas/itemEffectCfg.xlsx,A9A3847D60A057DC799F3B8D39C791F,9942,1645293973836
 C:/Github/UnityMobaDemo/Tools/Luban/MiniDesignerConfigsTemplate/ProtoDefines/HOKProtocol.xml,DBC99BEF2D2EDC66553C869AAE152324,7156,1645278605407
