@@ -1,0 +1,6 @@
+1.写[xml/excel]定义数据类型
+2.[xml/excel]生成Editor专用class类型,对其代码进行标签处理
+-------------------------------以下为需要重复-------------------------------
+3.使用Editor生成json数据 / 使用Editor读取json文件
+4.json数据 + [xml/excel] 生成bytes数据
+5.bytes数据作为运行时配置

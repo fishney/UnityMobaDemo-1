@@ -1,0 +1,258 @@
+<module name="HOKProtocol">
+
+<enum name="CMD">
+    <var name="None" value="0"/>
+    <var name="ReqLogin" value="101"/>
+    <var name="RspLogin" value="102"/>
+    <var name="ReqMatch" value="103"/>
+    <var name="RspMatch" value="104"/>
+    <var name="NotifyConfirm" value="105"/>
+    <var name="SendConfirm" value="106"/>
+    <var name="NotifySelect" value="107"/>
+    <var name="SendSelect" value="108"/>
+    <var name="NotifyLoadRes" value="109"/>
+    <var name="SendLoadPrg" value="110"/>
+    <var name="NotifyLoadPrg" value="111"/>
+    <var name="ReqBattleStart" value="112"/>
+    <var name="RspBattleStart" value="113"/>
+    <var name="ReqBattleEnd" value="114"/>
+    <var name="RspBattleEnd" value="115"/>
+    <var name="ReqBagItem" value="116"/>
+    <var name="RspBagItem" value="117"/>
+    <var name="ReqPing" value="1"/>
+    <var name="RspPing" value="2"/>
+    <var name="SendChat" value="201"/>
+    <var name="NotifyChat" value="202"/>
+    <var name="SendOpKey" value="1000"/>
+    <var name="NotifyOpKey" value="1001"/>
+</enum>
+
+<enum name="ErrorCode">
+    <var name="None" value="0"/>
+    <var name="ServerDataError" value="1"/>
+    <var name="ClientDataError" value="2"/>
+    <var name="UpdateDBError" value="3"/>
+    <var name="AccountIsOnline" value="4"/>
+    <var name="WrongPass" value="5"/>
+    <var name="NameExisted" value="6"/>
+    <var name="LackLevel" value="7"/>
+    <var name="LackCoin" value="8"/>
+    <var name="LackCrystal" value="9"/>
+    <var name="LackDiamond" value="10"/>
+    <var name="LackPower" value="11"/>
+    <var name="TaskError" value="12"/>
+    <var name="BagItemError" value="13"/>
+</enum>
+
+<enum name="PvpEnum">
+    <var name="None" value="0"/>
+    <var name="_1V1" value="1"/>
+    <var name="_2V2" value="2"/>
+    <var name="_5V5" value="3"/>
+</enum>
+
+<enum name="KeyType">
+    <var name="None" value="0"/>
+    <var name="Move" value="1"/>
+    <var name="Skill" value="2"/>
+</enum>
+
+<proto name="GameMsg">
+    <var name="cmd" type="CMD"/>
+    <var name="err" type="ErrorCode?"/>
+    <var name="isEmpty" type="bool?"/>
+    <var name="reqLogin" type="ReqLogin?"/>
+    <var name="rspLogin" type="RspLogin?"/>
+    <var name="reqMatch" type="ReqMatch?"/>
+    <var name="rspMatch" type="RspMatch?"/>
+    <var name="notifyConfirm" type="NotifyConfirm?"/>
+    <var name="sendConfirm" type="SendConfirm?"/>
+    <var name="notifySelect" type="NotifySelect?"/>
+    <var name="sendSelect" type="SendSelect?"/>
+    <var name="notifyLoadRes" type="NotifyLoadRes?"/>
+    <var name="sendLoadPrg" type="SendLoadPrg?"/>
+    <var name="notifyLoadPrg" type="NotifyLoadPrg?"/>
+    <var name="reqBattleStart" type="ReqBattleStart?"/>
+    <var name="rspBattleStart" type="RspBattleStart?"/>
+    <var name="reqBattleEnd" type="ReqBattleEnd?"/>
+    <var name="rspBattleEnd" type="RspBattleEnd?"/>
+    <var name="sendChat" type="SendChat?"/>
+    <var name="notifyChat" type="NotifyChat?"/>
+    <var name="sendOpKey" type="SendOpKey?"/>
+    <var name="notifyOpKey" type="NotifyOpKey?"/>
+    <var name="reqPing" type="ReqPing?"/>
+    <var name="rspPing" type="RspPing?"/>
+    <var name="reqBagItem" type="ReqBagItem?"/>
+    <var name="rspBagItem" type="RspBagItem?"/>
+</proto>
+
+<bean name="ReqLogin">
+    <var name="acct" type="string"/>
+    <var name="pass" type="string"/>
+</bean>
+
+<bean name="RspLogin">
+    <var name="playerData" type="PlayerData"/>
+</bean>
+
+<bean name="ReqRename">
+    <var name="name" type="string"/>
+</bean>
+
+<bean name="RspRename">
+    <var name="name" type="string"/>
+</bean>
+
+<bean name="ReqMatch">
+    <var name="pvpEnum" type="PvpEnum"/>
+</bean>
+
+<bean name="RspMatch">
+    <var name="preTime" type="int"/>
+</bean>
+
+<bean name="NotifyConfirm">
+    <var name="roomId" type="int"/>
+    <var name="dismiss" type="bool"/>
+    <var name="confirmArr" type="array,ConfirmData"/>
+</bean>
+
+<bean name="ConfirmData">
+    <var name="iconIndex" type="int"/>
+    <var name="confirmDone" type="bool"/>
+</bean>
+
+<bean name="SendConfirm">
+    <var name="roomId" type="int"/>
+</bean>
+
+<bean name="NotifySelect">
+    <var name="selectData" type="SelectData"/>
+</bean>
+
+<bean name="SelectData">
+    <var name="selectId" type="int"/>
+    <var name="selectDone" type="bool"/>
+</bean>
+
+<bean name="SendSelect">
+    <var name="roomId" type="int"/>
+    <var name="heroId" type="int"/>
+</bean>
+
+<bean name="NotifyLoadRes">
+    <var name="mapId" type="int"/>
+    <var name="heroList" type="list,BattleHeroData"/>
+    <var name="posIndex" type="int"/>
+</bean>
+
+<bean name="SendLoadPrg">
+    <var name="roomId" type="int"/>
+    <var name="percent" type="int"/>
+</bean>
+
+<bean name="NotifyLoadPrg">
+    <var name="percentList" type="list,int"/>
+</bean>
+
+<bean name="ReqBattleStart">
+    <var name="roomId" type="int"/>
+</bean>
+
+<bean name="RspBattleStart">
+</bean>
+
+<bean name="ReqBattleEnd">
+    <var name="roomId" type="int"/>
+</bean>
+<bean name="RspBattleEnd">
+</bean>
+
+<bean name="SendOpKey">
+    <var name="roomId" type="int"/>
+    <var name="opKey" type="OpKey"/>
+</bean>
+
+<bean name="NotifyOpKey">
+    <var name="frameId" type="int"/>
+    <var name="keyList" type="list,OpKey"/>
+</bean>
+
+<bean name="SendChat">
+    <var name="roomId" type="int"/>
+    <var name="chatMsg" type="string"/>
+</bean>
+
+<bean name="NotifyChat">
+    <var name="chatMsg" type="string"/>
+</bean>
+
+<bean name="ReqPing">
+    <var name="pingId" type="int"/>
+    <var name="sendTime" type="long"/>
+    <var name="backTime" type="long"/>
+</bean>
+
+<bean name="RspPing">
+    <var name="pingId" type="int"/>
+</bean>
+
+<bean name="PlayerData">
+    <var name="id" type="int"/>
+    <var name="name" type="string"/>
+    <var name="level" type="int"/>
+    <var name="exp" type="int"/>
+    <var name="coin" type="int"/>
+    <var name="diamond" type="int"/>
+    <var name="ticket" type="int"/>
+    <var name="heroSelectData" type="list,HeroSelectData"/>
+    <var name="bagData" type="list,BagItemData"/>
+</bean>
+
+<bean name="BagItemData">
+    <var name="itemId" type="int"/>
+    <var name="itemNum" type="int"/>
+</bean>
+
+<bean name="HeroSelectData">
+    <var name="heroID" type="int"/>
+</bean>
+
+<bean name="BattleHeroData">
+    <var name="userName" type="string"/>
+    <var name="heroId" type="int"/>
+</bean>
+
+<bean name="OpKey">
+    <var name="opIndex" type="int"/>
+    <var name="keyType" type="KeyType"/>
+    <var name="moveKey" type="MoveKey?"/>
+    <var name="skillKey" type="SkillKey?"/>
+</bean>
+
+<bean name="MoveKey">
+    <var name="keyId" type="int"/>
+    <var name="x" type="long"/>
+    <var name="z" type="long"/>
+</bean>
+
+<bean name="SkillKey">
+    <var name="skillId" type="int"/>
+    <var name="x_val" type="long"/>
+    <var name="z_val" type="long"/>
+</bean>
+
+<bean name="ReqBagItem">
+    <var name="itemId" type="int"/>
+    <var name="itemNum" type="int"/>
+</bean>
+
+<bean name="RspBagItem">
+    <var name="updatedPlayerData" type="PlayerData"/>
+    <var name="usedItem" type="int"/>
+</bean>
+
+
+
+
+</module>

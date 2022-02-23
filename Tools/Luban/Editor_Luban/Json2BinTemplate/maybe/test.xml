@@ -1,0 +1,9 @@
+<module name="test">
+	<bean name="skillCfgData">
+        <var name="id" type="int"/>
+        <var name="name" type="string"/>
+        <var name="spellTime" type="long"/>
+        <var name="buffList" type="(list#sep=,),int"/>
+    </bean>
+	<table name="TbskillCfgData" value="skillCfgData" input="datas"/>
+</module>

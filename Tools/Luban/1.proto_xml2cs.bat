@@ -6,7 +6,7 @@ set PROTO_ROOT=%WORKSPACE%\Luban\MiniDesignerConfigsTemplate\ProtoDefines
 
 %GEN_CLIENT% -j proto --^
  -d %PROTO_ROOT%\__root__.xml ^
- --output_code_dir %WORKSPACE%\Luban\Gen ^
+ --output_code_dir %WORKSPACE%\Luban\Gen\proto ^
  --naming_convention:module none  ^
  --naming_convention:bean_member none  ^
  --naming_convention:enum_member none  ^
