@@ -13,7 +13,7 @@ namespace editor.cfg
     /// </summary>
     public static partial class SelectRuleEnum
     {
-        public static readonly Bright.Config.EditorEnumItemInfo None = new Bright.Config.EditorEnumItemInfo("None", "", 0, "");
+        public static readonly Bright.Config.EditorEnumItemInfo None = new Bright.Config.EditorEnumItemInfo("None", "", 0, "无");
         public static readonly Bright.Config.EditorEnumItemInfo MinHpValue = new Bright.Config.EditorEnumItemInfo("MinHpValue", "", 1, "单体血量最小");
         public static readonly Bright.Config.EditorEnumItemInfo MinHpPercent = new Bright.Config.EditorEnumItemInfo("MinHpPercent", "", 2, "单体血量百分比最小");
         public static readonly Bright.Config.EditorEnumItemInfo TargetClosestSingle = new Bright.Config.EditorEnumItemInfo("TargetClosestSingle", "", 3, "最近的单个");

@@ -21,7 +21,6 @@ public sealed partial class BulletCfg :  Bright.Config.EditorBeanBase
             bulletType = "UIDirection";
             bulletName = "";
             resPath = "";
-            impacter = new TargetCfg();
     }
 
     public override void LoadJson(SimpleJSON.JSONObject _json)
@@ -149,9 +148,9 @@ public sealed partial class BulletCfg :  Bright.Config.EditorBeanBase
         {
             _json["canBlock"] = new JSONBool(canBlock);
         }
-        {
 
-            if (impacter == null) { throw new System.ArgumentNullException(); }
+        if (impacter != null)
+        {
             { var __bjson = new JSONObject();  TargetCfg.SaveJsonTargetCfg(impacter, __bjson); _json["impacter"] = __bjson; }
         }
         {

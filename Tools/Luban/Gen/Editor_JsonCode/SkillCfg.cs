@@ -25,8 +25,6 @@ public sealed partial class SkillCfg :  Bright.Config.EditorBeanBase
             audio_hit = "";
             buffIdArr = System.Array.Empty<int>();
             releaseMode = "None";
-            targetCfg = new TargetCfg();
-            bulletCfg = new BulletCfg();
     }
 
     public override void LoadJson(SimpleJSON.JSONObject _json)
@@ -206,14 +204,14 @@ public sealed partial class SkillCfg :  Bright.Config.EditorBeanBase
         {
             _json["releaseMode"] = new JSONString(releaseMode);
         }
-        {
 
-            if (targetCfg == null) { throw new System.ArgumentNullException(); }
+        if (targetCfg != null)
+        {
             { var __bjson = new JSONObject();  TargetCfg.SaveJsonTargetCfg(targetCfg, __bjson); _json["targetCfg"] = __bjson; }
         }
-        {
 
-            if (bulletCfg == null) { throw new System.ArgumentNullException(); }
+        if (bulletCfg != null)
+        {
             { var __bjson = new JSONObject();  BulletCfg.SaveJsonBulletCfg(bulletCfg, __bjson); _json["bulletCfg"] = __bjson; }
         }
     }

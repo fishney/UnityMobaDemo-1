@@ -13,7 +13,7 @@ namespace editor.cfg
     /// </summary>
     public static partial class StaticPosTypeEnum
     {
-        public static readonly Bright.Config.EditorEnumItemInfo None = new Bright.Config.EditorEnumItemInfo("None", "", 0, "");
+        public static readonly Bright.Config.EditorEnumItemInfo None = new Bright.Config.EditorEnumItemInfo("None", "", 0, "无");
         public static readonly Bright.Config.EditorEnumItemInfo SkillCasterPos = new Bright.Config.EditorEnumItemInfo("SkillCasterPos", "", 1, "Buff所属技能施放者的位置");
         public static readonly Bright.Config.EditorEnumItemInfo SkillLockTargetPos = new Bright.Config.EditorEnumItemInfo("SkillLockTargetPos", "", 2, "Buff所属技能锁定目标的位置");
         public static readonly Bright.Config.EditorEnumItemInfo BulletHitTargetPos = new Bright.Config.EditorEnumItemInfo("BulletHitTargetPos", "", 3, "子弹命中目标的位置");

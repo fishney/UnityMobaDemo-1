@@ -13,11 +13,11 @@ namespace editor.cfg
     /// </summary>
     public static partial class AttachTypeEnum
     {
-        public static readonly Bright.Config.EditorEnumItemInfo None = new Bright.Config.EditorEnumItemInfo("None", "", 0, "");
-        public static readonly Bright.Config.EditorEnumItemInfo Caster = new Bright.Config.EditorEnumItemInfo("Caster", "", 1, "由施术者自己确定：给自己，Arthur的1技能加速buff");
-        public static readonly Bright.Config.EditorEnumItemInfo Indie = new Bright.Config.EditorEnumItemInfo("Indie", "", 2, "由施术者自己确定：区域，Arthur大招(位置固定)产生的持续范围伤害");
-        public static readonly Bright.Config.EditorEnumItemInfo Target = new Bright.Config.EditorEnumItemInfo("Target", "", 3, "由受击者确定：给目标，Arthur的1技能沉默buff");
-        public static readonly Bright.Config.EditorEnumItemInfo Bullet = new Bright.Config.EditorEnumItemInfo("Bullet", "", 4, "由受击者确定：Houyi大招命中(位置动态)目标时产生的范围伤害");
+        public static readonly Bright.Config.EditorEnumItemInfo None = new Bright.Config.EditorEnumItemInfo("None", "", 0, "无");
+        public static readonly Bright.Config.EditorEnumItemInfo Caster = new Bright.Config.EditorEnumItemInfo("Caster", "", 1, "由施术者自己确定：给自己，例如Arthur的1技能加速buff");
+        public static readonly Bright.Config.EditorEnumItemInfo Indie = new Bright.Config.EditorEnumItemInfo("Indie", "", 2, "由施术者自己确定：区域，例如Arthur大招(位置固定)产生的持续范围伤害");
+        public static readonly Bright.Config.EditorEnumItemInfo Target = new Bright.Config.EditorEnumItemInfo("Target", "", 3, "由受击者确定：给目标，例如Arthur的1技能沉默buff");
+        public static readonly Bright.Config.EditorEnumItemInfo Bullet = new Bright.Config.EditorEnumItemInfo("Bullet", "", 4, "由受击者确定：例如Houyi大招命中(位置动态)目标时产生的范围伤害");
 
         private static readonly System.Collections.Generic.List<Bright.Config.EditorEnumItemInfo> __items = new System.Collections.Generic.List<Bright.Config.EditorEnumItemInfo>
         {

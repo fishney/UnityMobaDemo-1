@@ -13,53 +13,65 @@ namespace editor.cfg
     /// </summary>
     public static partial class BuffTypeEnum
     {
-        public static readonly Bright.Config.EditorEnumItemInfo None = new Bright.Config.EditorEnumItemInfo("None", "", 0, "");
-        public static readonly Bright.Config.EditorEnumItemInfo HPCure = new Bright.Config.EditorEnumItemInfo("HPCure", "", 1, "治疗");
-        public static readonly Bright.Config.EditorEnumItemInfo ModifySkill = new Bright.Config.EditorEnumItemInfo("ModifySkill", "", 2, "");
-        public static readonly Bright.Config.EditorEnumItemInfo MoveSpeed_Single = new Bright.Config.EditorEnumItemInfo("MoveSpeed_Single", "", 3, "单体加速buff");
-        public static readonly Bright.Config.EditorEnumItemInfo ArthurMark = new Bright.Config.EditorEnumItemInfo("ArthurMark", "", 4, "Arthur1技能的标记伤害Buff");
-        public static readonly Bright.Config.EditorEnumItemInfo Silense = new Bright.Config.EditorEnumItemInfo("Silense", "", 5, "沉默");
-        public static readonly Bright.Config.EditorEnumItemInfo TargetFlashMove = new Bright.Config.EditorEnumItemInfo("TargetFlashMove", "", 6, "");
-        public static readonly Bright.Config.EditorEnumItemInfo DirectionFlashMove = new Bright.Config.EditorEnumItemInfo("DirectionFlashMove", "", 7, "");
-        public static readonly Bright.Config.EditorEnumItemInfo ExecuteDamage = new Bright.Config.EditorEnumItemInfo("ExecuteDamage", "", 8, "");
-        public static readonly Bright.Config.EditorEnumItemInfo Knockup_Group = new Bright.Config.EditorEnumItemInfo("Knockup_Group", "", 9, "群体击飞");
-        public static readonly Bright.Config.EditorEnumItemInfo Stun_Single_DynamicTime = new Bright.Config.EditorEnumItemInfo("Stun_Single_DynamicTime", "", 10, "");
-        public static readonly Bright.Config.EditorEnumItemInfo HouyiActiveSkillModify = new Bright.Config.EditorEnumItemInfo("HouyiActiveSkillModify", "", 11, "Houyi主动技能修改buff");
-        public static readonly Bright.Config.EditorEnumItemInfo Scatter = new Bright.Config.EditorEnumItemInfo("Scatter", "", 12, "");
-        public static readonly Bright.Config.EditorEnumItemInfo HouyiPasvAttackSpeed = new Bright.Config.EditorEnumItemInfo("HouyiPasvAttackSpeed", "", 13, "Houyi被动攻速加成buff");
-        public static readonly Bright.Config.EditorEnumItemInfo HouyiPasvSkillModify = new Bright.Config.EditorEnumItemInfo("HouyiPasvSkillModify", "", 14, "Houyi被动技能修改Buff");
-        public static readonly Bright.Config.EditorEnumItemInfo HouyiPasvMultiArrow = new Bright.Config.EditorEnumItemInfo("HouyiPasvMultiArrow", "", 15, "Houyi被动技能多重射击Buff");
-        public static readonly Bright.Config.EditorEnumItemInfo HouyiMixedMultiScatter = new Bright.Config.EditorEnumItemInfo("HouyiMixedMultiScatter", "", 16, "混合多重射击与散射");
-        public static readonly Bright.Config.EditorEnumItemInfo MoveSpeed_DynamicGroup = new Bright.Config.EditorEnumItemInfo("MoveSpeed_DynamicGroup", "", 17, "动态群体移速Buff");
-        public static readonly Bright.Config.EditorEnumItemInfo MoveSpeed_StaticGroup = new Bright.Config.EditorEnumItemInfo("MoveSpeed_StaticGroup", "", 18, "静态群体移速buff");
-        public static readonly Bright.Config.EditorEnumItemInfo Damage_DynamicGroup = new Bright.Config.EditorEnumItemInfo("Damage_DynamicGroup", "", 19, "动态群体伤害");
-        public static readonly Bright.Config.EditorEnumItemInfo Damage_StaticGroup = new Bright.Config.EditorEnumItemInfo("Damage_StaticGroup", "", 20, "");
-        public static readonly Bright.Config.EditorEnumItemInfo MoveAttack = new Bright.Config.EditorEnumItemInfo("MoveAttack", "", 21, "移动攻击");
+        public static readonly Bright.Config.EditorEnumItemInfo None = new Bright.Config.EditorEnumItemInfo("None", "", 0, "无");
+        public static readonly Bright.Config.EditorEnumItemInfo MoveAttack = new Bright.Config.EditorEnumItemInfo("MoveAttack", "", 1, "移动攻击");
+        public static readonly Bright.Config.EditorEnumItemInfo HPCure = new Bright.Config.EditorEnumItemInfo("HPCure", "", 2, "治疗");
+        public static readonly Bright.Config.EditorEnumItemInfo Knockup_Single = new Bright.Config.EditorEnumItemInfo("Knockup_Single", "", 3, "单体击飞");
+        public static readonly Bright.Config.EditorEnumItemInfo Knockup_Group = new Bright.Config.EditorEnumItemInfo("Knockup_Group", "", 4, "群体击飞");
+        public static readonly Bright.Config.EditorEnumItemInfo Silense_Single = new Bright.Config.EditorEnumItemInfo("Silense_Single", "", 5, "单体沉默");
+        public static readonly Bright.Config.EditorEnumItemInfo Silense_Group = new Bright.Config.EditorEnumItemInfo("Silense_Group", "", 6, "群体沉默");
+        public static readonly Bright.Config.EditorEnumItemInfo Stun_Single = new Bright.Config.EditorEnumItemInfo("Stun_Single", "", 7, "单体眩晕");
+        public static readonly Bright.Config.EditorEnumItemInfo Stun_Group = new Bright.Config.EditorEnumItemInfo("Stun_Group", "", 8, "群体眩晕");
+        public static readonly Bright.Config.EditorEnumItemInfo Stun_Single_DynamicTime = new Bright.Config.EditorEnumItemInfo("Stun_Single_DynamicTime", "", 9, "动态时间眩晕：例如Houyi3技能");
+        public static readonly Bright.Config.EditorEnumItemInfo MoveSpeed_Single = new Bright.Config.EditorEnumItemInfo("MoveSpeed_Single", "", 10, "单体加速");
+        public static readonly Bright.Config.EditorEnumItemInfo MoveSpeed_DynamicGroup = new Bright.Config.EditorEnumItemInfo("MoveSpeed_DynamicGroup", "", 11, "动态群体移速");
+        public static readonly Bright.Config.EditorEnumItemInfo MoveSpeed_StaticGroup = new Bright.Config.EditorEnumItemInfo("MoveSpeed_StaticGroup", "", 12, "静态群体移速");
+        public static readonly Bright.Config.EditorEnumItemInfo Hook_Single = new Bright.Config.EditorEnumItemInfo("Hook_Single", "", 13, "单体牵引");
+        public static readonly Bright.Config.EditorEnumItemInfo Hook_Group = new Bright.Config.EditorEnumItemInfo("Hook_Group", "", 14, "群体牵引");
+        public static readonly Bright.Config.EditorEnumItemInfo Damage_DynamicGroup = new Bright.Config.EditorEnumItemInfo("Damage_DynamicGroup", "", 15, "动态群体伤害");
+        public static readonly Bright.Config.EditorEnumItemInfo Damage_StaticGroup = new Bright.Config.EditorEnumItemInfo("Damage_StaticGroup", "", 16, "静态群体伤害");
+        public static readonly Bright.Config.EditorEnumItemInfo ModifySkill = new Bright.Config.EditorEnumItemInfo("ModifySkill", "", 17, "替换普攻：例如Arthur1技能");
+        public static readonly Bright.Config.EditorEnumItemInfo ArthurMark = new Bright.Config.EditorEnumItemInfo("ArthurMark", "", 18, "标记伤害：例如Arthur1技能");
+        public static readonly Bright.Config.EditorEnumItemInfo TargetFlashMove = new Bright.Config.EditorEnumItemInfo("TargetFlashMove", "", 19, "目标闪现跳跃：例如Arthur1技能");
+        public static readonly Bright.Config.EditorEnumItemInfo DirectionFlashMove = new Bright.Config.EditorEnumItemInfo("DirectionFlashMove", "", 20, "方向闪现跳跃：例如Arthur1技能");
+        public static readonly Bright.Config.EditorEnumItemInfo ExecuteDamage = new Bright.Config.EditorEnumItemInfo("ExecuteDamage", "", 21, "百分比生命伤害：例如Arthur1技能");
+        public static readonly Bright.Config.EditorEnumItemInfo HouyiActiveSkillModify = new Bright.Config.EditorEnumItemInfo("HouyiActiveSkillModify", "", 22, "主动技能修改：例如Houyi");
+        public static readonly Bright.Config.EditorEnumItemInfo Scatter = new Bright.Config.EditorEnumItemInfo("Scatter", "", 23, "强化普攻为散射：例如Houyi");
+        public static readonly Bright.Config.EditorEnumItemInfo HouyiPasvAttackSpeed = new Bright.Config.EditorEnumItemInfo("HouyiPasvAttackSpeed", "", 24, "被动攻速加成：例如Houyi");
+        public static readonly Bright.Config.EditorEnumItemInfo HouyiPasvSkillModify = new Bright.Config.EditorEnumItemInfo("HouyiPasvSkillModify", "", 25, "被动技能修改：例如Houyi");
+        public static readonly Bright.Config.EditorEnumItemInfo HouyiPasvMultiArrow = new Bright.Config.EditorEnumItemInfo("HouyiPasvMultiArrow", "", 26, "被动技能多重射击：例如Houyi");
+        public static readonly Bright.Config.EditorEnumItemInfo HouyiMixedMultiScatter = new Bright.Config.EditorEnumItemInfo("HouyiMixedMultiScatter", "", 27, "混合多重射击与散射：例如Houyi");
 
         private static readonly System.Collections.Generic.List<Bright.Config.EditorEnumItemInfo> __items = new System.Collections.Generic.List<Bright.Config.EditorEnumItemInfo>
         {
             None,
+            MoveAttack,
             HPCure,
-            ModifySkill,
+            Knockup_Single,
+            Knockup_Group,
+            Silense_Single,
+            Silense_Group,
+            Stun_Single,
+            Stun_Group,
+            Stun_Single_DynamicTime,
             MoveSpeed_Single,
+            MoveSpeed_DynamicGroup,
+            MoveSpeed_StaticGroup,
+            Hook_Single,
+            Hook_Group,
+            Damage_DynamicGroup,
+            Damage_StaticGroup,
+            ModifySkill,
             ArthurMark,
-            Silense,
             TargetFlashMove,
             DirectionFlashMove,
             ExecuteDamage,
-            Knockup_Group,
-            Stun_Single_DynamicTime,
             HouyiActiveSkillModify,
             Scatter,
             HouyiPasvAttackSpeed,
             HouyiPasvSkillModify,
             HouyiPasvMultiArrow,
             HouyiMixedMultiScatter,
-            MoveSpeed_DynamicGroup,
-            MoveSpeed_StaticGroup,
-            Damage_DynamicGroup,
-            Damage_StaticGroup,
-            MoveAttack,
         };
 
         public static System.Collections.Generic.List<Bright.Config.EditorEnumItemInfo> GetItems() => __items;

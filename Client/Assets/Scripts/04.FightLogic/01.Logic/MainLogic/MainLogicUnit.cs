@@ -119,6 +119,7 @@ public enum UnitTypeEnum
     Hero,
     Soldier,
     Tower,
+    Crystal,
 }
 
 public enum TeamEnum

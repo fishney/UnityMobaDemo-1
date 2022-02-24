@@ -5,10 +5,12 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using System;
 using Bright.Serialization;
 using System.Collections.Generic;
 using SimpleJSON;
-
+using Sirenix.OdinInspector;
 
 
 namespace editor.cfg
@@ -17,6 +19,7 @@ namespace editor.cfg
 /// <summary>
 /// 碰撞关系配置
 /// </summary>
+[Serializable]
 public sealed partial class TargetCfg :  Bright.Config.EditorBeanBase 
 {
     public TargetCfg()
@@ -103,24 +106,25 @@ public sealed partial class TargetCfg :  Bright.Config.EditorBeanBase
         _obj.SaveJson((SimpleJSON.JSONObject)_json);
     }
 
-    public string targetTeam { get; set; }
-
-    public string selectRule { get; set; }
-
+    [ShowInInspector][ValueDropdown("TargetTeamEnum_List")]public string targetTeam { get; set; }
+    private static System.Collections.IEnumerable TargetTeamEnum_List = JsonEnumHelper.TargetTeamEnum_List;
+    [ShowInInspector][ValueDropdown("SelectRule_List")]public string selectRule { get; set; }
+    private static System.Collections.IEnumerable SelectRule_List = JsonEnumHelper.SelectRuleEnum_List;
     /// <summary>
     /// 可以是多类目标：英雄、小兵、塔
     /// </summary>
-    public string[] targetTypeArr { get; set; }
-
+    [ShowInInspector][ValueDropdown("UnitTypeEnum_List")]public string[] targetTypeArr { get; set; }
+    private static System.Collections.IEnumerable UnitTypeEnum_List = JsonEnumHelper.UnitTypeEnum_List;
+    
     /// <summary>
     /// 查找目标范围距离
     /// </summary>
-    public float selectRange { get; set; }
+    [ShowInInspector]public float selectRange { get; set; }
 
     /// <summary>
     /// 移动攻击搜索距离 m
     /// </summary>
-    public float searchDis { get; set; }
+    [ShowInInspector]public float searchDis { get; set; }
 
 }
 }

@@ -34,20 +34,45 @@ public class LogicUnitData
    public UnitCfg unitCfg;
 }
 
-public class UnitCfg
+public class UnitCfg : UnitInfoCfg
+{
+   // public int unitId;
+   // public string unitName;//单位角色名
+   // public string resName;//资源
+   public PEInt hitHeight;// 被子弹命中的高度
+   
+   // // 核心属性
+   // public int hp;
+   // public int def;
+   // public int moveSpeed;
+   
+   // 碰撞体
+   public ColliderConfig colliCfg;
+   
+   // // 技能Id数组
+   // /// <summary>
+   // /// 被动技能buff
+   // /// </summary>
+   // public int[] pasvBuff;
+   // public int[] skillArr;
+}
+
+public class UnitInfoCfg
 {
    public int unitId;
    public string unitName;//单位角色名
    public string resName;//资源
-   public PEInt hitHeight;// 被子弹命中的高度
+   // public PEInt hitHeight;// 被子弹命中的高度
    
    // 核心属性
    public int hp;
    public int def;
    public int moveSpeed;
+
+   public UnitTypeEnum colliderType;
    
    // 碰撞体
-   public ColliderConfig colliCfg;
+   // public ColliderConfig colliCfg;
    
    // 技能Id数组
    /// <summary>
@@ -56,6 +81,7 @@ public class UnitCfg
    public int[] pasvBuff;
    public int[] skillArr;
 }
+
 
 #endregion
 

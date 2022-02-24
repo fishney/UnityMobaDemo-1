@@ -8,11 +8,14 @@
 
 namespace editor.cfg
 {
+    /// <summary>
+    /// 作用目标队伍
+    /// </summary>
     public static partial class TargetTeamEnum
     {
-        public static readonly Bright.Config.EditorEnumItemInfo Dynamic = new Bright.Config.EditorEnumItemInfo("Dynamic", "", 0, "");
-        public static readonly Bright.Config.EditorEnumItemInfo Friend = new Bright.Config.EditorEnumItemInfo("Friend", "", 1, "");
-        public static readonly Bright.Config.EditorEnumItemInfo Enemy = new Bright.Config.EditorEnumItemInfo("Enemy", "", 2, "");
+        public static readonly Bright.Config.EditorEnumItemInfo Dynamic = new Bright.Config.EditorEnumItemInfo("Dynamic", "", 0, "动态");
+        public static readonly Bright.Config.EditorEnumItemInfo Friend = new Bright.Config.EditorEnumItemInfo("Friend", "", 1, "友军");
+        public static readonly Bright.Config.EditorEnumItemInfo Enemy = new Bright.Config.EditorEnumItemInfo("Enemy", "", 2, "敌军");
 
         private static readonly System.Collections.Generic.List<Bright.Config.EditorEnumItemInfo> __items = new System.Collections.Generic.List<Bright.Config.EditorEnumItemInfo>
         {

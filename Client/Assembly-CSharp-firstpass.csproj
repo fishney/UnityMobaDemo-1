@@ -55,20 +55,20 @@
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Net\Codecs\IProtocolAllocator.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Serialization\BeanBase.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Core\Threading\AtomicLong.cs" />
+     <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Editor\EditorBeanBase.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Net\Codecs\UnknownProtocolException.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Core\Common\NotNullInitialization.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Net\Codecs\Protocol.cs" />
+     <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Editor\EditorText.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Serialization\FieldTag.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Serialization\ITypeId.cs" />
+     <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Editor\EditorEnumItemInfo.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Config\BeanBase.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Serialization\ISerializable.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Serialization\EUnmarshalError.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\SimpleJSON\SimpleJSONBinary.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\SimpleJSON\SimpleJSONUnity.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\SimpleJSON\SimpleJSONDotNetTypes.cs" />
-     <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Editor\EditorBeanBase.cs" />
-     <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Editor\EditorText.cs" />
-     <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Editor\EditorEnumItemInfo.cs" />
      <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.xml" />
      <None Include="Assets\Plugins\Libs\LubanLib\SimpleJSON\Changelog.txt" />
      <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.xml" />
@@ -78,31 +78,31 @@
      <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.xml" />
      <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.xml" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -294,58 +294,58 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
  </Reference>
  <Reference Include="PEUtils">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/MyLibrary/Others/PEUtils.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/MyLibrary/Others/PEUtils.dll</HintPath>
  </Reference>
  <Reference Include="PEMath">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEMath.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEMath.dll</HintPath>
  </Reference>
  <Reference Include="PEPhysx">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEPhysx.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEPhysx.dll</HintPath>
  </Reference>
  <Reference Include="CodingK_Session">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/CodingK_Session.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/CodingK_Session.dll</HintPath>
  </Reference>
  <Reference Include="HOKProtocol">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/HOKProtocol.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/HOKProtocol.dll</HintPath>
  </Reference>
  <Reference Include="Kcp">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/Kcp.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/Kcp.dll</HintPath>
  </Reference>
  <Reference Include="System.Buffers">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Buffers.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Buffers.dll</HintPath>
  </Reference>
  <Reference Include="System.Collections.Immutable">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Collections.Immutable.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Collections.Immutable.dll</HintPath>
  </Reference>
  <Reference Include="System.Memory">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Memory.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Memory.dll</HintPath>
  </Reference>
  <Reference Include="System.Numerics.Vectors">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Numerics.Vectors.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Numerics.Vectors.dll</HintPath>
  </Reference>
  <Reference Include="System.Runtime.CompilerServices.Unsafe">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
  </Reference>
  <Reference Include="System.Threading.Tasks.Extensions">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Threading.Tasks.Extensions.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Threading.Tasks.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.OdinInspector.Attributes">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.OdinInspector.Editor">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Serialization.Config">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Serialization">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Utilities">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Utilities.Editor">
- <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+ <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

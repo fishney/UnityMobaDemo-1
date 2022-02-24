@@ -8,17 +8,22 @@
 
 namespace editor.cfg
 {
+    /// <summary>
+    /// 单位类型
+    /// </summary>
     public static partial class UnitTypeEnum
     {
-        public static readonly Bright.Config.EditorEnumItemInfo Hero = new Bright.Config.EditorEnumItemInfo("Hero", "", 0, "");
-        public static readonly Bright.Config.EditorEnumItemInfo Soldier = new Bright.Config.EditorEnumItemInfo("Soldier", "", 1, "");
-        public static readonly Bright.Config.EditorEnumItemInfo Tower = new Bright.Config.EditorEnumItemInfo("Tower", "", 2, "");
+        public static readonly Bright.Config.EditorEnumItemInfo Hero = new Bright.Config.EditorEnumItemInfo("Hero", "", 0, "英雄");
+        public static readonly Bright.Config.EditorEnumItemInfo Soldier = new Bright.Config.EditorEnumItemInfo("Soldier", "", 1, "小兵");
+        public static readonly Bright.Config.EditorEnumItemInfo Tower = new Bright.Config.EditorEnumItemInfo("Tower", "", 2, "防御塔");
+        public static readonly Bright.Config.EditorEnumItemInfo Crystal = new Bright.Config.EditorEnumItemInfo("Crystal", "", 3, "水晶");
 
         private static readonly System.Collections.Generic.List<Bright.Config.EditorEnumItemInfo> __items = new System.Collections.Generic.List<Bright.Config.EditorEnumItemInfo>
         {
             Hero,
             Soldier,
             Tower,
+            Crystal,
         };
 
         public static System.Collections.Generic.List<Bright.Config.EditorEnumItemInfo> GetItems() => __items;

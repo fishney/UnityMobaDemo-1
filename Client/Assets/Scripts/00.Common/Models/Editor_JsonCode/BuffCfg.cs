@@ -11,14 +11,12 @@ using Bright.Serialization;
 using System.Collections.Generic;
 using SimpleJSON;
 using Sirenix.OdinInspector;
-using UnityEngine.UI;
 
 
 namespace editor.cfg
 {
-    
 [Serializable]
-public sealed partial class BuffCfg :  Bright.Config.EditorBeanBase 
+public partial class BuffCfg :  Bright.Config.EditorBeanBase 
 {
     public BuffCfg()
     {
@@ -26,7 +24,6 @@ public sealed partial class BuffCfg :  Bright.Config.EditorBeanBase
             buffType = "None";
             attacher = "None";
             staticPosType = "None";
-            impacter = new TargetCfg();
             buffAudio = "";
             buffEffect = "";
             hitTickAudio = "";
@@ -151,9 +148,9 @@ public sealed partial class BuffCfg :  Bright.Config.EditorBeanBase
         {
             _json["staticPosType"] = new JSONString(staticPosType);
         }
-        {
 
-            if (impacter == null) { throw new System.ArgumentNullException(); }
+        if (impacter != null)
+        {
             { var __bjson = new JSONObject();  TargetCfg.SaveJsonTargetCfg(impacter, __bjson); _json["impacter"] = __bjson; }
         }
         {
@@ -194,45 +191,47 @@ public sealed partial class BuffCfg :  Bright.Config.EditorBeanBase
         _obj.SaveJson((SimpleJSON.JSONObject)_json);
     }
 
+    [ShowInInspector, VerticalGroup("基础信息")]public int buffId { get; set; }
     
-    [ShowInInspector]public int buffId { get; set; }
-    
-    [ShowInInspector]public string buffName { get; set; }
+    [ShowInInspector, VerticalGroup("基础信息")]public string buffName { get; set; }
 
     /// <summary>
     /// buff类型，用来创建不同类型的buff
     /// </summary>
-    [ShowInInspector]public string buffType { get; set; }
-
+    [ShowInInspector, VerticalGroup("类型")][ValueDropdown("BuffTypeEnum_List", DropdownWidth = 250)]public string buffType { get; set; }
+    private static System.Collections.IEnumerable BuffTypeEnum_List = JsonEnumHelper.BuffTypeEnum_List;
+    
     /// <summary>
     /// buff附着目标
     /// </summary>
-    [ShowInInspector]public string attacher { get; set; }
+    [ShowInInspector, VerticalGroup("类型")][ValueDropdown("AttachTypeEnum_List", DropdownWidth = 450)]public string attacher { get; set; }
+    private static System.Collections.IEnumerable AttachTypeEnum_List = JsonEnumHelper.AttachTypeEnum_List;
 
-    [ShowInInspector]public string staticPosType { get; set; }
+    [ShowInInspector, VerticalGroup("类型")][ValueDropdown("StaticPosTypeEnum_List", DropdownWidth = 250)]public string staticPosType { get; set; }
+    private static System.Collections.IEnumerable StaticPosTypeEnum_List = JsonEnumHelper.StaticPosTypeEnum_List;
 
     /// <summary>
     /// buff作用目标，如果为null默认影响附着对象
     /// </summary>
     [ShowInInspector]public TargetCfg impacter { get; set; }
 
-    [ShowInInspector]public int buffDelay { get; set; }
+    [ShowInInspector, VerticalGroup("时长")]public int buffDelay { get; set; }
 
     /// <summary>
     /// buff效果触发频率(比如持续1秒1次)，如果为0就只调用Start，LogicTick不会调用到Tick
     /// </summary>
-    [ShowInInspector]public int buffInterval { get; set; }
+    [ShowInInspector, VerticalGroup("时长")]public int buffInterval { get; set; }
 
     /// <summary>
     /// buff持续时间（不包含delay）0：生效1次，-1：永久生效
     /// </summary>
-    [ShowInInspector]public int buffDuration { get; set; }
+    [ShowInInspector, VerticalGroup("时长")]public int buffDuration { get; set; }
 
-    [ShowInInspector]public string buffAudio { get; set; }
+    [ShowInInspector, VerticalGroup("资源")]public string buffAudio { get; set; }
 
-    [ShowInInspector]public string buffEffect { get; set; }
+    [ShowInInspector, VerticalGroup("资源")]public string buffEffect { get; set; }
 
-    [ShowInInspector]public string hitTickAudio { get; set; }
+    [ShowInInspector, VerticalGroup("资源")]public string hitTickAudio { get; set; }
 
 }
 }

@@ -8,12 +8,15 @@
 
 namespace editor.cfg
 {
+    /// <summary>
+    /// 子弹寻找目标模式
+    /// </summary>
     public static partial class BulletTypeEnum
     {
         public static readonly Bright.Config.EditorEnumItemInfo UIDirection = new Bright.Config.EditorEnumItemInfo("UIDirection", "", 0, "ui指定方向");
         public static readonly Bright.Config.EditorEnumItemInfo UIPosition = new Bright.Config.EditorEnumItemInfo("UIPosition", "", 1, "ui指定位置");
         public static readonly Bright.Config.EditorEnumItemInfo SkillTarget = new Bright.Config.EditorEnumItemInfo("SkillTarget", "", 2, "当前技能目标");
-        public static readonly Bright.Config.EditorEnumItemInfo BuffSearch = new Bright.Config.EditorEnumItemInfo("BuffSearch", "", 3, "");
+        public static readonly Bright.Config.EditorEnumItemInfo BuffSearch = new Bright.Config.EditorEnumItemInfo("BuffSearch", "", 3, "根据Buff计算");
 
         private static readonly System.Collections.Generic.List<Bright.Config.EditorEnumItemInfo> __items = new System.Collections.Generic.List<Bright.Config.EditorEnumItemInfo>
         {
