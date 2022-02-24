@@ -51,6 +51,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\02.Systems\LoginSys.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\HouyiMixedMultiScatterBuffCfg.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\BagItem.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\ItemMapIcon.cs" />
      <Compile Include="Assets\Scripts\00.Common\Effects\EffectRotate.cs" />
@@ -61,15 +62,22 @@
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiPasvAttackSpeedBuff.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\00.Common\RandomUtils.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiScatterArrowBuff.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\DamageBuffCfg_DynamicGroup.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\Hero.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\HouyiScatterSkillModifyBuffCfg.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\PlayWindow.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\WindowBase.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\HPCureBuffCfg.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMultipleSkillModifyBuff.cs" />
      <Compile Include="Assets\Scripts\00.Common\Models\Gen_Cfg\Datas\TbItemEffectCfg.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\HouyiScatterArrowBuffCfg.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\HouyiMultipleSkillModifyBuffCfg.cs" />
      <Compile Include="Assets\Scripts\02.Systems\GMSystem.cs" />
      <Compile Include="Assets\Scripts\00.Common\CodingK_Expansion.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\Configs\ResBuffConfigs.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Bullet\DirectionBullet.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\MoveSpeedBuffCfg.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\ArthurMarkBuffCfg.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\MatchWindow.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\HPWindow.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\Configs\ResSkillConfigs.cs" />
@@ -85,8 +93,10 @@
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\MainLogicUnit.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\02.View\HeroView.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\LogicUnit.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\ExecuteDamageBuffCfg.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\MiniMapWindow.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SKill\Skill.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\HouyiPasvAttackSpeedBuffCfg.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\LoginWindow.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\GroupBuff\MoveSpeedBuff_DynamicGroup.cs" />
      <Compile Include="Assets\MyLibrary\SingletonLibrary\Scripts\Singleton.cs" />
@@ -98,6 +108,7 @@
      <Compile Include="Assets\Scripts\00.Common\Models\Gen_Cfg\Datas\ItemEffectCfg.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\GroupBuff\DamageBuff_StaticGroup.cs" />
      <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\TargetCfg.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\DamageBuffCfg_StaticGroup.cs" />
      <Compile Include="Assets\Scripts\01.Services\ClientSession.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\02.View\BulletView.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\ArthurMarkBuff.cs" />
@@ -117,11 +128,13 @@
      <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\BuffTypeEnum.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\02.View\TowerView.cs" />
      <Compile Include="Assets\Scripts\00.Common\Constants.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\CommonModifySkillBuffCfg.cs" />
      <Compile Include="Assets\Scripts\00.Common\GameRoot.cs" />
      <Compile Include="Assets\Scripts\00.Common\Models\ItemInfo.cs" />
      <Compile Include="Assets\Scripts\99.Ex\PEListener.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\SelectWindow.cs" />
      <Compile Include="Assets\Scripts\02.Systems\SystemBase.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\HouyiMultipleArrowBuffCfg.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\Configs\ResCfgs.cs" />
      <Compile Include="Assets\Scripts\00.Common\Models\Gen_Cfg\Datas\TbItemCfg.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\MoveSpeedBuff_Single.cs" />
@@ -131,6 +144,8 @@
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\SubLogicUnit.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\Configs\BuffCfg.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\00.Common\MapRoot.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\StunBuffCfg_DynamicTime.cs" />
+     <Compile Include="Assets\Scripts\99.Ex\EditorHelper\JsonEnumHelper.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\SkillWindow.cs" />
      <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\TargetTeamEnum.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\GroupBuff\DamageBuff_DynamicGroup.cs" />
@@ -151,6 +166,7 @@
      <Compile Include="Assets\Scripts\04.FightLogic\Configs\BulletCfg.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\Configs\TargetCfg.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMultipleArrowBuff.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\UnitInfoCfg.cs" />
      <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\BulletTypeEnum.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\GroupBuff\MoveSpeedBuff_StaticGroup.cs" />
      <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\BuffCfg.cs" />
@@ -159,55 +175,39 @@
      <Compile Include="Assets\Scripts\00.Common\GameRootResources.cs" />
      <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\UnitTypeEnum.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\MainLogic\MainLogicMove.cs" />
+     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\TargetFlashMoveBuffCfg.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\02.View\SoldierView.cs" />
      <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\SelectRuleEnum.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SKill\CalcRule.cs" />
      <Compile Include="Assets\Scripts\03.UIWindows\ItemHP.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\SilenseBuff_Single.cs" />
      <Compile Include="Assets\Scripts\04.FightLogic\01.Logic\SubLogic\Buff\HouyiMixedMultiScatterBuff.cs" />
-     <Compile Include="Assets\Scripts\99.Ex\EditorHelper\JsonEnumHelper.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\UnitInfoCfg.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\HouyiMixedMultiScatterBuffCfg.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\DamageBuffCfg_DynamicGroup.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\HouyiScatterSkillModifyBuffCfg.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\HPCureBuffCfg.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\HouyiScatterArrowBuffCfg.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\HouyiMultipleSkillModifyBuffCfg.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\MoveSpeedBuffCfg.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\ArthurMarkBuffCfg.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\ExecuteDamageBuffCfg.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\HouyiPasvAttackSpeedBuffCfg.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\DamageBuffCfg_StaticGroup.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\CommonModifySkillBuffCfg.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\HouyiMultipleArrowBuffCfg.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\StunBuffCfg_DynamicTime.cs" />
-     <Compile Include="Assets\Scripts\00.Common\Models\Editor_JsonCode\TargetFlashMoveBuffCfg.cs" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -399,58 +399,58 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
  </Reference>
  <Reference Include="PEUtils">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/MyLibrary/Others/PEUtils.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/MyLibrary/Others/PEUtils.dll</HintPath>
  </Reference>
  <Reference Include="PEMath">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEMath.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEMath.dll</HintPath>
  </Reference>
  <Reference Include="PEPhysx">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEPhysx.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Libs/PEPhysx.dll</HintPath>
  </Reference>
  <Reference Include="CodingK_Session">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/CodingK_Session.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/CodingK_Session.dll</HintPath>
  </Reference>
  <Reference Include="HOKProtocol">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/HOKProtocol.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/HOKProtocol.dll</HintPath>
  </Reference>
  <Reference Include="Kcp">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/Kcp.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/Kcp.dll</HintPath>
  </Reference>
  <Reference Include="System.Buffers">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Buffers.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Buffers.dll</HintPath>
  </Reference>
  <Reference Include="System.Collections.Immutable">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Collections.Immutable.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Collections.Immutable.dll</HintPath>
  </Reference>
  <Reference Include="System.Memory">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Memory.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Memory.dll</HintPath>
  </Reference>
  <Reference Include="System.Numerics.Vectors">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Numerics.Vectors.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Numerics.Vectors.dll</HintPath>
  </Reference>
  <Reference Include="System.Runtime.CompilerServices.Unsafe">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
  </Reference>
  <Reference Include="System.Threading.Tasks.Extensions">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Threading.Tasks.Extensions.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Protocol/netstandard2.0/System.Threading.Tasks.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.OdinInspector.Attributes">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.OdinInspector.Editor">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Serialization.Config">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Serialization">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Utilities">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Utilities.Editor">
- <HintPath>E:/My Github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+ <HintPath>D:/github/UnityMobaDemo/Client/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

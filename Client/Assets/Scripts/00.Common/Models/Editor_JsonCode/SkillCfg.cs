@@ -5,6 +5,8 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using System;
 using Bright.Serialization;
 using System.Collections.Generic;
 using SimpleJSON;
@@ -13,7 +15,7 @@ using SimpleJSON;
 
 namespace editor.cfg
 {
-
+[Serializable]
 public sealed partial class SkillCfg :  Bright.Config.EditorBeanBase 
 {
     public SkillCfg()

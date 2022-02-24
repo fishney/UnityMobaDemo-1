@@ -9,6 +9,7 @@
 using System;
 using Bright.Serialization;
 using System.Collections.Generic;
+using System.ComponentModel;
 using SimpleJSON;
 using Sirenix.OdinInspector;
 
@@ -213,7 +214,7 @@ public partial class BuffCfg :  Bright.Config.EditorBeanBase
     /// <summary>
     /// buff作用目标，如果为null默认影响附着对象
     /// </summary>
-    [ShowInInspector]public TargetCfg impacter { get; set; }
+    [ShowInInspector, TableColumnWidth(200), VerticalGroup("buff作用目标")]public TargetCfg impacter { get; set; }
 
     [ShowInInspector, VerticalGroup("时长")]public int buffDelay { get; set; }
 

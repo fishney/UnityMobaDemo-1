@@ -37,26 +37,21 @@ public class SkillEditorWindow: OdinMenuEditorWindow
         tree.Add("Buff/MoveSpeedBuffCfg", new BuffCfgEditor<editor.cfg.MoveSpeedBuffCfg>());
         tree.Add("Buff/StunBuffCfg_DynamicTime", new BuffCfgEditor<editor.cfg.StunBuffCfg_DynamicTime>());
         tree.Add("Buff/TargetFlashMoveBuffCfg", new BuffCfgEditor<editor.cfg.TargetFlashMoveBuffCfg>());
+        tree.Add("Skill",new SkillCfgEditor());
 
         return tree;
     }
     
-    private class BuffCfgEditor
+    private class SkillCfgEditor
     {
         
-        [VerticalGroup("数据"),TableList(ShowIndexLabels = true)]
-        public List<editor.cfg.ArthurMarkBuffCfg> cfgs;
-        public BuffCfgEditor()
+        [VerticalGroup("数据"),TableList(ShowIndexLabels = true, HideToolbar = true, AlwaysExpanded = true)]
+        public List<editor.cfg.SkillCfg> cfgs;
+        public SkillCfgEditor()
         {
-            cfgs = new List<editor.cfg.ArthurMarkBuffCfg>();
+            cfgs = new List<editor.cfg.SkillCfg>();
         }
         
-        [Button("新建")]
-        public void Create()
-        {
-            cfgs.Add(new editor.cfg.ArthurMarkBuffCfg());
-        }
-
         [Button("保存数据")]
         public void Save()
         {
@@ -68,29 +63,35 @@ public class SkillEditorWindow: OdinMenuEditorWindow
             
             foreach (var cfg in cfgs)
             {
-                cfg.SaveJsonFile($"{Application.dataPath}/../LubanGens/EditorJsonData/BuffCfg/{cfg.GetType()}/buffId_{cfg.buffId}.json");
+                cfg.SaveJsonFile($"{Application.dataPath}/../LubanGens/EditorJsonData/SkillCfg/skillId_{cfg.skillId}.json");
             }
         }
         
-        [Button("加载数据")]
+        [Button("加载数据"),HorizontalGroup("A")]
         public void Load()
         {
-            // string[] files = Directory.GetFiles($"{Application.dataPath}/../LubanGens/EditorJsonData/BuffCfg", "*.json");
-            // if (files?.Length == 0)
-            // {
-            //     // TODO 错误弹窗
-            //     return;
-            // }
-            //
-            // cfgs.Clear();
-            // foreach (var file in files)
-            // {
-            //     var cfg = new editor.cfg.BuffCfg();
-            //     cfg.LoadJsonFile(file);
-            //     cfgs.Add(cfg);
-            // }
-            //
-            // cfgs = cfgs.OrderBy(o => o.buffId).ToList();
+            string[] files = Directory.GetFiles($"{Application.dataPath}/../LubanGens/EditorJsonData/SkillCfg", "*.json");
+            if (files?.Length == 0)
+            {
+                // TODO 错误弹窗
+                return;
+            }
+            
+            cfgs.Clear();
+            foreach (var file in files)
+            {
+                var cfg = new editor.cfg.SkillCfg();
+                cfg.LoadJsonFile(file);
+                cfgs.Add(cfg);
+            }
+            
+            cfgs = cfgs.OrderBy(o => o.skillId).ToList();
+        }
+        
+        [Button("新建"),HorizontalGroup("A"),GUIColor(1,0,1)]
+        public void Create()
+        {
+            cfgs.Add(new editor.cfg.SkillCfg());
         }
     }
     
@@ -102,12 +103,6 @@ public class SkillEditorWindow: OdinMenuEditorWindow
         public BuffCfgEditor()
         {
             cfgs = new List<T>();
-        }
-        
-        [Button("新建")]
-        public void Create()
-        {
-            cfgs.Add(new T());
         }
 
         [Button("保存数据")]
@@ -125,7 +120,7 @@ public class SkillEditorWindow: OdinMenuEditorWindow
             }
         }
         
-        [Button("加载数据")]
+        [Button("加载数据"),HorizontalGroup("A")]
         public void Load()
         {
             string[] files = Directory.GetFiles($"{Application.dataPath}/../LubanGens/EditorJsonData/BuffCfg/{typeof(T).Name}", "*.json");
@@ -144,6 +139,12 @@ public class SkillEditorWindow: OdinMenuEditorWindow
             }
             
             cfgs = cfgs.OrderBy(o => o.buffId).ToList();
+        }
+        
+        [Button("新建"),HorizontalGroup("A")]
+        public void Create()
+        {
+            cfgs.Add(new T());
         }
     }
 }
