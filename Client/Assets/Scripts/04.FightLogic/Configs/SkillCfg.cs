@@ -1,5 +1,9 @@
 
+using System;
+using XNode;
+
 /// 技能配置
+[Serializable]
 public class SkillCfg
 {
     public int skillId;
@@ -26,7 +30,7 @@ public class SkillCfg
     /// 基础伤害数值
     public int damage;
     /// 附加Buff
-    public int[] buffIdArr;
+    [Node.OutputAttribute(dynamicPortList = true)]public int[] buffIdArr;
     
     /// 是否为普通攻击
     public bool isNormalAttack;

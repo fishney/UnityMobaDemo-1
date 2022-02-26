@@ -1,7 +1,11 @@
+using System;
+using XNode;
+
+[Serializable]
 public class BuffCfg
 {
     #region 属性
-
+    [Node.InputAttribute(Node.ShowBackingValue.Always)]
     public int buffId;
     public string buffName;
     

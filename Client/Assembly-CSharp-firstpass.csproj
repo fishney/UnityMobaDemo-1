@@ -69,6 +69,11 @@
      <Compile Include="Assets\Plugins\Libs\LubanLib\SimpleJSON\SimpleJSONBinary.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\SimpleJSON\SimpleJSONUnity.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\SimpleJSON\SimpleJSONDotNetTypes.cs" />
+     <Compile Include="Assets\Plugins\xNode\Scripts\NodeDataCache.cs" />
+     <Compile Include="Assets\Plugins\xNode\Scripts\Node.cs" />
+     <Compile Include="Assets\Plugins\xNode\Scripts\NodePort.cs" />
+     <Compile Include="Assets\Plugins\xNode\Scripts\Attributes\NodeEnum.cs" />
+     <Compile Include="Assets\Plugins\xNode\Scripts\NodeGraph.cs" />
      <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.xml" />
      <None Include="Assets\Plugins\Libs\LubanLib\SimpleJSON\Changelog.txt" />
      <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.xml" />

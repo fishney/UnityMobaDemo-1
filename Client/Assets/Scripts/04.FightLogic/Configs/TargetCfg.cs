@@ -1,9 +1,11 @@
 
 
+using System;
+
 /// <summary>
 /// 目标配置
 /// </summary>
-public class TargetCfg
+[Serializable]public class TargetCfg
 {
     public TargetTeamEnum targetTeam;
     public SelectRuleEnum selectRule;

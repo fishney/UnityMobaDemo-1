@@ -50,7 +50,20 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Editor\SkillEditorWindow.cs" />
+     <Compile Include="Assets\Editor\Odin_Editor\SkillEditorWindow.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Graphs\SkillGraph.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\SkillNode.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Editor\SkillGraphEditor.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\BuffNode.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Helper\Empty.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Helper\Ex.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\BulletNode.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Editor\OdinHelper_Editor.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Graphs\BuffGraph.cs" />
+     <Compile Include="Assets\Editor\Luban_NodeHelper.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\MoveSpeedBuffNode.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Editor\BuffNodeEditor.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Editor\SkillNodeEditor.cs" />
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>D:/github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
@@ -690,6 +703,10 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{8441f412-22a4-275f-22e6-507969043f15}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
+      <Project>{6c069222-a403-3357-4636-43653c20a180}</Project>
+      <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj">
       <Project>{68bd7c1e-3065-7e76-511a-7f84c9c91529}</Project>

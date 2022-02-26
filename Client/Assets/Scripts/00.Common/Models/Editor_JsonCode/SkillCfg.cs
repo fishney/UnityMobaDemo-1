@@ -10,7 +10,7 @@ using System;
 using Bright.Serialization;
 using System.Collections.Generic;
 using SimpleJSON;
-
+using Sirenix.OdinInspector;
 
 
 namespace editor.cfg
@@ -230,77 +230,77 @@ public sealed partial class SkillCfg :  Bright.Config.EditorBeanBase
         _obj.SaveJson((SimpleJSON.JSONObject)_json);
     }
 
-    public int skillId { get; set; }
+    [ShowInInspector, VerticalGroup("基础信息")]public int skillId { get; set; }
 
     /// <summary>
     /// 技能图标
     /// </summary>
-    public string iconName { get; set; }
+    [ShowInInspector, VerticalGroup("资源")]public string iconName { get; set; }
 
     /// <summary>
     /// 施法动画
     /// </summary>
-    public string aniName { get; set; }
+    [ShowInInspector, VerticalGroup("资源")]public string aniName { get; set; }
 
     /// <summary>
     /// 施法开始音效
     /// </summary>
-    public string audio_start { get; set; }
+    [ShowInInspector, VerticalGroup("资源")]public string audio_start { get; set; }
 
     /// <summary>
     /// 施法成功音效
     /// </summary>
-    public string audio_work { get; set; }
+    [ShowInInspector, VerticalGroup("资源")]public string audio_work { get; set; }
 
     /// <summary>
     /// 施法命中音效
     /// </summary>
-    public string audio_hit { get; set; }
+    [ShowInInspector, VerticalGroup("资源")]public string audio_hit { get; set; }
 
     /// <summary>
     /// CD时间 ms
     /// </summary>
-    public int cdTime { get; set; }
+    [ShowInInspector, VerticalGroup("属性")]public int cdTime { get; set; }
 
     /// <summary>
     /// 施法时间(前摇) ms
     /// </summary>
-    public int spellTime { get; set; }
+    [ShowInInspector, VerticalGroup("属性")]public int spellTime { get; set; }
 
     /// <summary>
     /// 技能全长时间(前摇+后摇) ms,后摇动作均可被移动中断，但技能总时间不能变短
     /// </summary>
-    public int skillTime { get; set; }
+    [ShowInInspector, VerticalGroup("属性")]public int skillTime { get; set; }
 
     /// <summary>
     /// 基础伤害数值
     /// </summary>
-    public int damage { get; set; }
+    [ShowInInspector, VerticalGroup("属性")]public int damage { get; set; }
 
     /// <summary>
     /// 附加Buff
     /// </summary>
-    public int[] buffIdArr { get; set; }
+    [ShowInInspector, VerticalGroup("buff")]public int[] buffIdArr { get; set; }
 
     /// <summary>
     /// 是否为普通攻击
     /// </summary>
-    public bool isNormalAttack { get; set; }
+    [ShowInInspector, VerticalGroup("属性")]public bool isNormalAttack { get; set; }
 
     /// <summary>
     /// 释放方式
     /// </summary>
-    public string releaseMode { get; set; }
+    [ShowInInspector, VerticalGroup("属性")]public string releaseMode { get; set; }
 
     /// <summary>
     /// 目标选择配置,null为非锁定弹道技能
     /// </summary>
-    public TargetCfg targetCfg { get; set; }
+    [ShowInInspector, TableColumnWidth(200), VerticalGroup("buff作用目标")]public TargetCfg targetCfg { get; set; }
 
     /// <summary>
     /// 弹道配置，无弹道就为null
     /// </summary>
-    public BulletCfg bulletCfg { get; set; }
+    [ShowInInspector, TableColumnWidth(200), VerticalGroup("飞弹")]public BulletCfg bulletCfg { get; set; }
 
 }
 }

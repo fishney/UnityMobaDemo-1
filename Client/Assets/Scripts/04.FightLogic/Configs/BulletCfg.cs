@@ -1,4 +1,6 @@
-public class BulletCfg {
+using System;
+
+[Serializable]public class BulletCfg {
     public BulletTypeEnum bulletType;
     public string bulletName;
     public string resPath;

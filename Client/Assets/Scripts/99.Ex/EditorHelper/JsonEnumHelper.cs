@@ -56,6 +56,10 @@ namespace editor.cfg
             }).ToList());
             UnitTypeEnum_List = unitTypeEnum_List;
         }
-        
+
+        // public static System.Collections.IEnumerable GetVal()
+        // {
+        //     return BuffTypeEnum_List.GetEnumerator()
+        // }
     }
 }
