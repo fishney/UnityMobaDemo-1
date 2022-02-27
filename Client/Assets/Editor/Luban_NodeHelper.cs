@@ -67,9 +67,21 @@ namespace Editor
             return null;
         }
 
-        public static BuffNode GetBuffNode(string name, string jsonFilePath)
+        public static void SaveBuffNode(this BuffNode bn)
         {
-            if (name == "MoveSpeedBuffCfg")
+            var buffType = bn.GetType().Name;
+            if (buffType == "MoveSpeedBuffNode")
+            {
+                var cfg = new editor.cfg.MoveSpeedBuffCfg();
+                cfg.InitDatas(bn);
+                cfg.amount = ((MoveSpeedBuffNode) bn).amount;
+                cfg.SaveJsonFile($"{Application.dataPath}/../LubanGens/EditorJsonData/BuffCfg/{cfg.GetType().Name}/buffId{cfg.buffId}.json");
+            }
+        }
+
+        public static BuffNode GetBuffNode(string buffType, string jsonFilePath)
+        {
+            if (buffType == "MoveSpeedBuffCfg")
             {
                 var cfg = new editor.cfg.MoveSpeedBuffCfg();
                 cfg.LoadJsonFile(jsonFilePath);
@@ -131,6 +143,22 @@ namespace Editor
             node.buffAudio = cfg.buffAudio;
             node.buffEffect = cfg.buffEffect;
             node.hitTickAudio = cfg.hitTickAudio;
+        }
+        
+        public static void InitDatas(this editor.cfg.BuffCfg cfg, BuffNode node)
+        {
+            cfg.buffId = node.BuffId;
+            cfg.buffName = node.buffName;
+            // cfg.buffType = node.buffType;
+            // cfg.attacher = node.attacher;
+            // cfg.staticPosType = node.staticPosType;
+            // cfg.impacter = node.impacter;
+            cfg.buffDelay = node.buffDelay;
+            cfg.buffInterval = node.buffInterval;
+            cfg.buffDuration = node.buffDuration;
+            cfg.buffAudio = node.buffAudio;
+            cfg.buffEffect = node.buffEffect;
+            cfg.hitTickAudio = node.hitTickAudio;
         }
     }
 }

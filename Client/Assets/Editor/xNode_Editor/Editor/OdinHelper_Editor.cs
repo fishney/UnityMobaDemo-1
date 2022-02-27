@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using Sirenix.OdinInspector.Editor;
 using UnityEngine;
 using XNodeEditor;
@@ -15,7 +16,7 @@ namespace Editor.xNode_Editor
                 target.nodes.Clear();
                 
                 // get path by targetObject.name
-                var rootsRaw = serializedObject.targetObject.name.Split('_').ToList();
+                var rootsRaw = serializedObject.targetObject.name.Split('.').ToList();
                 string[] roots = new string[rootsRaw.Count - 1];
                 for (int i = 1; i < rootsRaw.Count; i++)
                 {
@@ -58,7 +59,22 @@ namespace Editor.xNode_Editor
                 NodeEditorWindow.Open(target);
             }
             if (GUILayout.Button("保存技能", GUILayout.Height(40))) {
-                NodeEditorWindow.Open(serializedObject.targetObject as SkillGraph);
+                // get nodes
+                var graph = serializedObject.targetObject as SkillGraph;
+                foreach (var node in graph.nodes)
+                {
+                    if (node is SkillNode sn)
+                    {
+                        // TODO Mapping
+                        
+                        // TODO SaveJson
+                    }
+                    else if (node is BuffNode bn)
+                    {
+                        // TODO switch buff
+                        bn.SaveBuffNode();
+                    }
+                }
             }
             base.OnInspectorGUI();
         }
@@ -74,7 +90,7 @@ namespace Editor.xNode_Editor
                 target.nodes.Clear();
                 
                 // get path by targetObject.name
-                var rootsRaw = serializedObject.targetObject.name.Split('_').ToList();
+                var rootsRaw = serializedObject.targetObject.name.Split('.').ToList();
                 string[] roots = new string[rootsRaw.Count - 1];
                 for (int i = 1; i < rootsRaw.Count; i++)
                 {

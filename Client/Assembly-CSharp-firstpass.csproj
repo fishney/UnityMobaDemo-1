@@ -52,12 +52,15 @@
   <ItemGroup>
      <Compile Include="Assets\Plugins\Libs\LubanLib\SimpleJSON\SimpleJSON.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Net\Codecs\Rpc.cs" />
+     <Compile Include="Assets\Plugins\xNode\Scripts\NodeDataCache.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Net\Codecs\IProtocolAllocator.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Serialization\BeanBase.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Core\Threading\AtomicLong.cs" />
+     <Compile Include="Assets\Plugins\xNode\Scripts\Node.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Editor\EditorBeanBase.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Net\Codecs\UnknownProtocolException.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Core\Common\NotNullInitialization.cs" />
+     <Compile Include="Assets\Plugins\xNode\Scripts\NodePort.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Net\Codecs\Protocol.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Editor\EditorText.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\Bright.Serialization\FieldTag.cs" />
@@ -69,9 +72,6 @@
      <Compile Include="Assets\Plugins\Libs\LubanLib\SimpleJSON\SimpleJSONBinary.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\SimpleJSON\SimpleJSONUnity.cs" />
      <Compile Include="Assets\Plugins\Libs\LubanLib\SimpleJSON\SimpleJSONDotNetTypes.cs" />
-     <Compile Include="Assets\Plugins\xNode\Scripts\NodeDataCache.cs" />
-     <Compile Include="Assets\Plugins\xNode\Scripts\Node.cs" />
-     <Compile Include="Assets\Plugins\xNode\Scripts\NodePort.cs" />
      <Compile Include="Assets\Plugins\xNode\Scripts\Attributes\NodeEnum.cs" />
      <Compile Include="Assets\Plugins\xNode\Scripts\NodeGraph.cs" />
      <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.xml" />
