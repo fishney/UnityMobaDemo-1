@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using XNode;
@@ -43,7 +44,7 @@ namespace Editor.xNode_Editor
         /// 目标选择配置,null为非锁定弹道技能
         public TargetCfg targetCfg;
         /// 弹道配置，无弹道就为null
-        [Output()]public BulletCfg bulletCfg;
+        public BulletCfg bulletCfg;
 
         public override object GetValue(NodePort port)
         {
@@ -58,7 +59,7 @@ namespace Editor.xNode_Editor
             return null; // Replace this
         }
         
-        public override void OnCreateConnection(NodePort from, NodePort to) 
+        public override void OnCreateConnection(NodePort from, NodePort to)
         {
             if (from.ValueType == buffIdArr.GetType())
             {
@@ -66,14 +67,6 @@ namespace Editor.xNode_Editor
                 if (index >= 0)
                 {
                     buffIdArr[index] = (to.node as BuffNode).BuffId;
-                }
-            }
-            
-            if (from.ValueType == bulletCfg.GetType())
-            {
-                if (to.node.GetType() != typeof(BulletNode))
-                {
-                    from.ClearConnections();
                 }
             }
         }

@@ -1,6 +1,8 @@
 using System;
 
-[Serializable]public class BulletCfg {
+[Serializable]
+public class BulletCfg : ValStateView
+{
     public BulletTypeEnum bulletType;
     public string bulletName;
     public string resPath;

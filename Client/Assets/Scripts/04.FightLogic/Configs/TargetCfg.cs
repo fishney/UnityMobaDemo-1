@@ -5,8 +5,11 @@ using System;
 /// <summary>
 /// 目标配置
 /// </summary>
-[Serializable]public class TargetCfg
+[Serializable]
+public class TargetCfg : ValStateView
 {
+    
+    
     public TargetTeamEnum targetTeam;
     public SelectRuleEnum selectRule;
     /// 可以是多类目标：英雄、小兵、塔
@@ -18,8 +21,7 @@ using System;
     public float selectRange;
     /// 移动攻击搜索距离 m
     public float searchDis;
-
-
+    
     #endregion
 }
 
@@ -52,4 +54,18 @@ public enum TargetTeamEnum
     Dynamic,
     Friend,
     Enemy
+}
+
+/// <summary>
+/// View专用
+/// </summary>
+public enum ValState
+{
+   Null,
+   NotNull,
+}
+
+public class ValStateView
+{
+    public ValState ViewState = ValState.Null;
 }

@@ -10,9 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 250f4eee16fb4645afbb830f132cfe78, type: 3}
-  m_Name: Buff
+  m_Name: Graph_Skill_
   m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  graph: {fileID: 0}
   position: {x: 360, y: -424}
   ports:
     keys:
@@ -56,7 +65,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250f4eee16fb4645afbb830f132cfe78, type: 3}
   m_Name: Buff
   m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  graph: {fileID: 0}
   position: {x: 376, y: 72}
   ports:
     keys:
@@ -91,24 +109,6 @@ MonoBehaviour:
   buffAudio: 
   buffEffect: 
   hitTickAudio: 
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3104581d36e14ac692c8a14c12d6959c, type: 3}
-  m_Name: Graph_Skill_
-  m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1220052579910809067}
-  - {fileID: -6221713688182966379}
-  - {fileID: -8493360858130279794}
-  - {fileID: 6940543365106674230}
-  - {fileID: 8059552965985887604}
 --- !u!114 &1220052579910809067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +121,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250f4eee16fb4645afbb830f132cfe78, type: 3}
   m_Name: Buff
   m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  graph: {fileID: 0}
   position: {x: 328, y: 552}
   ports:
     keys:
@@ -168,13 +177,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9e7f0c8ef4499eb28352cd197ee433, type: 3}
   m_Name: Skill
   m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  graph: {fileID: 0}
   position: {x: -136, y: 408}
   ports:
     keys:
     - buffIdArr
     - buffIdArr 0
-    - bulletCfg
     values:
     - _fieldName: buffIdArr
       _node: {fileID: 6940543365106674230}
@@ -197,15 +214,6 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
-    - _fieldName: bulletCfg
-      _node: {fileID: 6940543365106674230}
-      _typeQualifiedName: BulletCfg, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
   skillId: 10002
   iconName: 
   aniName: 
@@ -254,14 +262,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9e7f0c8ef4499eb28352cd197ee433, type: 3}
   m_Name: Skill
   m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  graph: {fileID: 0}
   position: {x: 0, y: 0}
   ports:
     keys:
     - buffIdArr
     - buffIdArr 0
     - buffIdArr 1
-    - bulletCfg
     values:
     - _fieldName: buffIdArr
       _node: {fileID: 8059552965985887604}
@@ -293,15 +309,6 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
-    - _fieldName: bulletCfg
-      _node: {fileID: 8059552965985887604}
-      _typeQualifiedName: BulletCfg, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
   skillId: 10000
   iconName: 
   aniName: 

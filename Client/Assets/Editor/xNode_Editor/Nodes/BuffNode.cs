@@ -15,6 +15,7 @@ namespace Editor.xNode_Editor
         /// buff类型，用来创建不同类型的buff
         /// </summary>
         public BuffTypeEnum buffType;
+        
         /// <summary>
         /// buff附着目标
         /// </summary>

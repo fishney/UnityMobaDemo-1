@@ -1,4 +1,5 @@
 using NUnit.Framework.Internal;
+using UnityEngine;
 using XNodeEditor;
 
 namespace Editor.xNode_Editor
@@ -28,8 +29,8 @@ namespace Editor.xNode_Editor
                         }
                     }
                 }
-                np.GetOutputValue();
-                var test = np.fieldName;
+                // np.GetOutputValue();
+                // var test = np.fieldName;
             }
 
             
