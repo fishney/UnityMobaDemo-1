@@ -1,1 +1,0 @@
-﻿{"skillId":1,"iconName":"a","aniName":"a","audio_start":"a","audio_work":"a","audio_hit":"a","cdTime":233,"spellTime":233,"skillTime":233,"damage":233,"buffIdArr":[10222,10223],"isNormalAttack":true,"releaseMode":"None","targetCfg":{"targetTeam":"Dynamic","selectRule":"None","targetTypeArr":["Hero","Soldier"],"selectRange":22,"searchDis":0}}

@@ -29,11 +29,8 @@ namespace Editor.xNode_Editor
                         }
                     }
                 }
-                // np.GetOutputValue();
-                // var test = np.fieldName;
             }
-
-            
         }
+        
     }
 }

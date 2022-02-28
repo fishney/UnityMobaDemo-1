@@ -5,7 +5,7 @@ using XNode;
 
 namespace Editor.xNode_Editor
 {
-    [CreateAssetMenu(menuName = "New SkillGraph",fileName = "Graph.SkillCfg.skillId")]
+    [CreateAssetMenu(menuName = "Skill Editors/New SkillGraph",fileName = "Graph.SkillCfg.skillId")]
     public class SkillGraph : NodeGraph
     {
         

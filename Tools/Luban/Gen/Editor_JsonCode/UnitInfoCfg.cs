@@ -21,7 +21,7 @@ public sealed partial class UnitInfoCfg :  Bright.Config.EditorBeanBase
             unitName = "";
             resName = "";
             colliderType = "Hero";
-            pasvBuff = System.Array.Empty<int>();
+            pasvBuff = new System.Collections.Generic.List<int>();
             skillArr = System.Array.Empty<int>();
     }
 
@@ -87,7 +87,7 @@ public sealed partial class UnitInfoCfg :  Bright.Config.EditorBeanBase
             var _fieldJson = _json["pasvBuff"];
             if (_fieldJson != null)
             {
-                if(!_fieldJson.IsArray) { throw new SerializationException(); } int _n = _fieldJson.Count; pasvBuff = new int[_n]; int _index=0; foreach(SimpleJSON.JSONNode __e in _fieldJson.Children) { int __v;  if(!__e.IsNumber) { throw new SerializationException(); }  __v = __e;  pasvBuff[_index++] = __v; }  
+                if(!_fieldJson.IsArray) { throw new SerializationException(); } pasvBuff = new System.Collections.Generic.List<int>(); foreach(JSONNode __e in _fieldJson.Children) { int __v;  if(!__e.IsNumber) { throw new SerializationException(); }  __v = __e;  pasvBuff.Add(__v); }  
             }
         }
         
@@ -178,7 +178,7 @@ public sealed partial class UnitInfoCfg :  Bright.Config.EditorBeanBase
     /// <summary>
     /// 被动技能buff
     /// </summary>
-    public int[] pasvBuff { get; set; }
+    public System.Collections.Generic.List<int> pasvBuff { get; set; }
 
     public int[] skillArr { get; set; }
 

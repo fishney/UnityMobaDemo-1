@@ -7,10 +7,11 @@ using XNode;
 
 namespace Editor.xNode_Editor
 {
+    [NodeWidth(NodeHelper.SkillWidth)]
     public class SkillNode : Node
     {
         
-        public int skillId;
+        [Input(ShowBackingValue.Always)]public int skillId;
         /// 技能图标
         public string iconName;
         /// 施法动画

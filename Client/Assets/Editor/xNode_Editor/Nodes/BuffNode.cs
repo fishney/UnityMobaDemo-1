@@ -43,9 +43,6 @@ namespace Editor.xNode_Editor
 
         #endregion
 
-    
-
-
         #region 配置
 
         public string buffAudio;

@@ -13,39 +13,69 @@ namespace Editor
 {
     public static class LubanHelper
     {
+        #region Unit Node
 
-        public static bool SimpleLoadJson<T>(this T jsonInstance,string[] roots) where T : EditorBeanBase
+        public static UnitNode GetUnitNodeById(int unitId)
         {
-            if (roots?.Length < 1)
+            var findingFile = "unitId_" + unitId + ".json";
+            var findingPath = $"{Application.dataPath}/../LubanGens/EditorJsonData/UnitCfg/{findingFile}";
+            if (File.Exists(findingPath))
             {
-                return false;
-            }
-            StringBuilder pathBuilder = new StringBuilder();
-            pathBuilder.Append($"{Application.dataPath}/../LubanGens/EditorJsonData/");
-            
-            foreach (var root in roots)
-            {
-                pathBuilder.Append(root);
-                pathBuilder.Append("/");
-            }
-            pathBuilder.Remove(pathBuilder.Length - 1, 1);
-            pathBuilder.Append(".json");
-            var path = pathBuilder.ToString();
-            
-            if (File.Exists(path))
-            {
-                jsonInstance.LoadJsonFile(path);
+                var cfg = new editor.cfg.UnitInfoCfg();
+                cfg.LoadJsonFile(findingPath);
+                var node = new UnitNode();
+                node.InitData(cfg);
+                return node;
             }
             else
             {
-                Debug.LogWarning("cant find file in path:"+path);
-                return false;
+                Debug.LogWarning("cant find file in path:"+findingPath);
+                return null;
             }
-            
-            return true;
+        }
+        
+        public static void SaveUnitNode(this UnitNode node)
+        {
+            var cfg = new editor.cfg.UnitInfoCfg();
+            cfg.InitData(node);
+            cfg.SaveJsonFile($"{Application.dataPath}/../LubanGens/EditorJsonData/UnitCfg/unitId_{cfg.unitId}.json");
+            Debug.Log($"unitId_{cfg.unitId} 保存成功!");
         }
 
+        #endregion
+       
+        
+        #region Skill Node
 
+        public static SkillNode GetSkillNodeById(int skillId)
+        {
+            var findingFile = "skillId_" + skillId + ".json";
+            var findingPath = $"{Application.dataPath}/../LubanGens/EditorJsonData/SkillCfg/{findingFile}";
+            if (File.Exists(findingPath))
+            {
+                var cfg = new editor.cfg.SkillCfg();
+                cfg.LoadJsonFile(findingPath);
+                var node = new SkillNode();
+                node.InitData(cfg);
+                return node;
+            }
+            else
+            {
+                Debug.LogWarning("cant find file in path:"+findingPath);
+                return null;
+            }
+        }
+        
+        public static void SaveSkillNode(this SkillNode sn)
+        {
+            var cfg = new editor.cfg.SkillCfg();
+            cfg.InitData(sn);
+            cfg.SaveJsonFile($"{Application.dataPath}/../LubanGens/EditorJsonData/SkillCfg/skillId_{cfg.skillId}.json");
+            Debug.Log($"skillId_{cfg.skillId} 保存成功!");
+        }
+
+        #endregion
+        
         #region Buff Node
 
         public static BuffNode GetBuffNodeById(int buffId)
@@ -68,6 +98,9 @@ namespace Editor
             return null;
         }
 
+        /// <summary>
+        /// 添加新buff后需要添加case，TODO 改成反射
+        /// </summary>
         public static void SaveBuffNode(this BuffNode bn)
         {
             var buffType = bn.GetType().Name;
@@ -77,10 +110,14 @@ namespace Editor
                 cfg.InitData(bn);
                 // TODO 特殊属性
                 cfg.amount = ((MoveSpeedBuffNode) bn).amount;
-                cfg.SaveJsonFile($"{Application.dataPath}/../LubanGens/EditorJsonData/BuffCfg/{cfg.GetType().Name}/buffId{cfg.buffId}.json");
+                cfg.SaveJsonFile($"{Application.dataPath}/../LubanGens/EditorJsonData/BuffCfg/{cfg.GetType().Name}/buffId_{cfg.buffId}.json");
+                Debug.Log($"buffId_{cfg.buffId} 保存成功!");
             }
         }
 
+        /// <summary>
+        /// 添加新buff后需要添加case，TODO 改成反射
+        /// </summary>
         public static BuffNode GetBuffNode(string buffType, string jsonFilePath)
         {
             if (buffType == "MoveSpeedBuffCfg")
@@ -99,16 +136,7 @@ namespace Editor
 
         #endregion
 
-        #region Skill Node
-
-        public static void SaveSkillNode(this SkillNode sn)
-        {
-            var cfg = new editor.cfg.SkillCfg();
-            cfg.InitData(sn);
-            cfg.SaveJsonFile($"{Application.dataPath}/../LubanGens/EditorJsonData/SkillCfg/skillId_{cfg.skillId}.json");
-        }
-
-        #endregion
+        
 
         #region TargetCfg_JsonCfg
 
@@ -120,11 +148,13 @@ namespace Editor
             }
             
             var cfg = new TargetCfg();
+            cfg.ViewState = ValState.NotNull;
             cfg.selectRange = editorCfg.selectRange;
             cfg.searchDis = editorCfg.searchDis;
             cfg.targetTypeArr = editorCfg.targetTypeArr.ToEnums<UnitTypeEnum>();
             cfg.targetTeam = editorCfg.targetTeam.ToEnum<TargetTeamEnum>();
             cfg.selectRule = editorCfg.selectRule.ToEnum<SelectRuleEnum>();
+            
             return cfg;
         }
         
@@ -156,6 +186,7 @@ namespace Editor
             }
             
             var cfg = new BulletCfg();
+            cfg.ViewState = ValState.NotNull;
             cfg.bulletType = editorCfg.bulletType.ToEnum<BulletTypeEnum>();
             cfg.bulletName = editorCfg.bulletName;
             cfg.resPath = editorCfg.resPath;
@@ -208,7 +239,7 @@ namespace Editor
         {
             if (enumStrings?.Length < 1)
             {
-                return null;
+                return new T[0];;
             }
             
             var selectedEnumList = new T[enumStrings.Length];
@@ -224,7 +255,7 @@ namespace Editor
         {
             if (enums?.Length < 1)
             {
-                return null;
+                return new string[0];
             }
             
             return enums.Select(o=>o.ToString()).ToArray();
@@ -242,11 +273,47 @@ namespace Editor
         public const int PaddingHeight = 50;
         public const int BuffWidth = 300;
         public const int BuffHeight = 500;
+        public const int SkillWidth = 300;
+        public const int SkillHeight = 500;
+        public const int UnitWidth = 300;
+        public const int UnitHeight = 500;
         public const int BuffPaddingWidth = BuffWidth + PaddingWidth;
         public const int BuffPaddingHeight = BuffHeight + PaddingHeight;
-        
+        public const int SkillPaddingWidth = SkillWidth + PaddingWidth;
+        public const int SkillPaddingHeight = SkillHeight + PaddingHeight;
         #endregion
 
+        #region UnitInfoCfg_UnitNode Convert
+
+        public static void InitData(this UnitNode unitNode, editor.cfg.UnitInfoCfg cfg)
+        {
+            unitNode.unitId = cfg.unitId;
+            unitNode.unitName = cfg.unitName;
+            unitNode.resName = cfg.resName;
+            unitNode.hp = cfg.hp;
+            unitNode.def = cfg.def;
+            unitNode.moveSpeed = cfg.moveSpeed;
+            unitNode.colliderType = cfg.colliderType.ToEnum<UnitTypeEnum>();
+            unitNode.pasvBuff = cfg.pasvBuff;
+            unitNode.skillArr = cfg.skillArr;
+
+        }
+        
+        public static void InitData(this editor.cfg.UnitInfoCfg cfg, UnitNode unitNode)
+        {
+            cfg.unitId = unitNode.unitId; 
+            cfg.unitName = unitNode.unitName;
+            cfg.resName = unitNode.resName;
+            cfg.hp = unitNode.hp;
+            cfg.def = unitNode.def;
+            cfg.moveSpeed = unitNode.moveSpeed;
+            cfg.colliderType = unitNode.colliderType.ToString();
+            cfg.pasvBuff = unitNode.pasvBuff;
+            cfg.skillArr = unitNode.skillArr;
+        }
+
+        #endregion
+        
         #region SkillCfg_SkillNode Convert
 
         public static void InitData(this SkillNode skillNode, editor.cfg.SkillCfg skillCfg)
@@ -264,7 +331,7 @@ namespace Editor
             skillNode.isNormalAttack = skillCfg.isNormalAttack;
             skillNode.releaseMode = skillCfg.releaseMode.ToEnum<ReleaseModeEnum>();
             skillNode.targetCfg = skillCfg.targetCfg.ToView();
-            skillNode.bulletCfg = null; //skillCfg.bulletCfg;
+            skillNode.bulletCfg = skillCfg.bulletCfg.ToView();
         }
         
         public static void InitData(this editor.cfg.SkillCfg cfg, SkillNode node)
@@ -282,7 +349,7 @@ namespace Editor
             cfg.isNormalAttack = node.isNormalAttack;
             cfg.releaseMode = node.releaseMode.ToString();
             cfg.targetCfg = node.targetCfg.ToJsonCfg();
-            // cfg.bulletCfg = node.bulletCfg;
+            cfg.bulletCfg = node.bulletCfg.ToJsonCfg();
         }
 
         #endregion
