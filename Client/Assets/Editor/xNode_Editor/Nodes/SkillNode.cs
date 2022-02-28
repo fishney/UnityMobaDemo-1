@@ -62,12 +62,37 @@ namespace Editor.xNode_Editor
         
         public override void OnCreateConnection(NodePort from, NodePort to)
         {
-            if (from.ValueType == buffIdArr.GetType())
+            if (from.fieldName.Contains("buffIdArr "))
             {
                 var index = from.fieldName.GetIndex();
                 if (index >= 0)
                 {
                     buffIdArr[index] = (to.node as BuffNode).BuffId;
+                }
+            }
+        }
+        
+        private void OnValidate()
+        {
+            
+            var linkedNodes = GetInputPort("skillId")?.GetConnections();
+            foreach (var linkedNp in linkedNodes)
+            {
+                if (linkedNp?.node is UnitNode preNode)
+                {
+                    var index = linkedNp.fieldName.GetIndex();
+                    if (index >= 0)
+                    {
+                        if (linkedNp.fieldName.Contains("pasvBuff "))
+                        {
+                            preNode.pasvBuff[index] = this.skillId;
+                        }
+                        else if(linkedNp.fieldName.Contains("skillArr "))
+                        {
+                            preNode.skillArr[index] = this.skillId; 
+                        }
+                        
+                    }
                 }
             }
         }

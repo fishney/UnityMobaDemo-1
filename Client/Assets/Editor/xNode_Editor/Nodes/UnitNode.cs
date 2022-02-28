@@ -25,5 +25,47 @@ namespace Editor.xNode_Editor
         /// </summary>
         [Node.OutputAttribute(dynamicPortList = true)]public int[] pasvBuff;
         [Node.OutputAttribute(dynamicPortList = true)]public int[] skillArr;
+        
+        public override object GetValue(NodePort port)
+        {
+            if (port.fieldName.Contains("pasvBuff "))
+            {
+                var index = port.fieldName.GetIndex();
+                if (index >= 0 && index < pasvBuff.Length)
+                {
+                    return pasvBuff[index];
+                }
+            }
+            else if (port.fieldName.Contains("skillArr "))
+            {
+                var index = port.fieldName.GetIndex();
+                if (index >= 0 && index < skillArr.Length)
+                {
+                    return skillArr[index];
+                }
+            }
+            
+            return null; // Replace this
+        }
+        
+        public override void OnCreateConnection(NodePort from, NodePort to)
+        {
+            if (from.fieldName.Contains("pasvBuff "))
+            {
+                var index = from.fieldName.GetIndex();
+                if (index >= 0)
+                {
+                    pasvBuff[index] = (to.node as SkillNode).skillId;
+                }
+            }
+            else if (from.fieldName.Contains("skillArr "))
+            {
+                var index = from.fieldName.GetIndex();
+                if (index >= 0)
+                {
+                    skillArr[index] = (to.node as SkillNode).skillId;
+                }
+            }
+        }
     }
 }
