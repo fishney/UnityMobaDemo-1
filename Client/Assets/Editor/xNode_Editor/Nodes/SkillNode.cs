@@ -7,7 +7,7 @@ using XNode;
 
 namespace Editor.xNode_Editor
 {
-    [NodeWidth(NodeHelper.SkillWidth)]
+    [CreateNodeMenu("new SkillNode"),NodeWidth(NodeHelper.SkillWidth)]
     public class SkillNode : Node
     {
         
@@ -74,7 +74,6 @@ namespace Editor.xNode_Editor
         
         private void OnValidate()
         {
-            
             var linkedNodes = GetInputPort("skillId")?.GetConnections();
             foreach (var linkedNp in linkedNodes)
             {

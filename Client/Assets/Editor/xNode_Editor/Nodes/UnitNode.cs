@@ -1,8 +1,9 @@
+using UnityEngine;
 using XNode;
 
 namespace Editor.xNode_Editor
 {
-    [NodeWidth(NodeHelper.UnitWidth)]
+    [CreateNodeMenu("new UnitNode"), NodeWidth(NodeHelper.UnitWidth)]
     public class UnitNode : Node
     {
         public int unitId;
@@ -23,9 +24,9 @@ namespace Editor.xNode_Editor
         /// <summary>
         /// 被动技能buff
         /// </summary>
-        [Node.OutputAttribute(dynamicPortList = true)]public int[] pasvBuff;
+        public int[] pasvBuff;
         [Node.OutputAttribute(dynamicPortList = true)]public int[] skillArr;
-        
+
         public override object GetValue(NodePort port)
         {
             if (port.fieldName.Contains("pasvBuff "))

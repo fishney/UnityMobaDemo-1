@@ -4,7 +4,7 @@ using XNode;
 
 namespace Editor.xNode_Editor
 {
-    [CreateAssetMenu(menuName = "Skill Editors/New BuffGraph",fileName = "Graph.BuffCfg.")]
+    [CreateAssetMenu(menuName = "Skill Editors/new BuffGraph",fileName = "Graph.BuffCfg.buffId_")]
     public class BuffGraph : NodeGraph
     {
         

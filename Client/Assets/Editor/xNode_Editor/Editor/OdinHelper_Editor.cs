@@ -106,7 +106,6 @@ namespace Editor.xNode_Editor
 
                 // get path by targetObject.name
                 var rootsRaw = serializedObject.targetObject.name.Split('.').Last();
-                Debug.Log(rootsRaw.Split('_').Last());
                 var unitId = int.Parse(rootsRaw.Split('_').Last());
                 
                 // load json and mapping
@@ -166,7 +165,7 @@ namespace Editor.xNode_Editor
             
             if (GUILayout.Button("保存单位信息", GUILayout.Height(40))) {
                 // get nodes
-                var graph = serializedObject.targetObject as SkillGraph;
+                var graph = serializedObject.targetObject as UnitGraph;
                 foreach (var node in graph.nodes)
                 {
                     if (node is UnitNode un)

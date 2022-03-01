@@ -23,6 +23,7 @@ namespace Editor.Odin_Editor
         tree.DefaultMenuStyle = OdinMenuStyle.TreeViewStyle;
         tree.Selection.SupportsMultiSelect = false;
         
+        // TODO 如果添加新buff，需要添加
         tree.Add("Buff/BuffCfg", new BuffCfgEditor<editor.cfg.BuffCfg>());
         tree.Add("Buff/ArthurMarkBuffCfg", new BuffCfgEditor<editor.cfg.ArthurMarkBuffCfg>());
         tree.Add("Buff/CommonModifySkillBuffCfg", new BuffCfgEditor<editor.cfg.CommonModifySkillBuffCfg>());
@@ -40,8 +41,61 @@ namespace Editor.Odin_Editor
         tree.Add("Buff/StunBuffCfg_DynamicTime", new BuffCfgEditor<editor.cfg.StunBuffCfg_DynamicTime>());
         tree.Add("Buff/TargetFlashMoveBuffCfg", new BuffCfgEditor<editor.cfg.TargetFlashMoveBuffCfg>());
         tree.Add("Skill",new SkillCfgEditor());
+        tree.Add("Unit",new UnitInfoCfgEditor());
 
         return tree;
+    }
+
+    private class UnitInfoCfgEditor
+    {
+        [VerticalGroup("数据"),TableList(ShowIndexLabels = true, HideToolbar = true, AlwaysExpanded = true)]
+        public List<editor.cfg.UnitInfoCfg> cfgs;
+        public UnitInfoCfgEditor()
+        {
+            cfgs = new List<editor.cfg.UnitInfoCfg>();
+        }
+        
+        [Button("保存数据")]
+        public void Save()
+        {
+            if (cfgs?.Count == 0)
+            {
+                // TODO 错误弹窗
+                return;
+            }
+            
+            foreach (var cfg in cfgs)
+            {
+                cfg.SaveJsonFile($"{Application.dataPath}/../LubanGens/EditorJsonData/UnitCfg/unitId_{cfg.unitId}.json");
+            }
+        }
+        
+        [Button("加载数据"),HorizontalGroup("A")]
+        public void Load()
+        {
+            string[] files = Directory.GetFiles($"{Application.dataPath}/../LubanGens/EditorJsonData/UnitCfg", "*.json");
+            if (files?.Length == 0)
+            {
+                // TODO 错误弹窗
+                return;
+            }
+            
+            cfgs.Clear();
+            foreach (var file in files)
+            {
+                var cfg = new editor.cfg.UnitInfoCfg();
+                cfg.LoadJsonFile(file);
+                cfgs.Add(cfg);
+            }
+            
+            cfgs = cfgs.OrderBy(o => o.unitId).ToList();
+        }
+        
+        [Button("新建"),HorizontalGroup("A"),GUIColor(1,0,1)]
+        public void Create()
+        {
+            cfgs.Add(new editor.cfg.UnitInfoCfg());
+        }
     }
     
     private class SkillCfgEditor
@@ -142,7 +196,7 @@ namespace Editor.Odin_Editor
             cfgs = cfgs.OrderBy(o => o.buffId).ToList();
         }
         
-        [Button("新建"),HorizontalGroup("A")]
+        [Button("新建"),HorizontalGroup("A"),GUIColor(1,0,1)]
         public void Create()
         {
             cfgs.Add(new T());

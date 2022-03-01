@@ -290,7 +290,8 @@ public sealed partial class SkillCfg :  Bright.Config.EditorBeanBase
     /// <summary>
     /// 释放方式
     /// </summary>
-    [ShowInInspector, VerticalGroup("属性")]public string releaseMode { get; set; }
+    [ShowInInspector, VerticalGroup("属性")][ValueDropdown("ReleaseModeEnum_List", DropdownWidth = 250)]public string releaseMode { get; set; }
+    private static System.Collections.IEnumerable ReleaseModeEnum_List = JsonEnumHelper.ReleaseModeEnum_List;
 
     /// <summary>
     /// 目标选择配置,null为非锁定弹道技能

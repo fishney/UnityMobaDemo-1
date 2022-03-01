@@ -5,15 +5,18 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using System;
 using Bright.Serialization;
 using System.Collections.Generic;
 using SimpleJSON;
+using Sirenix.OdinInspector;
 
 
 
 namespace editor.cfg
 {
 
+    [Serializable]
 public sealed partial class BulletCfg :  Bright.Config.EditorBeanBase 
 {
     public BulletCfg()
@@ -170,30 +173,31 @@ public sealed partial class BulletCfg :  Bright.Config.EditorBeanBase
         _obj.SaveJson((SimpleJSON.JSONObject)_json);
     }
 
-    public string bulletType { get; set; }
+    [ShowInInspector][ValueDropdown("BulletTypeEnum_List")]public string bulletType { get; set; }
+    private static System.Collections.IEnumerable BulletTypeEnum_List = JsonEnumHelper.BulletTypeEnum_List;
 
-    public string bulletName { get; set; }
+    [ShowInInspector]public string bulletName { get; set; }
 
-    public string resPath { get; set; }
+    [ShowInInspector]public string resPath { get; set; }
 
-    public float bulletSpeed { get; set; }
+    [ShowInInspector]public float bulletSpeed { get; set; }
 
-    public float bulletSize { get; set; }
+    [ShowInInspector]public float bulletSize { get; set; }
 
-    public float bulletHeight { get; set; }
+    [ShowInInspector]public float bulletHeight { get; set; }
 
     /// <summary>
     /// 发射子弹的时候，要往发射方向偏移一小段而不是从中心
     /// </summary>
-    public float bulletOffset { get; set; }
+    [ShowInInspector]public float bulletOffset { get; set; }
 
-    public int bulletDelay { get; set; }
+    [ShowInInspector]public int bulletDelay { get; set; }
 
-    public bool canBlock { get; set; }
+    [ShowInInspector]public bool canBlock { get; set; }
 
-    public TargetCfg impacter { get; set; }
+    [ShowInInspector]public TargetCfg impacter { get; set; }
 
-    public int bulletDuration { get; set; }
+    [ShowInInspector]public int bulletDuration { get; set; }
 
 }
 }

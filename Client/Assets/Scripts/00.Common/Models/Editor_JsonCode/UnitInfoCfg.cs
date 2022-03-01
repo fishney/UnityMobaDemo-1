@@ -10,7 +10,7 @@ using System;
 using Bright.Serialization;
 using System.Collections.Generic;
 using SimpleJSON;
-
+using Sirenix.OdinInspector;
 
 
 namespace editor.cfg
@@ -155,35 +155,36 @@ public sealed partial class UnitInfoCfg :  Bright.Config.EditorBeanBase
         _obj.SaveJson((SimpleJSON.JSONObject)_json);
     }
 
-    public int unitId { get; set; }
+    [ShowInInspector, VerticalGroup("基础信息")]public int unitId { get; set; }
 
     /// <summary>
     /// 单位角色名
     /// </summary>
-    public string unitName { get; set; }
+    [ShowInInspector, VerticalGroup("基础信息")]public string unitName { get; set; }
 
     /// <summary>
     /// 资源
     /// </summary>
-    public string resName { get; set; }
+    [ShowInInspector, VerticalGroup("资源")]public string resName { get; set; }
 
-    public int hp { get; set; }
+    [ShowInInspector, VerticalGroup("属性")]public int hp { get; set; }
 
-    public int def { get; set; }
+    [ShowInInspector, VerticalGroup("属性")]public int def { get; set; }
 
-    public int moveSpeed { get; set; }
+    [ShowInInspector, VerticalGroup("属性")]public int moveSpeed { get; set; }
 
     /// <summary>
     /// 碰撞体类型
     /// </summary>
-    public string colliderType { get; set; }
+    [ShowInInspector, VerticalGroup("碰撞")][ValueDropdown("UnitTypeEnum_List", DropdownWidth = 250)]public string colliderType { get; set; }
+    private static System.Collections.IEnumerable UnitTypeEnum_List = JsonEnumHelper.UnitTypeEnum_List;
 
     /// <summary>
     /// 被动技能buff
     /// </summary>
-    public int[] pasvBuff { get; set; }
+    [ShowInInspector, VerticalGroup("被动")]public int[] pasvBuff { get; set; }
 
-    public int[] skillArr { get; set; }
+    [ShowInInspector, VerticalGroup("主动")]public int[] skillArr { get; set; }
 
 }
 }

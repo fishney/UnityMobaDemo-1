@@ -11,6 +11,8 @@ namespace editor.cfg
         public static System.Collections.IEnumerable TargetTeamEnum_List;
         public static System.Collections.IEnumerable SelectRuleEnum_List;
         public static System.Collections.IEnumerable UnitTypeEnum_List;
+        public static System.Collections.IEnumerable ReleaseModeEnum_List;
+        public static System.Collections.IEnumerable BulletTypeEnum_List;
 
         static JsonEnumHelper()
         {
@@ -55,6 +57,20 @@ namespace editor.cfg
                 return new ValueDropdownItem<string>(o.Comment, o.Name);
             }).ToList());
             UnitTypeEnum_List = unitTypeEnum_List;
+            
+            var releaseModeEnum_List = new ValueDropdownList<string>();
+            releaseModeEnum_List.AddRange(editor.cfg.ReleaseModeEnum.GetItems().Select(o =>
+            {
+                return new ValueDropdownItem<string>(o.Comment, o.Name);
+            }).ToList());
+            ReleaseModeEnum_List = releaseModeEnum_List;
+            
+            var bulletTypeEnum_List = new ValueDropdownList<string>();
+            bulletTypeEnum_List.AddRange(editor.cfg.BulletTypeEnum.GetItems().Select(o =>
+            {
+                return new ValueDropdownItem<string>(o.Comment, o.Name);
+            }).ToList());
+            BulletTypeEnum_List = bulletTypeEnum_List;
         }
 
         // public static System.Collections.IEnumerable GetVal()

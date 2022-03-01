@@ -13,19 +13,19 @@ namespace Editor.xNode_Editor
 
             foreach (var np in target.DynamicOutputs)
             {
-                if (np.fieldName.Contains("pasvBuff "))
+                if (np.fieldName.Contains("pasvBuff ") || np.fieldName.Contains("skillArr "))
                 {
                     if (np.IsConnected)
                     {
                         continue;
                     }
                     
-                    var buffId = (int)np.GetOutputValue();
+                    var skillId = (int)np.GetOutputValue();
                     foreach (var node in target.graph.nodes)
                     {
-                        if (node is BuffNode bn && bn.BuffId == buffId)
+                        if (node is SkillNode sn && sn.skillId == skillId)
                         {
-                            np.Connect(node.GetInputPort("BuffId"));
+                            np.Connect(node.GetInputPort("skillId"));
                         }
                     }
                 }

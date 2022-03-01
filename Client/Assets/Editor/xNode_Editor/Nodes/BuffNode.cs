@@ -2,7 +2,7 @@ using XNode;
 
 namespace Editor.xNode_Editor
 {
-    [NodeWidth(NodeHelper.BuffWidth)]
+    [CreateNodeMenu("new BuffNode/BuffNode"), NodeWidth(NodeHelper.BuffWidth)]
     public class BuffNode : Node
     {
         [Input(ShowBackingValue.Always)]
