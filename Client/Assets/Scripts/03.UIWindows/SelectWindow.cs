@@ -55,8 +55,8 @@ public class SelectWindow : WindowBase
             rect.SetParent(transScrollRoot);
             rect.localScale = Vector3.one;
             UnitCfg cfg = resSvc.GetUnitConfigById(heroId);
-            SetSprite(GetImage(go.transform,"imgIcon"),"ResImages/SelectWnd/" + cfg.resName + "_head");
-            SetText(GetText(go.transform,"txtName"),cfg.unitName);
+            SetSprite(GetImage(go.transform,"imgIcon"),"ResImages/SelectWnd/" + cfg.info.resName + "_head");
+            SetText(GetText(go.transform,"txtName"),cfg.info.unitName);
             
             OnClick(go,ClickHeroItem,go,heroId);
             
@@ -130,13 +130,13 @@ public class SelectWindow : WindowBase
         // arg: heroId
         selectHeroId = (int) args[1];
         UnitCfg cfg = resSvc.GetUnitConfigById(selectHeroId);
-        SetSprite(imgHeroShow,"ResImages/SelectWnd/"+cfg.resName+"_show");
+        SetSprite(imgHeroShow,"ResImages/SelectWnd/"+cfg.info.resName+"_show");
 
         // 修改技能显示
         for (int i = 0; i < transSkillIconRoot.childCount; i++)
         {
             Image icon = GetImage(transSkillIconRoot.GetChild(i));
-            SetSprite(icon,"ResImages/PlayWnd/"+cfg.resName+"_sk"+i);
+            SetSprite(icon,"ResImages/PlayWnd/"+cfg.info.resName+"_sk"+i);
         }
     }
 

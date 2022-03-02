@@ -50,36 +50,36 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\DamageBuffCfg_DynamicGroupNode.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Editor\SkillGraphEditor.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\HouyiPasvAttackSpeedBuffNode.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Editor\BuffNodeEditor.cs" />
      <Compile Include="Assets\Editor\Odin_Editor\SkillEditorWindow.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\ArthurMarkBuffNode.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\HouyiMixedMultiScatterBuffNode.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\HouyiMultipleArrowBuffNode.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Editor\UnitNodeEditor.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\ExecuteDamageBuffNode.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Helper\Ex.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Helper\Luban_NodeHelper.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\HouyiMultipleSkillModifyBuffNode.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Graphs\UnitGraph.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\HPCureBuffNode.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\DamageBuffCfg_StaticGroupNode.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\HouyiScatterArrowBuffNode.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Graphs\BuffGraph.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Editor\OdinHelper_Editor.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Nodes\SkillNode.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Nodes\UnitNode.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\StunBuffCfg_DynamicTimeNode.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Editor\SkillNodeEditor.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Graphs\SkillGraph.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\CommonModifySkillBuffNode.cs" />
+     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\TargetFlashMoveBuffNode.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\MoveSpeedBuffNode.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Nodes\BuffNode.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Helper\Empty.cs" />
-     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\ArthurMarkBuffNode.cs" />
-     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\CommonModifySkillBuffNode.cs" />
-     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\DamageBuffCfg_DynamicGroupNode.cs" />
-     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\DamageBuffCfg_StaticGroupNode.cs" />
-     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\ExecuteDamageBuffNode.cs" />
-     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\HouyiMixedMultiScatterBuffNode.cs" />
-     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\HouyiMultipleArrowBuffNode.cs" />
-     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\HouyiMultipleSkillModifyBuffNode.cs" />
-     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\HouyiPasvAttackSpeedBuffNode.cs" />
-     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\HouyiScatterArrowBuffNode.cs" />
      <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\HouyiScatterSkillModifyBuffNode.cs" />
-     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\HPCureBuffNode.cs" />
-     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\StunBuffCfg_DynamicTimeNode.cs" />
-     <Compile Include="Assets\Editor\xNode_Editor\Nodes\Buff\TargetFlashMoveBuffNode.cs" />
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>E:/My Github/UnityMobaDemo/Client/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>

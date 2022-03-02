@@ -21,7 +21,7 @@ public partial class PlayWindow
     {
         BattleHeroData self = GameRoot.battleHeroList[GameRoot.SelfPosIndex];
         UnitCfg heroCfg = resSvc.GetUnitConfigById(self.heroId);
-        int[] skillArr = heroCfg.skillArr;
+        int[] skillArr = heroCfg.info.skillArr;
         skaItem.InitSkillItem(resSvc.GetSkillConfigById(skillArr[0]),0);
         sk1Item.InitSkillItem(resSvc.GetSkillConfigById(skillArr[1]),1);
         sk2Item.InitSkillItem(resSvc.GetSkillConfigById(skillArr[2]),2);

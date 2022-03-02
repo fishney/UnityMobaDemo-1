@@ -4,12 +4,11 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using Bright.Config;
-using Editor.xNode_Editor;
 using UnityEngine;
 using editor.cfg;
 using XNode;
 
-namespace Editor
+namespace Editor.xNode_Editor
 {
     public static class LubanHelper
     {
@@ -103,9 +102,9 @@ namespace Editor
         /// </summary>
         public static void SaveBuffNode(this BuffNode bn)
         {
-            if (bn.GetType().Name == "BuffNode")
+            if (bn is ArthurMarkBuffNode n0)
             {
-                var cfg = new editor.cfg.BuffCfg();
+                var cfg = new editor.cfg.NormalBuffCfg();
                 cfg.InitData(bn);
                 cfg.SaveJsonFile($"{Application.dataPath}/../LubanGens/EditorJsonData/BuffCfg/{cfg.GetType().Name}/buffId_{cfg.buffId}.json");
                 Debug.Log($"{cfg.GetType().Name}/buffId_{cfg.buffId} 保存成功!");
@@ -318,9 +317,9 @@ namespace Editor
         /// </summary>
         public static BuffNode GetBuffNode(string buffType, string jsonFilePath)
         {
-            if (buffType == "BuffCfg")
+            if (buffType == "NormalBuffCfg")
             {
-                var cfg = new editor.cfg.BuffCfg();
+                var cfg = new editor.cfg.NormalBuffCfg();
                 cfg.LoadJsonFile(jsonFilePath);
                 var node = new BuffNode();
                 node.InitData(cfg);
@@ -547,9 +546,9 @@ namespace Editor
             cfg.ViewState = ValState.NotNull;
             cfg.selectRange = editorCfg.selectRange;
             cfg.searchDis = editorCfg.searchDis;
-            cfg.targetTypeArr = editorCfg.targetTypeArr.ToEnums<UnitTypeEnum>();
-            cfg.targetTeam = editorCfg.targetTeam.ToEnum<TargetTeamEnum>();
-            cfg.selectRule = editorCfg.selectRule.ToEnum<SelectRuleEnum>();
+            cfg.targetTypeArr = editorCfg.targetTypeArr.ToEnums<cfg.UnitTypeEnum>();
+            cfg.targetTeam = editorCfg.targetTeam.ToEnum<cfg.TargetTeamEnum>();
+            cfg.selectRule = editorCfg.selectRule.ToEnum<cfg.SelectRuleEnum>();
             
             return cfg;
         }
@@ -583,7 +582,7 @@ namespace Editor
             
             var cfg = new BulletCfg();
             cfg.ViewState = ValState.NotNull;
-            cfg.bulletType = editorCfg.bulletType.ToEnum<BulletTypeEnum>();
+            cfg.bulletType = editorCfg.bulletType.ToEnum<cfg.BulletTypeEnum>();
             cfg.bulletName = editorCfg.bulletName;
             cfg.resPath = editorCfg.resPath;
             cfg.bulletSpeed = editorCfg.bulletSpeed;
@@ -689,7 +688,7 @@ namespace Editor
             unitNode.hp = cfg.hp;
             unitNode.def = cfg.def;
             unitNode.moveSpeed = cfg.moveSpeed;
-            unitNode.colliderType = cfg.colliderType.ToEnum<UnitTypeEnum>();
+            unitNode.colliderType = cfg.colliderType.ToEnum<cfg.UnitTypeEnum>();
             unitNode.pasvBuff = cfg.pasvBuff;
             unitNode.skillArr = cfg.skillArr;
 
@@ -725,7 +724,7 @@ namespace Editor
             skillNode.damage = skillCfg.damage;
             skillNode.buffIdArr = skillCfg.buffIdArr;
             skillNode.isNormalAttack = skillCfg.isNormalAttack;
-            skillNode.releaseMode = skillCfg.releaseMode.ToEnum<ReleaseModeEnum>();
+            skillNode.releaseMode = skillCfg.releaseMode.ToEnum<cfg.ReleaseModeEnum>();
             skillNode.targetCfg = skillCfg.targetCfg.ToView();
             skillNode.bulletCfg = skillCfg.bulletCfg.ToView();
         }
@@ -763,9 +762,9 @@ namespace Editor
             node.buffEffect = cfg.buffEffect;
             node.hitTickAudio = cfg.hitTickAudio;
             
-            node.buffType = cfg.buffType.ToEnum<BuffTypeEnum>();
-            node.attacher = cfg.attacher.ToEnum<AttachTypeEnum>();
-            node.staticPosType = cfg.staticPosType.ToEnum<StaticPosTypeEnum>();
+            node.buffType = cfg.buffType.ToEnum<cfg.BuffTypeEnum>();
+            node.attacher = cfg.attacher.ToEnum<cfg.AttachTypeEnum>();
+            node.staticPosType = cfg.staticPosType.ToEnum<cfg.StaticPosTypeEnum>();
             node.impacter = cfg.impacter.ToView();
         }
         

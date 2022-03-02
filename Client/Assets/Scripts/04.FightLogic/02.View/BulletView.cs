@@ -1,3 +1,5 @@
+using cfg;
+
 public class BulletView : ViewUnit {
     public override void Init(LogicUnit logicUnit) {
         base.Init(logicUnit);

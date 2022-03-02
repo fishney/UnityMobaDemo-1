@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using cfg;
 
 public partial class PlayWindow {
     public Transform mapIconRoot;

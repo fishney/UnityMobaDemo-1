@@ -1,7 +1,4 @@
-public class StunBuffCfg_DynamicTime : BuffCfg {
-    public int minStunTime;
-    public int maxStunTime;
-}
+using cfg;
 
 public class StunBuff_DynamicTime : Buff {
     public StunBuff_DynamicTime(MainLogicUnit source, MainLogicUnit owner, Skill skill, int buffID, object[] args = null)

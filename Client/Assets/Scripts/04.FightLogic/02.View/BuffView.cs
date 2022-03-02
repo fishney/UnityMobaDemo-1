@@ -1,3 +1,5 @@
+using cfg;
+
 public class BuffView : ViewUnit
 {
     private Buff buff;

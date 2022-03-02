@@ -1,16 +1,5 @@
 using PEMath;
-
-public class HouyiMultipleArrowBuffCfg : BuffCfg {
-    public int arrowCount;
-    /// <summary>
-    /// 每只箭的延迟
-    /// </summary>
-    public int arrowDelay;
-    /// <summary>
-    /// 箭之间的上下偏移值
-    /// </summary>
-    public float posOffset;
-}
+using cfg;
 
 public class HouyiMultipleArrowBuff : Buff {
     int arrowCount;

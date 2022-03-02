@@ -1,7 +1,4 @@
-public class CommonModifySkillBuffCfg : BuffCfg {
-    public int originalID;
-    public int replaceID;
-}
+using cfg;
 
 /// <summary>
 /// 技能替换buff

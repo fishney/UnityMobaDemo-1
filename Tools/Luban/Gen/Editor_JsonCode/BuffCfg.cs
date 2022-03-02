@@ -183,6 +183,7 @@ public abstract partial class BuffCfg :  Bright.Config.EditorBeanBase
         BuffCfg obj;
         switch (type)
         {
+            case "NormalBuffCfg": obj = new NormalBuffCfg(); break;
             case "DamageBuffCfg_DynamicGroup": obj = new DamageBuffCfg_DynamicGroup(); break;
             case "DamageBuffCfg_StaticGroup": obj = new DamageBuffCfg_StaticGroup(); break;
             case "ArthurMarkBuffCfg": obj = new ArthurMarkBuffCfg(); break;

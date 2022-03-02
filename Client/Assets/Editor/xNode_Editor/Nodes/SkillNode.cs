@@ -41,7 +41,7 @@ namespace Editor.xNode_Editor
         /// 是否为普通攻击
         public bool isNormalAttack;
         /// 释放方式
-        public ReleaseModeEnum releaseMode;
+        public cfg.ReleaseModeEnum releaseMode;
         /// 目标选择配置,null为非锁定弹道技能
         public TargetCfg targetCfg;
         /// 弹道配置，无弹道就为null

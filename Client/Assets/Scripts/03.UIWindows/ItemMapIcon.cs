@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using cfg;
 
 public class ItemMapIcon : WindowBase {
     /// <summary>
@@ -22,7 +23,7 @@ public class ItemMapIcon : WindowBase {
         rectTrans.localEulerAngles = new Vector3(0, 0, -45);
         switch(unit.unitType) {
             case UnitTypeEnum.Hero:
-                SetSprite(imgIcon, string.Format("ResImages/PlayWnd/MiniMap/{0}_mapIcon", unit.ud.unitCfg.resName));
+                SetSprite(imgIcon, string.Format("ResImages/PlayWnd/MiniMap/{0}_mapIcon", unit.ud.unitCfg.info.resName));
                 if(unit.IsTeam(TeamEnum.Blue)) {
                     SetSprite(imgFrame, "ResImages/PlayWnd/MiniMap/blueHeroMapFrame");
                 }
@@ -42,7 +43,7 @@ public class ItemMapIcon : WindowBase {
                 break;
             case UnitTypeEnum.Tower:
                 if(unit.IsTeam(TeamEnum.Blue)) {
-                    switch(unit.ud.unitCfg.unitId) {
+                    switch(unit.ud.unitCfg.info.unitId) {
                         case 1001:
                             SetSprite(imgIcon, "ResImages/PlayWnd/MiniMap/blueTower");
                             break;
@@ -52,7 +53,7 @@ public class ItemMapIcon : WindowBase {
                     }
                 }
                 else {
-                    switch(unit.ud.unitCfg.unitId) {
+                    switch(unit.ud.unitCfg.info.unitId) {
                         case 2001:
                             SetSprite(imgIcon, "ResImages/PlayWnd/MiniMap/redTower");
                             break;

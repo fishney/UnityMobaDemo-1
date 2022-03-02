@@ -11,6 +11,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using cfg;
 
 public abstract class ViewUnit : MonoBehaviour
 {

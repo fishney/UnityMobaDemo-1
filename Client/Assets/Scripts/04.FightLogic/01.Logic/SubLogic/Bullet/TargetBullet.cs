@@ -2,6 +2,7 @@ using System;
 using PEMath;
 using PEPhysx;
 using UnityEngine;
+using cfg;
 
 /// <summary>
 /// 目标追踪子弹类型

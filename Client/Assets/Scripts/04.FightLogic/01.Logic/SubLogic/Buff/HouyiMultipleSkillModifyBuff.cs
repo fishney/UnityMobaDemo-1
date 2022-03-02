@@ -1,13 +1,7 @@
 using proto.HOKProtocol;
 using PEMath;
 
-public class HouyiMultipleSkillModifyBuffCfg : BuffCfg {
-    public int originalID;
-    public int powerID;
-    public int superPowerID;
-    public int triggerOverCount;
-    public int resetTime;
-}
+using cfg;
 
 /// <summary>
 /// 后裔被动，强化普攻为3次连射

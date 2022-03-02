@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using cfg;
 
 public class KnockUpBuff_Group : Buff {
     public KnockUpBuff_Group(MainLogicUnit source, MainLogicUnit owner, Skill skill, int buffID, object[] args = null)

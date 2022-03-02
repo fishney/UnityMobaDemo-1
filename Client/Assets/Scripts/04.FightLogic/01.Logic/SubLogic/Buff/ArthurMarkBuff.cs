@@ -1,9 +1,5 @@
 using PEMath;
-
-public class ArthurMarkBuffCfg : BuffCfg
-{
-    public int damagePct;
-}
+using cfg;
 
 public class ArthurMarkBuff : Buff
 {
@@ -28,7 +24,7 @@ public class ArthurMarkBuff : Buff
     }
 
     void GetHurt() {
-        target.GetDamageByBuff(damagePct / 100 * target.ud.unitCfg.hp, this, false);
+        target.GetDamageByBuff(damagePct / 100 * target.ud.unitCfg.info.hp, this, false);
     }
 
     protected override void End() {

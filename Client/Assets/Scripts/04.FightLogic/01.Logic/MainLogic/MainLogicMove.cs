@@ -40,8 +40,8 @@ public partial class MainLogicUnit
     void InitMove()
     {
         LogicPos = ud.bornPos;
-        moveSpeedBase = ud.unitCfg.moveSpeed;
-        LogicMoveSpeed = ud.unitCfg.moveSpeed;
+        moveSpeedBase = ud.unitCfg.info.moveSpeed;
+        LogicMoveSpeed = ud.unitCfg.info.moveSpeed;
         envColliList = BattleSys.Instance.GetEnvColliders();
 
         collider = new PECylinderCollider(ud.unitCfg.colliCfg)

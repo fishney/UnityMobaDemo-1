@@ -1,3 +1,5 @@
+using cfg;
+
 public class SoldierView : MainViewUnit {
     Soldier soldier;
     public override void Init(LogicUnit logicUnit) {

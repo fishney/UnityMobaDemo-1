@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Bright.Serialization;
 using PEMath;
 using PEPhysx;
 using UnityEngine;
+using cfg;
 
 #region 人物
 
@@ -34,7 +36,8 @@ public class LogicUnitData
    public UnitCfg unitCfg;
 }
 
-public class UnitCfg : UnitInfoCfg
+// TODO UnitInfoCfg => UnitInfoCfg内部类
+public class UnitCfg
 {
    // public int unitId;
    // public string unitName;//单位角色名
@@ -55,32 +58,33 @@ public class UnitCfg : UnitInfoCfg
    // /// </summary>
    // public int[] pasvBuff;
    // public int[] skillArr;
+   public UnitInfoCfg info;
 }
 
-public class UnitInfoCfg
-{
-   public int unitId;
-   public string unitName;//单位角色名
-   public string resName;//资源
-   // public PEInt hitHeight;// 被子弹命中的高度
-   
-   // 核心属性
-   public int hp;
-   public int def;
-   public int moveSpeed;
-
-   public UnitTypeEnum colliderType;
-   
-   // 碰撞体
-   // public ColliderConfig colliCfg;
-   
-   // 技能Id数组
-   /// <summary>
-   /// 被动技能buff
-   /// </summary>
-   public int[] pasvBuff;
-   public int[] skillArr;
-}
+// public class UnitInfoCfg
+// {
+//    public int unitId;
+//    public string unitName;//单位角色名
+//    public string resName;//资源
+//    // public PEInt hitHeight;// 被子弹命中的高度
+//    
+//    // 核心属性
+//    public int hp;
+//    public int def;
+//    public int moveSpeed;
+//
+//    public UnitTypeEnum colliderType;
+//    
+//    // 碰撞体
+//    // public ColliderConfig colliCfg;
+//    
+//    // 技能Id数组
+//    /// <summary>
+//    /// 被动技能buff
+//    /// </summary>
+//    public int[] pasvBuff;
+//    public int[] skillArr;
+// }
 
 
 #endregion

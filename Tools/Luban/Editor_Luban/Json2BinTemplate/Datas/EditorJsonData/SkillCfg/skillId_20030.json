@@ -1,0 +1,1 @@
+﻿{"skillId":20030,"iconName":"","aniName":"attack","audio_start":"","audio_work":"","audio_hit":"","cdTime":0,"spellTime":400,"skillTime":1200,"damage":20,"buffIdArr":[],"isNormalAttack":true,"releaseMode":"None","targetCfg":{"targetTeam":"Enemy","selectRule":"TargetClosestSingle","targetTypeArr":["Hero","Soldier","Tower","Crystal"],"selectRange":1.5,"searchDis":5}}

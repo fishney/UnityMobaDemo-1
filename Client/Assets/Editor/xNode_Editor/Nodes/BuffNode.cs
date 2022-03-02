@@ -14,13 +14,13 @@ namespace Editor.xNode_Editor
         /// <summary>
         /// buff类型，用来创建不同类型的buff
         /// </summary>
-        public BuffTypeEnum buffType;
+        public cfg.BuffTypeEnum buffType;
         
         /// <summary>
         /// buff附着目标
         /// </summary>
-        public AttachTypeEnum attacher;
-        public StaticPosTypeEnum staticPosType;
+        public cfg.AttachTypeEnum attacher;
+        public cfg.StaticPosTypeEnum staticPosType;
     
         /// <summary>
         /// buff作用目标，如果为null默认影响附着对象

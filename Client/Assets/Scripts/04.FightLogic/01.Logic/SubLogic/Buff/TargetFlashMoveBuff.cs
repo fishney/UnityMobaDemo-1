@@ -1,8 +1,5 @@
 using PEMath;
-
-public class TargetFlashMoveBuffCfg : BuffCfg {
-    public float offset;//目标偏移量
-}
+using cfg;
 
 /// <summary>
 /// 目标闪现移动buff 亚瑟3技能

@@ -1,9 +1,5 @@
 using PEMath;
-
-public class ExecuteDamageBuffCfg : BuffCfg {
-    // 百分比生命伤害
-    public int damagePct;
-}
+using cfg;
 
 /// <summary>
 /// 百分比生命值斩杀
@@ -25,7 +21,7 @@ public class ExecuteDamageBuff : Buff {
     protected override void Start() {
         base.Start();
 
-        PEInt damage = (damagePct / 100) * owner.ud.unitCfg.hp;
+        PEInt damage = (damagePct / 100) * owner.ud.unitCfg.info.hp;
         owner.GetDamageByBuff(damage, this);
     }
 }

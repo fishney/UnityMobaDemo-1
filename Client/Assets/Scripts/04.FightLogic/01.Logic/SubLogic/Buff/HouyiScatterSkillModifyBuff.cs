@@ -1,8 +1,4 @@
-public class HouyiScatterSkillModifyBuffCfg : BuffCfg {
-    public int originalID;
-    public int powerID;
-    public int superPowerID;
-}
+using cfg;
 
 /// <summary>
 /// 后裔1技能修改buff

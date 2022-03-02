@@ -1,5 +1,6 @@
 using proto.HOKProtocol;
 using PEMath;
+using cfg;
 
 public class Tower : MainLogicUnit
 {
@@ -64,7 +65,7 @@ public class Tower : MainLogicUnit
             MainLogicUnit unit = SearchTarget();
             if(unit != null) {
                 mainViewUnit.SetAtkSkillRange(true, skillArr[0].skillCfg.targetCfg.selectRange);
-                if(CanReleaseSkill(ud.unitCfg.skillArr[0])) {
+                if(CanReleaseSkill(ud.unitCfg.info.skillArr[0])) {
                     skillArr[0].ReleaseSkill(PEVector3.zero);
                 }
             }

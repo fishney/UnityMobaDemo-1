@@ -1,3 +1,5 @@
+using cfg;
+
 /// <summary>
 /// 单体沉默buff：亚瑟技能1附带的buff
 /// </summary>

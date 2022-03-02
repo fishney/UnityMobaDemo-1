@@ -1,0 +1,18 @@
+想加一个buff类需要做什么？
+
+数据
+1.luban改表加buff
+2.生成新的JsonEditorCode放到对应文件夹里
+3.添加可序列化标签、ShowInInspector标签
+4.BuffCfg下新建一个同名文件夹，用作储存
+
+Odin编辑器
+1.修改SkillEditorWindow.cs，添加出这个menu
+
+结点编辑器
+1.添加Node类
+2.修改LubanHelper里的TODO（2个），也就是 读取配置创建结点、保存配置 2个功能
+
+运行时
+1.替换Json2BinTemplate文件夹里的beans.xlsx，并对tables.xlsx添加新列（buff）
+2.修改ResSvc里的代码，让其支持对应新增buff的读取。

@@ -1,7 +1,7 @@
 using System;
 using PEMath;
 using UnityEngine;
-
+using cfg;
 public class Skill
 {
     public int skillId;

@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using proto.HOKProtocol;
 using PEMath;
+using cfg;
 
 /// <summary>
 /// MainLogicSkill
@@ -25,18 +26,18 @@ public partial class MainLogicUnit
     
     void InitSkill()
     {
-        int len = ud.unitCfg.skillArr.Length;
+        int len = ud.unitCfg.info.skillArr.Length;
         skillArr = new Skill[len];
         timerList = new List<LogicTimer>();
         buffList = new List<Buff>();
         
         for (int i = 0; i < len; i++)
         {
-            skillArr[i] = new Skill(ud.unitCfg.skillArr[i],this);
+            skillArr[i] = new Skill(ud.unitCfg.info.skillArr[i],this);
         }
         
         // 被动buff
-        int[] pasvBuffArr = ud.unitCfg.pasvBuff;
+        int[] pasvBuffArr = ud.unitCfg.info.pasvBuff;
         if (pasvBuffArr?.Length > 0)
         {
             foreach (var pBuff in pasvBuffArr)

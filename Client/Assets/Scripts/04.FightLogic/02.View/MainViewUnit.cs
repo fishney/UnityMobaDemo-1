@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using PEMath;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using cfg;
 
 /// <summary>
 /// 攻速、移速的表现速度

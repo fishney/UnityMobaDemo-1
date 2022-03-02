@@ -1,4 +1,5 @@
 using PEMath;
+using cfg;
 
 public class Soldier : MainLogicUnit
 {
@@ -21,7 +22,7 @@ public class Soldier : MainLogicUnit
         orderIndex = sd.orderIndex;
 
         unitType = UnitTypeEnum.Soldier;
-        unitName = sd.unitCfg.unitName + "_w:" + waveIndex + "_o:" + orderIndex;
+        unitName = sd.unitCfg.info.unitName + "_w:" + waveIndex + "_o:" + orderIndex;
 
         pathPrefix = "ResChars";
     }
@@ -48,7 +49,7 @@ public class Soldier : MainLogicUnit
             AITickIntervalCounter = 0;
         }
 
-        if(CanReleaseSkill(ud.unitCfg.skillArr[0])) {
+        if(CanReleaseSkill(ud.unitCfg.info.skillArr[0])) {
             MainLogicUnit lockTarget = CalcRule.FindSingleTargetByRule(this, cfg, PEVector3.zero);
             if(lockTarget != null) {
                 skillArr[0].ReleaseSkill(PEVector3.zero);

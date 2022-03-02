@@ -1,0 +1,1 @@
+﻿{"skillId":1022,"iconName":"houyi_sk2","aniName":"sk2","audio_start":"houyi_sk2_rls","audio_work":"","audio_hit":"","cdTime":5000,"spellTime":630,"skillTime":1200,"damage":0,"buffIdArr":[10220,10221,10222,10223],"isNormalAttack":false,"releaseMode":"Position","targetCfg":{"targetTeam":"Dynamic","selectRule":"None","targetTypeArr":[],"selectRange":6,"searchDis":0}}

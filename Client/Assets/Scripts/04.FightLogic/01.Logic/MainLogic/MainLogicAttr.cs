@@ -170,8 +170,8 @@ public partial class MainLogicUnit
 
     void InitProperties()
     {
-        Hp = ud.unitCfg.hp;
-        Def = ud.unitCfg.def;
+        Hp = ud.unitCfg.info.hp;
+        Def = ud.unitCfg.info.def;
     }
 
     public void InitAttackSpeedRate(PEInt rate)
@@ -220,15 +220,15 @@ public partial class MainLogicUnit
 
     public void GetCureByBuff(PEInt cure,Buff buff)
     {
-        if (Hp >= ud.unitCfg.hp)
+        if (Hp >= ud.unitCfg.info.hp)
         {
             // 血量溢出
             return;
         }
 
         var beforeCure = Hp;
-        Hp = (Hp + cure) > ud.unitCfg.hp 
-            ? ud.unitCfg.hp 
+        Hp = (Hp + cure) > ud.unitCfg.info.hp 
+            ? ud.unitCfg.info.hp 
             : (Hp + cure);
         var realCure = Hp - beforeCure;
 
@@ -310,7 +310,7 @@ public partial class MainLogicUnit
     }
     
     public void ResetHP() {
-        Hp = ud.unitCfg.hp;
+        Hp = ud.unitCfg.info.hp;
         OnHPChange?.Invoke(Hp.RawInt, null);
     }
     #endregion

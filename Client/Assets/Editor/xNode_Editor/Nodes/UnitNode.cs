@@ -16,7 +16,7 @@ namespace Editor.xNode_Editor
         public int def;
         public int moveSpeed;
 
-        public UnitTypeEnum colliderType;
+        public cfg.UnitTypeEnum colliderType;
         // public PEInt hitHeight;// 被子弹命中的高度
         // public ColliderConfig colliCfg;// 碰撞体
    

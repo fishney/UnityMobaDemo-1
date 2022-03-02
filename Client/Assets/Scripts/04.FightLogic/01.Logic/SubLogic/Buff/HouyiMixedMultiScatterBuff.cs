@@ -1,15 +1,6 @@
 using PEMath;
 using System.Collections.Generic;
-
-public class HouyiMixedMultiScatterBuffCfg : BuffCfg {
-    public int scatterCount;//散射个数
-    public TargetCfg targetCfg;//散射目标查找规则
-    public int damagePct;//散射子弹伤害百分比
-
-    public int arrowCount;
-    public int arrowDelay;
-    public float posOffset;
-}
+using cfg;
 
 public class HouyiMixedMultiScatterBuff : Buff {
     int scatterCount;//散射个数

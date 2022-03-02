@@ -1,4 +1,5 @@
 using PEMath;
+using cfg;
 
 /// <summary>
 /// 移动攻击buff

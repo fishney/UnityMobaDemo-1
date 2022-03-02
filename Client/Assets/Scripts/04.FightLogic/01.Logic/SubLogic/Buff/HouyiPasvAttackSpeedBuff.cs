@@ -1,12 +1,7 @@
 
 using proto.HOKProtocol;
 using PEMath;
-
-public class HouyiPasvAttackSpeedBuffCfg : BuffCfg {
-    public int overCount;// 叠加层数
-    public int speedAddtion;// 加成百分比
-    public int resetTime;// 重置周期
-}
+using cfg;
 
 public class HouyiPasvAttackSpeedBuff : Buff {
     int currOverCount;//叠加层数

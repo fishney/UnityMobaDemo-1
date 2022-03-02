@@ -46,8 +46,8 @@ public class LoadWindow : WindowBase
             {
                 SetActive(player);
                 UnitCfg cfg = resSvc.GetUnitConfigById(battleHeroList[i].heroId);
-                SetSprite(GetImage(player,"imgHero"),"ResImages/LoadWnd/" + cfg.resName + "_load");
-                SetText(GetText(player,"txtHeroName"),cfg.unitName);
+                SetSprite(GetImage(player,"imgHero"),"ResImages/LoadWnd/" + cfg.info.resName + "_load");
+                SetText(GetText(player,"txtHeroName"),cfg.info.unitName);
                 SetText(GetText(player,"bgName/txtPlayerName"),battleHeroList[i].userName);
                 Text txtPrg = GetText(player, "txtProgress");
                 txtPercentList.Add(txtPrg);
@@ -67,8 +67,8 @@ public class LoadWindow : WindowBase
             {
                 SetActive(player);
                 UnitCfg cfg = resSvc.GetUnitConfigById(battleHeroList[i + count].heroId);
-                SetSprite(GetImage(player,"imgHero"),"ResImages/LoadWnd/" + cfg.resName + "_load");
-                SetText(GetText(player,"txtHeroName"),cfg.unitName);
+                SetSprite(GetImage(player,"imgHero"),"ResImages/LoadWnd/" + cfg.info.resName + "_load");
+                SetText(GetText(player,"txtHeroName"),cfg.info.unitName);
                 SetText(GetText(player,"bgName/txtPlayerName"),battleHeroList[i + count].userName);
                 Text txtPrg = GetText(player, "txtProgress");
                 txtPercentList.Add(txtPrg);

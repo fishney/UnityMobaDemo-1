@@ -1,0 +1,29 @@
+[L]# 08:56:46--984  ThreadID:1 >> DBMgr Init Done.
+[L]# 08:56:47--048  ThreadID:1 >> NetSvc init.
+[L]# 08:56:47--051  ThreadID:1 >> Server Starting...
+[L]# 08:56:47--052  ThreadID:1 >> ServerSession init Completed by NetSvc.
+[L]# 08:56:47--093  ThreadID:1 >> TimerSvc init.
+[L]# 08:56:47--094  ThreadID:1 >> CacheSvc init.
+[L]# 08:56:47--095  ThreadID:1 >> LoginSys init.
+[L]# 08:56:47--095  ThreadID:1 >> MatchSys init.
+[L]# 08:56:47--098  ThreadID:1 >> RoomSys init.
+[L]# 08:56:47--099  ThreadID:1 >> ServerRoot init Completed.
+[L]# 08:56:52--117  ThreadID:1 >> 匹配队列负载：1v1=>0人，2v2=>0人，5v5=>0人
+[L]# 08:56:52--120  ThreadID:1 >> 对战房间负载：0个
+[L]# 08:56:57--104  ThreadID:1 >> 匹配队列负载：1v1=>0人，2v2=>0人，5v5=>0人
+[L]# 08:56:57--174  ThreadID:1 >> 对战房间负载：0个
+[L]# 08:57:02--109  ThreadID:1 >> 匹配队列负载：1v1=>0人，2v2=>0人，5v5=>0人
+[L]# 08:57:02--110  ThreadID:1 >> 对战房间负载：0个
+[L]# 08:57:05--669  ThreadID:7 >> SessionId:0 Client Connect1
+[L]# 08:57:05--836  ThreadID:4 >> SessionId:0 RcvPack CMD:
+[L]# 08:57:05--873  ThreadID:4 >> SessionId:0 RcvPack CMD:
+[L]# 08:57:07--097  ThreadID:1 >> 匹配队列负载：1v1=>0人，2v2=>0人，5v5=>0人
+[L]# 08:57:07--127  ThreadID:1 >> 对战房间负载：0个
+[L]# 08:57:12--107  ThreadID:1 >> 匹配队列负载：1v1=>0人，2v2=>0人，5v5=>0人
+[L]# 08:57:12--137  ThreadID:1 >> 对战房间负载：0个
+[L]# 08:57:17--164  ThreadID:1 >> 匹配队列负载：1v1=>0人，2v2=>0人，5v5=>0人
+[L]# 08:57:17--653  ThreadID:1 >> 对战房间负载：0个
+[L]# 08:57:22--099  ThreadID:1 >> 匹配队列负载：1v1=>0人，2v2=>0人，5v5=>0人
+[L]# 08:57:22--114  ThreadID:1 >> 对战房间负载：0个
+[L]# 08:57:27--101  ThreadID:1 >> 匹配队列负载：1v1=>0人，2v2=>0人，5v5=>0人
+[L]# 08:57:27--101  ThreadID:1 >> 对战房间负载：0个

@@ -4,6 +4,7 @@ using PEPhysx;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using cfg;
 
 /// <summary>
 /// 方向指向子弹

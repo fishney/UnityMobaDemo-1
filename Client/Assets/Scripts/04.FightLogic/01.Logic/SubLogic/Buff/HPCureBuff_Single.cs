@@ -1,11 +1,5 @@
 using PEMath;
-
-public class HPCureBuffCfg : BuffCfg {
-    /// <summary>
-    /// 治疗hp百分比
-    /// </summary>
-    public int cureHPpct;
-}
+using cfg;
 
 public class HPCureBuff_Single : Buff
 {
@@ -25,7 +19,7 @@ public class HPCureBuff_Single : Buff
     protected override void Tick() {
         base.Tick();
         if(owner.unitState == UnitStateEnum.Alive) {
-            owner.GetCureByBuff(owner.ud.unitCfg.hp * cureHPpct / 100, this);
+            owner.GetCureByBuff(owner.ud.unitCfg.info.hp * cureHPpct / 100, this);
         }
     }
 }

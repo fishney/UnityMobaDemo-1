@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using cfg;
 
 public class TowerView : MainViewUnit {
     Tower tower;

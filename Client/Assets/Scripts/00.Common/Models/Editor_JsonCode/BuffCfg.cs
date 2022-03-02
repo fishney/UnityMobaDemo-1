@@ -5,7 +5,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
 using System;
 using Bright.Serialization;
 using System.Collections.Generic;
@@ -14,10 +13,11 @@ using SimpleJSON;
 using Sirenix.OdinInspector;
 
 
+
 namespace editor.cfg
 {
-[Serializable]
-public partial class BuffCfg :  Bright.Config.EditorBeanBase 
+    [Serializable]
+public abstract partial class BuffCfg :  Bright.Config.EditorBeanBase 
 {
     public BuffCfg()
     {
@@ -182,13 +182,35 @@ public partial class BuffCfg :  Bright.Config.EditorBeanBase
 
     public static BuffCfg LoadJsonBuffCfg(SimpleJSON.JSONNode _json)
     {
-        BuffCfg obj = new BuffCfg();
+        string type = _json["$type"];
+        BuffCfg obj;
+        switch (type)
+        {
+            case "NormalBuffCfg": obj = new NormalBuffCfg(); break;
+            case "DamageBuffCfg_DynamicGroup": obj = new DamageBuffCfg_DynamicGroup(); break;
+            case "DamageBuffCfg_StaticGroup": obj = new DamageBuffCfg_StaticGroup(); break;
+            case "ArthurMarkBuffCfg": obj = new ArthurMarkBuffCfg(); break;
+            case "CommonModifySkillBuffCfg": obj = new CommonModifySkillBuffCfg(); break;
+            case "ExecuteDamageBuffCfg": obj = new ExecuteDamageBuffCfg(); break;
+            case "HPCureBuffCfg": obj = new HPCureBuffCfg(); break;
+            case "HouyiMixedMultiScatterBuffCfg": obj = new HouyiMixedMultiScatterBuffCfg(); break;
+            case "HouyiMultipleArrowBuffCfg": obj = new HouyiMultipleArrowBuffCfg(); break;
+            case "HouyiMultipleSkillModifyBuffCfg": obj = new HouyiMultipleSkillModifyBuffCfg(); break;
+            case "HouyiPasvAttackSpeedBuffCfg": obj = new HouyiPasvAttackSpeedBuffCfg(); break;
+            case "HouyiScatterArrowBuffCfg": obj = new HouyiScatterArrowBuffCfg(); break;
+            case "HouyiScatterSkillModifyBuffCfg": obj = new HouyiScatterSkillModifyBuffCfg(); break;
+            case "MoveSpeedBuffCfg": obj = new MoveSpeedBuffCfg(); break;
+            case "StunBuffCfg_DynamicTime": obj = new StunBuffCfg_DynamicTime(); break;
+            case "TargetFlashMoveBuffCfg": obj = new TargetFlashMoveBuffCfg(); break;
+            default: throw new SerializationException();
+        }
         obj.LoadJson((SimpleJSON.JSONObject)_json);
         return obj;
     }
         
     public static void SaveJsonBuffCfg(BuffCfg _obj, SimpleJSON.JSONNode _json)
     {
+        _json["$type"] = _obj.GetType().Name;
         _obj.SaveJson((SimpleJSON.JSONObject)_json);
     }
 

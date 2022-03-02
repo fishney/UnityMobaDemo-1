@@ -222,8 +222,8 @@ public partial class PlayWindow : WindowBase
             if (selfHero is Hero hero)
             {
                 string userName = hero.userName;
-                int unitID = selfHero.ud.unitCfg.unitId;
-                string heroName = ResSvc.Instance().GetUnitConfigById(unitID).unitName;
+                int unitID = selfHero.ud.unitCfg.info.unitId;
+                string heroName = ResSvc.Instance().GetUnitConfigById(unitID).info.unitName;
 
                 if(!String.IsNullOrEmpty(chatStr)) {
                     if(chatStr.Length >= maxChatLen) {

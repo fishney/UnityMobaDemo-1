@@ -1,4 +1,4 @@
-
+using cfg;
 
 public class Hero : MainLogicUnit
 {
@@ -13,7 +13,7 @@ public class Hero : MainLogicUnit
         userName = hd.userName;
 
         unitType = UnitTypeEnum.Hero;
-        unitName = ud.unitCfg.unitName + "_" + userName;
+        unitName = ud.unitCfg.info.unitName + "_" + userName;
         pathPrefix = "ResChars";
     }
     

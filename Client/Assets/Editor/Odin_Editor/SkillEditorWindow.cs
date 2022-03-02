@@ -6,6 +6,7 @@ using Sirenix.OdinInspector.Editor;
 using UnityEditor;
 using UnityEngine;
 using editor.cfg;
+using Sirenix.Utilities;
 
 namespace Editor.Odin_Editor
 {
@@ -24,7 +25,7 @@ namespace Editor.Odin_Editor
         tree.Selection.SupportsMultiSelect = false;
         
         // TODO 如果添加新buff，需要添加
-        tree.Add("Buff/BuffCfg", new BuffCfgEditor<editor.cfg.BuffCfg>());
+        tree.Add("Buff/NormalBuffCfg", new BuffCfgEditor<editor.cfg.NormalBuffCfg>());
         tree.Add("Buff/ArthurMarkBuffCfg", new BuffCfgEditor<editor.cfg.ArthurMarkBuffCfg>());
         tree.Add("Buff/CommonModifySkillBuffCfg", new BuffCfgEditor<editor.cfg.CommonModifySkillBuffCfg>());
         tree.Add("Buff/DamageBuffCfg_DynamicGroup", new BuffCfgEditor<editor.cfg.DamageBuffCfg_DynamicGroup>());
@@ -94,7 +95,10 @@ namespace Editor.Odin_Editor
         [Button("新建"),HorizontalGroup("A"),GUIColor(1,0,1)]
         public void Create()
         {
-            cfgs.Add(new editor.cfg.UnitInfoCfg());
+            cfgs.Add(new editor.cfg.UnitInfoCfg()
+            {
+                skillArr = new int[0],// TODO why ref?
+            });
         }
     }
     

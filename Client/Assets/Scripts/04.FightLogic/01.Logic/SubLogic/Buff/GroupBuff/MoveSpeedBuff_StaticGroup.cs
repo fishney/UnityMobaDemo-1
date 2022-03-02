@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using PEMath;
+using cfg;
 
 public class MoveSpeedBuff_StaticGroup : Buff {
     PEInt speedOffset;

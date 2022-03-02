@@ -1,10 +1,7 @@
 
 using System.Collections.Generic;
 using PEMath;
-
-public class DamageBuffCfg_StaticGroup : BuffCfg {
-    public int damage;//每次ticK伤害
-}
+using cfg;
 
 public class DamageBuff_StaticGroup : Buff {
     PEInt damage;

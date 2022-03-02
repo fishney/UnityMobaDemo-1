@@ -1,9 +1,5 @@
 using PEMath;
-
-public class MoveSpeedBuffCfg : BuffCfg {
-    public int amount;//速度改变量，百分比
-}
-
+using cfg;
 
 public class MoveSpeedBuff_Single : Buff {
     private PEInt speedOffset;

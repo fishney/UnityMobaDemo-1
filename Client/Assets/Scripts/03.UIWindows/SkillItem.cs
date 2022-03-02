@@ -3,6 +3,7 @@ using System.Collections;
 using proto.HOKProtocol;
 using UnityEngine;
 using UnityEngine.UI;
+using cfg;
 
 /// 技能Button
 public class SkillItem : WindowBase

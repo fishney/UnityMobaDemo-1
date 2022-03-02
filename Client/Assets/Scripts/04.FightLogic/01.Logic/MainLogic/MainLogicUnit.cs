@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using proto.HOKProtocol;
 using PEMath;
 using UnityEngine;
+using cfg;
 
 public abstract partial class MainLogicUnit : LogicUnit
 {
@@ -27,7 +28,7 @@ public abstract partial class MainLogicUnit : LogicUnit
     public MainLogicUnit(LogicUnitData ud)
     {
         this.ud = ud;
-        unitName = ud.unitCfg.unitName;
+        unitName = ud.unitCfg.info.unitName;
     }
     
     
@@ -40,7 +41,7 @@ public abstract partial class MainLogicUnit : LogicUnit
         // 初始化移动控制
         InitMove();
         
-        GameObject go = ResSvc.Instance().LoadPrefab(pathPrefix+"/"+ud.unitCfg.resName);
+        GameObject go = ResSvc.Instance().LoadPrefab(pathPrefix+"/"+ud.unitCfg.info.resName);
         mainViewUnit = go.GetComponent<MainViewUnit>();
         if (mainViewUnit == null)
         {
@@ -114,13 +115,7 @@ public enum UnitStateEnum
     Dead,
 }
 
-public enum UnitTypeEnum
-{
-    Hero,
-    Soldier,
-    Tower,
-    Crystal,
-}
+
 
 public enum TeamEnum
 {

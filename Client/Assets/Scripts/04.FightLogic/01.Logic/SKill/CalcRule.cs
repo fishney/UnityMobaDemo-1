@@ -3,6 +3,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using PEMath;
 using PEUtils;
+using cfg;
 
 /// <summary>
 /// 战斗计算规则

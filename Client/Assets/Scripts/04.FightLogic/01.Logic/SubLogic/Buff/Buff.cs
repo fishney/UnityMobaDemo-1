@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using proto.HOKProtocol;
 using UnityEngine;
+using cfg;
 
 public class Buff : SubLogicUnit
 {
@@ -78,7 +79,7 @@ public class Buff : SubLogicUnit
             LogicPos = owner.LogicPos;
         }
         
-        if (cfg.buffEffect != null)
+        if (!string.IsNullOrEmpty(cfg.buffEffect))
         {
             // 只是用资源，在服务端跑可以进行条件编译，这一段不需要
             GameObject go = ResSvc.Instance().LoadPrefab("ResImages/ResEffects/" + cfg.buffEffect);
@@ -116,7 +117,7 @@ public class Buff : SubLogicUnit
 
     protected override void End()
     {
-        if (cfg.buffEffect != null)
+        if (!string.IsNullOrEmpty(cfg.buffEffect))
         {
             buffView.DestroyBuff();
         }

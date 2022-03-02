@@ -10,6 +10,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using cfg;
 
 /// <summary>
 /// 技能释放显示、旁白

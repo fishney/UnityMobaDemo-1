@@ -1,0 +1,1 @@
+﻿{"buffId":10120,"buffName":"范围伤害","buffType":"Damage_DynamicGroup","attacher":"Caster","staticPosType":"None","impacter":{"targetTeam":"Enemy","selectRule":"TargetClosestMulti","targetTypeArr":["Hero","Soldier"],"selectRange":2,"searchDis":0},"buffDelay":0,"buffInterval":1000,"buffDuration":5000,"buffAudio":"","buffEffect":"Effect_sk2","hitTickAudio":"com_hit1","damage":100}

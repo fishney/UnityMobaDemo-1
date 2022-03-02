@@ -1,5 +1,6 @@
 using PEMath;
 using UnityEngine;
+using cfg;
 
 public class Bullet : SubLogicUnit
 {
