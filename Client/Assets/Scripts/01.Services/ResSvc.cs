@@ -27,7 +27,6 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     public void InitSvc()
     {
         // tables
-        //TextAsset txt = Resources.Load(@"ResCfg\datas_tbitemcfg") as TextAsset;
         configTable = new cfg.Tables(LoadByteBuf);
         
         // bag
@@ -62,7 +61,9 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     
     private static ByteBuf LoadByteBuf(string file)
     {
-        return new ByteBuf(File.ReadAllBytes($"{Application.dataPath}/Resources/ResCfg/{file}.bytes"));
+        var text = Resources.Load($"ResCfg/{file}") as TextAsset;
+        return new ByteBuf(text.bytes);
+        //return new ByteBuf(File.ReadAllBytes($"{Application.dataPath}/Resources/ResCfg/{file}.bytes"));
     }
     
     public ItemCfg GetItemCfgById(int id)

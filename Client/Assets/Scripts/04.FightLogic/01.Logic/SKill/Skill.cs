@@ -47,7 +47,7 @@ public class Skill
     void HitTarget(MainLogicUnit target, object[] args = null)
     {
         //音效表现
-        if (skillCfg.audio_hit != null)
+        if (!string.IsNullOrEmpty(skillCfg.audio_hit))
         {
             target.PlayAudio(skillCfg.audio_hit);
         } 
@@ -103,7 +103,7 @@ public class Skill
         // 0.切换技能状态
         skillState = SkillState.SpellStart;
         // 1.播放音效
-        if (skillCfg.audio_start != null)
+        if (!string.IsNullOrEmpty(skillCfg.audio_start))
         {
             owner.PlayAudio(skillCfg.audio_start);
         }
@@ -113,7 +113,7 @@ public class Skill
             owner.mainViewUnit.UpdateSKillRotation(spellDir);
         }
         // 3.播放动画
-        if (skillCfg.aniName != null)
+        if (!string.IsNullOrEmpty(skillCfg.aniName))
         {
             owner.InputFakeMoveKey(PEVector3.zero);// 释放技能所以先取消移动
             owner.PlayAni(skillCfg.aniName);
@@ -131,7 +131,7 @@ public class Skill
     void SkillSpellAfter()
     {
         skillState = SkillState.SpellAfter;
-        if (skillCfg.audio_work != null)
+        if (!string.IsNullOrEmpty(skillCfg.audio_work))
         {
             owner.PlayAudio(skillCfg.audio_work);
         }
@@ -147,7 +147,7 @@ public class Skill
         SpellSuccessBp?.Invoke(this);
 
         // 恢复原先玩家输入的方向信息
-        if (skillCfg.aniName != null)
+        if (!string.IsNullOrEmpty(skillCfg.aniName))
         {
             owner.RecoverUIInput();
         }

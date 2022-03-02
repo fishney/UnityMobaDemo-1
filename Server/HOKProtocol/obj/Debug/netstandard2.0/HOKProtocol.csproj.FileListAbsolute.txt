@@ -20,3 +20,4 @@ C:\Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.
 C:\Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.dll
 C:\Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.csproj.AssemblyReference.cache
 C:\Github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\UnityMobaDemo\Server\HOKProtocol\obj\Debug\netstandard2.0\HOKProtocol.csproj.AssemblyReference.cache

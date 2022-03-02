@@ -1,7 +1,12 @@
 ScriptsOnlyBuild:
   usedScripts:
+    Assembly-CSharp-Editor.dll:
+    - Editor.xNode_Editor.UnitGraph
+    - Editor.xNode_Editor.UnitNode
     Assembly-CSharp.dll:
     - AudioSvc
+    - BagItem
+    - BagWindow
     - BattleSys
     - BuffView
     - BulletView
@@ -33,14 +38,23 @@ ScriptsOnlyBuild:
     - StartWindow
     - TipsWindow
     - TowerView
+    Sirenix.OdinInspector.Editor.dll:
+    - Sirenix.OdinInspector.Editor.GeneralDrawerConfig
+    - Sirenix.OdinInspector.Editor.ImportSettingsConfig
+    - Sirenix.OdinInspector.Editor.InspectorConfig
+    - Sirenix.Serialization.AOTGenerationConfig
+    Sirenix.Serialization.Config.dll:
+    - Sirenix.Serialization.GlobalSerializationConfig
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -59,6 +73,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Mask
     - UnityEngine.UI.Outline
     - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
     - UnityEngine.UI.VerticalLayoutGroup
@@ -89,7 +104,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 13478}
+      Script: {instanceID: 14086}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -128,7 +143,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 13478}
+      Script: {instanceID: 14086}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -156,6 +171,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -177,97 +194,105 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11806}
+      Script: {instanceID: 12112}
     - Class: 114
-      Script: {instanceID: 11808}
+      Script: {instanceID: 12122}
     - Class: 114
-      Script: {instanceID: 11810}
+      Script: {instanceID: 12152}
     - Class: 114
-      Script: {instanceID: 11812}
+      Script: {instanceID: 12156}
     - Class: 114
-      Script: {instanceID: 11814}
+      Script: {instanceID: 12166}
     - Class: 114
-      Script: {instanceID: 11816}
+      Script: {instanceID: 12346}
     - Class: 114
-      Script: {instanceID: 11840}
+      Script: {instanceID: 12348}
     - Class: 114
-      Script: {instanceID: 11850}
+      Script: {instanceID: 12350}
     - Class: 114
-      Script: {instanceID: 11880}
+      Script: {instanceID: 12392}
     - Class: 114
-      Script: {instanceID: 11890}
+      Script: {instanceID: 12480}
     - Class: 114
-      Script: {instanceID: 12038}
+      Script: {instanceID: 12514}
     - Class: 114
-      Script: {instanceID: 12176}
+      Script: {instanceID: 12624}
     - Class: 114
-      Script: {instanceID: 12270}
-    - Class: 114
-      Script: {instanceID: 12274}
-    - Class: 114
-      Script: {instanceID: 12362}
-    - Class: 114
-      Script: {instanceID: 12396}
-    - Class: 114
-      Script: {instanceID: 12440}
-    - Class: 114
-      Script: {instanceID: 12486}
-    - Class: 114
-      Script: {instanceID: 12546}
-    - Class: 114
-      Script: {instanceID: 12568}
+      Script: {instanceID: 12628}
     - Class: 114
       Script: {instanceID: 12726}
     - Class: 114
-      Script: {instanceID: 12770}
+      Script: {instanceID: 12764}
     - Class: 114
-      Script: {instanceID: 12794}
+      Script: {instanceID: 12822}
     - Class: 114
-      Script: {instanceID: 12796}
+      Script: {instanceID: 12876}
     - Class: 114
-      Script: {instanceID: 12882}
+      Script: {instanceID: 12942}
     - Class: 114
-      Script: {instanceID: 12950}
+      Script: {instanceID: 12970}
     - Class: 114
-      Script: {instanceID: 12972}
+      Script: {instanceID: 13154}
     - Class: 114
-      Script: {instanceID: 13016}
+      Script: {instanceID: 13206}
     - Class: 114
-      Script: {instanceID: 13070}
+      Script: {instanceID: 13232}
     - Class: 114
-      Script: {instanceID: 13164}
+      Script: {instanceID: 13234}
     - Class: 114
-      Script: {instanceID: 13168}
+      Script: {instanceID: 13334}
     - Class: 114
-      Script: {instanceID: 13248}
+      Script: {instanceID: 13410}
     - Class: 114
-      Script: {instanceID: 13282}
+      Script: {instanceID: 13438}
     - Class: 114
-      Script: {instanceID: 13308}
+      Script: {instanceID: 13480}
     - Class: 114
-      Script: {instanceID: 13434}
+      Script: {instanceID: 13486}
     - Class: 114
-      Script: {instanceID: 13464}
+      Script: {instanceID: 13522}
     - Class: 114
-      Script: {instanceID: 13624}
+      Script: {instanceID: 13552}
     - Class: 114
-      Script: {instanceID: 13638}
+      Script: {instanceID: 13660}
     - Class: 114
-      Script: {instanceID: 13642}
+      Script: {instanceID: 13664}
     - Class: 114
-      Script: {instanceID: 13748}
+      Script: {instanceID: 13754}
     - Class: 114
-      Script: {instanceID: 13932}
+      Script: {instanceID: 13796}
     - Class: 114
-      Script: {instanceID: 13958}
+      Script: {instanceID: 13888}
     - Class: 114
-      Script: {instanceID: 13972}
+      Script: {instanceID: 13896}
     - Class: 114
-      Script: {instanceID: 13986}
+      Script: {instanceID: 14040}
     - Class: 114
-      Script: {instanceID: 14056}
+      Script: {instanceID: 14072}
     - Class: 114
-      Script: {instanceID: 14074}
+      Script: {instanceID: 14262}
+    - Class: 114
+      Script: {instanceID: 14278}
+    - Class: 114
+      Script: {instanceID: 14282}
+    - Class: 114
+      Script: {instanceID: 14396}
+    - Class: 114
+      Script: {instanceID: 14602}
+    - Class: 114
+      Script: {instanceID: 14632}
+    - Class: 114
+      Script: {instanceID: 14648}
+    - Class: 114
+      Script: {instanceID: 14666}
+    - Class: 114
+      Script: {instanceID: 14672}
+    - Class: 114
+      Script: {instanceID: 14754}
+    - Class: 114
+      Script: {instanceID: 14776}
+    - Class: 114
+      Script: {instanceID: 14814}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -314,42 +339,6 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: a6e561615949734e9f12f9b61661f43e
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Image
-  - hash:
-      serializedVersion: 2
-      Hash: f087c23fbfa15475a0d110af46fb0496
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Button
-  - hash:
-      serializedVersion: 2
-      Hash: 7ab0e790220bdca831fdd886b339039d
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: GridLayoutGroup
-  - hash:
-      serializedVersion: 2
-      Hash: 699619b86d9359741a4f58540298c80b
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Text
-  - hash:
-      serializedVersion: 2
-      Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: HorizontalLayoutGroup
-  - hash:
-      serializedVersion: 2
-      Hash: caa533b001ae39b864ba8425019e2268
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Outline
-  - hash:
-      serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -366,6 +355,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SelectionCaret
+  - hash:
+      serializedVersion: 2
+      Hash: 4ecc6ade324c915a1c76290d3ce3f8ce
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BagItem
   - hash:
       serializedVersion: 2
       Hash: 04ab58211151f776e48f1bc3c67b3a55
@@ -416,6 +411,12 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
+      Hash: 699619b86d9359741a4f58540298c80b
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Text
+  - hash:
+      serializedVersion: 2
       Hash: ff3f3185051690cec61856b79babea6b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -446,6 +447,12 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
+      Hash: a6e561615949734e9f12f9b61661f43e
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Image
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -456,6 +463,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 7ab0e790220bdca831fdd886b339039d
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: GridLayoutGroup
   - hash:
       serializedVersion: 2
       Hash: 0d7d35aaa4958f7930711c0d987cbf96
@@ -506,6 +519,12 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Sirenix.Utilities.dll
+    namespaceName: Sirenix.Utilities
+    className: ProjectPathFinder
+  - hash:
+      serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -540,6 +559,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ResSvc
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Sirenix.Utilities.dll
+    namespaceName: Sirenix.Utilities
+    className: ProjectPathFinder
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -656,6 +681,12 @@ ScriptsOnlyBuild:
     className: StartWindow
   - hash:
       serializedVersion: 2
+      Hash: a46076ec04c397e74e0fcb4cca9be474
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BagWindow
+  - hash:
+      serializedVersion: 2
       Hash: e5e7964cd89cdc4e79cf24ba34c84bdc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -666,6 +697,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: f087c23fbfa15475a0d110af46fb0496
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Sirenix.Utilities.dll
+    namespaceName: Sirenix.Utilities
+    className: ProjectPathFinder
   - hash:
       serializedVersion: 2
       Hash: 220fe34d432441a073b698cd1df19365
@@ -684,6 +727,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FightMgr
+  - hash:
+      serializedVersion: 2
+      Hash: cd0ecdca0166232906c6f2df9dddc3d3
+    assemblyName: Sirenix.Utilities.Editor.dll
+    namespaceName: Sirenix.Utilities.Editor
+    className: InstanceCreatorWindow
   - hash:
       serializedVersion: 2
       Hash: b004086fede1a230ad0d057ae569ee2a
@@ -722,10 +771,184 @@ ScriptsOnlyBuild:
     className: PEListener
   - hash:
       serializedVersion: 2
+      Hash: 8bb36adc820600fce4f0d27a6da57939
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: AcceptEULAWindow
+  - hash:
+      serializedVersion: 2
+      Hash: a38d0b420921353fcddf2e345856dfdd
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.Serialization
+    className: AOTGenerationConfig
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: AOTGenerationConfigEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 362f6d683348679954dbb2905ebe2b26
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: AttributesExampleWindow
+  - hash:
+      serializedVersion: 2
+      Hash: cd0ecdca0166232906c6f2df9dddc3d3
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: CheckForUpdatesWindow
+  - hash:
+      serializedVersion: 2
+      Hash: 99a55837ca4f304e463a96888097e6c1
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: ColorPaletteManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: ColorPaletteManagerEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: EditorOnlyModeConfigEditor
+  - hash:
+      serializedVersion: 2
+      Hash: a46792d288ced0feff736060aa84bb80
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: EmittedAnimationCurveContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 3d6d1b47a0a259340099dff0b9289686
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: EmittedGradientContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: GeneralDrawerConfig
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: GeneralDrawerConfigEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: GlobalSerializationConfigEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 34efe1c0b34c9862d50358738802f121
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: ImportSettingsConfig
+  - hash:
+      serializedVersion: 2
+      Hash: 64f6e5f7424d773451f76ecf5c6172e6
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: InspectorConfig
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: InspectorConfigEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 40c0c688729b3665d5dd607e280e2039
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor.Examples
+    className: MyDockableGameDashboard
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: OdinEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 8bb36adc820600fce4f0d27a6da57939
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: OdinEditorWindow
+  - hash:
+      serializedVersion: 2
+      Hash: 8bb36adc820600fce4f0d27a6da57939
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: OdinGettingStartedWindow
+  - hash:
+      serializedVersion: 2
+      Hash: cd0ecdca0166232906c6f2df9dddc3d3
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: OdinInspectorAboutWindow
+  - hash:
+      serializedVersion: 2
+      Hash: 910c2e20eb8dd0c0a1cf12bfb0ae17e4
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor.Modules
+    className: OdinModuleConfig
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: PersistentContextCacheEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 3ce408690698f04b0de02c69370277a7
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.Utilities.Editor
+    className: SerializationDebuggerWindow
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: SirenixPathLookupScriptableObject
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: SirenixPathLookupScriptableObjectEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 362f6d683348679954dbb2905ebe2b26
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: SirenixPreferencesWindow
+  - hash:
+      serializedVersion: 2
+      Hash: 77190ece2636f22f4b07c95f309b985c
+    assemblyName: Sirenix.OdinInspector.Editor.dll
+    namespaceName: Sirenix.OdinInspector.Editor
+    className: StaticInspectorWindow
+  - hash:
+      serializedVersion: 2
       Hash: 7874fba24ace2520dfeef2b04032d7aa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SelectWindow
+  - hash:
+      serializedVersion: 2
+      Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -866,7 +1089,7 @@ ScriptsOnlyBuild:
     className: PlayModeRunnerCallback
   - hash:
       serializedVersion: 2
-      Hash: a288a85b9388bff83adee62825151fd2
+      Hash: 104eb26116d495707eec03a30b2eb0a4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameRootResources
@@ -876,6 +1099,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: BaseInput
+  - hash:
+      serializedVersion: 2
+      Hash: caa533b001ae39b864ba8425019e2268
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Outline
   - hash:
       serializedVersion: 2
       Hash: b004086fede1a230ad0d057ae569ee2a
@@ -938,6 +1167,12 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
+      Hash: 4c19117b72c897cd82801f0f9f36ca9c
+    assemblyName: Sirenix.Serialization.Config.dll
+    namespaceName: Sirenix.Serialization
+    className: GlobalSerializationConfig
+  - hash:
+      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -954,4 +1189,4 @@ ScriptsOnlyBuild:
   - Assets/Resources/ResScenes/map_101.unity
   - Assets/Resources/ResScenes/map_102.unity
   - Assets/Scenes/MainCity.unity
-  playerPath: D:/release/demo/demoHOK/HOK.exe
+  playerPath: D:/release/demo/HOK.exe

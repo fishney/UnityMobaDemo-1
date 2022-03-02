@@ -95,13 +95,13 @@ public class Buff : SubLogicUnit
             }
             buffView.Init(this);
 
-            if(cfg.buffAudio != null) {
+            if(!string.IsNullOrEmpty(cfg.buffAudio)) {
                 buffView.PlayAudio(cfg.buffAudio);
             }
         }
         else {
             // 附着性buff
-            if(cfg.buffAudio != null) {
+            if(!string.IsNullOrEmpty(cfg.buffAudio)) {
                 owner.PlayAudio(cfg.buffAudio);
             }
         }
@@ -109,7 +109,7 @@ public class Buff : SubLogicUnit
 
     protected override void Tick()
     {
-        if (cfg.hitTickAudio != null && targetList?.Count > 0)
+        if (!string.IsNullOrEmpty(cfg.hitTickAudio) && targetList?.Count > 0)
         {
             owner.PlayAudio(cfg.hitTickAudio);
         }

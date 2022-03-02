@@ -865,24 +865,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\79982\\.nuget\\packages\\": {},
+    "C:\\Users\\YAN\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\My Github\\UnityMobaDemo\\Server\\Server\\Server.csproj",
+      "projectUniqueName": "D:\\github\\UnityMobaDemo\\Server\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "E:\\My Github\\UnityMobaDemo\\Server\\Server\\Server.csproj",
-      "packagesPath": "C:\\Users\\79982\\.nuget\\packages\\",
-      "outputPath": "E:\\My Github\\UnityMobaDemo\\Server\\Server\\obj\\",
+      "projectPath": "D:\\github\\UnityMobaDemo\\Server\\Server\\Server.csproj",
+      "packagesPath": "C:\\Users\\YAN\\.nuget\\packages\\",
+      "outputPath": "D:\\github\\UnityMobaDemo\\Server\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\79982\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\YAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -895,8 +901,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\My Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj": {
-              "projectPath": "E:\\My Github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj"
+            "D:\\github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj": {
+              "projectPath": "D:\\github\\UnityMobaDemo\\Server\\HOKProtocol\\HOKProtocol.csproj"
             }
           }
         }
@@ -937,7 +943,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

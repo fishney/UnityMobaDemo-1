@@ -257,7 +257,7 @@ public partial class MainLogicUnit
         if(calcCB) {
             OnHurt?.Invoke();
         }
-        if(buff.cfg.hitTickAudio != null) {
+        if(!string.IsNullOrEmpty(buff.cfg.hitTickAudio)) {
             PlayAudio(buff.cfg.hitTickAudio);
         }
 
