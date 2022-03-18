@@ -39,6 +39,22 @@ public sealed partial class CommonModifySkillBuffCfg :  BuffCfg
             }
         }
         
+        { 
+            var _fieldJson = _json["times"];
+            if (_fieldJson != null)
+            {
+                if(!_fieldJson.IsNumber) { throw new SerializationException(); }  times = _fieldJson;
+            }
+        }
+        
+        { 
+            var _fieldJson = _json["replaceIconId"];
+            if (_fieldJson != null)
+            {
+                if(!_fieldJson.IsNumber) { throw new SerializationException(); }  replaceIconId = _fieldJson;
+            }
+        }
+        
     }
 
     public override void SaveJson(SimpleJSON.JSONObject _json)
@@ -49,6 +65,12 @@ public sealed partial class CommonModifySkillBuffCfg :  BuffCfg
         }
         {
             _json["replaceID"] = new JSONNumber(replaceID);
+        }
+        {
+            _json["times"] = new JSONNumber(times);
+        }
+        {
+            _json["replaceIconId"] = new JSONNumber(replaceIconId);
         }
     }
 
@@ -67,6 +89,16 @@ public sealed partial class CommonModifySkillBuffCfg :  BuffCfg
     public int originalID { get; set; }
 
     public int replaceID { get; set; }
+
+    /// <summary>
+    /// 执行回数，-1就是永久生效
+    /// </summary>
+    public int times { get; set; }
+
+    /// <summary>
+    /// 替换刷新本地技能位置（0普攻，1-3技能）
+    /// </summary>
+    public int replaceIconId { get; set; }
 
 }
 }

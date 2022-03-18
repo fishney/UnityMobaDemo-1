@@ -125,5 +125,13 @@ namespace cfg
         /// 混合多重射击与散射：例如Houyi
         /// </summary>
         HouyiMixedMultiScatter = 27,
+        /// <summary>
+        /// Jinx大招混合：计距、百分比、爆炸溅射
+        /// </summary>
+        JinxRocketMixed_DynamicGroup = 28,
+        /// <summary>
+        /// 被动类buff：不可叠加的击杀速度加成
+        /// </summary>
+        NSSpeedUpPasv = 29,
     }
 }

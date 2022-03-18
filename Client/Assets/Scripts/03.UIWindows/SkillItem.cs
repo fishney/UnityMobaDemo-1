@@ -20,6 +20,7 @@ public class SkillItem : WindowBase
 
     private int skillIndex;
     private SkillCfg skillCfg;
+    private float curtSelectRange = 0;
     /// 根据宽高比算出的最远技能点拖拽距离
     private float pointDis;
     private Vector2 startPos = Vector2.zero;
@@ -33,7 +34,11 @@ public class SkillItem : WindowBase
 
         this.skillIndex = skillIndex;
         this.skillCfg = skillCfg;
-
+        if (skillCfg.targetCfg != null)
+        {
+            this.curtSelectRange = skillCfg.targetCfg.selectRange;
+        }
+        
         pointDis = Screen.height * 1.0f / ClientConfig.ScreenStandardHeight * ClientConfig.SkillOPDis;
         
         if (skillCfg.isNormalAttack == false)
@@ -214,9 +219,9 @@ public class SkillItem : WindowBase
 
     private void ShowSkillAtkRange(bool state)
     {
-        if (skillCfg.targetCfg != null)
+        if (curtSelectRange > 0)
         {
-            viewHero.SetAtkSkillRange(state,skillCfg.targetCfg.selectRange);
+            viewHero.SetAtkSkillRange(state,curtSelectRange);
         }
     }
 
@@ -265,5 +270,18 @@ public class SkillItem : WindowBase
     public void SetForbidState(bool state)
     {
         SetActive(imgForbid,state);
+    }
+
+    public void RefreshImages(SkillCfg cfg)
+    {
+        if (!string.IsNullOrEmpty(cfg?.iconName))
+        {
+            SetSprite(skillIcon,"ResImages/PlayWnd/" + cfg.iconName);
+        }
+        
+        if (cfg?.targetCfg != null)
+        {
+            curtSelectRange = cfg.targetCfg.selectRange;
+        }
     }
 }

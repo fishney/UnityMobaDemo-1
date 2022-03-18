@@ -78,6 +78,7 @@ public sealed partial class HouyiMixedMultiScatterBuffCfg :  BuffCfg
         + "buffAudio:" + buffAudio + ","
         + "buffEffect:" + buffEffect + ","
         + "hitTickAudio:" + hitTickAudio + ","
+        + "effectDestoryExtend:" + effectDestoryExtend + ","
         + "scatterCount:" + scatterCount + ","
         + "targetCfg:" + targetCfg + ","
         + "damagePct:" + damagePct + ","

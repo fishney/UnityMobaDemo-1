@@ -60,6 +60,7 @@ public sealed partial class HPCureBuffCfg :  BuffCfg
         + "buffAudio:" + buffAudio + ","
         + "buffEffect:" + buffEffect + ","
         + "hitTickAudio:" + hitTickAudio + ","
+        + "effectDestoryExtend:" + effectDestoryExtend + ","
         + "cureHPpct:" + cureHPpct + ","
         + "}";
     }

@@ -26,7 +26,7 @@ public class DamageBuff_DynamicGroup: Buff {
         targetList.Clear();
         targetList.AddRange(CalcRule.FindMulipleTargetByRule(owner, cfg.impacter, PEVector3.zero));
         for(int i = 0; i < targetList.Count; i++) {
-            targetList[i].GetDamageByBuff(damage, this);
+            targetList[i].GetDamageByBuff(source, damage, this);
         }
     }
 }

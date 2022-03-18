@@ -24,7 +24,7 @@ public class ArthurMarkBuff : Buff
     }
 
     void GetHurt() {
-        target.GetDamageByBuff(damagePct / 100 * target.ud.unitCfg.info.hp, this, false);
+        target.GetDamageByBuff(source, damagePct / 100 * target.ud.unitCfg.info.hp, this, false);
     }
 
     protected override void End() {

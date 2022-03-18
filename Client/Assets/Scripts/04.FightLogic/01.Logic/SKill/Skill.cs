@@ -56,7 +56,7 @@ public class Skill
         if (skillCfg.damage != 0)
         {
             PEInt damage = skillCfg.damage;
-            target.GetDamageBySkill(damage,this);
+            target.GetDamageBySkill(owner, damage,this);
         }
         
         // 附加buff(To Target or Bullet)
@@ -212,6 +212,7 @@ public class Skill
                 
                 void SkillWork()
                 {
+                    // 造成伤害，伤害、子弹buff回调
                     CalcSkillAttack(lockTarget);
                     // 附着buff
                     AttachSkillBuffToCaster();
@@ -326,7 +327,7 @@ public class Skill
     }
     
     /// 技能替换
-    public void ReplaceSkillCfg(int replaceId) {
+    public void ReplaceSkillCfg(int replaceId,int skillId = -1) {
         if(skillId == replaceId) {
             TempSkillID = 0;
         }
@@ -335,6 +336,10 @@ public class Skill
         }
 
         skillCfg = ResSvc.Instance().GetSkillConfigById(replaceId);
+        if (skillId > -1 && skillId < 4)
+        {
+            BattleSys.Instance.RefreshSkillWndInfo(skillCfg, skillId); 
+        }
         // spellTime = skillCfg.spellTime;
         // skillTime = skillCfg.skillTime;
         // if(skillCfg.isNormalAttack) {

@@ -15,7 +15,7 @@ namespace Sirenix.Serialization
     /// <summary>
     /// Custom formatter for the <see cref="Vector2Int"/> type.
     /// </summary>
-    /// <seealso cref="Sirenix.Serialization.MinimalBaseFormatter{UnityEngine.Vector2Int}" />
+    /// <seealso cref="Vector2Int" />
     public class Vector2IntFormatter : MinimalBaseFormatter<Vector2Int>
     {
         private static readonly Serializer<int> Serializer = Serialization.Serializer.Get<int>();
@@ -46,7 +46,7 @@ namespace Sirenix.Serialization
     /// <summary>
     /// Custom formatter for the <see cref="Vector3Int"/> type.
     /// </summary>
-    /// <seealso cref="Sirenix.Serialization.MinimalBaseFormatter{UnityEngine.Vector3Int}" />
+    /// <seealso cref="Vector3Int" />
     public class Vector3IntFormatter : MinimalBaseFormatter<Vector3Int>
     {
         private static readonly Serializer<int> Serializer = Serialization.Serializer.Get<int>();

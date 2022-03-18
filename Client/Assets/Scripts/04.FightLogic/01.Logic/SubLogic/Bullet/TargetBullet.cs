@@ -109,7 +109,8 @@ public class TargetBullet: Bullet
 
         //命中目标,产生效果
         if(target.unitState != UnitStateEnum.Dead) {
-            HitTargetCB?.Invoke(target, null);
+            Debug.Log("Bullet End Pos:" + LogicPos);
+            HitTargetCB?.Invoke(target, new object[2]{null,LogicPos});
         }
     }
     

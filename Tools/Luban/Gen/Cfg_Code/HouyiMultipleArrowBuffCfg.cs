@@ -67,6 +67,7 @@ public sealed partial class HouyiMultipleArrowBuffCfg :  BuffCfg
         + "buffAudio:" + buffAudio + ","
         + "buffEffect:" + buffEffect + ","
         + "hitTickAudio:" + hitTickAudio + ","
+        + "effectDestoryExtend:" + effectDestoryExtend + ","
         + "arrowCount:" + arrowCount + ","
         + "arrowDelay:" + arrowDelay + ","
         + "posOffset:" + posOffset + ","

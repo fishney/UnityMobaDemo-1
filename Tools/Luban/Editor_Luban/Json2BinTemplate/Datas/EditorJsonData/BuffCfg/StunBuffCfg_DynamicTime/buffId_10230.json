@@ -1,1 +1,1 @@
-﻿{"buffId":10230,"buffName":"动态时间眩晕","buffType":"Stun_Single_DynamicTime","attacher":"Bullet","staticPosType":"None","buffDelay":0,"buffInterval":0,"buffDuration":0,"buffAudio":"","buffEffect":"","hitTickAudio":"","minStunTime":1000,"maxStunTime":3500}
+﻿{"buffId":10230,"buffName":"动态时间眩晕","buffType":"Stun_Single_DynamicTime","attacher":"Bullet","staticPosType":"None","buffDelay":0,"buffInterval":0,"buffDuration":0,"buffAudio":"","buffEffect":"","hitTickAudio":"","effectDestoryExtend":0,"minStunTime":1000,"maxStunTime":3500}

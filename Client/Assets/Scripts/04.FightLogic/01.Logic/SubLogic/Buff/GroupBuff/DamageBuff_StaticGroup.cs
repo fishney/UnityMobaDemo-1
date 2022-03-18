@@ -54,7 +54,7 @@ public class DamageBuff_StaticGroup : Buff {
         targetList.Clear();
         targetList.AddRange(CalcRule.FindMulipleTargetByRule(owner, cfg.impacter, LogicPos));
         for(int i = 0; i < targetList.Count; i++) {
-            targetList[i].GetDamageByBuff(damage, this);
+            targetList[i].GetDamageByBuff(source, damage, this);
         }
     }
 }

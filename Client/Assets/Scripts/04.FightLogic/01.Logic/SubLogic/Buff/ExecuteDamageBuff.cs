@@ -22,6 +22,6 @@ public class ExecuteDamageBuff : Buff {
         base.Start();
 
         PEInt damage = (damagePct / 100) * owner.ud.unitCfg.info.hp;
-        owner.GetDamageByBuff(damage, this);
+        owner.GetDamageByBuff(source, damage, this);
     }
 }

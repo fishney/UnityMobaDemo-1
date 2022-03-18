@@ -60,6 +60,7 @@ public sealed partial class ExecuteDamageBuffCfg :  BuffCfg
         + "buffAudio:" + buffAudio + ","
         + "buffEffect:" + buffEffect + ","
         + "hitTickAudio:" + hitTickAudio + ","
+        + "effectDestoryExtend:" + effectDestoryExtend + ","
         + "damagePct:" + damagePct + ","
         + "}";
     }

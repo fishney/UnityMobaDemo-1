@@ -65,6 +65,7 @@ public sealed partial class HouyiMultipleSkillModifyBuffCfg :  BuffCfg
         + "buffAudio:" + buffAudio + ","
         + "buffEffect:" + buffEffect + ","
         + "hitTickAudio:" + hitTickAudio + ","
+        + "effectDestoryExtend:" + effectDestoryExtend + ","
         + "originalID:" + originalID + ","
         + "powerID:" + powerID + ","
         + "superPowerID:" + superPowerID + ","

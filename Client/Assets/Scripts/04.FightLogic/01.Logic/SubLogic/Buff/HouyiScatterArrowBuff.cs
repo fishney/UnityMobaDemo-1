@@ -40,7 +40,7 @@ public class HouyiScatterArrowBuff : Buff {
             TargetBullet bullet = source.CreateSkillBullet(source, targetList[i], skill) as TargetBullet;
             bullet.HitTargetCB = (MainLogicUnit target, object[] args) => {
                 // this.Log("scatter target name:" + target.unitName);
-                target.GetDamageByBuff(skill.skillCfg.damage * damagePct / 100, this);
+                target.GetDamageByBuff(source, skill.skillCfg.damage * damagePct / 100, this);
             };
         }
     }

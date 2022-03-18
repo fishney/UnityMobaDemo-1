@@ -1,0 +1,1 @@
+﻿{"buffId":10320,"buffName":"减速","buffType":"MoveSpeed_Single","attacher":"Bullet","staticPosType":"None","buffDelay":0,"buffInterval":0,"buffDuration":2000,"buffAudio":"","buffEffect":"jinx_bullets/Beam_Boom","hitTickAudio":"","effectDestoryExtend":2.5,"amount":-50}

@@ -57,6 +57,7 @@ public sealed partial class ArthurMarkBuffCfg :  BuffCfg
         + "buffAudio:" + buffAudio + ","
         + "buffEffect:" + buffEffect + ","
         + "hitTickAudio:" + hitTickAudio + ","
+        + "effectDestoryExtend:" + effectDestoryExtend + ","
         + "damagePct:" + damagePct + ","
         + "}";
     }

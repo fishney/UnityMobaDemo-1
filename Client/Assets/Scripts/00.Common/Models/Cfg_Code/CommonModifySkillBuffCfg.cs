@@ -19,6 +19,8 @@ public sealed partial class CommonModifySkillBuffCfg :  BuffCfg
     {
         originalID = _buf.ReadInt();
         replaceID = _buf.ReadInt();
+        times = _buf.ReadInt();
+        replaceIconId = _buf.ReadInt();
         PostInit();
     }
 
@@ -29,6 +31,14 @@ public sealed partial class CommonModifySkillBuffCfg :  BuffCfg
 
     public int originalID { get; private set; }
     public int replaceID { get; private set; }
+    /// <summary>
+    /// 执行回数，-1就是永久生效
+    /// </summary>
+    public int times { get; private set; }
+    /// <summary>
+    /// 替换刷新本地技能位置（0普攻，1-3技能）
+    /// </summary>
+    public int replaceIconId { get; private set; }
 
     public const int __ID__ = 455491269;
     public override int GetTypeId() => __ID__;
@@ -59,8 +69,11 @@ public sealed partial class CommonModifySkillBuffCfg :  BuffCfg
         + "buffAudio:" + buffAudio + ","
         + "buffEffect:" + buffEffect + ","
         + "hitTickAudio:" + hitTickAudio + ","
+        + "effectDestoryExtend:" + effectDestoryExtend + ","
         + "originalID:" + originalID + ","
         + "replaceID:" + replaceID + ","
+        + "times:" + times + ","
+        + "replaceIconId:" + replaceIconId + ","
         + "}";
     }
     

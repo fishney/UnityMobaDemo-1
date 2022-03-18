@@ -60,6 +60,7 @@ public sealed partial class DamageBuffCfg_StaticGroup :  BuffCfg
         + "buffAudio:" + buffAudio + ","
         + "buffEffect:" + buffEffect + ","
         + "hitTickAudio:" + hitTickAudio + ","
+        + "effectDestoryExtend:" + effectDestoryExtend + ","
         + "damage:" + damage + ","
         + "}";
     }

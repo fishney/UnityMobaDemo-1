@@ -41,6 +41,8 @@ namespace Editor.Odin_Editor
         tree.Add("Buff/MoveSpeedBuffCfg", new BuffCfgEditor<editor.cfg.MoveSpeedBuffCfg>());
         tree.Add("Buff/StunBuffCfg_DynamicTime", new BuffCfgEditor<editor.cfg.StunBuffCfg_DynamicTime>());
         tree.Add("Buff/TargetFlashMoveBuffCfg", new BuffCfgEditor<editor.cfg.TargetFlashMoveBuffCfg>());
+        tree.Add("Buff/JinxRocketMixedBuffCfg_DynamicGroup", new BuffCfgEditor<editor.cfg.JinxRocketMixedBuffCfg_DynamicGroup>());
+        tree.Add("Buff/NSSpeedBuffCfg", new BuffCfgEditor<editor.cfg.NSSpeedBuffCfg>());
         tree.Add("Skill",new SkillCfgEditor());
         tree.Add("Unit",new UnitInfoCfgEditor());
 

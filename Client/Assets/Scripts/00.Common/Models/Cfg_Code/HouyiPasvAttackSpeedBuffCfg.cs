@@ -70,6 +70,7 @@ public sealed partial class HouyiPasvAttackSpeedBuffCfg :  BuffCfg
         + "buffAudio:" + buffAudio + ","
         + "buffEffect:" + buffEffect + ","
         + "hitTickAudio:" + hitTickAudio + ","
+        + "effectDestoryExtend:" + effectDestoryExtend + ","
         + "overCount:" + overCount + ","
         + "speedAddtion:" + speedAddtion + ","
         + "resetTime:" + resetTime + ","

@@ -41,6 +41,8 @@ namespace editor.cfg
         public static readonly Bright.Config.EditorEnumItemInfo HouyiPasvSkillModify = new Bright.Config.EditorEnumItemInfo("HouyiPasvSkillModify", "", 25, "被动技能修改：例如Houyi");
         public static readonly Bright.Config.EditorEnumItemInfo HouyiPasvMultiArrow = new Bright.Config.EditorEnumItemInfo("HouyiPasvMultiArrow", "", 26, "被动技能多重射击：例如Houyi");
         public static readonly Bright.Config.EditorEnumItemInfo HouyiMixedMultiScatter = new Bright.Config.EditorEnumItemInfo("HouyiMixedMultiScatter", "", 27, "混合多重射击与散射：例如Houyi");
+        public static readonly Bright.Config.EditorEnumItemInfo JinxRocketMixed_DynamicGroup = new Bright.Config.EditorEnumItemInfo("JinxRocketMixed_DynamicGroup", "", 28, "Jinx大招混合：计距、百分比、爆炸溅射");
+        public static readonly Bright.Config.EditorEnumItemInfo NSSpeedUpPasv = new Bright.Config.EditorEnumItemInfo("NSSpeedUpPasv", "", 29, "被动类buff：不可叠加的击杀速度加成");
 
         private static readonly System.Collections.Generic.List<Bright.Config.EditorEnumItemInfo> __items = new System.Collections.Generic.List<Bright.Config.EditorEnumItemInfo>
         {
@@ -72,6 +74,8 @@ namespace editor.cfg
             HouyiPasvSkillModify,
             HouyiPasvMultiArrow,
             HouyiMixedMultiScatter,
+            JinxRocketMixed_DynamicGroup,
+            NSSpeedUpPasv,
         };
 
         public static System.Collections.Generic.List<Bright.Config.EditorEnumItemInfo> GetItems() => __items;

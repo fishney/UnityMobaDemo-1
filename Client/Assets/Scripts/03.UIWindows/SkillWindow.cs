@@ -31,6 +31,29 @@ public partial class PlayWindow
         SetActive(imgInfoRoot,false);
     }
 
+    /// <summary>
+    /// 更新技能UI
+    /// </summary>
+    public void RefreshSkillInfo(cfg.SkillCfg newSkillCfg, int skillIndex)
+    {
+        switch (skillIndex)
+        {
+            case 0:
+                skaItem.RefreshImages(newSkillCfg);
+                break;
+            case 1:
+                sk1Item.RefreshImages(newSkillCfg);
+                break;
+            case 2:
+                sk2Item.RefreshImages(newSkillCfg);
+                break;
+            case 3:
+                sk3Item.RefreshImages(newSkillCfg);
+                break;
+        }
+        
+    }
+
     public void SetAllSkillForbidState()
     {
         SetAllSkillForbidState(true);
@@ -45,7 +68,7 @@ public partial class PlayWindow
             }
         }
 
-        /*
+        
         if(Input.GetKeyDown(KeyCode.Space)) {
             skaItem.ClickSkillItem();
         }
@@ -77,7 +100,7 @@ public partial class PlayWindow
         else if(Input.GetKeyDown(KeyCode.Y)) {
             GameRoot.SelfPosIndex = 5;
         }
-        */
+        
     }
 
 

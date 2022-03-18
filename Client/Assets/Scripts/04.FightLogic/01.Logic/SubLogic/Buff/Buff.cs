@@ -7,6 +7,8 @@ public class Buff : SubLogicUnit
 {
     /// buff附着单位
     public MainLogicUnit owner;
+    // buff发起人
+    public MainLogicUnit source;
     protected int buffId;
     /// <summary>
     /// 值在DirectionBullet类里有输入，通过调用 hitTargetCB 来获得的
@@ -28,9 +30,9 @@ public class Buff : SubLogicUnit
     public Buff(MainLogicUnit source,MainLogicUnit owner, Skill skill, int buffId,object[] args = null) : base(source, skill)
     {
         this.owner = owner;
+        this.source = source;
         this.buffId = buffId;
         this.args = args;
-        
     }
     
     public override void LogicInit() {
@@ -119,7 +121,7 @@ public class Buff : SubLogicUnit
     {
         if (!string.IsNullOrEmpty(cfg.buffEffect))
         {
-            buffView.DestroyBuff();
+            buffView.DestroyBuff(cfg.effectDestoryExtend);
         }
     }
 }

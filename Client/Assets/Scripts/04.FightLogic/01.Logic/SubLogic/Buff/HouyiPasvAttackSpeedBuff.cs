@@ -6,7 +6,7 @@ using cfg;
 public class HouyiPasvAttackSpeedBuff : Buff {
     int currOverCount;//叠加层数
     int maxOverCount;//最大叠加层数
-    PEInt speedAddtion;
+    PEInt speedAddition;
     int resetTime;
 
     PEInt speedOffset;
@@ -22,7 +22,7 @@ public class HouyiPasvAttackSpeedBuff : Buff {
         HouyiPasvAttackSpeedBuffCfg hpasbc = cfg as HouyiPasvAttackSpeedBuffCfg;
         maxOverCount = hpasbc.overCount;
         resetTime = hpasbc.resetTime;
-        speedAddtion = hpasbc.speedAddtion;
+        speedAddition = hpasbc.speedAddtion;
         speedOffset = PEInt.zero;
 
         Skill[] skillArr = source.GetAllSkill();
@@ -32,7 +32,11 @@ public class HouyiPasvAttackSpeedBuff : Buff {
     }
 
     void OnSpellSkillSucc(Skill skillReleased) {
-        if(skillReleased.skillCfg.isNormalAttack) {
+        // TODO 偷懒了，后续把重置普攻形态技能ID换成配置
+        if(skillReleased.TempSkillID == 1034) {
+            ResetSpeed();
+        }
+        else if(skillReleased.skillCfg.isNormalAttack) {
             timeCount = 0;
             if(currOverCount >= maxOverCount) {
                 return;
@@ -40,7 +44,7 @@ public class HouyiPasvAttackSpeedBuff : Buff {
             else {
                 ++currOverCount;
                 isCounter = true;
-                PEInt addition = owner.AttackSpeedRateBase * (speedAddtion / 100);
+                PEInt addition = owner.AttackSpeedRateBase * (speedAddition / 100);
                 speedOffset += addition;
                 owner.ModifyAttackSpeed(addition);
             }

@@ -51,10 +51,10 @@ public class GMSystem : SystemBase
                 mapId = 101,
                 heroList = new List<BattleHeroData>()
                 {
-                    new BattleHeroData{ heroId = 102,userName = "P1"},
-                    new BattleHeroData{ heroId = 101,userName = "P2"},
-                    new BattleHeroData{ heroId = 101,userName = "P3"},
-                    new BattleHeroData{ heroId = 102,userName = "P4"},
+                    new BattleHeroData{ heroId = 103,userName = "P1"},
+                    new BattleHeroData{ heroId = 103,userName = "P2"},
+                    new BattleHeroData{ heroId = 103,userName = "P3"},
+                    new BattleHeroData{ heroId = 103,userName = "P4"},
                     new BattleHeroData{ heroId = 101,userName = "P5"},
                     new BattleHeroData{ heroId = 102,userName = "P6"},
 

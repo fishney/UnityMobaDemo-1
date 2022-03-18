@@ -33,6 +33,8 @@ public partial class Tables
     public Datas.TbMoveSpeedBuffCfg TbMoveSpeedBuffCfg {get; }
     public Datas.TbStunBuffCfg_DynamicTime TbStunBuffCfg_DynamicTime {get; }
     public Datas.TbTargetFlashMoveBuffCfg TbTargetFlashMoveBuffCfg {get; }
+    public Datas.TbJinxRocketMixedBuffCfg_DynamicGroup TbJinxRocketMixedBuffCfg_DynamicGroup {get; }
+    public Datas.TbNSSpeedBuffCfg TbNSSpeedBuffCfg {get; }
 
     public Tables(System.Func<string, ByteBuf> loader)
     {
@@ -77,6 +79,10 @@ public partial class Tables
         tables.Add("Datas.TbStunBuffCfg_DynamicTime", TbStunBuffCfg_DynamicTime);
         TbTargetFlashMoveBuffCfg = new Datas.TbTargetFlashMoveBuffCfg(loader("datas_tbtargetflashmovebuffcfg")); 
         tables.Add("Datas.TbTargetFlashMoveBuffCfg", TbTargetFlashMoveBuffCfg);
+        TbJinxRocketMixedBuffCfg_DynamicGroup = new Datas.TbJinxRocketMixedBuffCfg_DynamicGroup(loader("datas_tbjinxrocketmixedbuffcfg_dynamicgroup")); 
+        tables.Add("Datas.TbJinxRocketMixedBuffCfg_DynamicGroup", TbJinxRocketMixedBuffCfg_DynamicGroup);
+        TbNSSpeedBuffCfg = new Datas.TbNSSpeedBuffCfg(loader("datas_tbnsspeedbuffcfg")); 
+        tables.Add("Datas.TbNSSpeedBuffCfg", TbNSSpeedBuffCfg);
 
         PostInit();
         TbItemEffectCfg.Resolve(tables); 
@@ -99,6 +105,8 @@ public partial class Tables
         TbMoveSpeedBuffCfg.Resolve(tables); 
         TbStunBuffCfg_DynamicTime.Resolve(tables); 
         TbTargetFlashMoveBuffCfg.Resolve(tables); 
+        TbJinxRocketMixedBuffCfg_DynamicGroup.Resolve(tables); 
+        TbNSSpeedBuffCfg.Resolve(tables); 
         PostResolve();
     }
 
@@ -124,6 +132,8 @@ public partial class Tables
         TbMoveSpeedBuffCfg.TranslateText(translator); 
         TbStunBuffCfg_DynamicTime.TranslateText(translator); 
         TbTargetFlashMoveBuffCfg.TranslateText(translator); 
+        TbJinxRocketMixedBuffCfg_DynamicGroup.TranslateText(translator); 
+        TbNSSpeedBuffCfg.TranslateText(translator); 
     }
     
     partial void PostInit();

@@ -29,6 +29,7 @@ public abstract partial class BuffCfg :  Bright.Config.BeanBase
         buffAudio = _buf.ReadString();
         buffEffect = _buf.ReadString();
         hitTickAudio = _buf.ReadString();
+        effectDestoryExtend = _buf.ReadFloat();
         PostInit();
     }
 
@@ -52,6 +53,8 @@ public abstract partial class BuffCfg :  Bright.Config.BeanBase
             case MoveSpeedBuffCfg.__ID__: return new MoveSpeedBuffCfg(_buf);
             case StunBuffCfg_DynamicTime.__ID__: return new StunBuffCfg_DynamicTime(_buf);
             case TargetFlashMoveBuffCfg.__ID__: return new TargetFlashMoveBuffCfg(_buf);
+            case JinxRocketMixedBuffCfg_DynamicGroup.__ID__: return new JinxRocketMixedBuffCfg_DynamicGroup(_buf);
+            case NSSpeedBuffCfg.__ID__: return new NSSpeedBuffCfg(_buf);
             default: throw new SerializationException();
         }
     }
@@ -83,6 +86,10 @@ public abstract partial class BuffCfg :  Bright.Config.BeanBase
     public string buffAudio { get; private set; }
     public string buffEffect { get; private set; }
     public string hitTickAudio { get; private set; }
+    /// <summary>
+    /// buffEffect的销毁时长。如果为0则0.1f销毁，否则按照字段提供时间销毁。
+    /// </summary>
+    public float effectDestoryExtend { get; private set; }
 
 
     public virtual void Resolve(Dictionary<string, object> _tables)
@@ -111,6 +118,7 @@ public abstract partial class BuffCfg :  Bright.Config.BeanBase
         + "buffAudio:" + buffAudio + ","
         + "buffEffect:" + buffEffect + ","
         + "hitTickAudio:" + hitTickAudio + ","
+        + "effectDestoryExtend:" + effectDestoryExtend + ","
         + "}";
     }
     

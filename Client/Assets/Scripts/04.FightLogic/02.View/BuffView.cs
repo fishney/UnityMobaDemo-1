@@ -19,7 +19,7 @@ public class BuffView : ViewUnit
     //用一个空函数覆盖位置与方向的更新，因为不需要同步、平滑插值等复杂的表现手法，直接跟随hero就完了
     protected override void Update() { }
 
-    public void DestroyBuff() {
-        Destroy(gameObject, 0.1f);
+    public void DestroyBuff(float delayTime = 0.1f) {
+        Destroy(gameObject, delayTime > 0 ? delayTime : 0.1f);
     }
 }

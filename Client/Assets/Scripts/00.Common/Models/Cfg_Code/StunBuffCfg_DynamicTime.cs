@@ -59,6 +59,7 @@ public sealed partial class StunBuffCfg_DynamicTime :  BuffCfg
         + "buffAudio:" + buffAudio + ","
         + "buffEffect:" + buffEffect + ","
         + "hitTickAudio:" + hitTickAudio + ","
+        + "effectDestoryExtend:" + effectDestoryExtend + ","
         + "minStunTime:" + minStunTime + ","
         + "maxStunTime:" + maxStunTime + ","
         + "}";

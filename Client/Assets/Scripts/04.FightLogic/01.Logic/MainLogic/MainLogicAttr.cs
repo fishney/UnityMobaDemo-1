@@ -10,6 +10,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using cfg;
 using PEMath;
 
 /// <summary>
@@ -34,6 +35,10 @@ public partial class MainLogicUnit
     /// 死亡时回调
     /// </summary>
     public Action<MainLogicUnit> OnDeath;
+    /// <summary>
+    /// 击杀玩家时回调
+    /// </summary>
+    public Action<MainLogicUnit> OnKillPlayer;
     /// <summary>
     /// 被减速时
     /// </summary>
@@ -187,7 +192,7 @@ public partial class MainLogicUnit
 
     #region API Func
 
-    public void GetDamageBySkill(PEInt damage,Skill skill)
+    public void GetDamageBySkill(MainLogicUnit damageSource, PEInt damage,Skill skill)
     {
         OnHurt?.Invoke();// 比如挂载亚瑟的受击标记buff，受伤有额外伤害。
         PEInt hurt = damage - Def;
@@ -200,6 +205,10 @@ public partial class MainLogicUnit
                 unitState = UnitStateEnum.Dead;
                 InputFakeMoveKey(PEVector3.zero);
                 OnDeath?.Invoke(skill.owner);
+                if (this.unitType == UnitTypeEnum.Hero)
+                {
+                    damageSource?.OnKillPlayer?.Invoke(this);
+                }
                 PlayAni("death");
                 this.Log($"{unitName} hp=0, Died.");
             }
@@ -253,7 +262,7 @@ public partial class MainLogicUnit
     /// GetDamageByBuff
     /// </summary>
     /// <param name="calcCB">是否需要再次触发OnHurt</param>
-    public void GetDamageByBuff(PEInt damage, Buff buff, bool calcCB = true) {
+    public void GetDamageByBuff(MainLogicUnit damageSource, PEInt damage, Buff buff, bool calcCB = true) {
         if(calcCB) {
             OnHurt?.Invoke();
         }
@@ -269,6 +278,10 @@ public partial class MainLogicUnit
                 unitState = UnitStateEnum.Dead;//状态切换
                 InputFakeMoveKey(PEVector3.zero);
                 OnDeath?.Invoke(buff.source);
+                if (this.unitType == UnitTypeEnum.Hero)
+                {
+                    damageSource?.OnKillPlayer?.Invoke(this);
+                }
                 PlayAni("death");
             }
 
@@ -292,15 +305,15 @@ public partial class MainLogicUnit
     public void ModifyMoveSpeed(PEInt value, Buff buff, bool jumpInfo) { 
         LogicMoveSpeed += value;
         
+        // 减速跳字,加速不跳字
         if(value < 0 && jumpInfo) {
-            // 减速跳字,加速不跳字
             JumpUpdateInfo jui = null;
-            if(IsPlayerSelf()) {
+            //if(IsPlayerSelf()) {
                 jui = new JumpUpdateInfo {
                     jumpType = JumpTypeEnum.SlowSpeed,
                     jumpAni = JumpAniEnum.CenterUp
                 };
-            }
+            //}
             OnSlowDown?.Invoke(jui);
         }
     }

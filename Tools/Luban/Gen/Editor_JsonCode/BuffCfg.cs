@@ -125,6 +125,14 @@ public abstract partial class BuffCfg :  Bright.Config.EditorBeanBase
             }
         }
         
+        { 
+            var _fieldJson = _json["effectDestoryExtend"];
+            if (_fieldJson != null)
+            {
+                if(!_fieldJson.IsNumber) { throw new SerializationException(); }  effectDestoryExtend = _fieldJson;
+            }
+        }
+        
     }
 
     public override void SaveJson(SimpleJSON.JSONObject _json)
@@ -175,6 +183,9 @@ public abstract partial class BuffCfg :  Bright.Config.EditorBeanBase
             if (hitTickAudio == null) { throw new System.ArgumentNullException(); }
             _json["hitTickAudio"] = new JSONString(hitTickAudio);
         }
+        {
+            _json["effectDestoryExtend"] = new JSONNumber(effectDestoryExtend);
+        }
     }
 
     public static BuffCfg LoadJsonBuffCfg(SimpleJSON.JSONNode _json)
@@ -199,6 +210,8 @@ public abstract partial class BuffCfg :  Bright.Config.EditorBeanBase
             case "MoveSpeedBuffCfg": obj = new MoveSpeedBuffCfg(); break;
             case "StunBuffCfg_DynamicTime": obj = new StunBuffCfg_DynamicTime(); break;
             case "TargetFlashMoveBuffCfg": obj = new TargetFlashMoveBuffCfg(); break;
+            case "JinxRocketMixedBuffCfg_DynamicGroup": obj = new JinxRocketMixedBuffCfg_DynamicGroup(); break;
+            case "NSSpeedBuffCfg": obj = new NSSpeedBuffCfg(); break;
             default: throw new SerializationException();
         }
         obj.LoadJson((SimpleJSON.JSONObject)_json);
@@ -249,6 +262,11 @@ public abstract partial class BuffCfg :  Bright.Config.EditorBeanBase
     public string buffEffect { get; set; }
 
     public string hitTickAudio { get; set; }
+
+    /// <summary>
+    /// buffEffect的销毁时长。如果为0则0.1f销毁，否则按照字段提供时间销毁。
+    /// </summary>
+    public float effectDestoryExtend { get; set; }
 
 }
 }

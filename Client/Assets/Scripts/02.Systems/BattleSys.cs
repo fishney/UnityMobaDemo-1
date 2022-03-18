@@ -10,6 +10,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using cfg;
 using proto.HOKProtocol;
 using PEMath;
 using PEPhysx;
@@ -165,6 +166,12 @@ public class BattleSys : SystemBase
     {
         gameRootResources.playWindow.EnterCDState(skillId,cdTime);
     }
+    
+    public void RefreshSkillWndInfo(SkillCfg cfg, int skillIndex)
+    {
+        gameRootResources.playWindow.RefreshSkillInfo(cfg,skillIndex);
+    }
+
 
     public MainLogicUnit GetSelfHero()
     {

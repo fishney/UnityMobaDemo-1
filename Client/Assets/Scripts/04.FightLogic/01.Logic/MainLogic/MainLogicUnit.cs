@@ -73,7 +73,6 @@ public abstract partial class MainLogicUnit : LogicUnit
                 InputSkillKey(key.skillKey);
                 break;
             case KeyType.Move:
-                // TODO 需要学习理解
                 PEInt x = PEInt.zero;
                 x.ScaledValue = key.moveKey.x;
                 PEInt z = PEInt.zero;

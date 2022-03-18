@@ -1,1 +1,1 @@
-﻿{"buffId":10200,"buffName":"被动攻速加成叠加","buffType":"HouyiPasvAttackSpeed","attacher":"Caster","staticPosType":"None","buffDelay":0,"buffInterval":66,"buffDuration":-1,"buffAudio":"","buffEffect":"","hitTickAudio":"","overCount":3,"speedAddtion":10,"resetTime":3000}
+﻿{"buffId":10200,"buffName":"被动攻速加成叠加","buffType":"HouyiPasvAttackSpeed","attacher":"Caster","staticPosType":"None","buffDelay":0,"buffInterval":66,"buffDuration":-1,"buffAudio":"","buffEffect":"","hitTickAudio":"","effectDestoryExtend":0,"overCount":3,"speedAddtion":10,"resetTime":3000}

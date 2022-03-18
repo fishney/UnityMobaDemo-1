@@ -33,7 +33,7 @@ public class HouyiMultipleArrowBuff : Buff {
             }
 
             bullet.HitTargetCB = (MainLogicUnit target, object[] args) => {
-                target.GetDamageByBuff(skill.skillCfg.damage, this);
+                target.GetDamageByBuff(source, skill.skillCfg.damage, this);
             };
         }
     }

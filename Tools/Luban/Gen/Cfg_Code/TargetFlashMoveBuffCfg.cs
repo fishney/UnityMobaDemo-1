@@ -60,6 +60,7 @@ public sealed partial class TargetFlashMoveBuffCfg :  BuffCfg
         + "buffAudio:" + buffAudio + ","
         + "buffEffect:" + buffEffect + ","
         + "hitTickAudio:" + hitTickAudio + ","
+        + "effectDestoryExtend:" + effectDestoryExtend + ","
         + "offset:" + offset + ","
         + "}";
     }

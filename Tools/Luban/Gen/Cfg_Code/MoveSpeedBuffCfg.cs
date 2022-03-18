@@ -60,6 +60,7 @@ public sealed partial class MoveSpeedBuffCfg :  BuffCfg
         + "buffAudio:" + buffAudio + ","
         + "buffEffect:" + buffEffect + ","
         + "hitTickAudio:" + hitTickAudio + ","
+        + "effectDestoryExtend:" + effectDestoryExtend + ","
         + "amount:" + amount + ","
         + "}";
     }

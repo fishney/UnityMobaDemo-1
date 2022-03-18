@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Runes_AddMul
+  m_Shader: {fileID: 4800000, guid: 853c206e3162a184e81a383babf153b1, type: 3}
+  m_ShaderKeywords: _HASDEPTH_ON _HASEMISSIVEDEPTH_ON _HASNOISEEMISSIVE_ON _HASNOISEOPACITY_ON
+    _HASNOISETEXTURE_ON _HASOPACITYDEPTH_ON
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTexture
+        second:
+          m_Texture: {fileID: 2800000, guid: 755a3d79299727e499dc066acd9484e4, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Noise
+        second:
+          m_Texture: {fileID: 2800000, guid: 832d9632ca6c98440afb3695dbe1d34c, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Cutoff
+        second: 0.5
+      data:
+        first:
+          name: _Depth
+        second: 0.35
+      data:
+        first:
+          name: _U_Speed
+        second: 0.3
+      data:
+        first:
+          name: _V_Speed
+        second: 0.25
+      data:
+        first:
+          name: _EmissiveIntensity
+        second: 9
+      data:
+        first:
+          name: _OpacityIntensity
+        second: 8
+      data:
+        first:
+          name: _HasNoiseTexture
+        second: 1
+      data:
+        first:
+          name: _NoisePower
+        second: 2.25
+      data:
+        first:
+          name: _HasNoiseEmissive
+        second: 1
+      data:
+        first:
+          name: _HasNoiseOpacity
+        second: 1
+      data:
+        first:
+          name: _HasDepth
+        second: 1
+      data:
+        first:
+          name: _HasOpacityDepth
+        second: 1
+      data:
+        first:
+          name: _HasEmissiveDepth
+        second: 1
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}

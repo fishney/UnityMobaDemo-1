@@ -54,7 +54,7 @@ public class HouyiMixedMultiScatterBuff : Buff {
             TargetBullet bullet = source.CreateSkillBullet(source, targetList[i], skill) as TargetBullet;
             bullet.HitTargetCB = (MainLogicUnit target, object[] args) => {
                 // this.Log("scatter target name:" + target.unitName);
-                target.GetDamageByBuff(skill.skillCfg.damage * damagePct / 100, this);
+                target.GetDamageByBuff(source, skill.skillCfg.damage * damagePct / 100, this);
             };
 
             CreateMultiArrow(targetList[i], skill.skillCfg.damage * damagePct / 100, true);
@@ -77,7 +77,7 @@ public class HouyiMixedMultiScatterBuff : Buff {
             }
 
             bullet.HitTargetCB = (MainLogicUnit hitTarget, object[] args) => {
-                hitTarget.GetDamageByBuff(damage, this);
+                hitTarget.GetDamageByBuff(source, damage, this);
             };
         }
     }

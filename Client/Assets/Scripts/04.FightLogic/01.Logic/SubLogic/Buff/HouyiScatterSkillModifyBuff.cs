@@ -40,7 +40,7 @@ public class HouyiScatterSkillModifyBuff : Buff {
             modifySkill.ReplaceSkillCfg(originalID);
         }
         else {
-            modifySkill.ReplaceSkillCfg(1025);
+            modifySkill.ReplaceSkillCfg(1025);//TODO need replace to cfg
         }
     }
 }

@@ -72,6 +72,7 @@ public sealed partial class HouyiScatterArrowBuffCfg :  BuffCfg
         + "buffAudio:" + buffAudio + ","
         + "buffEffect:" + buffEffect + ","
         + "hitTickAudio:" + hitTickAudio + ","
+        + "effectDestoryExtend:" + effectDestoryExtend + ","
         + "scatterCount:" + scatterCount + ","
         + "targetCfg:" + targetCfg + ","
         + "damagePct:" + damagePct + ","

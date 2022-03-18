@@ -1,1 +1,1 @@
-﻿{"buffId":10131,"buffName":"百分比生命伤害","buffType":"ExecuteDamage","attacher":"Target","staticPosType":"None","buffDelay":0,"buffInterval":0,"buffDuration":0,"buffAudio":"","buffEffect":"","hitTickAudio":"","damagePct":12}
+﻿{"buffId":10131,"buffName":"百分比生命伤害","buffType":"ExecuteDamage","attacher":"Target","staticPosType":"None","buffDelay":0,"buffInterval":0,"buffDuration":0,"buffAudio":"","buffEffect":"","hitTickAudio":"","effectDestoryExtend":0,"damagePct":12}

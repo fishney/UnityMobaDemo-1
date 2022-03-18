@@ -236,6 +236,35 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         {
             return cfg;
         }
+        
+        // TODO TEST hero
+        // if (id == 103)
+        // {
+        //     return new UnitCfg()
+        //     {
+        //         info = new UnitInfoCfg
+        //         {
+        //             unitId = 103,
+        //             unitName = "金克斯",
+        //             resName = "Jinx",
+        //             hp = 3500,
+        //             def = 10,
+        //             moveSpeed = 5,
+        //             pasvBuff = new int[] { 10300,10301 },//new int[] { 10200, 10201 },
+        //             skillArr = new []{1030,1031,1032,1033},
+        //         },
+        //        
+        //         hitHeight = (PEInt)1.5F,
+        //
+        //         colliCfg = new ColliderConfig
+        //         {
+        //             mType = ColliderType.Cylinder, //所有角色都是圆柱体
+        //             mRadius = (PEInt)0.5f,
+        //         },
+        //         
+        //     };
+        // }
+        
         return null;
         
         // TODO 1
@@ -432,6 +461,212 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
             return cfg;
         }
         
+        // TODO Test skill
+     //    return Test(id);
+     //    SkillCfg Test(int test_id)
+     //    {
+     //        SkillCfg sk_1030 = new SkillCfg {
+     //     skillId = 1030,
+     //     iconName = null,
+     //     aniName = "atk",
+     //     releaseMode = ReleaseModeEnum.None,
+     //     //最近的敌方目标
+     //     targetCfg = new TargetCfg {
+     //         targetTeam = TargetTeamEnum.Enemy,
+     //         selectRule = SelectRuleEnum.TargetClosestSingle,
+     //         targetTypeArr = new UnitTypeEnum[] {
+     //             UnitTypeEnum.Hero,
+     //             UnitTypeEnum.Tower,
+     //             UnitTypeEnum.Soldier,
+     //         },
+     //         selectRange = 5f,
+     //         searchDis = 15f,
+     //     },
+     //     bulletCfg = new BulletCfg {
+     //         bulletType = BulletTypeEnum.SkillTarget,
+     //         bulletName = "金克斯普攻子弹",
+     //         resPath = "jinx_bullets/Minigun",
+     //         bulletSpeed = 1f,
+     //         bulletSize = 0.1f,
+     //         bulletHeight = 1.5f,
+     //         bulletOffset = 0.5f,
+     //         bulletDelay = 0,
+     //     },
+     //     cdTime = 0,
+     //     spellTime = 350,//施法时间（技能前摇）
+     //     isNormalAttack = true,
+     //     skillTime = 1000,
+     //     damage = 120,
+     //
+     //     buffIdArr = null,
+     //     audio_start = null,
+     //     audio_work = "jinx_ska_mode1_rls",
+     //     audio_hit = "jinx_mode1_hit",
+     //     
+     // };  
+     //        // TODO 替换技能1 + 普攻
+     //        SkillCfg sk_1031 = new SkillCfg {
+     //     skillId = 1031,
+     //     iconName = "jinx_sk1_mode1",
+     //     releaseMode = ReleaseModeEnum.Click,
+     //     aniName = "sk1_mode1",
+     //     targetCfg = null,
+     //     bulletCfg = null,
+     //     cdTime = 1500,//ms
+     //     spellTime = 300,
+     //     skillTime = 800,
+     //     isNormalAttack = false,
+     //     damage = 0,
+     //     //普攻强化buff（技能修改）
+     //     buffIdArr = new int[] { 10310,10311 },
+     //     
+     //     audio_start = "jinx_sk1_mode1_rls"
+     // };
+     //        SkillCfg sk_1032 = new SkillCfg {
+     //            skillId = 1032,
+     //            iconName = "jinx_sk2",
+     //            aniName = "sk2",
+     //            releaseMode = ReleaseModeEnum.Direction,
+     //            targetCfg = null,
+     //            bulletCfg = new BulletCfg {
+     //                bulletType = BulletTypeEnum.UIDirection,//技能锁定的目标
+     //                bulletName = "振荡电磁波",
+     //                resPath = "jinx_bullets/Beam",
+     //                bulletSpeed = 3f,
+     //                bulletSize = 0.1f,
+     //                bulletHeight = 1.5f,
+     //                bulletOffset = 1f,
+     //                bulletDelay = 0,
+     //
+     //                canBlock = true,
+     //                //受影响的目标
+     //                impacter = new TargetCfg {
+     //                    targetTeam = TargetTeamEnum.Enemy,
+     //                    selectRule = SelectRuleEnum.Hero,
+     //                    targetTypeArr = new UnitTypeEnum[] { UnitTypeEnum.Hero , UnitTypeEnum.Soldier},
+     //                },
+     //                bulletDuration = 150,//确保不击中目标的情况下能飞出地图
+     //            },
+     //            cdTime = 1000,
+     //            spellTime = 670,//施法时间（技能前摇）
+     //            isNormalAttack = false,
+     //            skillTime = 1500,
+     //            damage = 500,
+     //            buffIdArr = new []{10320},//new int[] { 10230, 10231 },
+     //
+     //            audio_start = "jinx_sk2_rls",
+     //            audio_work = null,
+     //            audio_hit = "jinx_sk2_hit",//技能命中后，命中目标播放音效
+     //        };
+     //        
+     //        SkillCfg sk_1033 = new SkillCfg {
+     //     skillId = 1033,
+     //     iconName = "jinx_sk3",
+     //     aniName = "sk3",
+     //     releaseMode = ReleaseModeEnum.Direction,
+     //     targetCfg = null,
+     //     bulletCfg = new BulletCfg {
+     //         bulletType = BulletTypeEnum.UIDirection,//技能锁定的目标
+     //         bulletName = "超究极死神飞弹",
+     //         resPath = "jinx_bullets/Bullet",
+     //         bulletSpeed = 1f,
+     //         bulletSize = 0.5f,
+     //         bulletHeight = 1.5f,
+     //         bulletOffset = 1f,
+     //         bulletDelay = 200,
+     //
+     //         canBlock = true,
+     //         //受影响的目标
+     //         impacter = new TargetCfg {
+     //             targetTeam = TargetTeamEnum.Enemy,
+     //             selectRule = SelectRuleEnum.Hero,
+     //             targetTypeArr = new UnitTypeEnum[] { UnitTypeEnum.Hero },
+     //         },
+     //         bulletDuration = 5000,//确保不击中目标的情况下能飞出地图
+     //     },
+     //     cdTime = 3000,
+     //     spellTime = 900,//施法时间（技能前摇）
+     //     isNormalAttack = false,
+     //     skillTime = 1800,
+     //     damage = 0,
+     //     buffIdArr = new int[] { 10330 },
+     //
+     //     audio_start = "jinx_sk3_rls",
+     //     audio_work = null,
+     //     audio_hit = "jinx_sk3_hit",//技能命中后，命中目标播放音效
+     // };
+     //        // 炮状态普攻
+     //        SkillCfg sk_1034 = new SkillCfg {
+     //            skillId = 1034,
+     //            iconName = null,
+     //            aniName = "sk1",
+     //            releaseMode = ReleaseModeEnum.None,
+     //            //最近的敌方目标
+     //            targetCfg = new TargetCfg {
+     //                targetTeam = TargetTeamEnum.Enemy,
+     //                selectRule = SelectRuleEnum.TargetClosestSingle,
+     //                targetTypeArr = new UnitTypeEnum[] {
+     //                    UnitTypeEnum.Hero,
+     //                    UnitTypeEnum.Tower,
+     //                    UnitTypeEnum.Soldier,
+     //                },
+     //                selectRange = 7.5f,//5f to 7.5f
+     //                searchDis = 15f,
+     //            },
+     //            bulletCfg = new BulletCfg {
+     //                bulletType = BulletTypeEnum.SkillTarget,
+     //                bulletName = "金克斯普攻爆炸子弹",
+     //                resPath = "jinx_bullets/Rocket",
+     //                bulletSpeed = 1f,
+     //                bulletSize = 0.1f,
+     //                bulletHeight = 1.5f,
+     //                bulletOffset = 0.5f,
+     //                bulletDelay = 0,
+     //            },
+     //            cdTime = 0,
+     //            spellTime = 720,//施法时间（技能前摇）
+     //            isNormalAttack = true,
+     //            skillTime = 1333,
+     //            damage = 0,//伤害由buff判定
+     //
+     //            buffIdArr = new int[]{10314},
+     //            audio_start = null,
+     //            audio_work = "jinx_ska_mode2_rls",
+     //            audio_hit = "jinx_mode2_hit"
+     //        };
+     //        
+     //        // 炮状态1技能
+     //        SkillCfg sk_1035 = new SkillCfg {
+     //            skillId = 1035,
+     //            iconName = "jinx_sk1_mode2",
+     //            releaseMode = ReleaseModeEnum.Click,
+     //            aniName = "sk1_mode2",
+     //            targetCfg = null,
+     //            bulletCfg = null,
+     //            cdTime = 1500,//ms
+     //            spellTime = 300,
+     //            skillTime = 1000,
+     //            isNormalAttack = false,
+     //            damage = 0,
+     //            //普攻,1技能修改
+     //            buffIdArr = new int[] { 10312, 10313},
+     //     
+     //            audio_start = "jinx_sk1_mode2_rls"
+     //        };
+     //        
+     //        switch (test_id)
+     //        {
+     //            case 1030: return sk_1030;
+     //            case 1031: return sk_1031;
+     //            case 1032: return sk_1032;
+     //            case 1033: return sk_1033;
+     //            case 1034: return sk_1034;
+     //            case 1035: return sk_1035;
+     //        }
+     //
+     //        return null;
+     //    }
+        
         return null; 
         // TODO 1
         // switch (skillId)
@@ -533,9 +768,12 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
                 return new HouyiMixedMultiScatterBuff(source, owner, skill, buffID, args);
             case BuffTypeEnum.MoveSpeed_StaticGroup:
                 return new MoveSpeedBuff_StaticGroup(source, owner, skill, buffID, args);
-            
             case BuffTypeEnum.Stun_Single_DynamicTime:
                 return new StunBuff_DynamicTime(source, owner, skill, buffID, args);
+            case BuffTypeEnum.JinxRocketMixed_DynamicGroup:
+                return new JinxRocketMixedBuff_DynamicGroup(source, owner, skill, buffID, args);
+            case BuffTypeEnum.NSSpeedUpPasv:
+                return new NSSpeedPasvBuff(source, owner, skill, buffID, args);
             // TOADD
             case BuffTypeEnum.None:
             default:
@@ -548,6 +786,7 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
     
     public void LoadBuffs()
     {
+        // TODO 可以改反射或者做个迭代器，目前手动
         buffCfgDic = new Dictionary<int, BuffCfg>();
         foreach (var cfg in configTable.TbNormalBuffCfg.DataList)
         {
@@ -613,15 +852,231 @@ public class ResSvc : GameRootMonoSingleton<ResSvc>
         {
             buffCfgDic.Add(cfg.buffId, cfg);
         }
+        foreach (var cfg in configTable.TbJinxRocketMixedBuffCfg_DynamicGroup.DataList)
+        {
+            buffCfgDic.Add(cfg.buffId, cfg);
+        }
+        foreach (var cfg in configTable.TbNSSpeedBuffCfg.DataList)
+        {
+            buffCfgDic.Add(cfg.buffId, cfg);
+        }
     }
     
-    // TODO need Test abstract
     public BuffCfg GetBuffConfigById(int id) {
         
         if (buffCfgDic.TryGetValue(id,out var cfg))
         {
             return cfg;
         }
+        
+        // TODO Test buff
+     //    return Test(id);
+     //    BuffCfg Test(int test_id)
+     //    {
+     //        BuffCfg buff_10300 = new HouyiPasvAttackSpeedBuffCfg {
+     //      //通用buff属性
+     //      buffId = 10300,
+     //      buffName = "被动攻速加成叠加",
+     //      buffType = BuffTypeEnum.HouyiPasvAttackSpeed,
+     //
+     //      attacher = AttachTypeEnum.Caster,
+     //      impacter = null,
+     //
+     //      buffDelay = 0,
+     //      buffInterval = 66,
+     //      buffDuration = -1,
+     //
+     //      //专有属性
+     //      overCount = 3,
+     //      speedAddtion = 40,
+     //      resetTime = 2500,
+     //  };
+     //        BuffCfg buff_10301 = new NSSpeedBuffCfg {
+     //    buffId = 10301,
+     //      buffName = "被动攻速移速加成、不可叠加",
+     //      buffType = BuffTypeEnum.NSSpeedUpPasv,
+     //
+     //      attacher = AttachTypeEnum.Caster,
+     //      impacter = null,
+     //
+     //      buffDelay = 0,
+     //      buffInterval = 66,
+     //      buffDuration = -1,
+     //
+     //      //专有属性
+     //      buffAudio = "jinx_speedup",
+     //      moveSpeedPer = 100,
+     //      atkSpeedPer = 100,
+     //      resetTime = 3000,
+     //  };
+     //
+     //        // skill 1
+     //        BuffCfg buff_10310 = new CommonModifySkillBuffCfg {
+     //            buffId = 10310,
+     //            buffName = "替换普攻到炮形态",
+     //            buffType = BuffTypeEnum.ModifySkill,
+     //
+     //            attacher = AttachTypeEnum.Caster,
+     //            impacter = null,
+     //            
+     //            buffDuration = -1,
+     //
+     //            //专有属性
+     //            originalID = 1030,
+     //            replaceID = 1034,
+     //            times = -1,
+     //            replaceIconId = 0,
+     //        };
+     //        
+     //        BuffCfg buff_10311 = new CommonModifySkillBuffCfg {
+     //            buffId = 10311,
+     //            buffName = "替换Sk1到炮状态",
+     //            buffType = BuffTypeEnum.ModifySkill,
+     //
+     //            attacher = AttachTypeEnum.Caster,
+     //            impacter = null,
+     //            
+     //            buffDuration = -1,
+     //
+     //            //专有属性
+     //            originalID = 1031,
+     //            replaceID = 1035,
+     //            times = -1,
+     //            replaceIconId = 1,
+     //        };
+     //        
+     //        BuffCfg buff_10312 = new CommonModifySkillBuffCfg {
+     //            buffId = 10312,
+     //            buffName = "替换普攻到枪形态",
+     //            buffType = BuffTypeEnum.ModifySkill,
+     //
+     //            attacher = AttachTypeEnum.Caster,
+     //            impacter = null,
+     //            
+     //            buffDuration = -1,
+     //
+     //            //专有属性
+     //            originalID = 1030,
+     //            replaceID = 1030,
+     //            times = -1,
+     //            replaceIconId = 0,
+     //        };
+     //        
+     //        BuffCfg buff_10313 = new CommonModifySkillBuffCfg {
+     //            buffId = 10313,
+     //            buffName = "替换Sk1到枪状态",
+     //            buffType = BuffTypeEnum.ModifySkill,
+     //
+     //            attacher = AttachTypeEnum.Caster,
+     //            impacter = null,
+     //            
+     //            buffDuration = -1,
+     //
+     //            //专有属性
+     //            originalID = 1031,
+     //            replaceID = 1031,
+     //            times = -1,
+     //            replaceIconId = 1,
+     //        };
+     //        
+     //        BuffCfg buff_10314 = new DamageBuffCfg_StaticGroup {
+     //            buffId = 10314, 
+     //            buffName = "范围伤害",
+     //
+     //     attacher = AttachTypeEnum.Bullet,
+     //     impacter = new TargetCfg {
+     //         targetTeam = TargetTeamEnum.Friend,
+     //         selectRule = SelectRuleEnum.PositionClosestMulti,
+     //         targetTypeArr = new UnitTypeEnum[] {
+     //             UnitTypeEnum.Hero,
+     //             UnitTypeEnum.Soldier,
+     //         },
+     //         selectRange = 2f
+     //     },
+     //
+     //     buffDelay = 0,
+     //     buffInterval = 0,
+     //     buffDuration = 0,
+     //     buffType = BuffTypeEnum.Damage_StaticGroup,
+     //     staticPosType = StaticPosTypeEnum.BulletHitTargetPos,
+     //
+     //     //damageAudio = "com_hit1",
+     //     //effect
+     //     effectDestoryExtend = 1f,
+     //     buffEffect = "jinx_bullets/Bullet_Boom",
+     //
+     //     damage = 200,
+     // };
+     //        
+     //        // skill2
+     //        
+     //        BuffCfg buff_10320 = new MoveSpeedBuffCfg {
+     //            buffId = 10320,
+     //     buffName = "减速",
+     //     buffType = BuffTypeEnum.MoveSpeed_Single,
+     //
+     //     attacher = AttachTypeEnum.Bullet,
+     //     impacter = null,
+     //
+     //     buffDelay = 0,
+     //     buffInterval = 0,
+     //     buffDuration = 2000,
+     //     effectDestoryExtend = 2.5f,
+     //     buffEffect = "jinx_bullets/Beam_Boom",
+     //     amount = -50,
+     // };
+     //        BuffCfg buff_10330 = new JixRocketMixedBuffCfg_DynamicGroup {
+     //            buffId = 10330, 
+     //            buffName = "Jinx大招混合范围伤害",
+     //
+     //            attacher = AttachTypeEnum.Bullet,
+     //            impacter = new TargetCfg {
+     //                targetTeam = TargetTeamEnum.Friend,
+     //                selectRule = SelectRuleEnum.PositionClosestMulti,
+     //                targetTypeArr = new UnitTypeEnum[] {
+     //                    UnitTypeEnum.Hero,
+     //                    UnitTypeEnum.Soldier,
+     //                },
+     //                selectRange = 3.5f
+     //            },
+     //
+     //            buffDelay = 0,
+     //            buffInterval = 0,
+     //            buffDuration = 0,
+     //            buffType = BuffTypeEnum.JixRocketMixed_DynamicGroup,
+     //            staticPosType = StaticPosTypeEnum.BulletHitTargetPos,
+     //
+     //            //damageAudio = "com_hit1",
+     //            //effect
+     //            //buffEffect = "Effect_sk3",
+     //
+     //            minTime = 100,
+     //            maxTime = 1000,
+     //            minDamage = 50,
+     //            maxDamage = 500,
+     //            perDamagedHit = 35,
+     //            perSplash = 80,
+     //            
+     //            effectDestoryExtend = 2.5f,
+     //            buffEffect = "jinx_bullets/Rocket_Boom",
+     //        };
+     //        
+     //        switch (test_id)
+     //        {
+     //            case 10300: return buff_10300;
+     //            case 10301: return buff_10301;
+     //            case 10310: return buff_10310;
+     //            case 10311: return buff_10311;
+     //            case 10312: return buff_10312;
+     //            case 10313: return buff_10313;
+     //            case 10314: return buff_10314;
+     //            case 10320: return buff_10320;
+     //            case 10330: return buff_10330;
+     //        }
+     //        return null;
+     //    }
+        
+        
         this.Error("Get Buff Config Failed,buffId:" + id);
         return null;
 
