@@ -31,9 +31,9 @@ namespace Server
 
 			//启动
 //#if DEBUG
-			server.StartAsServer(ServerConfig.LocalDevInnerIp, ServerConfig.UdpPort, ServerRoot.Instance().protocolMode);
+			//server.StartAsServer(ServerConfig.LocalDevInnerIp, ServerConfig.UdpPort, ServerRoot.Instance().protocolMode);
 // #else
-//             server.StartAsServer(ServerConfig.RemoteServerIp, ServerConfig.UdpPort);
+             server.StartAsServer(ServerConfig.RemoteServerIp, ServerConfig.UdpPort, ServerRoot.Instance().protocolMode);
 // #endif
 
 			this.Log("ServerSession init Completed by NetSvc.");

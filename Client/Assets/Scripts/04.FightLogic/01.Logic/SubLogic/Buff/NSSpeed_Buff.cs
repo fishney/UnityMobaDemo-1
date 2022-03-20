@@ -10,6 +10,7 @@ public class NSSpeedPasvBuff : Buff {
     private PEInt resetTime;
     private PEInt moveSpeedPer;
     private PEInt atkSpeedPer;
+    private string buffOnAudio;
 
     public NSSpeedPasvBuff(MainLogicUnit source, MainLogicUnit owner, Skill skill, int buffID, object[] args = null)
         : base(source, owner,skill, buffID, args) {
@@ -22,13 +23,22 @@ public class NSSpeedPasvBuff : Buff {
         resetTime = buffCfg.resetTime;
         moveSpeedPer = buffCfg.moveSpeedPer;
         atkSpeedPer = buffCfg.atkSpeedPer;
+        buffOnAudio = buffCfg.audio_buffOn;
 
         source.OnKillPlayer += OnKill;
     }
     
     void OnKill(MainLogicUnit killedUnit)
     {
+        source.PlayAudio(buffOnAudio);
         SetOrExtendSpeed();
+    }
+    
+    protected override void Start()
+    {
+        base.Start();
+        // TODO 偷懒了，应该放在buff里设立字段
+        owner.mainViewUnit.SetImgInfoIcon("jinx_pasv");
     }
 
     /// <summary>
@@ -53,10 +63,8 @@ public class NSSpeedPasvBuff : Buff {
     
     void SetOrExtendSpeed()
     {
-        PEInt moveSpeedOffset = source.moveSpeedBase * (moveSpeedPer / 100);
-        PEInt atkSpeedOffset = source.AttackSpeedRateBase * (atkSpeedPer / 100);
-        Debug.Log("moveSpeedOffset " + moveSpeedOffset + ",atkSpeedOffset" + atkSpeedOffset + ",isInBuff" + isInBuff+ ",timeCount" + timeCount+ ",resetTime" + resetTime);
         // 不可叠加的buff。如果正在buff状态中，只会刷新时长，而不会叠加速度。
+        owner.mainViewUnit.SetImgInfo(resetTime.RawInt);
         if (isInBuff)
         {
             timeCount = 0;

@@ -5,6 +5,7 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using Bright.Serialization;
 using System.Collections.Generic;
@@ -12,14 +13,15 @@ using SimpleJSON;
 using Sirenix.OdinInspector;
 
 
+
 namespace editor.cfg
 {
-
-    [Serializable]
+[Serializable]
 public sealed partial class NSSpeedBuffCfg :  BuffCfg 
 {
     public NSSpeedBuffCfg()
     {
+            audio_buffOn = "";
     }
 
     public override void LoadJson(SimpleJSON.JSONObject _json)
@@ -49,6 +51,14 @@ public sealed partial class NSSpeedBuffCfg :  BuffCfg
             }
         }
         
+        { 
+            var _fieldJson = _json["audio_buffOn"];
+            if (_fieldJson != null)
+            {
+                if(!_fieldJson.IsString) { throw new SerializationException(); }  audio_buffOn = _fieldJson;
+            }
+        }
+        
     }
 
     public override void SaveJson(SimpleJSON.JSONObject _json)
@@ -62,6 +72,11 @@ public sealed partial class NSSpeedBuffCfg :  BuffCfg
         }
         {
             _json["resetTime"] = new JSONNumber(resetTime);
+        }
+        {
+
+            if (audio_buffOn == null) { throw new System.ArgumentNullException(); }
+            _json["audio_buffOn"] = new JSONString(audio_buffOn);
         }
     }
 
@@ -91,6 +106,11 @@ public sealed partial class NSSpeedBuffCfg :  BuffCfg
     /// 速度改变持续时间
     /// </summary>
     [ShowInInspector, VerticalGroup("特殊")]public int resetTime { get; set; }
+
+    /// <summary>
+    /// 被动buff启动时音效
+    /// </summary>
+    [ShowInInspector, VerticalGroup("特殊")]public string audio_buffOn { get; set; }
 
 }
 }

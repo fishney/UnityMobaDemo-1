@@ -188,6 +188,12 @@ public abstract class MainViewUnit : ViewUnit
         }
     }
     
+    public void SetImgInfoIcon(string path) {
+        if(mainLogicUnit.IsPlayerSelf()) {
+            playWindow.SetImgInfoIcon(path);
+        }
+    }
+    
     public void RemoveUIItemInfo() {
         hpWindow.RemoveHPItemInfo(mainLogicUnit);
         playWindow.RemoveMapIconItemInfo(mainLogicUnit);

@@ -4,35 +4,45 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: MAT_Glow_1
-  m_Shader: {fileID: 4800000, guid: c0c098dd36db49746abcb007452cb18d, type: 3}
+  m_Shader: {fileID: 4800000, guid: 853c206e3162a184e81a383babf153b1, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TexEnvs:
-      data:
-        first:
-          name: _MainTexture
-        second:
-          m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise:
+        m_Texture: {fileID: 2800000, guid: dc664e2d56996f844ad09d81f5e27fe2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-      data:
-        first:
-          name: _Depth
-        second: 0.4
-      data:
-        first:
-          name: _Glow
-        second: 1.5
+    - _Cutoff: 0.5
+    - _Depth: 0.4
+    - _EmissiveIntensity: 4
+    - _FinalEmissive: 1
+    - _FinalMix: 1
+    - _FinalOpacity: 1
+    - _Glow: 1.5
+    - _HasEmissiveDepth: 0
+    - _HasNoiseEmissive: 0
+    - _HasNoiseOpacity: 0
+    - _HasOpacityDepth: 0
+    - _NoisePower: 3
+    - _OpacityIntensity: 4
+    - _U_Speed: 0.1
+    - _V_Speed: 0.15
     m_Colors:
-      data:
-        first:
-          name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

@@ -35,8 +35,9 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
         {
             this.ColorLog((LogColor)color,msg);
         };
-
-        string svcIP = ServerConfig.LocalDevInnerIp;//RemoteGateIp;
+        
+        // TODO change!
+        string svcIP = ServerConfig.RemoteGateIp;//RemoteGateIp;
         if (GameRootResources.Instance().loginWindow != null)
         {
             if (! GameRootResources.Instance().loginWindow.togServer.isOn)
@@ -108,8 +109,11 @@ public class NetSvc : GameRootMonoSingleton<NetSvc>
                 ++counter;
                 if (counter > 4)
                 {
-                    this.Error($"ConnectServer Failed{counter}.Please Check.");
-                    GameRootResources.Instance().ShowTips("服务器连接失败次数过多，请检查网络");
+                    if (!GMSystem.Instance.isActive)
+                    {
+                        this.Error($"ConnectServer Failed{counter}.Please Check.");
+                        GameRootResources.Instance().ShowTips("服务器连接失败次数过多，请检查网络");
+                    }
                     checkTask = null;
                 }
                 else

@@ -20,6 +20,7 @@ public sealed partial class NSSpeedBuffCfg :  BuffCfg
         moveSpeedPer = _buf.ReadInt();
         atkSpeedPer = _buf.ReadInt();
         resetTime = _buf.ReadInt();
+        audio_buffOn = _buf.ReadString();
         PostInit();
     }
 
@@ -40,6 +41,10 @@ public sealed partial class NSSpeedBuffCfg :  BuffCfg
     /// 速度改变持续时间
     /// </summary>
     public int resetTime { get; private set; }
+    /// <summary>
+    /// 被动buff启动时音效
+    /// </summary>
+    public string audio_buffOn { get; private set; }
 
     public const int __ID__ = -1384948945;
     public override int GetTypeId() => __ID__;
@@ -74,6 +79,7 @@ public sealed partial class NSSpeedBuffCfg :  BuffCfg
         + "moveSpeedPer:" + moveSpeedPer + ","
         + "atkSpeedPer:" + atkSpeedPer + ","
         + "resetTime:" + resetTime + ","
+        + "audio_buffOn:" + audio_buffOn + ","
         + "}";
     }
     

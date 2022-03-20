@@ -9,8 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Beam_AddMul
   m_Shader: {fileID: 4800000, guid: 853c206e3162a184e81a383babf153b1, type: 3}
-  m_ShaderKeywords: _HASDEPTH_ON _HASEMISSIVEDEPTH_ON _HASNOISEEMISSIVE_ON _HASNOISEOPACITY_ON
-    _HASOPACITYDEPTH_ON
+  m_ShaderKeywords: _HASDEPTH_ON _HASNOISEEMISSIVE_ON _HASNOISEOPACITY_ON
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -77,10 +76,10 @@ Material:
     - _Glossiness: 0.5
     - _Glow: 0.8
     - _HasDepth: 1
-    - _HasEmissiveDepth: 1
+    - _HasEmissiveDepth: 0
     - _HasNoiseEmissive: 1
     - _HasNoiseOpacity: 1
-    - _HasOpacityDepth: 1
+    - _HasOpacityDepth: 0
     - _Metallic: 0
     - _Mode: 0
     - _NoisePower: 1
@@ -89,10 +88,10 @@ Material:
     - _Parallax: 0.02
     - _SrcBlend: 1
     - _UVSec: 0
-    - _U_Speed: 2
-    - _V_Speed: 1
+    - _U_Speed: 0.1
+    - _V_Speed: 0.15
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.22694911, g: 0.46730724, b: 0.5660378, a: 1}
+    - _Color: {r: 0.7122642, g: 0.9129221, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

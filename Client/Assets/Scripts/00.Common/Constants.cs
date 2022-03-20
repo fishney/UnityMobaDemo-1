@@ -19,6 +19,7 @@ public static class Constants
     //public const string BGLogin = "bgLogin";
     // 主城bgm
     public const string BGMainCity = "main";
+    public const string BGLobby = "lobby";
     // 战斗bgm
     public const string BGBattle = "battle";
 

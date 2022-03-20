@@ -70,6 +70,10 @@ namespace Server
                         {
                             heroID = 102,
                         },
+                        new HeroSelectData
+                        {
+                            heroID = 103,
+                        },
 					},
 					bagData = GetNewBag(),
 				};

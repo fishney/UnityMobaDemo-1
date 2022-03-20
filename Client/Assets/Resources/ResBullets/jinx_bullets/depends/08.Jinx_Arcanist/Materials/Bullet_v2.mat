@@ -4,104 +4,232 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: Bullet_v2
   m_Shader: {fileID: 4800000, guid: 853c206e3162a184e81a383babf153b1, type: 3}
   m_ShaderKeywords: _HASDEPTH_ON _HASNOISEEMISSIVE_ON _HASNOISEOPACITY_ON
   m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
   stringTagMap: {}
-  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 3
+    serializedVersion: 2
     m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTexture:
-        m_Texture: {fileID: 2800000, guid: 45ecdd6d6c88d8642938462c3a008265, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Mask:
-        m_Texture: {fileID: 2800000, guid: 45ecdd6d6c88d8642938462c3a008265, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise:
-        m_Texture: {fileID: 2800000, guid: 832d9632ca6c98440afb3695dbe1d34c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailNormalMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MainTexture
+        second:
+          m_Texture: {fileID: 2800000, guid: 45ecdd6d6c88d8642938462c3a008265, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Noise
+        second:
+          m_Texture: {fileID: 2800000, guid: 832d9632ca6c98440afb3695dbe1d34c, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ParallaxMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _OcclusionMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _EmissionMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailMask
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailAlbedoMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MetallicGlossMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Mask
+        second:
+          m_Texture: {fileID: 2800000, guid: 45ecdd6d6c88d8642938462c3a008265, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _Depth: 0
-    - _DetailNormalMapScale: 1
-    - _DissolvePower: 0.4
-    - _DstBlend: 0
-    - _EmissiveIntensity: 6
-    - _FinalEmissive: 1
-    - _FinalMix: 1
-    - _FinalOpacity: 2
-    - _FresnelExp: 0.27
-    - _FresnelPow: 2.56
-    - _Glossiness: 0.5
-    - _Glow: 1
-    - _HasDepth: 1
-    - _HasEmissiveDepth: 0
-    - _HasNoiseEmissive: 1
-    - _HasNoiseOpacity: 1
-    - _HasOpacityDepth: 0
-    - _Intensity: 1
-    - _MainPower: 1
-    - _MaskPower: 0.64
-    - _Metallic: 0
-    - _Mode: 0
-    - _NoisePower: 1
-    - _OcclusionStrength: 1
-    - _OpacityIntensity: 2
-    - _Parallax: 0.02
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _U_Speed: 1
-    - _V_Speed: 1
-    - _ZWrite: 1
+      data:
+        first:
+          name: _SrcBlend
+        second: 1
+      data:
+        first:
+          name: _DstBlend
+        second: 0
+      data:
+        first:
+          name: _Cutoff
+        second: 0.5
+      data:
+        first:
+          name: _Glow
+        second: 1
+      data:
+        first:
+          name: _Depth
+        second: 0
+      data:
+        first:
+          name: _DissolvePower
+        second: 0.4
+      data:
+        first:
+          name: _FinalOpacity
+        second: 2
+      data:
+        first:
+          name: _Parallax
+        second: 0.02
+      data:
+        first:
+          name: _ZWrite
+        second: 1
+      data:
+        first:
+          name: _Glossiness
+        second: 0.5
+      data:
+        first:
+          name: _BumpScale
+        second: 1
+      data:
+        first:
+          name: _OcclusionStrength
+        second: 1
+      data:
+        first:
+          name: _DetailNormalMapScale
+        second: 1
+      data:
+        first:
+          name: _UVSec
+        second: 0
+      data:
+        first:
+          name: _Mode
+        second: 0
+      data:
+        first:
+          name: _Metallic
+        second: 0
+      data:
+        first:
+          name: _Intensity
+        second: 1
+      data:
+        first:
+          name: _U_Speed
+        second: 1
+      data:
+        first:
+          name: _V_Speed
+        second: 1
+      data:
+        first:
+          name: _FresnelExp
+        second: 0.27
+      data:
+        first:
+          name: _FresnelPow
+        second: 2.56
+      data:
+        first:
+          name: _MaskPower
+        second: 0.64
+      data:
+        first:
+          name: _MainPower
+        second: 1
+      data:
+        first:
+          name: _EmissiveIntensity
+        second: 6
+      data:
+        first:
+          name: _OpacityIntensity
+        second: 6
+      data:
+        first:
+          name: _NoisePower
+        second: 2
+      data:
+        first:
+          name: _HasNoiseEmissive
+        second: 1
+      data:
+        first:
+          name: _HasNoiseOpacity
+        second: 1
+      data:
+        first:
+          name: _HasDepth
+        second: 1
+      data:
+        first:
+          name: _HasOpacityDepth
+        second: 0
+      data:
+        first:
+          name: _HasEmissiveDepth
+        second: 0
     m_Colors:
-    - _Color: {r: 0.14751692, g: 0.5047255, b: 0.8018868, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-  m_BuildTextureStacks: []
+      data:
+        first:
+          name: _EmissionColor
+        second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _Color
+        second: {r: 0, g: 0.5448277, b: 1, a: 1}

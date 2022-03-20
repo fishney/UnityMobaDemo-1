@@ -242,7 +242,6 @@ C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\win-x64\HOKProto
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\win-x64\Kcp.dll
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\win-x64\PETimer.dll
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\win-x64\PEUtils.dll
-C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\win-x64\HOKProtocol.pdb
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\win-x64\Server.AssemblyInfoInputs.cache
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\win-x64\Server.AssemblyInfo.cs
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\win-x64\Server.csproj.CoreCompileInputs.cache
@@ -250,8 +249,9 @@ C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\win-x64\Server.c
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\win-x64\Server.dll
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\win-x64\Server.pdb
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\win-x64\Server.genruntimeconfig.cache
-C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\win-x64\protobuf-net.dll
-C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\win-x64\protobuf-net.Core.dll
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\win-x64\CodingK_Session.dll
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\win-x64\CodingK_Session.pdb
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\win-x64\Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\win-x64\PEMath.dll
+C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\win-x64\PEPhysx.dll
+C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\win-x64\Server.csproj.AssemblyReference.cache

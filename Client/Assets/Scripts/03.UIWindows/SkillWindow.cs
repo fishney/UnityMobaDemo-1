@@ -11,6 +11,7 @@ public partial class PlayWindow
 
     public Transform imgInfoRoot;
     public Image imgInfoCD;
+    public Image imgInfoIcon;
     
     /// <summary>
     /// 禁止释放所有技能
@@ -109,6 +110,18 @@ public partial class PlayWindow
         sk1Item.SetForbidState(state);
         sk2Item.SetForbidState(state);
         sk3Item.SetForbidState(state);
+    }
+    
+    
+    /// <summary>
+    /// 被动buff小图标图片
+    /// </summary>
+    /// <param name="cdTime">持续时间</param>
+    public void SetImgInfoIcon(string path) {
+        if (!string.IsNullOrEmpty(path))
+        {
+            SetSprite(imgInfoIcon,"ResImages/PlayWnd/" + path);
+        }
     }
     
     /// <summary>

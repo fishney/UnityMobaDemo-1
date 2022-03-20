@@ -14,12 +14,12 @@ namespace proto.HOKProtocol
         /// <summary>
         /// 远端IP（公网）
         /// </summary>
-        public const string RemoteGateIp = "47.102.42.164";
+        public const string RemoteGateIp = "121.4.127.19";
 
         /// <summary>
         /// 云服务器IP 远端转发绑定IP（私网）
         /// </summary>
-        public const string RemoteServerIp = "172.22.18.183";
+        public const string RemoteServerIp = "10.0.4.6";
 
         public const int UdpPort = 17666;
 

@@ -31,13 +31,10 @@ C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\HOKProtocol.dll
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\Kcp.dll
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\PETimer.dll
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\PEUtils.dll
-C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\HOKProtocol.pdb
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.csproj.CopyComplete
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.dll
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.pdb
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.genruntimeconfig.cache
-C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\protobuf-net.dll
-C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\protobuf-net.Core.dll
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\CodingK_Session.dll
 C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\CodingK_Session.pdb
 C:\Github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.csproj.AssemblyReference.cache
@@ -87,3 +84,5 @@ D:\github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.csproj.Co
 D:\github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.dll
 D:\github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.pdb
 D:\github\UnityMobaDemo\Server\Server\obj\Release\netcoreapp3.1\Server.genruntimeconfig.cache
+C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\PEMath.dll
+C:\Github\UnityMobaDemo\Server\Server\bin\Release\netcoreapp3.1\PEPhysx.dll
